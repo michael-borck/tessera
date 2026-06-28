@@ -1,0 +1,94 @@
+project:
+  type: website
+  render:
+    - "!CLAUDE.md"
+    - "!CODE_OF_CONDUCT.md"
+    - "!CONTRIBUTING.md"
+    - "!README.md"
+    - "*"
+
+website:
+  title: "Tessera"
+  navbar:
+    logo: assets/logo.svg
+    logo-alt: "Tessera"
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Solutions
+        menu:
+          - text: Cloud Hosting
+            href: index.qmd#solutions
+          - text: Managed Services
+            href: index.qmd#solutions
+          - text: Security & Compliance
+            href: index.qmd#solutions
+      - text: About
+        href: about.qmd
+      - text: Pricing
+        href: pricing.qmd
+      - text: Resources
+        menu:
+          - text: Documentation
+            href: docs/policies.qmd
+          - text: Support Center
+            href: docs/support.qmd
+          - text: Blog
+            href: blog/index.qmd
+          - text: Consultant Portal
+            href: chatbots/index.qmd
+      - text: Docs
+        menu:
+          - docs/interviews.qmd
+          - docs/policies.qmd
+          - docs/support.qmd
+          - docs/articles.qmd
+          - docs/logs.qmd
+    right:
+      - text: Educational Site
+        href: legal.qmd
+      - text: Contact Us
+        href: contact.qmd
+  page-footer:
+    background: "#0f172a"
+    left: |
+      **Tessera**  
+      Enterprise cloud infrastructure solutions  
+      ISO 27001:2013 Certified
+    center: |
+      **Contact**  
+      Perth: 11 Newcastle St, WA 6000  
+      Malaga: 4 Millrose Dr, WA 6090  
+      Email: info@tessera.io  
+      Phone: +61 (8) 4587 8990
+    right: |
+      **Legal**  
+      [Legal Disclaimer](/legal.html) | [Privacy](/legal.html#privacy-data-collection)  
+      [MIT License](/legal.html#license) | [Security Notice](/legal.html#security-notice)  
+      
+      © 2024 Tessera (Fictional). All rights reserved.  
+      [Open Source Credits](/credits.html) | [Icons by Lordicon.com](https://lordicon.com/) | [Educational Disclaimer](/legal.html)
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    include-in-header:
+      - text: |
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+      - text: |
+          <script src="/scripts/config.js"></script>
+          <script src="/scripts/booking-api.js"></script>
+          <script src="/scripts/booking-modal.js"></script>
+          <script src="/scripts/chatbot-booking.js"></script>
+
+resources:
+  - CNAME
+  - assets/
+  - scripts/
+  - data/
+
+
+

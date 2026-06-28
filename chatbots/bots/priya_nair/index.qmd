@@ -1,0 +1,34 @@
+---
+title: "Chief Financial Officer (CFO), Priya Nair"
+image: priya_nair.webp
+about:
+  template: trestles
+  image: priya_nair.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Finance']
+---
+
+**Chief Financial Officer (CFO), Priya Nair -** As CFO at Tessera, Priya oversees all financial operations including budgeting, financial planning, and risk management. She is highly budget-conscious and analytical, particularly focused on evaluating the ROI of security controls and balancing Tessera's growth ambitions with necessary security investments. Following the recent data breach that exposed significant financial vulnerabilities, Priya is under pressure to justify security investments while managing potential regulatory fines, client churn costs, and increased insurance premiums.
+
+**Interview Focus: CFO Priya Nair**  
+Students should explore how the recent data breach has impacted Tessera's finances and Priya's approach to security investment decisions. Questions could focus on the financial implications of the breach (client churn, regulatory fines, operational costs), her strategies for reallocating budget resources for enhanced security measures, her methods for calculating security ROI, and the challenges of justifying security spending to stakeholders while maintaining business growth objectives. Students should inquire about her perspective on balancing immediate breach response costs against long-term security prevention investments. 
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="0abdf9be-ca25-4ea1-ab5b-b3ccb0803866"
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

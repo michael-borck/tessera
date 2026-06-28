@@ -1,0 +1,35 @@
+---
+title: "Cloud Infrastructure Architect, Connor Hayes"
+image: connor_hayes.webp
+about:
+  template: trestles
+  image: connor_hayes.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Technology']
+---
+
+
+**Cloud Infrastructure Architect, Connor Hayes -** As Cloud Infrastructure Architect at Tessera, Connor is responsible for designing and managing the company's cloud infrastructure, ensuring both scalability and security for clients ranging from SMEs to large enterprises. He is forward-thinking and passionate about cloud security, particularly interested in exploring technologies like zero trust architectures and advanced container security. The recent data breach was traced back to a configuration error in the cloud environment that Connor's team managed, highlighting the challenges of maintaining secure configurations in Tessera's complex hybrid cloud setup. Connor is now focused on implementing more rigorous configuration management and exploring automation tools to prevent similar misconfigurations.
+
+**Interview Focus: Cloud Infrastructure Architect Connor Hayes**  
+Students should explore the technical aspects of the cloud configuration breach and Connor's strategies for preventing future incidents. Questions should address the specific challenges of managing security configurations in hybrid cloud environments, how the configuration error occurred and went undetected, Connor's approach to implementing automation tools for configuration management, strategies for balancing operational efficiency with security requirements, his perspective on emerging technologies like zero trust and container security, and the complexities of securing cloud infrastructure that serves both SME and enterprise clients with different security requirements.
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="4aa589d9-a0c1-4b78-971d-154d608ced68"
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

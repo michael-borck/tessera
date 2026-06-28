@@ -1,0 +1,35 @@
+---
+title: "Human Resources Manager, Anika Desai"
+image: anika_desai.webp
+about:
+  template: trestles
+  image: anika_desai.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'People']
+---
+
+**Human Resources Manager, Anika Desai -** As Human Resources Manager at Tessera, Anika oversees all HR functions including employee recruitment, training, and policy management. She is people-oriented and passionate about fostering a positive workplace culture while promoting security awareness. A significant part of her role involves managing employee access controls and implementing security training programs to reduce insider threats. The recent data breach was caused by an insider threat where an employee exploited overly broad access permissions to gain unauthorized access to sensitive data, highlighting gaps in Tessera's security culture and access control policies. This incident has led to increased focus on security training, reevaluation of access controls based on the principle of least privilege, and operational changes to implement more rigorous access reviews and enhanced security awareness programs.
+
+**Interview Focus: Human Resources Manager Anika Desai**  
+Students should explore the insider threat aspects of the breach and Anika's role in preventing future human-factor security incidents. Questions should address how the insider threat occurred and what access control weaknesses were exploited, Anika's assessment of the effectiveness of current security awareness programs, challenges of balancing collaborative company culture with security policy enforcement, strategies for implementing the principle of least privilege without hindering productivity, her approach to improving security culture and employee engagement with security protocols, methods for regular access reviews and monitoring employee access patterns, and the human element in security including both malicious intent and unintentional security violations. Students should inquire about her strategies for rebuilding trust while strengthening security measures.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="5eb26c9d-fe10-4be7-97cf-3975b059b16d"
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

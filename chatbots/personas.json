@@ -1,0 +1,196 @@
+{
+  "shared_docs": [
+    "_backstories/tessera_company_overview.md",
+    "_backstories/unit-employee-guide.md",
+    "_backstories/student_focus.md"
+  ],
+  "allowlist_domains": [
+    "tessera.locoensayo.org",
+    "localhost"
+  ],
+  "personas": [
+    {
+      "slug": "chloe_anderson",
+      "prompt": "bots/chloe_anderson/prompt.txt",
+      "page": "bots/chloe_anderson/index.qmd",
+      "backstory": "_backstories/customer_support_lead_chloe_anderson.md",
+      "extra_docs": [
+        "_backstories/reputation_recovery_plan.md",
+        "_backstories/brand_guidelines_summary.md",
+        "_backstories/marketing_strategy_overview.md"
+      ]
+    },
+    {
+      "slug": "kai_nakamura",
+      "prompt": "bots/kai_nakamura/prompt.txt",
+      "page": "bots/kai_nakamura/index.qmd",
+      "backstory": "_backstories/cloud_service_operations_manager_kai_nakamura.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md"
+      ]
+    },
+    {
+      "slug": "dr_amara_okafor",
+      "prompt": "bots/dr_amara_okafor/prompt.txt",
+      "page": "bots/dr_amara_okafor/index.qmd",
+      "backstory": "_backstories/chief_technology_officer_dr_amara_okafor.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "maya_rossi",
+      "prompt": "bots/maya_rossi/prompt.txt",
+      "page": "bots/maya_rossi/index.qmd",
+      "backstory": "_backstories/client_small_business_maya_rossi.md"
+    },
+    {
+      "slug": "lucas_moreno",
+      "prompt": "bots/lucas_moreno/prompt.txt",
+      "page": "bots/lucas_moreno/index.qmd",
+      "backstory": "_backstories/security_compliance_officer_lucas_moreno.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "mika_sato",
+      "prompt": "bots/mika_sato/prompt.txt",
+      "page": "bots/mika_sato/index.qmd",
+      "backstory": "_backstories/client_helena_industries_mika_sato.md"
+    },
+    {
+      "slug": "connor_hayes",
+      "prompt": "bots/connor_hayes/prompt.txt",
+      "page": "bots/connor_hayes/index.qmd",
+      "backstory": "_backstories/connor_hayes_cloud_infrastructure_architect.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "vikram_reddy",
+      "prompt": "bots/vikram_reddy/prompt.txt",
+      "page": "bots/vikram_reddy/index.qmd",
+      "backstory": "_backstories/vikram_reddy_it_manager.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "priya_nair",
+      "prompt": "bots/priya_nair/prompt.txt",
+      "page": "bots/priya_nair/index.qmd",
+      "backstory": "_backstories/priya_nair_cfo.md",
+      "extra_docs": [
+        "_backstories/reputation_recovery_plan.md",
+        "_backstories/brand_guidelines_summary.md",
+        "_backstories/marketing_strategy_overview.md"
+      ]
+    },
+    {
+      "slug": "mateo_vega",
+      "prompt": "bots/mateo_vega/prompt.txt",
+      "page": "bots/mateo_vega/index.qmd",
+      "backstory": "_backstories/mateo_vega_networks_specialist.md"
+    },
+    {
+      "slug": "soyeon_kim",
+      "prompt": "bots/soyeon_kim/prompt.txt",
+      "page": "bots/soyeon_kim/index.qmd",
+      "backstory": "_backstories/soyeon_kim_head_of_compliance.md",
+      "extra_docs": [
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "tariq_mansour",
+      "prompt": "bots/tariq_mansour/prompt.txt",
+      "page": "bots/tariq_mansour/index.qmd",
+      "backstory": "_backstories/tariq_mansour_data_analyst.md"
+    },
+    {
+      "slug": "anika_desai",
+      "prompt": "bots/anika_desai/prompt.txt",
+      "page": "bots/anika_desai/index.qmd",
+      "backstory": "_backstories/anika_desai_hr_manager.md"
+    },
+    {
+      "slug": "noah_bennett",
+      "prompt": "bots/noah_bennett/prompt.txt",
+      "page": "bots/noah_bennett/index.qmd",
+      "backstory": "_backstories/noah_bennett_lead_software_developer.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "isabella_ferreira",
+      "prompt": "bots/isabella_ferreira/prompt.txt",
+      "page": "bots/isabella_ferreira/index.qmd",
+      "backstory": "_backstories/isabella_ferreira_ciso.md",
+      "extra_docs": [
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "dana_whitfield",
+      "prompt": "bots/dana_whitfield/prompt.txt",
+      "page": "bots/dana_whitfield/index.qmd",
+      "backstory": "_backstories/dana_whitfield_cmo.md",
+      "extra_docs": [
+        "_backstories/reputation_recovery_plan.md",
+        "_backstories/brand_guidelines_summary.md",
+        "_backstories/marketing_strategy_overview.md"
+      ]
+    },
+    {
+      "slug": "liam_carter",
+      "prompt": "bots/liam_carter/prompt.txt",
+      "page": "bots/liam_carter/index.qmd",
+      "backstory": "_backstories/liam_carter_marketing_manager.md",
+      "extra_docs": [
+        "_backstories/reputation_recovery_plan.md",
+        "_backstories/brand_guidelines_summary.md",
+        "_backstories/marketing_strategy_overview.md"
+      ]
+    },
+    {
+      "slug": "adrian_vasquez",
+      "prompt": "bots/adrian_vasquez/prompt.txt",
+      "page": "bots/adrian_vasquez/index.qmd",
+      "backstory": "_backstories/adrian_vasquez_cio.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
+      "slug": "grace_sullivan",
+      "prompt": "bots/grace_sullivan/prompt.txt",
+      "page": "bots/grace_sullivan/index.qmd",
+      "backstory": "_backstories/grace_sullivan_coo.md",
+      "extra_docs": [
+        "_backstories/reputation_recovery_plan.md",
+        "_backstories/brand_guidelines_summary.md",
+        "_backstories/marketing_strategy_overview.md"
+      ]
+    },
+    {
+      "slug": "henrik_larsson",
+      "prompt": "bots/henrik_larsson/prompt.txt",
+      "page": "bots/henrik_larsson/index.qmd",
+      "backstory": "_backstories/henrik_larsson_ceo.md",
+      "extra_docs": [
+        "_backstories/reputation_recovery_plan.md",
+        "_backstories/brand_guidelines_summary.md",
+        "_backstories/marketing_strategy_overview.md"
+      ]
+    }
+  ]
+}
