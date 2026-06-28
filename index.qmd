@@ -3,89 +3,79 @@ title: ""
 toc: false
 ---
 
-::: {.hero-section}
-# Enterprise Cloud Infrastructure for Modern Business
+:::: {.hero-section}
+# Australian Managed Cloud, Built for Performance
 
-### Trusted by 500+ organizations worldwide with 99.9% uptime guarantee
+### Perth-founded, locally supported, and trusted by 200+ organisations across ANZ
 
-::: {.trust-metrics}
-::: {.metric}
-**500+**
-Active Clients
-:::
+:::: {.trust-metrics}
+:::: {.metric}
+**2019**
+Founded
+::::
 
-::: {.metric}
-**99.9%**
+:::: {.metric}
+**200+**
+ANZ Clients
+::::
+
+:::: {.metric}
+**99.95%**
 Uptime SLA
-:::
+::::
 
-::: {.metric}
-**2**
-Data Centers
-:::
+:::: {.metric}
+**Perth + Sydney**
+Data Centres
+::::
+::::
 
-::: {.metric}
-**24/7**
-Support
-:::
-:::
-
-[Schedule a Demo](contact.qmd){.btn .btn-primary .btn-lg role="button"}
-[View Solutions](#solutions){.btn .btn-outline-primary .btn-lg role="button"}
-:::
+[Talk to Our Team](contact.qmd){.btn .btn-primary .btn-lg role="button"}
+[Explore Solutions](#solutions){.btn .btn-outline-primary .btn-lg role="button"}
+::::
 
 ## Why Tessera?
 
-We combine enterprise-grade infrastructure with innovative cloud solutions to power your digital transformation.
+We pair enterprise-grade infrastructure with genuinely local expertise, so your cloud runs fast, stays sovereign, and never leaves you waiting on a time zone.
 
-::: {layout-ncol=3 #solutions}
+:::: {layout-ncol=2 #solutions}
 
-::: {.feature-card}
-{{< li evyuuwna trigger=loop delay=1000 class=small >}} **Cloud Hosting**  
-Enterprise-grade infrastructure with automated scaling, load balancing, and global CDN distribution for optimal performance.
-:::
+:::: {.feature-card}
+**Managed Cloud**  
+Fully managed IaaS and PaaS with automated scaling, proactive monitoring, and a dedicated local team that knows your environment by name.
+::::
 
-::: {.feature-card}
-{{< li lzgmgrnn trigger=loop delay=1000 class=small >}} **Managed Services**  
-Full-stack management including 24/7 monitoring, automated backups, security patches, and dedicated support team.
-:::
+:::: {.feature-card}
+**Data Sovereignty**  
+Australian-hosted by default. Your data stays under Australian law, in Perth and Sydney regions, with documented cross-border controls for international workloads.
+::::
 
-::: {.feature-card}
-{{< li yxyampao trigger=loop delay=1000 class=small >}} **Security & Compliance**  
-ISO 27001 certified with end-to-end encryption, DDoS protection, and compliance with GDPR, HIPAA, and SOC 2.
-:::
+:::: {.feature-card}
+**Security and Compliance**  
+ISO/IEC 27001 certified, SOC 2 Type II audited, with end-to-end encryption and continuous threat monitoring across all layers.
+::::
 
-::: {.feature-card}
-{{< li bxdnmmpl trigger=loop delay=1000 class=small >}} **DevOps Integration**  
-Seamless CI/CD pipelines, container orchestration with Kubernetes, and infrastructure as code support.
-:::
+:::: {.feature-card}
+**Local Support**  
+Perth-based engineers, not a call centre. 24/7 monitoring with escalation to people who know your stack and your business.
+::::
+::::
 
-::: {.feature-card}
-{{< li vyqvtrtg trigger=loop delay=1000 class=small >}} **High Availability**  
-Multi-region deployment, automatic failover, and 99.9% uptime SLA with transparent status monitoring.
-:::
+## Trusted Across Industries
 
-::: {.feature-card}
-{{< li kddybgok trigger=loop delay=1000 class=small >}} **Expert Support**  
-Dedicated account managers, 24/7 technical support, and access to cloud architects for optimization.
-:::
-:::
+:::: {.testimonial-section}
+> "Tessera's local team understood our regulatory requirements from day one. The migration was seamless, and their support actually picks up the phone."
 
-## Trusted by Industry Leaders
+**David Okafor**  
+*Head of IT, FinOps Advisory*
+::::
 
-::: {.testimonial-section}
-> "Tessera transformed our infrastructure, reducing costs by 40% while improving performance. Their team's expertise and 24/7 support have been invaluable."
+## Security and Compliance
 
-**Grace Mitchell**  
-*CTO, TechVentures Inc.*
-:::
-
-## Security & Compliance
-
-::: {.certifications}
-- **ISO 27001:2013** Certified Information Security Management
+:::: {.certifications}
+- **ISO/IEC 27001:2022** Certified Information Security Management
 - **SOC 2 Type II** Audited Security Controls
 - **GDPR** Compliant Data Protection
 - **HIPAA** Healthcare Information Security
 - **PCI DSS** Payment Card Industry Standards
-:::
+::::

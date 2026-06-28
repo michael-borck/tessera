@@ -6,6 +6,7 @@ project:
     - "!CONTRIBUTING.md"
     - "!README.md"
     - "*"
+    - "!pricing.qmd"
 
 website:
   title: "Tessera"
@@ -25,8 +26,6 @@ website:
             href: index.qmd#solutions
       - text: About
         href: about.qmd
-      - text: Pricing
-        href: pricing.qmd
       - text: Resources
         menu:
           - text: Documentation
@@ -53,8 +52,8 @@ website:
     background: "#0f172a"
     left: |
       **Tessera**  
-      Enterprise cloud infrastructure solutions  
-      ISO 27001:2013 Certified
+      Australian managed cloud solutions  
+      ISO/IEC 27001:2022 Certified
     center: |
       **Contact**  
       Perth: 11 Newcastle St, WA 6000  
