@@ -128,10 +128,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./pricing.html"> 
-<span class="menu-text">Pricing</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Resources</span>
@@ -241,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Local Expertise</strong>: Australian-owned and operated with data sovereignty guarantee</li>
 <li><strong>Proven Track Record</strong>: 99.9% uptime SLA consistently exceeded for 5 years</li>
-<li><strong>Security First</strong>: ISO 27001:2013 certified with comprehensive compliance</li>
+<li><strong>Security First</strong>: ISO/IEC 27001:2022 certified with comprehensive compliance</li>
 <li><strong>24/7 Support</strong>: Local support team available round the clock</li>
 <li><strong>Innovation Driven</strong>: Continuous investment in cutting-edge technologies</li>
 </ul>
@@ -274,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="our-certifications-partnerships">Our Certifications &amp; Partnerships</h2>
 <div class="certifications-grid">
 <ul>
-<li><strong>ISO 27001:2013</strong> - Information Security Management</li>
+<li><strong>ISO/IEC 27001:2022</strong> - Information Security Management</li>
 <li><strong>SOC 2 Type II</strong> - Security &amp; Availability</li>
 <li><strong>ISO 9001:2015</strong> - Quality Management Systems</li>
 <li><strong>AWS Advanced Partner</strong> - Cloud Solutions</li>
@@ -380,7 +376,7 @@ Investing in tomorrow’s technology today</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/tessera\.locoensayo\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -712,8 +708,8 @@ Investing in tomorrow’s technology today</p>
   <div class="nav-footer">
     <div class="nav-footer-left">
 <p><strong>Tessera</strong><br>
-Enterprise cloud infrastructure solutions<br>
-ISO 27001:2013 Certified</p>
+Australian managed cloud solutions<br>
+ISO/IEC 27001:2022 Certified</p>
 </div>   
     <div class="nav-footer-center">
 <p><strong>Contact</strong><br>
