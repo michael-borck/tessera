@@ -17,38 +17,31 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: Solutions
-        menu:
-          - text: Cloud Hosting
-            href: index.qmd#solutions
-          - text: Managed Services
-            href: index.qmd#solutions
-          - text: Security & Compliance
-            href: index.qmd#solutions
       - text: About
         href: about.qmd
-      - text: Resources
+      - text: Interviews
         menu:
-          - text: Documentation
-            href: docs/policies.qmd
-          - text: Support Center
-            href: docs/support.qmd
-          - text: Blog
-            href: blog/index.qmd
-          - text: Consultant Portal
+          - text: Chat with Staff
             href: chatbots/index.qmd
-      - text: Docs
+          - text: Written Transcripts
+            href: docs/interviews.qmd
+      - text: Company Files
         menu:
-          - docs/interviews.qmd
-          - docs/policies.qmd
-          - docs/support.qmd
-          - docs/articles.qmd
-          - docs/logs.qmd
+          - text: Policies
+            href: docs/policies.qmd
+          - text: Logs
+            href: docs/logs.qmd
+          - text: Internal Records
+            href: docs/support.qmd
+          - text: In the News
+            href: docs/articles.qmd
+      - text: Blog
+        href: blog/index.qmd
     right:
-      - text: Educational Site
-        href: legal.qmd
-      - text: Contact Us
+      - text: Contact
         href: contact.qmd
+      - text: Legal
+        href: legal.qmd
   page-footer:
     background: "#050807"
     left: |
