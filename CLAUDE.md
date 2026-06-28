@@ -20,10 +20,10 @@ Tessera is an educational platform built with Quarto static site generator. It s
 ### Technology Stack
 - **Static Site Generator**: Quarto with Cosmo HTML theme
 - **Content Format**: Quarto Markdown (`.qmd` files)
-- **Styling**: Custom CSS design system (`styles.css`) layered over the Cosmo theme — "Refined Light" direction with an Electric Blue accent (#2563eb / #06b6d4)
-- **Typography**: Inter (sans) + JetBrains Mono (code), loaded via Google Fonts in `_quarto.yml` `include-in-header`
-- **Brand mark**: `assets/logo.svg` (network/constellation glyph); set via `website.navbar.logo`, wordmark injected by `.navbar-brand-logo::after` in CSS
-- **Scripts**: Custom JavaScript for access control (`scripts/simple-timeline-access.js`, `scripts/password.js`)
+- **Styling**: Custom CSS design system (`styles.css`) layered over the Cosmo theme — "Terminal / Breach Console" direction: dark canvas, phosphor-green accent (#22e88a / #10b981), JetBrains Mono chrome, CRT scanlines, CLI-window cards
+- **Typography**: JetBrains Mono (headings, navbar, buttons, code, metrics) + Inter (long-form body), loaded via Google Fonts in `_quarto.yml` `include-in-header`
+- **Brand mark**: `assets/logo.svg` (constellation glyph on a phosphor-green gradient tile); set via `website.navbar.logo`, wordmark injected by `.navbar-brand-logo::after` in CSS
+- **Scripts**: Custom JavaScript for contact forms and UI (`scripts/contact-buttons.js`, `scripts/contact-form.js`)
 - **Chatbot Integration**: AnythingLLM embedded widgets
 
 ### Project Structure
@@ -37,22 +37,18 @@ Tessera is an educational platform built with Quarto static site generator. It s
 - `/_extensions/` - Quarto extensions (lordicon for animated icons)
 
 ### Key Implementation Details
-1. **Access Control**: JavaScript-based time restrictions (business hours only) and password protection for certain pages
-2. **Content Organization**: Uses Quarto's listing feature for blog and chatbot directories
-3. **Navigation**: Multi-level navbar with dropdown menus for documentation sections
-4. **Chatbot Integration**: Each character has an embedded AnythingLLM chat widget with unique embed IDs
+1. **Content Organization**: Uses Quarto's listing feature for blog and chatbot directories
+2. **Navigation**: Multi-level navbar with dropdown menus for documentation sections
+3. **Chatbot Integration**: Each character has an embedded AnythingLLM chat widget with unique embed IDs
 
 ### Theme & Design System (`styles.css`)
 All visual styling is driven by CSS custom properties at `:root` (tokens for color, radius, shadow, type, motion). When changing the look, edit tokens — not individual rules. Key conventions:
-- **Palette**: ink `#0f172a`, accent `#2563eb`, hairline borders `#e2e8f0`, surfaces on `#f8fafc`. The purple/blue gradient that used to cover the navbar/footer/buttons has been retired in favour of flat surfaces + a single accent; gradients appear only as the hero mesh and the featured-plan accent bar.
-- **Cards**: 1px hairline border + 12px radius; hover swaps border to accent and adds a soft shadow (no global lift).
+- **Palette**: dark surfaces, green-tinted near-black (`#070b09` bg / `#0d1411` surface), phosphor-green accent `#22e88a`, hairline lines `#1b2823`, readable green-gray ink (`#aec7b6` body / `#d9f5e4` headings). Body carries a faint CRT scanline texture; a green glow appears on hover and in the hero. Edit the `--tx-*` tokens in `:root`, not individual rules.
+- **Cards**: terminal-window treatment — small radius (6px), hairline border, `● ● ●` dots + `~/tessera` path chrome; hover swaps border to the accent and adds a green glow (no global lift). Square (`0px`) buttons carry `[ ... ]` brackets.
 - **Avatars** (leadership headshots): `.card img` is forced to a 116px circle via `border-radius: 50% !important` (Bootstrap's `.rounded` utility is `!important`, so the override must be too).
 - **Footer**: rendered by Quarto as `.nav-footer` (NOT `.page-footer`); background comes from `_quarto.yml` `page-footer.background`, link/heading colours from `.nav-footer` rules.
-- **Gated pages** (docs/chatbots): content is hidden by `scripts/simple-timeline-access.js` outside business hours — the "Outside Business Hours" state is expected, not a styling bug.
 
 ### Security Considerations
-- Password visible in `scripts/password.js`: `GottaCatchEmAll!2024`
-- Client-side access control can be bypassed
 - Educational platform - security weaknesses may be intentional for teaching purposes
 
 ## Content Types

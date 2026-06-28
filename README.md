@@ -12,13 +12,7 @@ Welcome to Tessera Educational Platform - a comprehensive cybersecurity and syst
 - **URL:** https://tessera.locoensayo.org
 - **Purpose:** Educational content, interactive chatbots, documentation
 - **Technology:** Quarto static site generator
-- **Features:** Unit-based access control, time-release content, educational scenarios
-
-### **Unit Coordinator Admin Site (Vercel)**
-- **URL:** https://cloudcore-uc.vercel.app/
-- **Purpose:** Content management and access control for educators
-- **Technology:** HTML/JS with Vercel serverless functions
-- **Features:** Password management, access control, content editing
+- **Features:** Interactive chatbots, educational scenarios, documentation
 
 ## 🎓 Educational Focus
 
@@ -34,7 +28,6 @@ Tessera simulates a fictional cloud services company experiencing a security inc
 ### Prerequisites
 - Git
 - [Quarto CLI](https://quarto.org/docs/get-started/)
-- Node.js (for admin interface development)
 
 ### Local Development
 ```bash
@@ -43,36 +36,14 @@ cd cloudcore
 
 # Run student site locally
 quarto preview
-
-# Run admin interface locally (from tessera-admin folder)
-cd tessera-admin
-npm install
-vercel dev
 ```
-
-## 🎛️ For Unit Coordinators
-
-1. **Access the admin interface:** https://cloudcore-uc.vercel.app/
-2. **Login with your unit credentials** (provided by site administrator)
-3. **Manage student access:** Set passwords, configure access rules
-4. **Upload content:** Add new scenarios, documents, and resources
-5. **Monitor usage:** View activity and student progress
 
 ## 🏫 For Students
 
 1. **Visit the learning site:** https://tessera.locoensayo.org
-2. **Enter your unit password** (provided by your Unit Coordinator)
-3. **Explore scenarios:** Access time-released content based on your unit
-4. **Interact with staff:** Chat with AI-powered Tessera employees
-5. **Review documents:** Access policies, logs, and incident reports
-
-## 🔐 Access Control System
-
-The platform uses a sophisticated unit-based access control system:
-- **Time-based release:** Content unlocks at specific dates
-- **Scenario-based access:** Unit-specific content filtering
-- **Password protection:** Unit Coordinators set custom passwords
-- **Role simulation:** Students experience consultant/auditor perspectives
+2. **Explore scenarios:** Browse educational content and case studies
+3. **Interact with staff:** Chat with AI-powered Tessera employees
+4. **Review documents:** Access policies, logs, and incident reports
 
 ## 📁 Repository Structure
 
@@ -85,9 +56,7 @@ The platform uses a sophisticated unit-based access control system:
 │       └── development/       # Archived development files
 ├── blog/                   # Technical articles and tutorials
 ├── assets/                 # Images and media files
-├── scripts/                # Access control JavaScript
-├── config/                 # Unit access configuration
-├── tessera-admin/        # Admin interface (deployed to Vercel)
+├── scripts/                # Contact forms and UI JavaScript
 └── data/                   # Sample financial and operational data
 ```
 
@@ -95,7 +64,7 @@ The platform uses a sophisticated unit-based access control system:
 
 This platform is actively used in university courses. Contributions should:
 - Maintain educational integrity
-- Follow existing access control patterns
+- Follow existing content and design patterns
 - Test thoroughly before submitting
 - Consider impact on student learning experience
 
@@ -110,9 +79,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Curtin University students and staff for feedback and testing
 - AnythingLLM for chatbot infrastructure
 - Quarto team for the excellent static site generator
-- Vercel for seamless admin interface hosting
 
 ---
 
-**For support:** Contact your Unit Coordinator or site administrator
+**For support:** Contact the site administrator
 **Technical issues:** Check the [Issues](https://github.com/michael-borck/cloudcore/issues) page

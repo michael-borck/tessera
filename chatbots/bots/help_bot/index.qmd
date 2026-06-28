@@ -7,19 +7,18 @@ about:
 categories: ['Help', 'Guide']
 ---
 
-**Tessera Help Bot** — Your guide to using the interview and booking system. This bot is freely accessible — no appointment needed.
+**Tessera Help Bot** — Your guide to navigating this educational platform and chatting with Tessera staff. This bot is freely accessible.
 
 **Ask me about:**
 
-- How to book an interview with Tessera staff
+- How to start a chat with Tessera staff members
 - How to use the chat interface
-- Understanding the access tiers (public, consultant, auditor)
 - Troubleshooting common issues
 - Tips for preparing your interviews
 
 **How to Chat:** Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question into the text box and press Enter to send.
 
-*Note: The Help Bot can assist with platform navigation only. For questions about Tessera operations, book an interview with the relevant staff member.*
+*Note: The Help Bot can assist with platform navigation only. For questions about Tessera operations, chat with the relevant staff member.*
 
 <!--
 Help Bot - freely accessible, no booking required
@@ -34,6 +33,6 @@ Help Bot - freely accessible, no booking required
   data-window-height="700"
   data-window-width="400"
   data-text-size="14"
-  data-greeting="Hi! I'm the Tessera Help Bot. I can help you navigate the interview booking system, use the chat interface, or answer questions about how this platform works. What would you like to know?"
+  data-greeting="Hi! I'm the Tessera Help Bot. I can help you navigate this platform, use the chat interface, or answer questions about how it works. What would you like to know?"
   src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
 </script>

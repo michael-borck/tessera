@@ -7,6 +7,7 @@ project:
     - "!README.md"
     - "*"
     - "!pricing.qmd"
+    - "!prototype.html"
 
 website:
   title: "Tessera"
@@ -49,7 +50,7 @@ website:
       - text: Contact Us
         href: contact.qmd
   page-footer:
-    background: "#0f172a"
+    background: "#050807"
     left: |
       **Tessera**  
       Australian managed cloud solutions  
@@ -72,16 +73,13 @@ website:
 format:
   html:
     theme: cosmo
+    highlight-style: github-dark
+    code-block-bg: "#0a100d"
     css: styles.css
     toc: true
     include-in-header:
       - text: |
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-      - text: |
-          <script src="/scripts/config.js"></script>
-          <script src="/scripts/booking-api.js"></script>
-          <script src="/scripts/booking-modal.js"></script>
-          <script src="/scripts/chatbot-booking.js"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 resources:
   - CNAME
