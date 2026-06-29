@@ -11,6 +11,7 @@ project:
     - "!REDESIGN_TRACKER.md"
     - "!BOOK_UPDATE_SUGGESTIONS.md"
     - "!_instructor/"
+    - "!assets/portrait_backups/"
 
 website:
   title: "Tessera"
