@@ -59,7 +59,7 @@ Defines requirements for logical and physical access control.
 ```mermaid
 graph TD
     CEO[CEO - Grace Sullivan]
-    CEO --> CTO[CTO - Dr. Amara Okafor]
+    CEO --> CTO[CTO - Dr Sana Qureshi]
     CEO --> CFO[CFO - Priya Nair]
     CEO --> CISO[CISO - Isabella Ferreira]
     
@@ -129,7 +129,7 @@ right now with the new enterprise clients. Tell no one.
 
 ### Employee Interview Evidence
 
-**Interview Transcript: IT Manager (Vikram Reddy)**
+**Interview Transcript: IT Manager (Hamish Boyd)**
 ```
 Q: How often are security patches applied?
 A: "We try to do it monthly, but honestly we're 

@@ -3,213 +3,187 @@ categories:
 - Physical Security
 - Access Control
 - Facility Management
-description: It is the goal of Tessera to provide a safe and secure environment
-  for all employees.
+description: Sets out physical access and security controls for Tessera's Perth,
+  Sydney and Malaga offices, aligned to ISO/IEC 27001:2022 Annex A.7.
 title: Facility Access and Physical Security
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Facility Access and Physical Security             |
-| **Doc#**     | POL-SECU-003 |
+| **Title**    | Facility Access and Physical Security |
+| **Doc#**     | POL-SECU-003                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 03-08-2023                              |
+| **Date**     | 03-08-2023                          |
+| **Owner**    | Head of IT (H. Boyd)                |
+| **Approved By** | COO (G. Sullivan)               |
+| **ISO/IEC 27001:2022** | A.7.1–A.7.6 — Physical security (perimeters, entry, secure areas, monitoring) |
 
-It is the goal of Tessera to provide a safe and secure environment for all
-employees. Access to the Tessera facilities is limited to authorised
-individuals only.
-
-Tessera works with Subcontractors (e.g. property management companies and
-facilities management) to assure restriction of physical access to systems used
-as part of the Tessera Platform.
-
-Physical Access to all of Tessera facilities is limited to only those
-authorised in this policy. All workforce members are responsible for reporting
-an incident of unauthorised visitor and/or unauthorised access to Tessera's
-facility.
-
-Tessera and its Subcontractors control access to the physical
-buildings/facilities that house these systems/applications, or in which
-Tessera workforce members operate, in accordance to the HIPAA Security Rule
-164.310 and its implementation specifications. In an effort to safeguard ePHI
-from unauthorised access, tampering, and theft, access is allowed to areas only
-to those persons authorised to be in them and with escorts for unauthorised
-persons.
+Physical access to Tessera premises is restricted to authorised individuals.
+This policy implements the physical and environmental security controls in
+**Annex A.7** of ISO/IEC 27001:2022. The Head of IT owns the access-control and
+CCTV systems; day-to-day facilities management at each site is handled by a
+contracted facilities manager.
 
 ## Policy Statements
 
-Tessera policy requires that
+Tessera requires that:
 
-(a) Physical access to Tessera facilities is restricted.
+(a) Physical access to Tessera offices, comms rooms and restricted areas is
+restricted to authorised workforce members and escorted visitors.
 
-(b) All employees are required to wear employee badges at secure facilities
-(such as server rooms, data centers, labs).
+(b) Workforce members wear their access card visibly while inside secure areas
+and challenge unbadged individuals.
 
-(c) All employees must follow physical security requirements and procedures
-documented by facility management.
+(c) All workforce members comply with the physical-security procedures published
+for each site.
 
-(d) On-site visitors and vendors must be escorted by a Tessera employee at all
-times while on premise.
+(d) Visitors and vendors are escorted by a Tessera workforce member at all times
+while on site.
 
-(e) All workforce members are responsible for reporting an incident of
-unauthorised visitor and/or unauthorised access to Tessera's facility.
+(e) Workforce members report any unauthorised visitor or access attempt to the
+Facilities Manager or the Security team.
 
-(f) Retain a record for each physical access, including visits, maintenance and
-repairs to Tessera production environments and secure facilities.
+(f) A record is kept of every physical access event — normal entry, visitor
+escort, maintenance and repair — for the secure areas and comms rooms. Records
+are retained for a minimum of seven years.
 
-  * Details must be captured for all maintenance and repairs performed to
-    physical security equipment such as locks, walls, doors, surveillance
-    cameras; and
-  * All records must be retained for a minimum of seven years.
-
-(g) Building security, such as fire extinguishers and detectors, escape routes,
-floor warden responsibilities, shall be maintained according to applicable laws
-and regulations.
+(g) Fire detection, suppression, escape routes and floor-warden duties are
+maintained in line with the building's work health and safety obligations and
+relevant Australian standards.
 
 ## Controls and Procedures
 
 ### Physical Security
 
-#### Access Requirements Overview
+#### Access requirements
 
-* Physical access is restricted using badge readers and/or smart locks that
-  track all access.
+- Physical access is controlled by **Gallagher** card readers and smart locks at
+  every perimeter and restricted door. Each access event is logged.
+  - Restricted areas and comms rooms are locked when unattended.
+  - Access to restricted areas is granted only to authorised workforce members,
+    approved by the Head of IT.
+  - Access is revoked as part of the leaver process (ISMS-PR-014).
+  - Lost or stolen cards must be reported to the manager, the local Site Lead or
+    the Facilities Manager without delay.
+  - The Facilities Manager deactivates a lost or stolen card on the Gallagher
+    system and reissues access as required.
+  - Physical keys (where still in use) are changed within 7 days of being
+    reported lost or stolen.
 
-    * Restricted areas and facilities are locked when unattended (where
-      feasible).
-    * Only authorised workforce members receive access to restricted areas (as
-      determined by the Security Officer).
-    * Access and keys are revoked upon termination of workforce members.
-    * Workforce members must report a lost and/or stolen key(s) or badge(s) to
-      his/her manager, local Site Lead, or the Facility Manager.
-    * The Facility Manager or designee is responsible to revoke access to the
-      lost/stolen badge(s) or access key(s), and re-provision access as needed.
-    * The Facility Manager or designee facilitates the changing of the lock(s)
-      within 7 days of a physical key being reported lost/stolen.
+- Enforcement
+  - Violations are reported to the relevant team lead or the Security team.
+  - Workforce members who breach this policy are subject to disciplinary action
+    under the HR and Personnel Security Policy (POL-HUMA-017), up to and
+    including termination.
+  - Visitors who breach this policy may be refused further site access.
 
-* Enforcement of Facility Access Policies
+- Workstation security
+  - Workstations are used only by authorised workforce members for their
+    assigned duties.
+  - Workforce members must lock their screen when they leave their workstation
+    (screen-saver lock is set at **15 minutes** of inactivity on managed
+    devices).
+  - Workforce members report unauthorised access attempts to the Security team.
+  - Tessera-issued devices remain Tessera property and are issued to users by IT.
 
-    * Report violations of this policy to the restricted area's department team
-      leader, supervisor, manager, or director, or the Privacy Officer.
-    * Workforce members in violation of this policy are subject to disciplinary
-      action, up to and including termination.
-    * Visitors in violation of this policy are subject to loss of vendor
-      privileges and/or termination of services from Tessera.
+> *[H. Boyd, margin note: confirm the 15-minute screen lock here still matches
+> the endpoint baseline — I think Security moved managed laptops to a shorter
+> value in the last MDM push.]*
 
-* Workstation Security
+#### Building standards by location
 
-    * Workstations may only be accessed and utilised by authorised workforce
-      members to complete assigned job/contract responsibilities.
-    * All workforce members are required to monitor workstations and report
-      unauthorised users and/or unauthorised attempts to access
-      systems/applications as per the System Access Policy.
-    * All workstations purchased by Tessera are the property of Tessera and
-      are distributed to users by the company.
+All entry points are secured by Gallagher card readers and covered by Genetec
+CCTV.
 
-#### Building Standards per Location
+- **Perth — St Georges Terrace (HQ)**
+  - Staffed Monday–Friday, with after-hours card access for Tessera workforce
+    members.
+  - The Tessera floor is secured 24/7 and requires an access card at all times.
+  - The comms room is secured 24/7 and is card-access restricted to authorised
+    IT and Security staff only.
+  - Visitor entry is through reception, which logs visitor details and the host.
 
-All entry points are secured by card readers and have cameras for additional
-monitoring as needed.
+- **Sydney**
+  - Shared-floor tenancy; the Tessera suite is secured 24/7 and requires an
+    access card.
+  - The comms cabinet is a lockable cabinet within the secured suite,
+    card-access restricted.
 
-* **Indianapolis, IN** Office
+- **Malaga WA**
+  - Operations and engineering workshop facility; secured 24/7, card access
+    required.
+  - The server and network cabinet sits in a locked comms room, card-access
+    restricted.
 
-    * The building is unlocked Monday-Friday from 9am-4pm
-    * After hours the building is secured and requires an access card for entry
-    * The main entry to our office suite is open during normal business hours
-      (M-F 8am-5pm)
-    * Tessera office space is secured and requires an access card for entry for
-      after hours access
-    * All server rooms are secured 24/7 and require an access card for entry
+#### Access-control data storage
 
-* **Morrisville, NC** Office
+The Gallagher access-control server for each site runs on local infrastructure
+within that site's secured comms room, and access logs are replicated off-site.
 
-    * The building is unlocked with free access Monday–Friday 7am-7pm and
-      Saturdays from 9am-1pm
-    * After hours the building is secured and requires an access card for entry
-    * Tessera office suite is secured 24/7 and requires an access card for
-      entry
+CCTV is recorded on the **Genetec** platform. Footage is retained for a minimum
+of 30 days, and longer where an incident is flagged for preservation.
 
-#### Facility Access Data Storage
+#### Access-control process
 
-The security server that houses our security configuration for our electronic
-key card system is securely located in the server room of the prospective office
-that it manages; Indianapolis, IN and Morrisville, NC.
+Unissued access cards are held in a locked cabinet at each site's reception.
 
-**dnaFusion** (Indianapolis office) stores all access control logs indefinitely.
-
-**mySonitrol** (Morrisville office) stores all access control logs for 90 days.
-
-Camera footage is stored on cameras and footage is accessed through **Meraki**.
-Footage is stored for a minimum of 30 days.
-
-#### Facility Access Control Process
-
-Access cards are stored in a locked cabinet until they are activated and issued.
-
-##### New Hires
-
-New Hire access cards are assigned based on new hire notice issued through .
-
-* New Hire access is typically activated the day prior to start date
-* Once activated the access card is stored in a locked cabinet until issued to
-  new hire.
+##### New hires
+Access is provisioned from the joiner ticket raised in the People & IT project
+in Jira (see HR and Personnel Security Policy, POL-HUMA-017). The card is
+typically activated the day before the start date and held in the locked cabinet
+until issued.
 
 ##### Separations
+The leaver ticket triggers card deactivation. Immediate separations are
+processed as soon as the ticket is raised; future separations are scheduled to
+deactivate on or before the termination date.
 
-Separation notices are issued through .
+##### Special-access requests
+Restricted areas (comms rooms, the Malaga build area) require named-approver
+approval. Approval routing moved from email to Jira in late 2024; some older
+runbooks still describe the email approval path. If the documented approver is
+unavailable, the Head of IT or COO may act as approver.
 
-* Immediate separation notices are processed when issued
-* Future separation notices are pre-scheduled for deactivation prior to
-  termination date
+#### Maintenance and repairs
 
-##### Special Access Requests
+Maintenance, repairs and modifications to the access-control and CCTV systems
+are performed by the contracted security-systems vendor for each site. Records
+are stored in the Physical Security folder in SharePoint and retained for seven
+years.
 
-Special access areas require additional approvals for access. If documented
-approver is unavailable, COO may act as approver.
+#### Reporting and auditing
 
-#### Maintenance & Repairs
+Access-control records are reviewed at least annually. Special-access lists are
+reviewed with their approvers quarterly. Records are owned by the Facilities
+Manager and held in the Physical Security folder in SharePoint.
 
-All maintenance, repairs and modifications to our access control system will be
-handled by the local vendor that supports our system.
+### Data centre security
 
-All documents regarding maintenance, repair or modification will be stored in
-the physical security folder located on the Tessera SharePoint site.
+Tessera does not operate its own data centre. Production workloads run in **AWS
+Sydney (ap-southeast-2)**, with cross-region standby. Physical and environmental
+security of the data centre — perimeter, power, cooling, fire suppression and
+physical access to the host facility — is the responsibility of the cloud
+provider under the AWS shared-responsibility model. Tessera's responsibility is
+the logical security of what runs in the account, which is covered in the
+[Security Architecture and Operating Model](model.md) and the cloud architecture
+diagram (docs/support/architecture_diagram.qmd).
 
-#### Reporting and Auditing
+### Clean-desk and workstation procedures
 
-All access control records are audited on an annual basis.
+Workforce members must secure all sensitive and confidential material —
+electronic and physical — when they leave their workspace, and at the end of the
+day. This includes:
 
-Special access is audited and reviewed with approver quarterly.
+- laptops, tablets and other portable devices;
+- removable media (USB drives, external disks);
+- printed material; and
+- whiteboards holding sensitive information.
 
-Records are owned and maintained by the Facility Manager. Records are kept in
-the Physical Security folder on SharePoint and will be retained for a minimum of
-7 years.
+Managed laptops and tablets must be screen-locked when unattended and taken home
+at the end of the day where the site is not staffed overnight. Removable media
+and printed documents are stored in a locked drawer or cabinet when not in use.
+Printed material is collected from the printer immediately. Passwords are never
+written down or left in the open.
 
-
-### Data Center Security
-
-Physical security of data centers is ensured by the cloud infrastructure service
-provided, AWS.
-
-
-#### Clean Desk Policy and Procedures
-
-Employees must secure all sensitive/confidential information in their workspace
-at the conclusion of the work day and when away from their workspace. This
-includes both electronic and physical information such as:
-
-* computer workstations, laptops, and tablets
-* removable storage devices including CDs, DVDs, USB drives, and external hard drives
-* printed materials
-
-Computer workstations/laptops must be locked (password protected) when
-physically unattended. Portable devices such as laptops and tablets should be
-taken home at the conclusion of the work day.
-
-Removable storage devices and printed documents must be treated as sensitive
-material and locked in a drawer or similar when not in use. Printed materials
-must be immediately removed from printers or fax machines. Passwords must not be
-written down or stored physically.
-
-Keys and access cards used for access to sensitive or restricted
-information/areas must not be left unattended anywhere in the office.
+Access cards and physical keys must not be left unattended anywhere in the
+office.

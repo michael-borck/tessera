@@ -3,86 +3,74 @@ title: "Transcript of interview with Network Engineer"
 categories: ["Network Management", "Security Architecture", "Operational Security"]
 ---
 
-Auditor: I'd like to discuss the network security controls you have in place.
-Could you give me an overview of your network architecture?
+Auditor: I'd like to understand the network controls around the platform. Could
+you give me an overview of the architecture?
 
-Network Engineer: Certainly. We utilise a segmented architecture based on
-business units and system types. Critical assets are in a separate sone with
-ACLs limiting access. Edge firewalls provide filtering.
+Network Engineer: The platform runs inside a VPC in `ap-southeast-2`, split into
+public subnets for the Application Load Balancer and private subnets for the
+application and data tiers. There's no direct internet path to the application
+or database hosts — traffic terminates at the ALB and is forwarded over TLS.
+We mirror that in `ap-southeast-1` as the standby region.
 
-Auditor: Good to hear. How do you monitor and protect against malicious network
-activity?
+Auditor: How is east-west traffic controlled?
 
-on known bad signatures. We also capture netflow data and use a SIEM for
-Network Engineer: Intrusion detection sensors analyse traffic patterns and alert
-visibility. Access to monitoring tools is tightly controlled.
+Network Engineer: Security groups and network ACLs do the heavy lifting. The
+application tier can talk to the Aurora cluster on the database port and
+nothing else of consequence; the database tier has no outbound path to the
+internet. Inter-subnet rules are scoped to the ports the services actually use.
 
-Auditor: Excellent. And could you outline some of your network access and
-authentication controls?
+Auditor: That's a clean baseline. How do you monitor for malicious activity on
+the network?
 
-Network Engineer: 802.1x and Radius enforce access policies and restrictions on
-ports. Wireless uses WPA2 encryption at minimum. VPN concentrators allow MFA
-protected remote access into business systems. The network is fully switched
-with protected infrastructure management.
+Network Engineer: VPC Flow Logs are published to CloudWatch and the SIEM, and
+GuardDuty covers the behavioural side — unusual `AssumeRole`, instance
+credential exfiltration, that kind of finding. AWS Shield and the WAF sit in
+front of the ALB and absorb or rate-limit volumetric and Layer 7 attacks.
 
-Auditor: That provides a solid baseline. I'm here to have an open discussion
-about network security. If any potential gaps arise, I'll work through
-recommendations with you. Does that sound good?
+Auditor: Good. I'm running this as an open discussion; if something looks like a
+gap I'll raise it with you directly. Walk me through remote access.
 
-Network Engineer: Absolutely, I welcome the feedback on improving our security
-posture. Our network is constantly evolving and I want to stay ahead of emerging
-threats.
+Network Engineer: Workforce access is through the identity provider with MFA and
+a zero-trust network access layer rather than a flat VPN into the VPC.
+Administrators assume scoped roles via SSO; there's no standing route into the
+data subnets. Site-to-site connectivity to our offices is encrypted and
+mutually authenticated.
 
-Auditor: Could you outline your remote access capabilities and security
-controls?
+Auditor: How do you handle DDoS or flooding?
 
-Network Engineer: VPN access with MFA for employees. Site-to-site VPNs with
-partners using encryption and mutual authentication. Remote access is restricted
-based on least privilege and logged.
+Network Engineer: Shield Standard is on everywhere and Shield Advanced sits in
+front of the public endpoints. The WAF applies rate-based rules, and we've
+tuned a few custom rules for the application's known abuse patterns.
 
-Auditor: What protections do you have against DDoS attacks or network flooding
-scenarios?
+Auditor: Vulnerability scanning and penetration testing?
 
-Network Engineer: Our internet edge has DDoS prevention scrubbing high volume
-attacks before they hit internal infrastructure. Rate limiting and ACLs also
-help minimise impact.
+Network Engineer: We run network-layer scans each quarter from outside and
+inside, and there's an annual third-party assessment scoped with the security
+team. Findings go into the risk register and are tracked to closure.
 
-Auditor: How do you perform vulnerability scanning and penetration testing on
-the network environment?
+Network Engineer: One thing I'd want to be precise about: the boundary between
+the management plane and the tenant data tier. The intended design is that
+management roles can't reach tenant data directly — tenant reads go through the
+application tier under a tenant-scoped role. In practice that segregation
+wasn't fully enforced, and that's the gap the February incident exposed. The
+fix is in flight but I wouldn't claim it's closed yet.
 
-Network Engineer: Quarterly internal and external vulnerability scans, including
-from wireless perspectives. Annual third-party pen testing under the guidance of
-our infosec team.
+Auditor: That's exactly the kind of thing I need to hear. Redundancy — what's
+built in?
 
-Auditor: What capabilities exist for network traffic monitoring, capture and
-analysis?
+Network Engineer: Multi-AZ within the region for the ALB and Aurora, redundant
+transit and NAT paths, and the standby region for the bigger events. Capacity
+changes are scheduled to avoid customer impact.
 
-Network Engineer: We utilise full packet capture and taps to feed network
-detection systems. Flow data gives us visibility into communications between
-systems.
+Auditor: How do access issues between network and security get resolved?
 
-Auditor: Finally, could you speak about the redundancy built into the network in
-case of device failure?
+Network Engineer: Anything that touches a security group or routing table goes
+through a change ticket that the security team reviews. We meet fortnightly to
+walk the rule base and prune anything stale.
 
-Network Engineer: Redundant internet links, load balancing firewalls, cluster
-router configurations. We design availability into the architecture for high
-uptime. Maintenance is scheduled to limit impact.
+Auditor: Do security concerns ever push back on a network change?
 
-Auditor: How are network access issues escalated and resolved with security
-teams?
-
-Network Engineer: We engage infosec on access change tickets if there are
-questions or potential risks. My team meets regularly with security to review
-network ACLs and firewall rules for appropriate controls.
-
-Auditor: Do network changes ever get pushed back due to security concerns?
-
-Network Engineer: Yes occasionally, we then work jointly to determine
-alternative solutions. An example is implementing a DMZ or additional monitoring
-rather than opening access.
-
-Auditor: Is collaboration effective between network and security ops teams?
-
-Network Engineer: Collaboration is generally strong as the groups need to work
-very closely. Minor misalignments on priorities which are worked through.
-Overall we support each other in enabling secure network operations.
+Network Engineer: Yes — the usual outcome is a compensating control, like an
+additional guardrail or monitoring, rather than opening a path. It's a good
+working relationship; the priorities don't always line up but we resolve it
+together.

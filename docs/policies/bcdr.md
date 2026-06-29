@@ -3,353 +3,326 @@ categories:
 - Risk Management
 - Operational Continuity
 - Disaster Recovery
-description: The Tessera Contingency Plan establishes procedures to recover Tessera
-  following a disruption resulting from a disaster.
+description: The Tessera Business Continuity and Disaster Recovery (BCDR) plan sets out
+  how the platform is recovered and restored after a disruption.
 title: Business Continuity and Disaster Recovery
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Business Continuity and Disaster Recovery             |
+| **Title**    | Business Continuity and Disaster Recovery |
 | **Doc#**     | POL-RISK-008 |
 | **Version**  | 1.0                                 |
-| **Date**     | 08-11-2023                              |
+| **Date**     | 08-11-2023                          |
+| **Owner**    | Grace Sullivan, Chief Operating Officer |
+| **Approved By** | Henrik Larsson, Chief Executive Officer |
+| **ISO/IEC 27001:2022** | A.5.29 Information security during disruption; A.5.30 ICT readiness for business continuity |
 
-The Tessera Contingency Plan establishes procedures to recover Tessera
-following a disruption resulting from a disaster. This Disaster Recovery Policy
-is maintained by the Tessera Security Officer and Privacy Officer.
+This document is the Tessera Business Continuity and Disaster Recovery (BCDR)
+plan. It sets out how Tessera keeps tenant services available through a
+disruption and how the platform is recovered to normal operations afterwards.
+Tessera runs a multi-tenant managed-cloud platform; the realistic disruptions
+we plan for are loss of an AWS region, a wide-area connectivity outage, a
+cyber incident that forces isolation of the production environment, and loss of
+a work site or key personnel. The plan is written to satisfy **A.5.29**
+(information security during disruption) and **A.5.30** (ICT readiness for
+business continuity) of ISO/IEC 27001:2022, and to follow the business
+continuity good practice in ISO 22301.
 
-**HIPAA:** This Tessera Contingency Plan has been developed as
-required under the Office of Management and Budget (OMB) Circular A-130,
-Management of Federal Information Resources, Appendix III, November 2000, and
-the Health Insurance Portability and Accountability Act (HIPAA) Final Security
-Rule, Section §164.308(a)(7), which requires the establishment and
-implementation of procedures for responding to events that damage systems
-containing electronic protected health information.
-
+Operational accountability for the plan sits with the **Chief Operating Officer
+(G. Sullivan)**. Security accountability during a disruption sits with the
+**Chief Information Security Officer (I. Ferreira)**. The plan is reviewed at
+least annually and after any activation or major test.
 
 ## Policy Statements
 
 Tessera policy requires that:
 
-(a) A plan and process for business continuity and disaster recovery (BCDR),
-including the backup and recovery of systems and data, must be defined and
-documented.
+(a) A documented BCDR plan, including backup and recovery of systems and data,
+must be defined, maintained and tested.
 
-(b) BCDR shall be simulated and tested at least once a year. Metrics shall be
-measured and identified recovery enhancements shall be filed to improve the BCDR
-process.
+(b) The plan must be exercised at least annually. Recovery objectives (RTO/RPO)
+must be measured against the targets in the Business Impact Analysis, and gaps
+filed as improvement actions.
 
-(c) Security controls and requirements must be maintained during all BCDR
-activities.
-
+(c) Security controls must be maintained during all BCDR activities. Recovery is
+not a reason to bypass authentication, logging, tenant isolation or
+break-glass controls.
 
 ## Controls and Procedures
-
 
 ### BCDR Objectives and Roles
 
 #### Objectives
 
-The following objectives have been established for this plan:
+The objectives of this plan are to:
 
-1. Maximise the effectiveness of contingency operations through an established
-   plan that consists of the following phases:
+1. Provide a structured response to a disruption, organised into three phases:
 
-    * *Notification/Activation phase* to detect and assess damage and to
+    * *Notification/Activation phase* — detect and assess the disruption and
       activate the plan;
-    * *Recovery phase* to restore temporary IT operations and recover damage
-      done to the original system;
-    * *Reconstitution phase* to restore IT system processing capabilities to
-      normal operations.
+    * *Recovery phase* — restore services to an operational state, using the
+      cross-region standby where required;
+    * *Reconstitution phase* — return processing to normal operations and
+      formally close the event.
 
-2. Identify the activities, resources, and procedures needed to carry out
-   Tessera processing requirements during prolonged interruptions
-   to normal operations.
+2. Identify the activities, resources and procedures needed to keep Tessera
+platform services running during a prolonged interruption.
 
-3. Identify and define the impact of interruptions to Tessera
-   systems.
+3. Identify and quantify the impact of interruptions to Tessera systems, using
+the Business Impact Analysis, DOC-BCDR-001, to classify systems by
+criticality tier.
 
-4. Assign responsibilities to designated personnel and provide guidance for
-   recovering Tessera during prolonged periods of interruption to
-   normal operations.
+4. Assign responsibilities to named individuals and teams for recovery during a
+prolonged interruption.
 
-5. Ensure coordination with other Tessera staff who will
-   participate in the contingency planning strategies.
+5. Coordinate with internal teams and with external partners and suppliers who
+participate in recovery.
 
-6. Ensure coordination with external points of contact and vendors who will
-   participate in the contingency planning strategies.
+The disruptions that would activate this plan include regional AWS outages,
+loss of connectivity to a site, natural disasters, civil disturbance, a
+successful cyber attack requiring isolation of the production environment, and
+loss of a work site.
 
-Example of the types of disasters that would initiate this plan are natural
-disaster, political disturbances, man made disaster, external human threats,
-and internal malicious activities.
+#### Criticality of systems
 
-Tessera defined two categories of systems from a disaster recovery perspective.
+Tessera classifies systems into two recovery categories. The authoritative
+criticality tiers, RTO and RPO targets are defined in the **Business Impact
+Analysis, DOC-BCDR-001 (v0.3 DRAFT)**.
 
-1. *Critical Systems*. These systems host production application
-   servers/services and database servers/services or are required for
-   functioning of systems that host production applications and data. These
-   systems, if unavailable, affect the integrity of data and must be restored,
-   or have a process begun to restore them, immediately upon becoming
-   unavailable.
-2. *Non-critical Systems*. These are all systems not considered critical by
-   definition above. These systems, while they may affect the performance and
-   overall security of critical systems, do not prevent Critical systems from
-   functioning and being accessed appropriately. These systems are restored at a
-   lower priority than critical systems.
+1. *Critical systems* host the production application, tenant data stores,
+authentication, or services that production depends on (for example the control
+plane, the tenant databases, and the management plane). These must be restored
+— or failover to the cross-region standby initiated — as soon as they become
+unavailable. Target **RTO 4 hours / RPO 1 hour**.
 
-#### Line of Succession
+2. *Non-critical systems* are everything not classified critical above —
+internal tooling, reporting, analytics and administrative services. These are
+restored at lower priority and must not block recovery of critical systems.
+Target **RTO 48 hours / RPO 24 hours**.
 
-The following order of succession to ensure that decision-making authority for
-the Tessera Contingency Plan is uninterrupted. The Chief Operating
-Officer (COO) is responsible for ensuring the safety of personnel and the
-execution of procedures documented within this Tessera Contingency
-Plan. The Head of Engineering is responsible for the recovery of
-Tessera technical environments. If the COO or Head of Engineering
-is unable to function as the overall authority or chooses to delegate this
-responsibility to a successor, the CEO shall function as that authority or
-choose an alternative delegate. To provide contact initiation should the
-contingency plan need to be initiated, please use the contact list below.
+> *[BIA draft, v0.3 — N. Bennett, 2025-02: the Tier 1 RTO/RPO above are the
+> policy targets. The BIA working copy (DOC-BCDR-001 v0.3) currently records
+> Tier 1 as RTO 2h / RPO 15 min pending sign-off; reconcile before the Stage 1
+> audit.]*
 
-* Joe Blog, COO: 
-* Steve PLanter, Head of Engineering: 
-* Leo Kelp, CEO: 
+#### Line of succession
 
-#### Response Teams and Responsibilities
+Decision-making authority for this plan is held, in order:
 
-The following teams have been developed and trained to respond to a contingency
-event affecting Tessera infrastructure and systems.
+* **Grace Sullivan, COO** — overall authority for the plan; responsible for the
+  safety of personnel and for executing the procedures in this document.
+* **Noah Bennett, Head of Engineering** — responsible for recovery of the
+  Tessera technical environment and the cross-region failover.
+* **Henrik Larsson, CEO** — acts as authority if neither the COO nor Head of
+  Engineering is available, or delegates to an alternative.
 
-1. **IT** is responsible for recovery of the Tessera hosted
-   environment, network devices, and all servers. The team includes personnel
-   responsible for the daily IT operations and maintenance. The team leader is
-   the IT Manager who reports to the COO.
+To initiate the plan, use the after-hours contact list maintained by the
+Security team (the current copy is held in the Security shared drive and
+mirrored to team leads' local devices):
 
-2. **HR & Facilities** is responsible for ensuring the physical safety of all
-   Tessera personnel and environmental safety at each
-   Tessera physical location.  The team members also include site
-   leads at each Tessera work site.  The team leader is the
-   Facilities Manager who reports to the COO.
+* Grace Sullivan, COO
+* Noah Bennett, Head of Engineering
+* Isabella Ferreira, CISO
+* Henrik Larsson, CEO
 
-3. **DevOps** is responsible for assuring all applications, web services,
-   platform and their supporting infrastructure in the Cloud. The team is also
-   responsible for testing re-deployments and assessing damage to the
-   environment. The team leader is the Head of Engineering.
+#### Response teams and responsibilities
 
-4. **Security** is responsible for assessing and responding to all cybersecurity
-   related incidents according to Tessera Incident Response policy
-   and procedures. The security team shall assist the above teams in recovery as
-   needed in non-cybersecurity events. The team leader is the Security Officer.
+The following teams are trained to respond to a disruption affecting Tessera
+infrastructure and systems.
 
-Members of above teams must maintain local copies of the contact information of
-the BCDR succession team. Additionally, the team leads must maintain a local
-copy of this policy in the event Internet access is not available during a
-disaster scenario.
+1. **Cloud Infrastructure & IT** — recovery of the hosted environment, network
+   and supporting services. Led by **Hamish Boyd, Head of IT**, reporting to
+   the COO. **Connor Hayes (Cloud Infrastructure Architect)** owns the
+   region-failover mechanics.
 
-All executive leadership shall be informed of any and all contingency events.
-Current members of Tessera leadership team include the
-.
+2. **HR & Facilities** — physical safety of personnel and environmental safety
+   at each Tessera site (Perth HQ, Sydney, Malaga WA), supported by site leads.
+   Led by the Facilities Manager, reporting to the COO.
 
+3. **Cloud Service Operations / DevOps** — recovery of applications, web
+   services, the platform and its supporting cloud infrastructure, including
+   testing re-deployments and assessing damage. Led by **Noah Bennett, Head of
+   Engineering**, with **Rafa Costa (Cloud Service Operations)** on rotation.
+
+4. **Security** — assessment and response to any cybersecurity dimension of the
+   event, per the Incident Response Policy ([POL-SECU-010](ir.md)). The
+   Security team supports the other teams during non-cyber events. Led by
+   **Isabella Ferreira, CISO**.
+
+Team leads must keep a local copy of this policy and the contact list, in case
+Internet access is unavailable during a disaster. All executive leadership are
+informed of any activation. Current executive leadership are listed in the
+organisational chart maintained by Head of People.
 
 ### General Disaster Recovery Procedures
 
-#### Notification and Activation Phase
+#### Notification and Activation phase
 
-This phase addresses the initial actions taken to detect and assess damage
-inflicted by a disruption to Tessera. Based on the assessment of
-the Event, sometimes according to the Tessera Incident Response
-Policy, the Contingency Plan may be activated by either the COO or Head of
-Engineering.  The Contingency Plan may also be activated by the Security Officer
-in the event of a cyber disaster.
+This phase covers the initial detection, assessment and decision to activate.
+Based on assessment — and per the Incident Response Policy (POL-SECU-010) where
+the event has a cyber dimension — the plan may be activated by the **COO** or
+**Head of Engineering**. The **CISO** may activate the plan directly in the
+event of a cyber disaster.
 
-The notification sequence is listed below:
+The notification sequence:
 
-* The first responder is to notify the COO. All known information must be
-  relayed to the COO.
-* The COO is to contact the Response Teams and inform them of the event. The COO
-  or delegate is responsible to begin assessment procedures.
-* The COO is to notify team members and direct them to complete the assessment
-  procedures outlined below to determine the extent of damage and estimated
-  recovery time. If damage assessment cannot be performed locally because of
-  unsafe conditions, the COO is to following the steps below.
+* The first responder notifies the COO with all known information.
+* The COO contacts the response teams and begins assessment. If the COO is
+  unreachable, the Head of Engineering or CISO stands in.
+* Team leads complete the damage assessment to determine the extent of damage
+  and estimated recovery time. Where assessment cannot be performed locally
+  because conditions are unsafe, the COO follows the alternate assessment
+  procedure with the response teams.
+* The plan is activated if any of the following are met:
+    * Platform services will be unavailable for more than 4 hours against the
+      Tier 1 RTO;
+    * The primary AWS region (ap-southeast-2) is degraded and cross-region
+      failover is required;
+    * A site or hosting facility will be unavailable for more than 24 hours;
+    * Other criteria as defined by the COO and CISO.
+* On activation, the COO informs team leads of the event details and any
+  relocation required.
+* Team leads cascade to their teams.
+* The COO notifies hosting and connectivity partners that an event has been
+  declared and arranges any material transfer to the alternate site.
+* The COO briefs remaining personnel and executive leadership on status.
 
-    * Damage Assessment Procedures:
-    * The COO is to logically assess damage, gain insight into whether the
-      infrastructure is salvageable, and begin to formulate a plan for recovery.
-    * Alternate Assessment Procedures:
-    * Upon notification, the COO is to follow the procedures for damage
-      assessment with the Response Teams.
+Notification may be by message, email or phone. Out-of-hours escalation runs
+through the Security on-call rotation.
 
-* The Tessera Contingency Plan is to be activated if one or more of the
-  following criteria are met:
+#### Recovery phase
 
-    * Tessera will be unavailable for more than 48 hours.
-    * On-premise hosting facility or cloud infrastructure service is damaged and
-      will be unavailable for more than 24 hours.
-    * Other criteria, as appropriate and as defined by Tessera.
+This phase recovers Tessera infrastructure and operations. Where the primary
+region is the problem, recovery follows the **Failover Runbook, SOP-BCDR-001**,
+which details the ap-southeast-2 → standby region failover: promotion of the
+cross-region replicas, DNS cutover, and validation. Tasks below run largely in
+parallel; sequence is a guide, not a constraint.
 
-* If the plan is to be activated, the COO is to notify and inform team members
-  of the details of the event and if relocation is required.
-* Upon notification from the COO, group leaders and managers are to notify their
-  respective teams. Team members are to be informed of all applicable
-  information and prepared to respond and relocate if necessary.
-* The COO is to notify the hosting facility partners that a contingency event
-  has been declared and to ship the necessary materials (as determined by damage
-  assessment) to the alternate site.
-* The COO is to notify remaining personnel and executive leadership on the
-  general status of the incident.
-* Notification can be message, email, or phone.
+Recovery goal: return Tessera infrastructure to a production state, with
+security controls intact.
 
-#### Recovery Phase
+1. Contact affected tenants and partners to open communication — Cloud Service
+   Operations.
+2. Assess damage to the environment — Cloud Service Operations + Security.
+3. Stand up the standby environment (region failover per SOP-BCDR-001, or fresh
+   bootstrap from infrastructure-as-code) — Cloud Infrastructure.
+4. Confirm secure access to the recovered environment, including break-glass
+   under POL-SECU-010 — Security.
+5. Promote replicas / restore data from backup; verify integrity — Cloud
+   Service Operations.
+6. Deploy application code and run the recovery test suite — Engineering.
+7. Verify logging, security alerting and tenant isolation — Security + DevOps.
+8. Confirm patch levels and configuration baselines — DevOps.
+9. Cut over DNS and dependent records to the recovered environment — Cloud
+   Infrastructure.
+10. Update tenants and partners through established channels — Cloud Service
+    Operations.
 
-This section provides procedures for recovering Tessera infrastructure and
-operations at an alternate site, whereas other efforts are directed to repair
-damage to the original system and capabilities.
+#### Reconstitution phase
 
-Procedures are outlined per team required. Each procedure should be executed in
-the sequence it is presented to maintain efficient operations.
+This phase returns Tessera to normal operations. The goal is full
+reconstitution within the Tier 1 RTO of activation; where the original
+environment has been rebuilt, operations are transitioned back from the
+standby region.
 
-Recovery Goal: The goal is to rebuild Tessera infrastructure to a production
-state.
-
-The tasks outlines below are not sequential and some can be run in parallel.
-
-1. Contact Partners and Customers affected to begin initial communication -
-   DevOps
-2. Assess damage to the environment - DevOps
-3. Create a new production environment using new environment bootstrap
-   automation - DevOps
-4. Ensure secure access to the new environment - Security
-5. Begin code deployment and data replication using pre-established automation -
-   DevOps
-6. Test new environment and applications using pre-written tests - DevOps
-7. Test logging, security, and alerting functionality - DevOps and Security
-8. Assure systems and applications are appropriately patched and up to date -
-   DevOps
-9. Update DNS and other necessary records to point to new environment - DevOps
-10. Update Partners and Customers affected through established channels - DevOps
-
-#### Reconstitution Phase
-
-This section discusses activities necessary for restoring full
-Tessera operations at the original or new site. The goal is to
-restore full operations within 24 hours of a disaster or outage. If necessary,
-when the hosted data center at the original or new site has been restored,
-Tessera operations at the alternate site may be transitioned back.
-The goal is to provide a seamless transition of operations from the alternate
-site to the computer center.
-
-1. Original or New Site Restoration
-
-    * Repeat steps 5-9 in the Recovery Phase at the original or new site /
-      environment.
-    * Restoration of Original site is unnecessary for cloud environments, except
-      when required for forensic purpose.
-
-2. Plan Deactivation
-
-    * If the Tessera environment is moved back to the original site
-      from the alternative site, all hardware used at the alternate site should
-      be handled and disposed of according to the Tessera Media
-      Disposal Policy.
+1. Restoration of the primary site / region
+    * Re-run the recovery steps at the primary region once it is restored.
+    * For cloud environments, restoring the original region is not required
+      except for forensic purposes; the standby may be promoted to primary by
+      decision of the COO and Head of Engineering.
+2. Plan deactivation
+    * Any hardware used at an alternate site is handled and disposed of under
+      the Tessera Media Disposal / Asset Management policy.
+    * A post-incident review is held within two weeks; lessons feed the next
+      test cycle.
 
 ### Testing and Maintenance
 
-The COO and/or Head of Engineering shall establish criteria for
-validation/testing of a Contingency Plan, an annual test schedule, and ensure
-implementation of the test. This process will also serve as training for
-personnel involved in the plan's execution. At a minimum the Contingency Plan
-shall be tested annually (within 365 days). The types of validation/testing
-exercises include tabletop and technical testing. Contingency Plans for all
-application systems must be tested at a minimum using the tabletop testing
-process. However, if the application system Contingency Plan is included in the
-technical testing of their respective support systems that technical test will
-satisfy the annual requirement.
+The COO, with the Head of Engineering and CISO, sets the annual test schedule,
+the validation criteria, and ensures the test is run. The plan is exercised at
+least annually (within 365 days). Two exercise types are used: tabletop and
+technical. The contingency plan for every application system must be exercised
+at minimum via a tabletop; where an application system is covered by a
+technical test of its supporting infrastructure, that technical test satisfies
+the annual requirement.
 
 #### Tabletop Testing
 
-Tabletop Testing is conducted in accordance with the
-[CMS Risk Management Handbook, Volume 2](http://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Downloads/RMH_VII_4-5_Contingency_Plan_Exercise.pdf).
-The primary objective of the tabletop test is to ensure designated personnel are
-knowledgeable and capable of performing the notification/activation requirements
-and procedures as outlined in the CP, in a timely manner. The exercises include,
-but are not limited to:
+The primary objective of a tabletop is to confirm that the named responders can
+carry out the notification and activation procedures correctly and promptly.
+Tabletop methodology follows the contingency-plan exercise guidance in the
+**CMS Risk Management Handbook, Volume 2** as an established external
+methodology.
 
-* Testing to validate the ability to respond to a crisis in a coordinated,
-  timely, and effective manner, by simulating the occurrence of a specific
-  crisis.
+> *[Reviewer, M. Dubois, 2025-03: CMS IRM is a US federal publication. We
+> should adopt ISO 22301 exercise guidance or an Australian equivalent (HB 292)
+> before the next review — flagged for the BCDR working group.]*
 
-#### Simulation and/or Technical Testing
+Exercises include, but are not limited to:
 
-The primary objective of the technical test is to ensure the communication
-processes and data storage and recovery processes can function at an alternate
-site to perform the functions and capabilities of the system within the
-designated requirements. Technical testing shall include, but is not limited to:
+* A simulated specific crisis, to validate coordinated and timely response.
 
-* Process from backup system at the alternate site;
-* Restore system using backups; and
-* Switch compute and storage resources to alternate processing site.
+#### Simulation and Technical Testing
 
+The objective of the technical test is to confirm that data storage and
+recovery processes can function at the standby region to deliver system
+capabilities within the RTO/RPO targets. Technical testing includes, but is not
+limited to:
+
+* Restore from the cross-region backup;
+* Fail compute and storage to the standby region per SOP-BCDR-001;
+* Validate application functionality against the recovery test suite.
 
 ### Work Site Recovery
 
-In the event a Tessera facility is not functioning due to a
-disaster, employees will work from home or locate to a secondary site with
-Internet access, until the physical recovery of the facility impacted is
-complete. The recovery shall be performed by the facility management firm under
-contract with Tessera, and coordinated by the Facility Manager
-and/or the Site Lead.
+If a Tessera facility is unavailable due to a disaster, staff work from home or
+relocate to a secondary site with Internet access until the affected facility
+is restored. Physical recovery is performed by the facilities management firm
+under contract with Tessera, coordinated by the Facilities Manager and/or the
+site lead.
 
-Tessera’s software development organisation has the ability to work
-from any location with Internet access and does not require an office provided
-Internet connection.
+Tessera's engineering and operations teams can work from any location with
+Internet access and do not depend on an office connection.
 
 ### Application Service Event Recovery
 
-Tessera will develop a status page to provide real time update and
-inform our customers of the status of each service. The status page is updated
-with details about an event that may cause service interruption / downtime.
+Tessera publishes a status page giving tenants real-time updates on the state
+of each service, updated as an event unfolds. A root-cause analysis (RCA) is
+made available to affected tenants on request after the event.
 
-A follow up root-cause analysis details (RCA) will be available to customers
-upon request after the event has transpired for further details to cause and
-remediation plan for the future. Event Service Level
+Event severity bands:
 
 #### Short (hours)
 
-* Experience a short delay in service.
-* Tessera will monitor the event and determine course of action.
-  Escalation may be required.
+* A short delay in service.
+* Tessera monitors the event and determines the course of action; escalation as
+  required.
 
 #### Moderate (days)
 
-* Experience a modest delay in service where processes in flight may need to be
-  restarted.
-* Tessera will monitor the event and determine course of action.
-  Escalation may be required.
-* Tessera will notify customers of delay in service and provide
-  updates on Tessera’s status page.
+* A modest delay; in-flight processes may need to be restarted.
+* Tessera monitors and escalates as required.
+* Tessera notifies tenants of the delay and posts updates to the status page.
 
 #### Long (a week or more)
 
-* Experience a delay in service and processes in flight may need to be
-  restarted.
-* Tessera will monitor the event and determine course of action.
-  Escalation may be required.
-* Tessera will notify customers of delay in service and provide
-  updates on Tessera’s status page.
-
+* A prolonged delay; in-flight processes may need to be restarted.
+* Tessera monitors and escalates as required; executive and tenant comms
+  cadence increases.
+* Tessera notifies tenants and posts updates to the status page.
 
 ### Production Environments and Data Recovery
 
-Production data is to be synchronised across multiple S3 buckets in AWS.
-Additionally, it is backed up to AWS Glacier for long term storage and recovery.
-In an event that requires data to be recovered, it will be retrieved from
-Glacier.
+Production data is synchronised across multiple S3 buckets in the primary AWS
+region (ap-southeast-2), replicated to the cross-region standby, and backed up
+to AWS Glacier for long-term retention. Where data must be recovered, it is
+restored from the cross-region replica or, in the worst case, from Glacier held
+in a separate AWS account and geography.
 
-Tessera assumes that in the worst-case scenario, that one of the
-production environments suffers a complete data loss, the account will be
-reconstructed from code, and the data restored from Glacier that is hosted
-within a different AWS account and geolocation.
+Worst-case assumption: one production environment suffers complete data loss.
+The account is rebuilt from code (infrastructure-as-code and application
+artefacts) and data is restored from the cross-region backup or Glacier.
 
-Recovery of production Environments and data should follow the procedures listed
-above and in [Data Management - Backup and Recovery](data_mgmt.md#cp-data-backup)
+Recovery of production environments and data follows the procedures above and
+the backup and recovery section of [Data Management](data_mgmt.md#cp-data-backup).

@@ -3,10 +3,10 @@ categories:
 - Security Management
 - Incident Response
 - Operational Security
-description: Tessera implements an information security incident response process
-  to consistently detect, respond, and report incidents, minimise loss and destruction,
-  mitigate the weaknesses that were exploited, and restore information system functionality
-  and business continuity as soon as possible.
+description: Tessera's Incident Response Policy defines how the security function
+  prepares for, detects, triages, contains, eradicates and recovers from information
+  security incidents, and how affected tenants, the OAIC and individuals are notified
+  under the Privacy Act 1988 (Cth) and the Notifiable Data Breaches scheme.
 title: Incident Response Policy
 format:
   pdf:
@@ -22,707 +22,573 @@ format:
     embed-resources: true
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Incident Response Policy            |
-| **Doc#**     | POL-SECU-010                       |
-| **Version**  | 2.1                                 |
-| **Date**     | 28-02-2024                         |
-| **Supersedes** | POL-SECU-010 v2.0 (19-11-2023)   |
-| **Next Review** | 28-02-2025                       |
-| **Owner**    | Chief Information Security Officer  |
-| **Approved By** | Chief Executive Officer           |
-
-> **POLICY INTEGRATION NOTE:** This policy should be read in conjunction with:
-> - Business Continuity Policy POL-BC-001 (under development)
-> - Data Breach Notification Policy POL-BREACH-001 (v1.3)
-> - Access Control Policy POL-SECU-021 (v1.3) 
-> - Change Management Policy POL-CHANGE-001 (draft status)
-
-Tessera implements an information security incident response process to
-consistently detect, respond, and report incidents, minimise loss and
-destruction, mitigate the weaknesses that were exploited, and restore
-information system functionality and business continuity as soon as possible.
-
-The incident response process addresses:
-
-* Continuous monitoring of threats through intrusion detection systems (IDS) and
-  other monitoring applications;
-* Establishment of an information security incident response team;
-* Establishment of procedures to respond to media inquiries;
-* Establishment of clear procedures for identifying, responding, assessing,
-  analysing, and follow-up of information security incidents;
-* Workforce training, education, and awareness on information security incidents
-  and required responses; and
-* Facilitation of clear communication of information security incidents with
-  internal, as well as external, stakeholders
-
-> **SCOPE LIMITATION:** This policy covers information security incidents only. 
-> Physical security incidents are addressed under separate policy POL-PHYS-001 
-> (last updated 2022 - may be outdated).
-
-## Policy Statements
-
-Tessera policy requires that:
-
-(a) All computing environments and systems must be monitored in accordance to
-the policies and procedures specified in the following Tessera policies and
-procedures:
-
-  * Auditing
-  * System Access  
-  * End-user Computing and Acceptable Use
-
-> **REFERENCE ISSUE:** Policy names listed above do not match current policy register:
-> - "System Access" should be "Access Control Policy POL-SECU-021"
-> - "Auditing" should be "System Auditing Policy POL-AUDIT-001"
-> - "End-user Computing" policy merged into Acceptable Use Policy POL-AUP-001
-
-(b) All alerts must be reviewed to identify security incidents.
-
-> **IMPLEMENTATION GAP:** Current monitoring generates approximately 500-800 alerts 
-> daily. Policy does not specify prioritisation criteria or response timeframes for 
-> different alert types.
-
-(c) Incident response procedures are invoked upon discovery of a valid security
-incident.
-
-(d) Incident response team and management must comply with any additional
-requests by law enforcement in the event of criminal investigation or national
-security, including but not limited to warranted data requests, subpoenas, and
-breach notifications.
-
-> **LEGAL COMPLIANCE NOTE:** Australian Privacy Act 1988 requires breach notification 
-> within 72 hours. This policy does not explicitly reference Australian legal requirements.
-
-## Controls and Procedures
-
-### Security Incident Response Team (SIRT)
-
-The Security Incident Response Team (SIRT) is responsible for:
-
-* Review, analyse and log of all received reports and track their statuses.
-* Performing investigations, creating and executing action plans, post-incident
-  activities.
-* Collaboration with law enforcement agencies.
-
-Current members of the Tessera SIRT:
-
-* Security and Privacy Officer
-* Security Engineers  
-* Head of Engineering
-* DevOps and Production Support Team
-
-> **TEAM COMPOSITION ISSUE:** SIRT membership last updated November 2023. 
-> Several structural changes since then:
-> - "Security and Privacy Officer" role split into two separate positions
-> - "Head of Engineering" position vacant since January 2024
-> - DevOps team restructured under new "Platform Engineering" department
-
-> **CONTACT DETAILS MISSING:** Policy does not include 24/7 contact information 
-> for SIRT members or escalation procedures for after-hours incidents.
-
-### Incident Management Process
-
-The Tessera incident response process follows the process recommended by
-[SANS](https://www.sans.org), an industry leader in security. Process flows are
-a direct representation of the SANS process which can be found in [this
-document](sections/incident-flowchart.pdf).
-
-> **BROKEN REFERENCE:** Link to incident-flowchart.pdf returns 404 error. 
-> Document may have been moved during recent documentation system migration.
-
-Tessera's incident response classifies security-related events into the
-following categories:
-
-* **Events** - Any observable computer security-related occurrence in a system
-  or network with a negative consequence. Examples:
-
-    * Hardware component failing causing service outages.
-    * Software error causing service outages.
-    * General network or system instability.
-
-> **CATEGORISATION ISSUE:** Hardware and software failures are operational incidents, 
-> not necessarily security incidents. Classification criteria need refinement.
-
-* **Precursors** - A sign that an incident may occur in the future. Examples:
-
-    * Monitoring system showing unusual behaviour.
-    * Audit log alerts indicated several failed login attempts.
-    * Suspicious emails targeting specific Tessera staff members with
-      administrative access to production systems.
-    * Alerts raised from a security control source based on its monitoring
-      policy, such as
-
-        - Okta (user authentication activities)
-        - Threat Stack (AWS Cloudtrail events or system agent activities)
-        - Dome9 (cloud services configuration or access alerts)
-        - Carbon Black Cb Defence (malware and endpoint events)
-        - Syslog events from servers
-
-> **OUTDATED TOOL REFERENCES:** Several monitoring tools listed are no longer in use:
-> - Okta replaced with Auth0 (December 2023)
-> - Threat Stack decommissioned, replaced with Splunk (January 2024)
-> - Dome9 replaced with Prisma Cloud (Q4 2023)
-> - Carbon Black Cb Defence upgraded to Carbon Black Cloud (Q1 2024)
-
-* **Indications** - A sign that an incident may have occurred or may be
-  occurring at the present time. Examples:
-
-    * Alerts for modified system files or unusual system accesses.
-    * Antivirus alerts for infected files or devices.
-    * Excessive network traffic directed at unexpected geographic locations.
-
-* **Incidents** - A confirmed attack / indicator of compromise or a validated
-  violation of computer security policies or acceptable use policies, often
-  resulting in data breaches. Examples:
-
-    * Unauthorised disclosure of sensitive data.
-    * Unauthorised change or destruction of sensitive data.
-    * A data breach accomplished by an internal or external entity.
-    * A Denial-of-Service (DoS) attack causing a critical service to become
-      unreachable.
-
-Tessera employees must report any unauthorised or suspicious activity seen on
-production systems or associated with related communication systems (such as
-email or Slack). In practice this means keeping an eye out for security events,
-and letting the Security team know about any observed precursors or indications
-as soon as they are discovered.
-
-> **REPORTING MECHANISM GAP:** Policy states employees should "let the Security team know" 
-> but does not specify HOW - email, phone, ticketing system, or escalation procedures.
-
-!!! Attention
-
-    Incidents of a severity/impact rating higher than **MINOR** shall trigger the
-    following response process, or as defined more specifically in the **Incident
-    Categories and Playbooks** section.
-
-> **SEVERITY CLASSIFICATION INCONSISTENCY:** Policy references MINOR/MAJOR/CRITICAL 
-> severity levels but the classification section below uses different terminology.
-
-#### I - Identification and Triage
-
-1. Immediately upon observation Tessera members report suspected and known
-   Events, Precursors, Indications, and Incidents in one of the following ways:
-
-    1. Direct report to management, the Security Officer, Privacy Officer, or
-       other;
-    2. Email;
-    3. Phone call;
-    4. Submit an incident report online via
-       [Tessera Internal ServiceDesk]();
-    5. Secure chat; or
-    6. Anonymously through workforce members desired channels.
-
-> **BROKEN LINK:** ServiceDesk link is empty/non-functional.
-
-> **CONTACT INFORMATION MISSING:** No specific email addresses, phone numbers, or 
-> chat channels provided for incident reporting.
-
-2. The individual receiving the report facilitates the collection of additional
-   information about the incident, as needed, and notifies the Security Officer
-   (if not already done).
-
-> **ROLE AMBIGUITY:** "Security Officer" role may refer to either the "Security and 
-> Privacy Officer" or new separate "Chief Information Security Officer" position.
-
-3. The Security Officer determines if the issue is an Event, Precursor,
-   Indication, or Incident.
-
-   1. If the issue is an event, indication, or precursor the Security Officer
-      forwards it to the appropriate resource for resolution.
-
-      1. Non-Technical Event (minor infringement): the Security Officer of
-         designee creates an appropriate issue in  and further investigates
-         the incident as needed.
-
-> **INCOMPLETE REFERENCE:** Missing ticketing system name (likely Jira or ServiceNow).
-
-      2. Technical Event: Assign the issue to an technical resource for
-         resolution. This resource may also be a contractor or outsourced
-         technical resource, in the event of a lack of resource or expertise in
-         the area.
-
-   2. If the issue is a security incident the Security Officer activates the
-      Security Incident Response Team (SIRT) and notifies senior leadership by
-      email.
-
-> **NOTIFICATION TIMEFRAME:** No timeframe specified for senior leadership notification.
-
-       1. If a non-technical security incident is discovered the SIRT completes
-          the investigation, implements preventative measures, and resolves the
-          security incident.
-       2. Once the investigation is completed, progress to Phase V, Follow-up.
-       3. If the issue is a technical security incident, commence to Phase II:
-          Containment.
-       4. The Containment, Eradication, and Recovery Phases are highly
-          technical. It is important to have them completed by a highly
-          qualified technical security resource with oversight by the SIRT team.
-       5. Each individual on the SIRT and the technical security resource
-          document all measures taken during each phase, including the start and
-          end times of all efforts.
-       6. The lead member of the SIRT team facilitates initiation of an Incident
-          ticket in  Security Project and documents all findings and details
-          in the ticket.
-
-> **SYSTEM REFERENCE MISSING:** Incomplete reference to ticketing system.
-
-           * The intent of the Incident ticket is to provide a summary of all
-             events, efforts, and conclusions of each Phase of this policy and
-             procedures.
-           * Each Incident ticket should contain sufficient details following
-             the [SANS Security Incident Forms templates](https://www.sans.org/score/incident-forms/),
-             as appropriate.
-
-3. The Security Officer, Privacy Officer, or Tessera representative appointed
-   notifies any affected Customers and Partners. If no Customers and Partners
-   are affected, notification is at the discretion of the Security and Privacy
-   Officer.
-
-> **NOTIFICATION INCONSISTENCY:** References both singular "Privacy Officer" and 
-> combined "Security and Privacy Officer" roles.
-
-> **CUSTOMER NOTIFICATION TIMEFRAME:** No timeframe specified for customer notification, 
-> which may conflict with contractual SLAs and regulatory requirements.
-
-4. In the case of a threat identified, the Security Officer is to form a team to
-   investigate and involve necessary resources, both internal to Tessera and
-   potentially external.
-
-#### II - Containment (Technical)
-
-In this Phase, Tessera's engineers and security team attempts to contain the
-security incident. It is extremely important to take detailed notes during the
-security incident response process. This provides that the evidence gathered
-during the security incident can be used successfully during prosecution, if
-appropriate.
-
-> **EVIDENCE HANDLING GAP:** Policy mentions evidence collection but does not reference 
-> chain of custody procedures or forensic evidence handling standards.
-
-1. Review any information that has been collected by the Security team or any
-   other individual investigating the security incident.
-2. Secure the blast radius (i.e. a physical or logical network perimeter or
-   access zone).
-
-> **TYPO:** "access sone" should be "access zone" - indicates lack of proofreading.
-
-3. Perform the following forensic analysis preparation, as needed:
-
-    1. Securely connect to the affected system over a trusted connection.
-    2. Retrieve any volatile data from the affected system.
-    3. Determine the relative integrity and the appropriateness of backing the
-       system up.
-    4. As necessary, take a snapshot of the disk image for further forensic;
-       and if appropriate, back up the system.
-
-> **INCOMPLETE SENTENCE:** "for further forensic" - missing word (analysis/investigation).
-
-    5. Change the password(s) to the affected system(s).
-    6. Determine whether it is safe to continue operations with the affect
-       system(s).
-
-> **TYPO:** "affect" should be "affected" - grammar error.
-
-    7. If it is safe, allow the system to continue to function; and move to
-       Phase V, Post Incident Analysis and Follow-up.
-    8. If it is NOT safe to allow the system to continue operations, discontinue
-       the system(s) operation and move to Phase III, Eradication.
-    9. The individual completing this phase provides written communication to
-       the SIRT.
-
-> **COMMUNICATION METHOD:** No specification of how/where written communication should be provided.
-
-4. Complete any documentation relative to the security incident containment on the
-   Incident ticket, using
-   [SANS IH Containment Form](https://www.sans.org/media/score/incident-forms/IH-Containment.pdf)
-   as a template.
-5. Continuously apprise Senior Management of progress.
-
-> **UPDATE FREQUENCY:** "Continuously" is impractical - no specific timeframe or trigger events defined.
-
-6. Continue to notify affected Customers and Partners with relevant updates as
-   needed.
-
-#### III - Eradication (Technical)
-
-The Eradication Phase represents the SIRT's effort to remove the cause, and the
-resulting security exposures, that are now on the affected system(s).
-
-1. Determine symptoms and cause related to the affected system(s).
-2. Strengthen the defences surrounding the affected system(s), where possible (a
-   risk assessment may be needed and can be determined by the Security Officer).
-   This may include the following:
-
-    1. An increase in network perimeter defences.
-    2. An increase in system monitoring defences.
-    3. Remediation ("fixing") any security issues within the affected system,
-       such as removing unused services/general host hardening techniques.
-
-3. Conduct a detailed vulnerability assessment to verify all the holes/gaps that
-   can be exploited have been addressed.
-
-> **VULNERABILITY ASSESSMENT SCOPE:** No timeframe specified for vulnerability assessment 
-> completion or criteria for determining assessment scope.
-
-    1. If additional issues or symptoms are identified, take appropriate
-       preventative measures to eliminate or minimise potential future
-       compromises.
-
-4. Update the Incident ticket with Eradication details, using
-   [SANS IH Eradication Form](https://www.sans.org/media/score/incident-forms/IH-Eradication.pdf)
-   as a template.
-5. Update the documentation with the information learned from the vulnerability
-   assessment, including the cause, symptoms, and the method used to fix the
-   problem with the affected system(s).
-6. Apprise Senior Management of the progress.
-7. Continue to notify affected Customers and Partners with relevant updates as
-   needed.
-8. Move to Phase IV, Recovery.
-
-#### IV - Recovery (Technical)
-
-The Recovery Phase represents the SIRT's effort to restore the affected
-system(s) back to operation after the resulting security exposures, if any, have
-been corrected.
-
-1. The technical team determines if the affected system(s) have been changed in
-   any way.
-
-    1. If they have, the technical team restores the system to its proper,
-       intended functioning ("last known good").
-    2. Once restored, the team validates that the system functions the way it
-       was intended/had functioned in the past. This may require the involvement
-       of the business unit that owns the affected system(s).
-
-> **BUSINESS UNIT COORDINATION:** No process defined for engaging business units 
-> or determining who has authority to approve system restoration.
-
-    3. If operation of the system(s) had been interrupted (i.e., the system(s)
-       had been taken offline or dropped from the network while triaged),
-       restart the restored and validated system(s) and monitor for behaviour.
-    4. If the system had not been changed in any way, but was taken offline
-       (i.e., operations had been interrupted), restart the system and monitor
-       for proper behaviour.
-
-> **MONITORING DURATION:** No timeframe specified for post-recovery monitoring.
-
-    5. Update the documentation with the detail that was determined during this
-       phase.
-    6. Apprise Senior Management of progress.
-    7. Continue to notify affected Customers and Partners with relevant updates
-       as needed.
-    8. Move to Phase V, Follow-up.
-
-#### V - Post-Incident Analysis (Technical and Non-Technical)
-
-The Follow-up phase represents the review of the security incident to look for
-"lessons learned" and to determine whether the process that was taken could have
-been improved in any way. It is recommended all security incidents be reviewed
-shortly after resolution to determine where response could be improved.
-Timeframes may extend to one to two weeks post-incident.
-
-> **TIMEFRAME AMBIGUITY:** "Shortly after" and "one to two weeks" are inconsistent timeframes.
-
-1. Responders to the security incident (SIRT Team and technical security
-   resource) meet to review the documentation collected during the security
-   incident.
-2. A "lessons learned" section is written and attached to Incident ticket.
-
-    1. Evaluate the cost and impact of the security incident to Tessera using
-       the documents provided by the SIRT and the technical security resource.
-
-> **COST CALCULATION:** No methodology specified for calculating incident costs 
-> (downtime, response effort, lost revenue, etc.).
-
-    2. Determine what could be improved. This may include:
-
-        * Systems and processes adjustments
-        * Awareness training and documentation
-        * Implementation of additional controls
-
-    3. Communicate these findings to Senior Management for approval and for
-       implementation of any recommendations made post-review of the security
-       incident.
-    4. Carry out recommendations approved by Senior Management; sufficient
-       budget, time and resources should be committed to this activity.
-
-> **IMPLEMENTATION TRACKING:** No process defined for tracking implementation of 
-> post-incident recommendations or measuring their effectiveness.
-
-3. Ensure all incident related information is recorded and retained as described
-   in Tessera Auditing requirements and Data Retention standards.
-
-> **RETENTION REQUIREMENTS:** References to "Auditing requirements" and "Data Retention 
-> standards" but no specific retention periods or storage requirements defined.
-
-4. Close the security incident.
-
-#### Periodic Evaluation
-
-It is important to note that the processes surrounding security incident
-response should be periodically reviewed and evaluated for effectiveness. This
-also involves appropriate training of resources expected to respond to security
-incidents, as well as the training of the general population regarding the
-Tessera's expectation for them, relative to security responsibilities. The
-incident response plan is tested annually.
-
-> **TESTING SPECIFICS:** "Tested annually" but no details on test methodology, 
-> scenarios, success criteria, or tabletop exercise requirements.
-
-### Incident Categories and Playbooks
-
-* The IRT reviews and analyses on the security events on as part of its daily
-  operations.
-
-> **TERMINOLOGY INCONSISTENCY:** References "IRT" (Incident Response Team) but 
-> policy uses "SIRT" (Security Incident Response Team) elsewhere.
-
-* Based on the initial analysis, an event may be dismissed due to false
-  positives, normal business operations, exceptions that are already in place,
-  permitted per policy, or duplicates. An audit trail will be kept for event
-  dismissal.
-
-> **AUDIT TRAIL LOCATION:** No specification of where dismissed event audit trail is maintained.
-
-* A valid security event may be upgrade to a security incident. Upon which, an
-  incident classification and severity is assigned as specified below.
-
-> **GRAMMAR ERROR:** "may be upgrade" should be "may be upgraded".
-
-* Record of the decision must be stored with details on date(s), name(s) of the
-  person(s) conducted assessment.
-
-> **GRAMMAR ERROR:** "conducted" should be "who conducted".
-
-* A containment, eradication and recovery procedure is triggered based on the
-  Category classification of the incident.
-* In addition to the general incident management procedures previously
-  described, one or more of the following playbooks are consulted based on the
-  classification of a particular incident.
-
-#### Classification
-
-* **Category 1** – General Incidents, including physical security incidents
-
-> **SCOPE CONFLICT:** Physical security incidents mentioned here but policy scope 
-> statement excludes physical security incidents.
-
-* **Category 2** – Attacks on internal corporate infrastructure, including
-  network, hardware, software
-
-* **Category 3** – Malware
-
-* **Category 4** – Attacks on external facing assets, such as website, web
-  applications, web services. Including denial of service attacks.
-
-* **Category 5** – Human targets, social engineering, phishing, etc.
-
-* **Category 6** – Breach/leakage of critical or confidential data
-
-> **DATA CLASSIFICATION DEPENDENCY:** References "critical or confidential data" 
-> but no link to Data Classification Policy for definitions.
-
-#### Severity Levels:
-
-* **Critical** – incident that involves immediate and significant interruption
-  to business operations and/or breach of critical or confidential data
-
-* **Major** – incident that involves immediate interruption to business
-  operations but will not likely result in immediate data breach
-
-* **Minor** – all other confirmed incidents
-
-> **SEVERITY CRITERIA GAPS:** 
-> - No time-based SLAs for each severity level
-> - No escalation criteria defined
-> - "Immediate interruption" not quantified (minutes, hours?)
-
-#### Response Procedures: Cat 1 – General Incident
-
-* Prioritise handling the incident based on functional impact, informational
-  effort, recoverability efforts and other relevant factors
-
-> **PRIORITISATION CRITERIA:** "Other relevant factors" too vague - no specific criteria provided.
-
-* Report the incident to the appropriate internal personnel and external
-  organisations
-* Acquire, preserve, secure, and document evidence
-* Contain the incident
-* Eradicate the incident
-
-    * Identify and mitigate all factors that enabled the incident to occur
-    * Remove any results of malicious activity
-
-* Recover from the incident
-
-    * Restore affected systems and business functions
-    * Implement additional preventive measures
-
-#### Response Procedures: Cat 2 – Internal Infrastructure Incident Response
-
-Depending on the type of event, use the following incident response playbooks:
-
-* [Unauthorised
-  Access](https://incidentresponse.com/playbooks/unauthorised-access)
-* [Root Access](https://incidentresponse.com/playbooks/root-access)
-* [Elevation of
-  Privilege](https://incidentresponse.com/playbooks/elevation-of-privilege)
-* [Improper
-  Usage](https://incidentresponse.com/playbooks/improper-computer-usage)
-
-> **EXTERNAL DEPENDENCY:** Links to third-party playbooks may become unavailable 
-> or outdated. No internal backup playbooks maintained.
-
-#### Response Procedures: Cat 3 – Malware outbreak
-
-Depending on the agent type, follow these incident response playbooks:
-
-* [Malware](https://incidentresponse.com/playbooks/malware-outbreak)
-* [Virus](https://incidentresponse.com/playbooks/virus-outbreak)
-
-#### Response Procedures: Cat 4 – External web attacks and DoS/DDoS attacks
-
-* Mobilise the Engineering team to secure systems and ensure Business
-  Continuity
-* Conduct a thorough investigation of the incident
-* Manage public relationships
-* Address legal and regulatory requirements
-* For a DDOS attack, follow the [DDOS
-  playbook](https://incidentresponse.com/playbooks/ddos)
-* Trigger BCDR if necessary
-
-> **BCDR TRIGGER:** References Business Continuity and Disaster Recovery (BCDR) 
-> but no cross-reference to BCDR policy or trigger criteria.
-
-#### Response Procedures: Cat 5 – Social Engineering
-
-Follow the [Phishing incident response
-playbook](https://incidentresponse.com/playbooks/phishing)
-
-#### Response Procedures: Cat 6 – Data Leakage
-
-[Data Theft incident response
-playbook](https://incidentresponse.com/playbooks/data-theft) outlines the
-response instructions
-
-#### Response Procedures: Special Cases
-
-At least the following two special cases are considered when responding to an
-incident:
-
-**PHI/ePHI:**
-
-When a data breach occurs that involves unsecured PHI or ePHI, breach
-notifications must be performed according to HIPAA regulation requirements,
-including each individual impacted and as applicable, the covered entity and OCR
-(see Appendix for additional details).
-
-> **REGULATORY MISMATCH:** HIPAA is US regulation. Australian organisation should 
-> reference Privacy Act 1988 and Notifiable Data Breaches scheme.
-
-> **MISSING APPENDIX:** References appendix for additional details but no appendix included.
-
-If the breach or potential breach impacts PHI/ePHI that belongs to a Covered
-Entity to which Tessera is a Business Associate of, the IRT and management team
-will inform the Covered Entity per the timeframe and contact method established
-in the Business Associate Agreement or as described in [§Breach Notification](breach.md).
-HIPAA §164.410(b)
-
-> **BROKEN LINK:** Reference to breach.md policy document that may not exist.
-
-**Criminal Activities:**
-
-In the event of an attack that involves suspected criminal activities, the IRT
-and management team will inform law enforcement.
-
-> **LAW ENFORCEMENT CONTACT:** No specific procedures for contacting Australian 
-> Federal Police, state police, or ACSC (Australian Cyber Security Centre).
-
-**Insider Threat:**
-
-Members of the cross-discipline insider threat incident handling team include:
-
-* Security and Privacy Officer,
-* COO, and
-* Head of Engineering as appropriate.
-
-> **TEAM COMPOSITION OUTDATED:** References positions that have changed since policy creation.
-
-### Emergency Operations Mode
-
-If an incident constitutes an emergency – for example, a detected cyberattack
-that impacts production systems – Tessera plans to operate in a "read-only"
-mode, to continue to provide customers access to their data. All write access is
-temporarily blocked and data upload is paused until the emergency is resolved.
-This is accomplished by updating the access policy in production AWS
-environments.
-
-> **EMERGENCY CRITERIA:** No specific criteria defined for what constitutes "emergency" 
-> requiring read-only mode activation.
-
-> **CUSTOMER IMPACT:** No notification process defined for customers affected by 
-> emergency operations mode.
-
-In emergency operations mode, temporary access may be granted to security and/or
-engineering team to access the production environments to perform forensics,
-root cause analysis, eradication/remediation, or other necessary activities for
-incident recovery.
-
-### Tabletop Exercise
-
-At least once per year, Tessera security and engineering teams
-jointly performs a Red Team exercise and/or a simulated "drill" of an emergency
-cyberattack that results in one or more **CRITICAL** incidents. Depending on the
-type of exercise, the duration may range from 2-4 hours (simulated "drill") to a
-couple of weeks (full Red Teaming exercise).
-
-> **EXERCISE SCHEDULING:** No specific timeframe or scheduling requirements for annual exercises.
-
-The exercise will follow a cyberattack playbook. It may be conducted with all
-internal resources or with the help of an external security consulting firm. The
-goal of the exercise is to ensure all parties involved receive proper training
-to handle an actual incident and to test out the documented procedures in order
-to identify gaps ahead of a real event. Senior leadership team may be invited to
-participate in the "drill" depending on the nature of the exercise or receive a
-readout of the outcome.
-
-> **EXERCISE DOCUMENTATION:** No requirement specified for documenting exercise results 
-> or implementing improvements identified during tabletop exercises.
-
-### Incident Tracking and Records
-
-A record is created for each reported incident in Jira. Each incident
-record contains details about the incident capturing the incident attributes
-and progression, including the following as applicable:
-
-> **SYSTEM SPECIFICATION:** Policy now specifies "Jira" but earlier sections have 
-> incomplete system references.
-
-- Summary
-- Description
-- Impact
-- Priority / Urgency
-- Categorisation
-- Analysis Notes and Comments
-- Cause / Determination
-- Outcome / Resolution
-- Lessons Learned
-
-If a more detailed post-mortem is applicable, the Security and/or DevOps team
-will create the write-up and link it in the incident record.
-
-> **POST-MORTEM CRITERIA:** No criteria specified for when detailed post-mortem is required.
+|                     |                                                            |
+|---------------------|------------------------------------------------------------|
+| **Title**           | Incident Response Policy                                   |
+| **Doc#**            | POL-SECU-010                                               |
+| **Version**         | 2.2                                                        |
+| **Date**            | 14-03-2025                                                 |
+| **Supersedes**      | POL-SECU-010 v2.1 (28-02-2024)                             |
+| **Next Review**     | 14-03-2026                                                 |
+| **Owner**           | Isabella Ferreira, Chief Information Security Officer      |
+| **Approved By**     | Henrik Larsson, Chief Executive Officer                    |
+| **ISO/IEC 27001:2022** | Annex A.5.24–A.5.28 — Information security incident management |
+
+This policy is read alongside the Data Breach Notification Policy
+(POL-BREACH-001), the Access Control Policy (POL-SECU-021), the Change
+Management Policy (POL-CHANGE-001) and the Business Continuity and Disaster
+Recovery (BCDR) policy.[^bcdr] Where an incident is suspected to involve
+personal information, the **NDB Playbook (SOP-PRIV-001)** governs the
+notification workflow and takes precedence over the general steps below.
+
+[^bcdr]: Formerly numbered POL-BC-001; reissued as POL-BCDR-001 during the
+    2024 risk-document consolidation. Some older runbooks still cite the
+    old number.
+
+## 1. Purpose and scope
+
+This policy sets out how Tessera prepares for, detects, responds to and learns
+from information security incidents across its managed-cloud platform and
+corporate environment. The objective is plain: catch incidents early, limit
+harm to tenants and to Tessera, restore normal operation, meet our notification
+obligations under the *Privacy Act 1988* (Cth) and the Notifiable Data Breaches
+(NDB) scheme, and feed what we learn back into the controls. This policy is the
+primary control satisfying Annex A.5.24–A.5.28 of ISO/IEC 27001:2022 and
+operates alongside the ASD Essential Eight mitigations, particularly the
+application control, patching, and daily-backup and recovery strategies that an
+incident may invoke.
+
+It applies to all Tessera staff, contractors and third parties acting on
+Tessera's behalf, and to all systems and environments that process, store or
+transit Tessera or tenant data — including the multi-tenant production platform
+hosted primarily in AWS `ap-southeast-2` (Sydney) with cross-region standby,
+the corporate network, and SaaS services in tenant or internal use.
+
+The policy covers information security incidents only. Physical security
+incidents — site access, theft of hardware, tailgating — are handled under the
+Physical and Environmental Security Policy (POL-PHYS-001).
+
+> *[Reviewer, 2025-03-06: POL-PHYS-001 was last reviewed in mid-2022 and is on
+> the overdue list. Confirm it's still current before relying on it for
+> incident hand-off.]*
+
+The incident response process addresses, at minimum:
+
+* continuous monitoring of threats through the SIEM and security tooling;
+* a standing Security Incident Response Team (SIRT) with defined authority;
+* clear procedures for identifying, triaging, containing, eradicating and
+  recovering from incidents;
+* notification of tenants, regulators and individuals as required;
+* workforce training and awareness of reporting and response duties; and
+* post-incident review so that each event improves the next response.
+
+## 2. Policy statements
+
+Tessera requires that:
+
+(a) All production and corporate environments are monitored in accordance with
+the Tessera Logging and Monitoring standard and the policies referenced there —
+principally the Access Control Policy (POL-SECU-021), the Acceptable Use Policy
+(POL-SEC-022) and the System Auditing Policy (POL-AUDIT-001).
+
+> *[I. Ferreira, note to self: align the referenced policy set with
+> ISMS-PR-014 wording before the Stage 1 audit — the SoA (DOC-SEC-003)
+> references a slightly different list.]*
+
+(b) All security-relevant alerts are reviewed by a qualified analyst and
+triaged against the severity matrix in this policy.
+
+(c) Incident response procedures are invoked as soon as a valid security
+incident is confirmed.
+
+(d) Where an incident may involve a notifiable data breach, the SIRT and the
+Head of Compliance assess eligibility under the NDB scheme without delay and,
+where eligible, notify the Office of the Australian Information Commissioner
+(OAIC) as soon as practicable and within Tessera's internal **72-hour** target.
+Affected individuals are notified as required by Part IIIC of the Privacy Act.
+
+(e) The SIRT and management comply with lawful requests from Australian law
+enforcement and national-security agencies — including the Australian Federal
+Police (AFP), state or territory police, and the Australian Cyber Security
+Centre (ACSC) — in the event of a criminal investigation or national-security
+matter, acting only on properly issued warrants, court orders or lawful
+compulsory process.
+
+## 3. Controls and procedures
+
+### 3.1 Security Incident Response Team (SIRT)
+
+The SIRT is the standing body that owns incident response end to end. It is
+responsible for:
+
+* logging, tracking and reviewing all reports and their status in the Security
+  Incident Register (DOC-SEC-005);
+* investigating incidents and executing containment, eradication and recovery
+  plans;
+* coordinating tenant, regulator and individual notifications;
+* engaging and directing external forensic or legal support where needed; and
+* liaising with law enforcement and the ACSC where appropriate.
+
+The SIRT is led by the CISO and convened as follows:
+
+| Role | Member |
+|------|--------|
+| Incident lead / chair | **Isabella Ferreira**, CISO |
+| Head of Engineering | **Noah Bennett** |
+| Head of IT | **Hamish Boyd** |
+| Cloud Service Operations | **Rafa Costa** |
+| On-call security engineer | Security Engineering rotation |
+| On-call platform engineer | Platform Engineering rotation |
+
+The Head of Compliance (Margaux Dubois) and Head of People (Anika Desai) are
+co-opted for incidents involving privacy, breach notification or workforce
+conduct.
+
+> *[Reviewer, 2025-03-10: the on-call rotation above reflects the roster as at
+> 1 March 2025. The PagerDuty schedule is the source of truth for current
+> on-call names — reconcile before an actual page.]*
+
+The 24×7 contact path is the PagerDuty `sec-oncall` escalation policy, which
+pages the on-call security engineer and, if unacknowledged, escalates to the
+CISO within 15 minutes. After-hours incidents reported by email or chat must be
+ escalated to PagerDuty by the first responder — email and chat are not
+ themselves monitored out of hours.
+
+### 3.2 Incident management process
+
+The response process follows the six-phase SANS lifecycle — Identification and
+Triage, Containment, Eradication, Recovery, Post-Incident Analysis, and ongoing
+Preparation — adapted to Tessera's environment. A flowchart of the end-to-end
+process is maintained alongside this policy.
+
+> *[Reviewer, 2025-02-28: the flowchart was relocated during the documentation
+> migration and now lives at `docs/runbooks/ir-flowchart.qmd`. The legacy
+> `sections/incident-flowchart.pdf` path still referenced from some older
+> tickets returns a 404 — update those links.]*
+
+Tessera classifies security-relevant observations into four kinds:
+
+* **Events** — an observable occurrence in a system or network that is
+  investigated for security relevance but is not, on its own, a confirmed
+  incident. Most events turn out to be operational (a failed disk, a deploy
+  that tripped an alert) and are routed to the owning team rather than the SIRT.
+
+* **Precursors** — a sign that an incident *may* occur. Examples: a monitoring
+  system flagging anomalous behaviour, repeated failed sign-ins to the IdP, or
+  suspicious email targeting staff with privileged production access. Precursor
+  signals arrive from the security tooling Tessera has in production, including:
+
+    - **Auth0** — identity and authentication activity;
+    - **Splunk** — correlated SIEM events across log sources;
+    - **Prisma Cloud** — cloud configuration and posture alerts;
+    - **Carbon Black Cloud** — endpoint, malware and EDR events;
+    - **AWS GuardDuty, CloudTrail and Security Hub** — control-plane and
+      threat-detection signals from the production AWS accounts; and
+    - Syslog from servers and network devices.
+
+  > *[Reviewer, 2025-03-04: the line above was rewritten when we migrated the
+  > IdP, but the December 2023 SOC 2 description still names Okta in a couple of
+  > places. Leave for now; clean up at the next SOC 2 refresh.]*
+
+* **Indications** — a sign that an incident *may have occurred or be occurring
+  now*. Examples: alerts for modified system files or unexpected privileged
+  access, EDR alerts for a compromised endpoint, or anomalous egress to an
+  unfamiliar destination.
+
+* **Incidents** — a confirmed indicator of compromise or a validated breach of
+  policy, often involving exposure of data. Examples: unauthorised disclosure
+  or destruction of tenant data, a successful account takeover, a confirmed
+  data breach by an internal or external actor, or a denial-of-service attack
+  that takes a critical service offline.
+
+Every workforce member is responsible for reporting anything in the categories
+above that they observe on production systems or in associated communications
+(email, chat, code repositories). In practice this means: if something looks
+wrong, raise it — do not wait for certainty.
+
+Reports are made through any of:
+
+* `security@tessera.locoensayo.org`;
+* the `#sec-incidents` channel;
+* the PagerDuty `sec-oncall` escalation (for suspected active incidents, in or
+  out of hours); or
+* the [Tessera Internal ServiceDesk]() incident form.
+
+> *[Reviewer, 2025-03-05: the ServiceDesk incident form was retired when we
+> moved to the new support portal — the link target above was never updated.
+> Use the portal until this is fixed.]*
+
+!!! attention
+
+    Any incident with a severity above **MINOR** triggers the full response
+    process below, and any incident that may involve personal information
+    additionally triggers the NDB Playbook (SOP-PRIV-001).
+
+### 3.3 Phase I — Identification and Triage
+
+1. On observing a suspected event, precursor, indication or incident, the
+   reporter raises it through one of the channels above, including what they
+   saw, when, and any systems or tenants they believe are affected.
+
+2. The on-call security engineer (the "first responder") acknowledges the
+   report, gathers any additional detail needed, and determines whether the
+   report is an event, precursor, indication or incident.
+
+    1. If it is an event, indication or precursor that is **not** a security
+       incident, the first responder routes it to the owning team and records
+       the disposition in the Security Incident Register (DOC-SEC-005).
+       Non-technical or minor items are logged as a Jira task for follow-up.
+    2. If it is a confirmed **security incident**, the first responder pages
+       the SIRT via PagerDuty and notifies the CISO and senior leadership by
+       email within one hour of confirmation.
+
+       1. For a non-technical security incident, the SIRT completes the
+          investigation, implements preventative measures and resolves it.
+       2. Once resolved, the SIRT moves to Phase V (Post-Incident Analysis).
+       3. For a technical security incident, the SIRT moves to Phase II
+          (Containment).
+       4. The Containment, Eradication and Recovery phases are technical and
+          are executed by qualified security engineers with SIRT oversight.
+       5. Every responder records what they did and the start/end time of each
+          action; contemporaneous notes matter for later review and for any
+          law-enforcement referral.
+       6. The incident lead opens an incident ticket in Jira (project `SEC`)
+          and documents findings there as the single source of truth.
+
+       > *[Reviewer, 2025-03-11: the one-hour leadership-notification target is
+       > from the Feb 2025 post-mortem of TSR-INC-2025-031 and has not yet been
+       > ratified by the Executive Risk Committee — treat as draft until
+       > endorsed.]*
+
+3. The CISO (or delegate) determines whether tenants or partners are affected
+   and, if so, initiates tenant notification per the contract and the breach
+   policy. If no tenant is affected, notification is at the CISO's discretion.
+
+4. Where the incident may involve personal information, the CISO and Head of
+   Compliance begin the NDB eligibility assessment immediately and in parallel
+   with containment — do not wait for containment to complete before starting
+   the clock on notification.
+
+### 3.4 Phase II — Containment
+
+The aim of containment is to stop the incident spreading while preserving
+evidence. Detailed, timestamped notes are taken throughout so that evidence can
+support any later prosecution or regulatory action.
+
+1. Review all information collected so far by the first responder and SIRT.
+2. Define and secure the blast radius — the logical (or, rarely, physical)
+   perimeter around the affected systems.
+
+    > *[Reviewer, 2025-02-28: chain-of-custody for disk images and memory
+    > captures is handled on the chain-of-custody form[^chain] in the SIRT runbook.
+    > The form number is being reissued — confirm the current reference before
+    > relying on it.]*
+
+3. As needed, prepare for forensic analysis:
+
+    1. connect to the affected system over a trusted, out-of-band connection;
+    2. capture volatile data (memory, network state, running processes) before
+       anything else;
+    3. assess the integrity of the system and decide whether to back it up;
+    4. take a snapshot or image of the disk for forensic analysis, and back up
+       the system if appropriate;
+    5. rotate credentials for the affected systems — application secrets, AWS
+       keys, and IdP (Auth0) sessions for any compromised identity;
+    6. decide whether it is safe to keep the affected system running; and
+    7. if it is safe, allow it to continue and move to Phase V; if not, take it
+       out of service and move to Phase III.
+
+4. Record all containment actions and timestamps on the incident ticket.
+5. Keep senior management informed of progress — at minimum a written update at
+   each phase boundary, and more often for a Critical incident.
+6. Continue tenant and partner notifications with material updates as the
+   picture changes.
+
+### 3.5 Phase III — Eradication
+
+Eradication removes the cause of the incident and the exposure it created.
+
+1. Confirm the root cause and the full set of affected systems — do not assume
+   the first affected host is the only one.
+2. Strengthen defences around the affected systems where possible. This may
+   include tightening network segmentation, raising monitoring sensitivity, or
+   host hardening (removing unused services, patching).
+3. Run a vulnerability assessment across the affected scope to confirm that the
+   exploited weaknesses — and any related ones — have been closed.
+
+    > *[Reviewer, 2025-03-09: there is no fixed window for the eradication
+    > vulnerability scan. In practice it is "as soon as the SIRT can schedule
+    > it"; for Critical incidents this has meant same-day, but it is not
+    > written down as an SLA. Worth fixing.]*
+
+4. Record eradication actions, root cause and remediation method on the
+   incident ticket.
+5. Update senior management and affected tenants with relevant changes.
+6. Move to Phase IV (Recovery).
+
+### 3.6 Phase IV — Recovery
+
+Recovery returns affected systems to normal operation and confirms they are
+clean.
+
+1. Determine whether the affected systems were altered.
+
+    1. If altered, restore from a known-good state (clean snapshot or rebuild),
+       then validate function with the owning engineering team before returning
+       to service.
+    2. If the system was taken offline but not altered, restart and monitor.
+    3. In either case, monitor the restored system for recurrence before
+       declaring the incident closed.
+
+    > *[Reviewer, 2025-03-09: the post-recovery monitoring window is not
+    > specified. Convention is 72 hours of heightened monitoring for Critical
+    > and 24 hours for Major, but it is not in this policy.]*
+
+2. The business owner of the affected system authorises return to service; the
+   SIRT does not unilaterally return a tenant-facing system to production.
+
+   > *(N. Bennett: in practice the service owner is the Head of Engineering or
+   > their delegate; for a tenant-facing service this sign-off is not optional,
+   > even mid-incident.)*
+
+3. Record recovery actions and the decision to return to service on the ticket.
+4. Update senior management and affected tenants.
+5. Move to Phase V (Post-Incident Analysis).
+
+### 3.7 Phase V — Post-Incident Analysis
+
+The post-incident review captures what happened, what it cost, and what to
+change. It is run for every Major and Critical incident, and for any Minor
+incident where the SIRT judges there is something to learn.
+
+1. Within ten business days of incident closure, the responders meet to review
+   the timeline and documentation.
+
+    > *[Reviewer, 2025-03-12: "ten business days" replaced an earlier
+    > "shortly after resolution / one to two weeks". The 2025-03 revision
+    > standardised on ten business days; older Jira tickets may still carry the
+    > old wording.]*
+
+2. A lessons-learned write-up is attached to the incident ticket and the
+   Security Incident Register (DOC-SEC-005).
+
+    1. Assess the cost and impact to Tessera and affected tenants — response
+       effort, downtime, lost revenue, remediation cost, and any notification
+       or regulatory cost.
+    2. Identify what to improve: systems and processes, detective controls,
+       awareness training, or additional controls.
+    3. Record agreed actions as Jira tickets under a tracking epic, with owners
+       and due dates, and report them to the Executive Risk Committee.
+
+       > *[Reviewer, 2025-03-12: the post-incident action epic exists
+       > (`SECIR` in Jira) but is not consistently used for Minor incidents.
+       > Tighten up at next review.]*
+
+3. Retain all incident records per the Tessera Records Retention Schedule
+   (DOC-REC-001, DRAFT v0.2 — pending Compliance sign-off) and the System
+   Auditing Policy (POL-AUDIT-001).
+
+4. Close the incident in the register.
+
+### 3.8 Periodic evaluation and testing
+
+The incident response capability is reviewed at least annually and after any
+significant incident, and is tested through at least one tabletop or simulated
+exercise per year.
+
+> *[Reviewer, 2025-03-10: the 2025 exercise schedule is drafted but not yet
+> endorsed by the Executive Risk Committee — see `docs/runbooks/ir-exercise-2025.qmd`
+> (DRAFT v0.3, pending sign-off, M. Dubois).]*
+
+Exercises may be run internally or with an external security firm, and range
+from a two- to four-hour tabletop to a multi-week red-team engagement. The
+senior leadership team is invited to participate or to receive a readout.
+Exercise outcomes and any control gaps found are recorded and tracked to
+closure in the same way as post-incident actions.
+
+## 4. Incident categories and playbooks
+
+The SIRT reviews security events as part of daily operations. Based on initial
+analysis, an event may be dismissed (false positive, normal business activity,
+an approved exception, or a duplicate); a dismissed event is recorded with the
+reason so the audit trail is preserved. A valid event may be escalated to a
+security incident, at which point a category and severity are assigned, and the
+decision — with date and assessor — is recorded in the register.
+
+A containment, eradication and recovery procedure is triggered based on the
+category. In addition to the general process above, the relevant playbook is
+consulted.
+
+### 4.1 Categories
+
+* **Category 1 — General incidents.** Incidents that do not fit a more specific
+  category, including policy violations and lower-impact events. (Physical
+  security events are handled under POL-PHYS-001 and are out of scope here
+  unless they have a cyber component, in which case the SIRT coordinates with
+  facilities.)
+
+* **Category 2 — Attacks on internal infrastructure.** Attacks against
+  corporate or platform network, hardware or software — for example
+  unauthorised access to an internal host or lateral movement.
+
+* **Category 3 — Malware.** Confirmed malicious code on Tessera-managed
+  systems, including endpoints and build infrastructure.
+
+* **Category 4 — Attacks on external-facing assets.** Attacks against
+  Tessera's public footprint — web applications, APIs and public services —
+  including denial-of-service and distributed denial-of-service (DoS/DDoS).
+
+* **Category 5 — Human-targeted attacks.** Social engineering, phishing,
+  business email compromise and pretexting directed at workforce members.
+
+* **Category 6 — Breach or leakage of data.** Unauthorised access to,
+  disclosure, or exfiltration of Tessera or tenant data. Definitions of data
+  sensitivity follow the Data Classification Policy; any Category 6 incident
+  involving personal information also invokes the NDB Playbook (SOP-PRIV-001).
+
+### 4.2 Severity
+
+Incidents are assigned a severity that drives response times and escalation.
+The matrix below is the working standard; the response-time targets in it are
+endorsed for Major and Critical and remain in draft for Minor.
+
+| Severity | Typical trigger | First response | Leadership brief | Containment target |
+|----------|-----------------|----------------|------------------|--------------------|
+| **Critical** | Significant interruption to operations and/or confirmed or likely breach of confidential or personal data | Immediate (page SIRT) | Within 1 hour | Best-effort continuous |
+| **Major** | Material interruption to operations, data exposure unlikely | Within 2 hours (business hours) | Within 4 hours | Within 4 hours |
+| **Minor** | All other confirmed incidents | Next business day | At SIRT discretion | Within 1 business day |
+
+> *[Reviewer, 2025-03-11: the Minor column has not been ratified by the
+> Executive Risk Committee. Treat as draft until endorsed.]*
+
+For any incident that may meet the NDB threshold, the OAIC notification target
+(72 hours from formation of a belief that a notifiable breach has occurred)
+overrides the containment target — notification runs in parallel with
+containment, not after it.
+
+### 4.3 Response procedures by category
+
+**Category 1 — General incident.** Prioritise by functional and informational
+impact and by recoverability; report to the appropriate internal and external
+parties; acquire, preserve and document evidence; contain, eradicate and
+recover, restoring affected systems and adding preventive measures.
+
+**Category 2 — Internal infrastructure.** Depending on the event, the relevant
+playbook is followed for unauthorised access, root or privileged access,
+elevation of privilege, or improper usage.
+
+**Category 3 — Malware.** Depending on the agent, the malware or outbreak
+playbook is followed; Carbon Black Cloud containment (network isolate / ban
+hash) is the primary technical lever.
+
+**Category 4 — External web attack / DoS-DDoS.** Engineering is mobilised to
+protect systems and preserve availability; a thorough investigation is
+conducted; legal and regulatory obligations are addressed; and, if the
+incident threatens continuity, the **BCDR trigger is pulled** — escalating to
+the BCDR policy (POL-BCDR-001) and the Failover Runbook (SOP-BCDR-001).
+
+> *[Reviewer, 2025-03-12: the criteria for declaring a BCDR event are defined
+> in the BCDR policy, not here. Cross-check the threshold before escalating —
+> earlier drafts of this policy implied any DoS was a BCDR event, which is not
+> the case.]*
+
+**Category 5 — Social engineering / phishing.** The phishing playbook is
+followed; affected credentials are rotated in Auth0 and any granted sessions
+revoked.
+
+**Category 6 — Data leakage.** The data-theft playbook is followed; the NDB
+Playbook (SOP-PRIV-001) is invoked where personal information is involved.
+
+> *[Reviewer, 2025-03-10: the category playbooks above currently point at
+> third-party references (incidentresponse.com). They go stale and have broken
+> before. Internalising them as version-controlled runbooks is on the backlog
+> — see ticket ####.]*
+
+### 4.4 Special cases
+
+**Healthcare tenants (US PHI).** Tessera's own governing regime is the
+*Privacy Act 1988* and the NDB scheme, not HIPAA. For tenants that are US
+healthcare providers or covered entities, a Business Associate Addendum (BAA)
+is executed and the contractual notification terms in that BAA apply to any
+incident affecting that tenant's data. In such a case the affected tenant (the
+covered entity) carries its own HIPAA notification duties; Tessera's job is to
+inform the tenant within the timeframe and by the channel set out in the BAA
+and the breach policy (POL-BREACH-001; the BAA notification appendix referenced
+there is still in draft and not yet published).
+
+**Criminal activity.** Where an incident involves suspected criminal conduct,
+the CISO, with the CEO and external counsel, determines whether to refer the
+matter to the **Australian Federal Police**, the relevant **state or territory
+police**, or to report it to the **Australian Cyber Security Centre (ACSC)**
+via the ReportCyber portal. Engagement with law enforcement is coordinated
+through counsel and proceeds only on proper authority.
+
+**Insider threat.** Insider-threat incidents are handled by a cross-discipline
+team comprising the CISO (Isabella Ferreira), the Head of People (Anika Desai)
+and the Head of Engineering (Noah Bennett), with the Head of Compliance
+(Margaux Dubois) advising. The COO is engaged where operational continuity is
+at risk.
+
+## 5. Emergency operations mode
+
+If an incident constitutes an emergency — for example an active compromise of
+the production management plane — Tessera may move production to a read-only
+emergency posture. In this mode customers retain read access to their data but
+all write access and data ingestion are paused until the emergency is resolved.
+This is effected by updating IAM and access policy in the production AWS
+accounts.
+
+> *[Reviewer, 2025-03-09: the threshold for declaring emergency operations mode
+> ("active compromise of the production management plane") is indicative, not
+> exhaustive — the CISO has discretion. The customer-communication template for
+> a read-only cutover is drafted but not yet approved by Comms; do not rely on
+> it until signed off.]*
+
+In emergency operations mode, temporary write or forensic access may be granted
+to named security and engineering staff to perform forensics, root-cause
+analysis, eradication and recovery. Such grants are time-boxed, logged, and
+revoked on exit from emergency mode.
+
+## 6. Tabletop and red-team exercise
+
+At least once a year the security and engineering teams jointly run a tabletop
+exercise or a simulated drill of a cyberattack resulting in one or more
+Critical incidents. Depending on the format, this ranges from a two- to
+four-hour tabletop to a multi-week red-team engagement. The exercise follows a
+prepared attack scenario and may be delivered internally or with an external
+security firm.
+
+The goal is to give responders realistic practice, to test the documented
+procedures, and to surface gaps before a real event. The senior leadership team
+is invited to take part or to receive a readout. Exercise findings and the
+actions they generate are documented and tracked to closure in the same way as
+post-incident actions.
+
+## 7. Incident tracking and records
+
+A record is created for each reported incident in Jira and tracked in the
+Security Incident Register (DOC-SEC-005). Each incident record captures, as
+applicable:
+
+- summary and description;
+- impact and affected tenants;
+- priority / urgency and severity;
+- category and classification;
+- analysis notes and timeline;
+- root cause and determination;
+- resolution and outcome; and
+- lessons learned and agreed actions.
+
+Where a detailed post-mortem is warranted — for any Critical incident, and for
+Major incidents where the cause is non-obvious — the assigned SIRT engineer
+writes the post-mortem and links it from the incident record.
+
+> *[Reviewer, 2025-03-11: the post-mortem threshold ("Major where the cause is
+> non-obvious") is judgement-based and is applied inconsistently across the
+> team. Consider a harder rule at the next revision.]*
 
 ---
 
-> **POLICY STATUS NOTICE:** This policy requires comprehensive review to address:
-> - Outdated tool and system references
-> - Inconsistent role definitions and team composition
-> - Missing contact information and escalation procedures  
-> - Gaps in Australian regulatory compliance requirements
-> - Broken cross-references and incomplete sections
-> 
-> **COMPLIANCE RISK:** Current implementation may not meet Australian regulatory 
-> requirements for incident response and breach notification.
+*This policy is owned by the CISO and approved by the CEO. It is reviewed at
+least annually and after any significant incident. The next scheduled review is
+14-03-2026.*

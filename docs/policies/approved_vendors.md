@@ -3,54 +3,52 @@ categories:
 - Vendor Management
 - Procurement
 - Compliance
-description: |
-  At Tessera, our commitment to delivering exceptional service
-  and maintaining the highest standards of security and performance is reflected in
-  our meticulously curated list of Approved Software.
+description: Lists the vendors approved for use across Tessera, with the service
+  each provides and the basis of approval.
 title: Approved Vendors
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Approved Vendors             |
-| **Doc#**     | DOC-COMP-007 |
+| **Title**    | Approved Vendors                    |
+| **Doc#**     | DOC-COMP-007                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 13-02-2023                              |
+| **Date**     | 13-02-2023                          |
+| **Owner**    | Head of Compliance (M. Dubois)      |
+| **Approved By** | CISO (I. Ferreira)              |
 
-At Tessera, our commitment to delivering exceptional service and
-maintaining the highest standards of security and performance is reflected in
-our meticulously curated list of Approved Software. This crucial document
-outlines a carefully selected suite of tools and applications that meet our
-stringent criteria for reliability, compliance, and compatibility with our
-network environments. By standardizing the software used across our operations,
-we ensure that all team members have access to the best resources, enhancing
-productivity while safeguarding our infrastructure and client data. This list is
-periodically reviewed and updated to adapt to new technological advancements and
-evolving security landscapes, guaranteeing that Tessera remains at
-the forefront of technological innovation and security excellence.
+This is the approved-vendor list for Tessera. Each vendor below has been through
+procurement and security review and is approved for the purpose stated. The list
+is reviewed at least annually and whenever a contract is renewed or a material
+security concern arises. Adding a vendor requires a request through Procurement
+and a security assessment by the Security team; using an unlisted vendor for
+Tessera or tenant data is not permitted.
 
-1. **SecureHost Solutions** - Specializes in providing secure and scalable
-   hosting environments for enterprise applications.
-2. **Quantum Storage Technologies** - Offers cutting-edge data storage
-   solutions, optimized for high-performance and reliability.
-3. **GlobalConnect Networks** - A leading provider of high-speed internet
-   services and networking solutions, essential for robust VPS operations.
-4. **CyberSafe Security** - Delivers advanced cybersecurity solutions tailored
-   to protect virtual and physical servers.
-5. **EcoCool HVAC Systems** - Provides energy-efficient cooling systems for data
-   centers, essential for maintaining optimal server performance.
-6. **PeakPower Generators** - Supplies reliable backup power solutions to ensure
-   uninterrupted service during power outages.
-7. **Optima Hardware** - A supplier of high-end server and network hardware that
-   meets rigorous performance standards.
-8. **Software Streamline** - Offers a range of software licensing solutions,
-   particularly for server management and virtualization.
-9. **Network Dynamics** - Specializes in network infrastructure and maintenance
-   services, crucial for managing large-scale network operations.
-10. **ComplianceGuard** - Consultancy firm that ensures all IT operations meet
-    regulatory and compliance standards, particularly valuable in managed
-    services.
+## Approved vendors
 
-These vendors cover a broad spectrum of needs from hardware and software to
-security and compliance, enabling Tessera to maintain a high level of
-service and reliability.
+| Vendor | Purpose |
+|--------|---------|
+| **Amazon Web Services (AWS)** | Primary IaaS — compute, storage, networking and managed services for the Tessera platform, in ap-southeast-2 (Sydney) with cross-region standby. |
+| **Auth0** | Identity provider — workforce SSO and platform customer authentication (OAuth 2.0 / OIDC / SAML). |
+| **Atlassian** | Jira (ticketing, GRC and change) and Confluence (engineering wiki). |
+| **GitHub** | Source-code hosting, code review and CI/CD. |
+| **GitLab** | Secondary source-control and CI runner for selected workloads. |
+| **Splunk** | SIEM — security event aggregation, correlation and detection. |
+| **NextDC** | Australian colocation — cross-connect and DR standby for on-premises edge gear. |
+| **Vocus (TPG Telecom)** | WAN and internet transit for the Perth, Sydney and Malaga sites. |
+| **Employment Hero** | HRIS — personnel records, onboarding and payroll. |
+| **KPMG** | External audit and assurance (ISO/IEC 27001 and SOC 2). |
+| **Australian Cyber Security Centre (ACSC) / AusCERT** | Threat-intelligence and incident-notification feeds (participation, not a commercial contract). |
+
+## Notes
+
+- The list above is not exhaustive for low-risk, indirect procurement (for
+  example, stationery). For anything that will store, process or transmit Tessera
+  or tenant data, only a listed vendor may be used.
+- Tenant-driven add-ons — for example, a US healthcare tenant's Business
+  Associate obligations — are reflected in the tenant schedule and do not appear
+  here.
+
+> *[M. Dubois: the Splunk renewal is under review against a managed-detection
+> alternative, so do not assume Splunk is permanent when scoping new detection
+> content. Ref: PROC-2025-118.]*

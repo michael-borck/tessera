@@ -67,7 +67,7 @@ This policy defines access control requirements for all Tessera systems and faci
 ```mermaid
 graph TD
     CEO[CEO - Grace Sullivan]
-    CEO --> CTO[CTO - Dr. Amara Okafor]
+    CEO --> CTO[CTO - Dr Sana Qureshi]
     CEO --> CFO[CFO - Priya Nair]
     CEO --> CISO[CISO - Isabella Ferreira]
     
@@ -75,7 +75,7 @@ graph TD
     CTO --> INFRA[Infrastructure Architect<br/>Connor Hayes]
     
     CISO --> SEC[Security Compliance<br/>Lucas Moreno]
-    CISO --> IT[IT Manager<br/>Vikram Reddy]
+    CISO --> IT[IT Manager<br/>Hamish Boyd]
     
     CFO --> FIN[Finance Team]
     CFO --> HR[HR Manager<br/>Anika Desai]
@@ -108,7 +108,7 @@ Despite Policy IS-POL-001 requiring complex passwords changed every 90 days, sys
 - Password age: NO MAXIMUM
 - Screenshot evidence: [View Configuration](../audit/screenshots/ad_password_settings.png)
 
-**Employee Interview - IT Manager Vikram Reddy:**
+**Employee Interview - IT Manager Hamish Boyd:**
 > "We had to disable the password policy because the executives complained too much. The CEO's password has been 'Tessera123' for two years."
 
 #### Finding #2: Multi-Factor Authentication Bypass

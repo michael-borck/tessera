@@ -3,94 +3,94 @@ title: "Transcript of interview with CISO"
 categories: ["Security Management", "Access Control", "Vulnerability Management"]
 ---
 
-Auditor: Thank you for taking the time to meet with me today. As part of the ISO
-27001 audit, I'd like to discuss how your organisation handles access controls
-for information systems. Could you walk me through the key controls in place?
+Auditor: Thanks for taking the time. As part of the ISO/IEC 27001:2022
+certification-readiness audit I'd like to talk through how Tessera manages
+access controls. Could you walk me through the key controls?
 
-CISO: Of course. We utilise role-based access controls enforced by Active
-Directory group policies. Employees are granted least privilege access tied to
-their job roles. We regularly review access and revoke when no longer needed
-such as for departing employees.
+CISO: Access is role-based and federated through the identity provider, with
+least privilege scoped at the AWS IAM layer. The application tier runs under
+narrow roles and connects to the data tier under a tenant-aware identity, so
+there are no broad standing privileges in the hot path. We revoke on
+termination through the joiner/mover/leaver workflow within 24 hours.
 
-Auditor: That's great to hear. Are there established procedures for provisioning
-and deprovisioning user access?
+Auditor: Are there established procedures for provisioning and deprovisioning?
 
-CISO: Yes, we have formal onboarding and offboarding checklists that IT staff
-follow to grant or revoke access when an employee joins or leaves. Access
-request tickets also document when new access is approved.
+CISO: Yes. Onboarding follows an approved role profile in the service-management
+tool, and offboarding is triggered by the Head of People and actioned against a
+checklist. Access requests outside a profile need a named approver, so there's
+an artefact behind every grant.
 
-Auditor: Excellent. And how often do you review user accounts and access
-permissions to identify unauthorised or dormant access?
+Auditor: How often do you review accounts and permissions for unauthorised or
+dormant access?
 
-CISO: We run automated reports monthly to show stale accounts and privilege
-creep. Account owners have to verify or remove access. We also do quarterly
-entitlement reviews of all high risk systems.
+CISO: We run automated stale-account and key-last-used reports monthly, and the
+high-risk systems go through a quarterly recertification. I'd be straight with
+you: the recertifications run on schedule, but the quality of the attestations
+depends on how closely the reviewers actually look. That's on my list to
+tighten.
 
-Auditor: That covers some key points around access controls. Let's move on to
-how you manage security configurations for servers, workstations and other
-endpoints. Could you outline some of the standards and procedures in place?
+Auditor: Let's move to secure configuration for the platform. What's the
+baseline?
 
-CISO: Sure, managing secure configurations is critical for us. We utilise the
-CIS benchmarks to harden OS settings and have a gold build standard for
-workstations and servers...
+CISO: CIS-hardened base images, rebuilt on a schedule and enforced through SSM
+State Manager, with Config rules flagging drift. The infrastructure is
+Terraform, peer-reviewed and applied through CI, so configuration is a reviewed
+artefact rather than a console action.
 
-Auditor: Let's discuss vulnerability management. What processes do you have to
-scan for vulnerabilities and prioritise patching?
+Auditor: Vulnerability management — how do you scan and prioritise patching?
 
-CISO: We utilise Tenable.io to perform weekly vulnerability scans on all
-systems. Critical and high risks are patched within 15 days. We use dedicated
-windows for production systems.
+CISO: We scan the fleet weekly. Critical and high findings are targeted within a
+fortnight once a fix is validated, and the container tier inherits patching
+through base-image rebuilds and redeployment. Container and dependency scanning
+run in the pipeline as a gate.
 
-Auditor: How do you secure sensitive data at rest and in transit across your
-infrastructure?
+Auditor: How do you protect data at rest and in transit?
 
-connections are encrypted TLS 1.2 or greater. We mandate SSH, VPNs, and HTTPS.
-CISO: For data at rest, we leverage disk and database encryption. In transit,
-Sensitive data is anonymised for non-production use.
+CISO: KMS-managed keys for data at rest across Aurora, the object stores and the
+secrets tier; TLS 1.2 or better on every hop, including the calls to our
+third-party model vendor. Non-production datasets are de-identified.
 
-Auditor: What physical security controls are in place for corporate facilities
-and data centers?
+Auditor: Physical security for your sites?
 
-CISO: We use layered controls including fences, alarms, CCTV, guards, badges,
-and biometric readers. The data center has mantraps and environment monitoring.
-Facilities are audited annually.
+CISO: Badge access, CCTV and alarm monitoring at Perth, Sydney and Malaga, with
+visitor escort and sign-in enforced. We don't operate a data centre — the
+platform is on AWS — so the physical perimeter that matters to us is the cloud
+provider's, which we rely on under the shared-responsibility model.
 
-Auditor: Explain your backup and recovery processes for critical systems and
-information assets.
+Auditor: Backup and recovery for critical systems?
 
-CISO: Daily incremental backups to disk onsite, weekly fulls to tape offsite. We
-have documented recovery plans with RTOs and RPOs. Disaster recovery tests are
-run twice a year to validate capabilities.
+CISO: Aurora continuous backups and automated snapshots, with restore tested
+quarterly. The cross-region failover is the honest caveat: the standby region
+exists, but the cross-region replica that would make failover lossless is still
+being commissioned, so I'm not claiming a validated RTO today.
 
-Auditor: How do you evaluate security risks when adopting cloud services or
-working with vendors?
+Auditor: How do you evaluate risk when adopting cloud services or vendors?
 
-CISO: Third-party risk assessments are completed analysing data sensitivity,
-access needs and vendor security posture. Information security terms are
-incorporated into contracts. Cloud deployments follow our secure architecture
-guidelines.
+CISO: Third-party risk assessment against data sensitivity, access needs and the
+vendor's own attestations — a SOC 2 report, typically. Security terms are in the
+contract, and cloud deployments follow the secure-architecture guidelines and
+the shared-responsibility mapping.
 
-Auditor: How do you ensure collaboration between security teams like IT, HR,
-legal, facilities etc?
+Auditor: How do the security, IT, HR, legal and facilities functions
+coordinate?
 
-CISO: We have regular meetings between department security liaisons to discuss
-issues and initiatives. I meet individually with each executive regularly.
-Security committees with cross-functional representation are used for policy and
-control oversight.
+CISO: We have cross-functional security liaisons and a standing meeting cadence.
+I meet each executive one-on-one regularly, and policy and control decisions go
+through the Executive Risk Committee so there's a single accountable forum.
 
-Auditor: What mechanisms exist for security teams to escalate issues or
-concerns?
+Auditor: What mechanisms exist for security teams to escalate?
 
-CISO Security teams can directly engage my office on any roadblocks or concerns.
-We have an internal ticketing system to track security escalations and risks if
-collaboration breaks down. I report up through the infrastructure steering
-committee on issues needing executive visibility.
+CISO: Anyone can come to my office directly, and there's a tracked queue for
+escalations and risks that keeps a record when something can't be resolved in
+conversation. Material items go to the Executive Risk Committee for visibility.
 
 Auditor: How are conflicts between business objectives and security priorities
 resolved?
 
-CISO: We always aim to enable business needs securely. If there are conflicts,
-we perform risk assessments jointly to understand tradeoffs. Data-driven
-rationale focusing on business impacts drives decisions. We may implement
-additional monitoring and review. Executive oversight helps align on approach if
-needed.
+CISO: We try to enable the business securely rather than block it. Where there's
+a genuine tension we do the risk assessment jointly, put the trade-offs in
+business terms, and either add a compensating control or take a documented risk
+decision at the right level. The February incident sharpened this — we're now
+quicker to insist on the structural fix rather than a workaround, and the
+ISO/IEC 27001:2022 programme is the accountability structure for seeing those
+through.

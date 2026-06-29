@@ -3,88 +3,90 @@ categories:
 - IT Management
 - Risk Management
 - Asset Inventory
-description: 'Asset Inventory Management  You can''t protect what you can''t see.'
+description: Describes how Tessera inventories and manages physical and digital
+  assets, aligned to ISO/IEC 27001:2022 A.5.9, A.5.10 and A.5.14.
 title: Asset Management
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Asset Management             |
-| **Doc#**     | POL-ITMA-009 |
+| **Title**    | Asset Management                    |
+| **Doc#**     | POL-ITMA-009                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 19-04-2023                              |
+| **Date**     | 19-04-2023                          |
+| **Owner**    | Head of IT (H. Boyd)                |
+| **Approved By** | CISO (I. Ferreira)              |
+| **ISO/IEC 27001:2022** | A.5.9 Inventory; A.5.10 Acceptable use of assets; A.5.14 Information transfer |
 
 # Asset Inventory Management
 
-You can't protect what you can't see.  Therefore, it is imperative for Tessera
-to maintain an accurate and up-to-date inventory of both its physical and
-digital assets.
-
-More details on data inventory and data lifecycle management is documented
-separately in [Data Management](data_mgmt.md).
+Maintaining an accurate inventory of physical and digital assets is a
+precondition for every other security control — you cannot protect, monitor or
+retire what you do not know you own. This policy implements Annex A controls
+**A.5.9** (inventory of information and other associated assets), **A.5.10**
+(acceptable use of assets) and **A.5.14** (information transfer). Data inventory
+and lifecycle are covered separately in [Data Management](data_mgmt.md).
 
 ## Policy Statements
 
-Tessera policy requires that:
+Tessera requires that:
 
-(a) IT and/or Security must maintain an inventory of all critical company
-assets, both physical and logical.
+(a) IT and Security maintain an inventory of all critical company assets,
+physical and logical (A.5.9).
 
-(b) All assets should have identified owners and be tagged with a risk/data
-classification.
+(b) Every asset has a named owner and is tagged with a data/risk classification.
 
-(c) All physical assets must be labeled with a company property tag.
+(c) Physical assets are labelled with a Tessera property tag.
 
+(d) Acceptable use of assets follows the Acceptable Use Policy (POL-SEC-022)
+(A.5.10).
 
+(e) Transfer of information between systems, sites or parties follows the
+information-transfer handling rules in the Data Classification Policy
+(A.5.14).
 
 ## Controls and Procedures
 
+### Physical asset inventory
 
-### Physical Asset Inventory
+Tessera IT maintains the inventory of company-owned physical computing equipment
+in **JupiterOne**, which acts as our CMDB. Tracked equipment includes:
 
-Tessera IT leverages a SaaS-based IT asset management system,
-JupiterOne, to maintain inventory of all company
-owned physical computing equipment, including but not limited to:
+- servers;
+- workstations and laptops;
+- printers; and
+- networking equipment.
 
-* servers
-* workstations
-* laptops
-* printers
-* networking equipment
+Each record captures manufacturer, model, serial number, property tag, assigned
+owner and location. Movement of hardware and media — issue, return, transfer and
+reuse — is recorded against the asset.
 
-Each record includes details of the physical device such as manufacturer, model
-as well as ownership details and property tag ID.
+The IT Manager ensures every physical asset carries a Tessera property tag and
+that JupiterOne reflects its current status. When a device is infected,
+redeployed or retired, IT performs a full data wipe before reuse or disposal, in
+line with the media-sanitisation standard.
 
-The movement of computing hardware and electronic media is maintained as part of
-the records, including media re-use and ownership reassignment.
+### Digital asset inventory
 
-Tessera IT manager is responsible for ensuring each physical asset is applied
-with a Tessera property tag, and an up-to-date record is maintained in the IT
-asset management system.
+The Security team runs automated discovery against the cloud estate (primarily
+AWS) and ingests the results into JupiterOne. Digital assets tracked include:
 
-All company-owned devices are subject to a complete data wipe if deemed necessary, such as in the 
-case of device infection or repurpose. This data wipe will be carried out by the IT manager.
+- virtual machines and EC2 instances;
+- S3 repositories;
+- Lambda functions;
+- IAM accounts and roles;
+- security agents; and
+- source-code repositories.
 
+Records are tagged with owner, project and classification where applicable, and
+kept current through automation.
 
-### Digital Asset Inventory
+> *[H. Boyd: the IAM-account discovery job has been noisy since the Auth0
+> migration — some service accounts surface as "orphaned" that are actually
+> active. Ticket OPS-4481 to tune the filter is still open, so treat orphan
+> reports with caution until it lands.]*
 
-Tessera Security team uses an automated system to query across our cloud-based
-infrastructure, including but is not limited to AWS, to obtain detailed records
-of all digital assets, including but not limited to:
+### Paper records
 
-* Virtual machines
-* AWS EC2 instances
-* AWS S3 repositories
-* AWS Lambda functions
-* Security agents
-* Source code repositories
-* User accounts
-
-The records are stored in a database system maintained by Tessera security
-team. Records are tagged with owner/project and classification when applicable.
-All records are kept up to date via automation.
-
-### Paper Records
-
-Tessera does not use paper records for any sensitive information. Use of paper
-for recording and storing sensitive data is against Tessera policies.
+Tessera does not use paper records for sensitive information. Recording or
+storing sensitive data on paper is against policy.

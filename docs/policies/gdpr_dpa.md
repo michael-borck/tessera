@@ -19,17 +19,19 @@ title: GDPR
 | **Version**  | 1.0                                 |
 | **Date**     | 22-11-2023                              |
 
-## GDPR Data Processing Agreement/Addendum ("DPA")
+## Data Processing Addendum ("DPA")
 
-## Data Protection Addendum
+This Data Processing Addendum (this "Addendum") is incorporated by reference into
+each agreement for services (each a "Services Agreement") between Tessera
+("Company") and the Supplier named on the signature page, under which the Supplier
+may Process Personal Data on behalf of Company. It takes effect on the date
+appearing on the signature page (the "Effective Date").
 
-This Data Protection Addendum (this "Addendum") is made and entered into as of
-the date appearing on the signature page hereto (the "Effective Date") by and
-between Tessera ("Company") and the Supplier named on the signature page
-hereto, and upon execution shall be incorporated by reference into each
-agreement for services ("Services Agreement") pursuant to which Supplier may
-Process (as defined below) Personal Data (as defined below) for, from, or on
-behalf of Company.
+For Australian personal data, this Addendum operates alongside, and does not
+limit, Tessera's obligations under the *Privacy Act 1988* (Cth) and the
+Australian Privacy Principles. Where this Addendum and the Privacy Act apply to
+the same Processing, the higher standard of protection prevails.
+
 
 ### A. Personal Data Protection
 
@@ -57,13 +59,15 @@ and the categories of Data Subjects are further specified in Exhibit 1 to this
 Addendum.
 
 (b) to comply with (i) the GDPR and any applicable European data protection laws
-and regulations (collectively “European Data Protection Law”), and (ii), in case
-Supplier is certified under the EU-U.S. and/or Swiss-U.S. Privacy Shield
-Framework, or any successor program recognised under European Data Protection
-Law to provide for an adequate level of data protection, the principles of such
-applicable Privacy Shield Framework or successor program, and (iii) all other
+and regulations (collectively "European Data Protection Law"), and (ii) the EU
+Standard Contractual Clauses as a transfer mechanism where Personal Data is
+transferred to a country outside the European Economic Area that lacks an
+adequacy decision, and, where Supplier is certified under the EU-U.S. Data
+Privacy Framework (the successor to the invalidated EU-U.S. and Swiss-U.S.
+Privacy Shield Frameworks) or any successor program recognised under European
+Data Protection Law, the principles of that framework, and (iii) all other
 applicable data protection and privacy laws and regulations ((i) to (iii)
-collectively “Data Protection Laws”).
+collectively "Data Protection Laws").
 
 (c) to implement appropriate technical and organisational measures in such a
 manner that the Processing, including by any Sub-Processors (as defined below),
@@ -229,71 +233,68 @@ Description of Processing
 
 ### A. Subject-matter, nature and purpose of the Processing
 
-Supplier provides certain services to Company, including _[insert general
-description of services relating to processing of personal data]_, as further
-specified in the Services Agreement. In the context of performing the
-obligations under the Services Agreement, Supplier may Process certain of
-Company’s Personal Data as necessary for the purposes of _[insert purposes of
-Processing]_, as further specified in the Services Agreement. Such processing may
-include:  
-_[insert description of relevant data processing activities/operations]_.
+Supplier provides services to Company that support the operation of the Tessera
+managed-cloud platform, including infrastructure, identity and access management,
+email and notification delivery, ticketing, analytics, logging and security
+services, as further specified in the Services Agreement. In performing these
+services, Supplier may Process Company's Personal Data as necessary to provide,
+maintain and secure those services for the benefit of Company and its customers.
+Such Processing may include hosting, storing, transmitting, indexing and
+securing Personal Data, and providing support and diagnostics.
 
 ### B. Duration of the Processing
 
-_[insert duration of data processing, e.g.: “The agreed Processing of Personal
-Data shall commence upon the effective date of the Services Agreement and be
-carried out for the term of the Services Agreement. The services relating to
-Processing of Personal Data shall automatically end in case the Services
-Agreement is effectively terminated or expires, in which case the Personal Data
-shall be handled in accordance with Section A(i). To the extent the Processing
-of Personal Data by Supplier is necessary for the winding-up of the Services
-Agreement, e.g. with respect to returning the Personal Data, the provisions of
-Section A shall continue to apply until the completion of the winding-up.”]_
+The Processing of Personal Data commences on the effective date of the Services
+Agreement and continues for its term. If the Services Agreement is terminated or
+expires, the Personal Data is handled in accordance with Section A(i). To the
+extent Processing is necessary for winding up the Services — for example to
+return or delete the Personal Data — the provisions of Section A continue to
+apply until winding-up is complete.
 
 ### C. Categories of Data Subjects
 
-The Processing will concern the following categories of Data Subjects:  
-_[insert categories of data subjects concerned, e.g.: a. Company employees and
-job candidates b. Managers, employees, agents or other contact persons at
-business partners c. Company customers that are natural persons d.  Patients,
-research subjects or other customers of Company’s clients]_
+The Processing will concern the following categories of Data Subjects:
+
+a. Employees, contractors and job applicants of Company's customer organisations
+   (the customers who use the Tessera platform);
+b. The customers' authorised administrators and end-users of the platform;
+c. The customers' own customers and business contacts who are natural persons,
+   whose personal data the customers process through the platform (for example
+   contacts captured in tenant-managed records, support tickets and workflow
+   forms); and
+d. Other individuals about whom customers input personal data into the platform
+   in the ordinary course of using the Services.
 
 ### D. Types of Personal Data
 
-The Processing will concern the following types of Personal Data _[insert types
-of Personal Data concerned, e.g.:]_
+The Processing will concern the following types of Personal Data:
 
-* **a) Company employees and job candidates:**  
-  name, contact details (address, phone number and direct line, e-mail address),
-  birth date/ country, gender, education (e.g., highest education level,
-  country, degree, certificates), job information about current and previous
-  employment (position, kind of work, work location, salary, replacement,
-  company, location, department, position, function, grade, supervisor, employee
-  class, grade and labor start/ entry date, labor agreement, business title,
-  full or part-time, shifts, working hours), professional skills, CV and resume,
-  training, compensation and remuneration (e.g., compensation rate, salary,
-  target bonus, incentives, benefits), individual development plan, performance
-  goals and assessment, position in company, bank account number and corporate
-  credit card number, national ID and social security number, information about
-  an immigration background.
+* **a) Customer organisation employees, contractors and job applicants:**
+  name, work contact details (email address and phone number), job title and
+  department, and the account and login identifiers used to provision and
+  administer access to the platform.
 
-* **b) Managers, employees, agents or other contact persons at business partners:**  
-  contact details (name, address, phone number and direct line, e-mail address).
+* **b) Customer platform administrators and end-users:**
+  name, work email address, role and group memberships, authentication and audit
+  data (logins, session and access events), and usage data about how the platform
+  is used.
 
-* **c) Company customers that are natural persons:**  
-  name, contact details (address, phone number and direct line, e-mail address),
-  information regarding purchases of such customers, bank account details,
-  credit information, information about such customers’ interest in Company
-  products.
+* **c) Individuals whose personal data customers process through the platform:**
+  the contact, account, support-ticket and workflow-record data that customers
+  choose to enter — typically name, email address, phone number and other
+  contact or business attributes relevant to the customer's own use of the
+  Services.
 
-* **d) Patients, research subjects or other customers of Company’s clients:**  
-  _[insert the type of data in this category that your service providers might handle]_
+* **d) Other data customers input:** any other personal data a customer
+  voluntarily enters into the platform in the ordinary course of using it. The
+  nature and sensitivity of this data is determined by the customer; Company
+  Processes it on the customer's documented instructions only.
 
-The Processing will concern the following special categories of data[^1]:  
+The Processing will concern the following special categories of data[^1]:
 _[…]_
 
-The Processing will include Personal Data relating criminal convictions and
-offenses relating to:  
+The Processing will include Personal Data relating to criminal convictions and
+offences relating to:
 _[…]_
 
 [^1]: _"Special categories of data" means any personal data revealing

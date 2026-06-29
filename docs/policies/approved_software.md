@@ -3,62 +3,66 @@ categories:
 - IT Management
 - Software
 - Compliance
-description: |
-  At Tessera, our commitment to delivering exceptional service
-  and maintaining the highest standards of security and performance is reflected in
-  our meticulously curated list of Approved Software.
+description: Lists the software approved for installation and use on Tessera
+  endpoints and in the Tessera environment.
 title: Approved Software
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Approved Software             |
-| **Doc#**     | DOC-ITMA-003 |
+| **Title**    | Approved Software                   |
+| **Doc#**     | DOC-ITMA-003                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 06-02-2023                              |
+| **Date**     | 06-02-2023                          |
+| **Owner**    | Head of IT (H. Boyd)                |
+| **Approved By** | CISO (I. Ferreira)              |
 
-At Tessera, our commitment to delivering exceptional service and
-maintaining the highest standards of security and performance is reflected in
-our meticulously curated list of Approved Software. This crucial document
-outlines a carefully selected suite of tools and applications that meet our
-stringent criteria for reliability, compliance, and compatibility with our
-network environments. By standardising the software used across our operations,
-we ensure that all team members have access to the best resources, enhancing
-productivity while safeguarding our infrastructure and client data. This list is
-periodically reviewed and updated to adapt to new technological advancements and
-evolving security landscapes, guaranteeing that Tessera remains at
-the forefront of technological innovation and security excellence.
+This is the approved-software list for Tessera. The software below has been
+reviewed by IT and Security and may be installed on Tessera-managed devices and
+used for Tessera or tenant data. Software not on this list may be used only if
+it is necessary for a business purpose, is legal and properly licensed, and is
+approved case by case by the manager and the Security team. The list is reviewed
+at least annually.
 
-Software approved for use at Tessera includes, but is not limited to:
+## Approved software
 
-* Adobe suite
-* Atlassian suite
-* Code editors (Atom, Emacs, Vim, VS Code, etc)
-* Dashlane
-* Docker
-* Node/NPM
-* Office 365
-* Okta (and any apps/services managed by Okta)
-* Postman
-* Slack
-* Sketch
-* Zoom
+**Identity and access**
+- **Auth0** — primary identity provider (workforce SSO and platform
+  authentication).
+- **1Password** — secrets and password management.
 
-Reputable and well documented open source / free software may be used for
-development purposes at the discretion of the Engineering team. Defence agents
-must be active to monitor the behaviour of all application processes. Additional
-periodic audit may be conducted to review the usage of open source tools.
-Examples of such software include, but are not limited to:
+**Development and operations**
+- Code editors — **Visual Studio Code**, Vim and equivalents.
+- **Docker** — local containers.
+- **Node.js / npm** — JavaScript runtime and package management.
+- **Postman** — API testing.
+- **AWS CLI** and **Terraform** — cloud and infrastructure-as-code.
+- **Atlassian suite** — Jira and Confluence.
 
-* Chrome and various browser extensions
-* Firefox and various browser extensions
-* Homebrew
-* GraphQL/GraphiQL
-* Keybase
-* Skitch
-* Spectacle
-* etc.
+**Productivity and collaboration**
+- **Microsoft 365** (Office apps, SharePoint, OneDrive).
+- **Slack** — team messaging.
+- **Zoom** — video conferencing.
+- **Adobe suite** — design and document tooling.
+- **Sketch** — design (macOS).
 
-Software not in the list above may be installed if it is necessary for a
-business purpose, legal, with a valid license, and approved on a case-by-case
-basis by your manager or the Security Officer.
+> *[H. Boyd: this list used to name Okta as the primary IdP before the 2024
+> identity migration to Auth0. If you come across an older runbook that still
+> says Okta, treat it as stale and rely on this entry instead.]*
+
+## Open-source and free software
+
+Reputable, well-documented open-source or free software may be used for
+development at the discretion of the Engineering team, provided the endpoint
+agent is active and process behaviour is monitored. Periodic audits review
+open-source usage. Examples include:
+
+- Chrome and Firefox (with vetted extensions);
+- Homebrew; and
+- GraphQL / GraphiQL.
+
+## Approval
+
+Software not listed above may be installed if it is necessary for a business
+purpose, is legal, carries a valid licence, and is approved on a case-by-case
+basis by the manager or the Security team.

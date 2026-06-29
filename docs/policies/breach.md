@@ -3,266 +3,224 @@ categories:
 - Incident Response
 - Privacy
 - Regulatory Compliance
-description: To provide guidance for breach notification when impressive or unauthorised
-  access, acquisition, use and/or disclosure of the ePHI occurs.
-title: Breach Investigation and Notification
+description: Defines how Tessera investigates suspected data breaches and notifies
+  the Office of the Australian Information Commissioner (OAIC) and affected
+  individuals under the Privacy Act 1988 (Cth) and the Notifiable Data Breaches
+  scheme.
+title: Data Breach Investigation and Notification
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Breach Investigation and Notification             |
-| **Doc#**     | POL-COMP-006 |
-| **Version**  | 1.0                                 |
-| **Date**     | 20-10-2023                              |
+|              |                                              |
+|--------------|----------------------------------------------|
+| **Title**    | Data Breach Investigation and Notification    |
+| **Doc#**     | POL-COMP-006                                 |
+| **Version**  | 2.0                                          |
+| **Date**     | 14-03-2025                                   |
+| **Supersedes** | POL-COMP-006 v1.0 (20-10-2023)             |
+| **Next Review** | 14-03-2026                                |
+| **Owner**    | Chief Information Security Officer (I. Ferreira) |
+| **Approved By** | Head of Compliance (M. Dubois)            |
+| **ISO/IEC 27001:2022** | A.5.24 Information security incident management planning and preparation; A.5.34 Privacy and protection of personal data |
 
-To provide guidance for breach notification when impressive or unauthorised
-access, acquisition, use and/or disclosure of the ePHI occurs.  In the case of a
-breach, Tessera shall notify all affected Customers. It is the responsibility
-of the Customers to notify affected individuals.
+## 1. Purpose and scope
 
-## Policy Statements
+This policy sets out how Tessera investigates suspected data breaches involving
+personal information it holds as an APP entity under the *Privacy Act 1988*
+(Cth), and how it discharges its obligations under the Notifiable Data Breaches
+(NDB) scheme in Part IIIC of the Act, administered by the Office of the
+Australian Information Commissioner (OAIC).
 
-Tessera policy requires that:
+It applies to all Tessera workforce members, contractors and subprocessors, and
+to personal information held across Tessera's production environments — hosted
+primarily in the `ap-southeast-2` (Sydney) AWS region with cross-region standby.
 
-(a) Breach notification procedures are invoked upon confirmation of security
-breach that results in unauthorised disclosure of unprotected/unencrypted
-sensitive data.
+Version 1.0 of this document was written around the US HIPAA Breach Notification
+Rule (45 CFR Part 164, Subpart D) and a 60-day notification window. That framing
+belonged to a former line of business and is **superseded**. The authoritative
+operational procedure is now the **NDB Playbook (SOP-PRIV-001)**; where this
+policy and the Playbook differ on operational detail, the Playbook prevails.
 
-(b) Individuals impacted by a confirmed data breach must be notified within 60
-days of discovery of such breach.
+> *[Reviewer, 2025-03-10: the 60-day figure was struck from the current draft of
+> this policy. A stale "within 60 days of discovery" still sits in the §5.3
+> individuals-notification paragraph below — strike it before the Stage 1 audit,
+> it contradicts §5.2.]*
 
-(c) In the event of a data breach that involves unencrypted ePHI,
-Tessera must report the breach to individuals impacted following
-the HIPAA Breach Notification requirements (45 CFR Part 164, Subpart D).
+For tenants that are US healthcare providers and for whom Tessera processes
+protected health information under a Business Associate Addendum, Tessera will
+additionally meet its BAA notification commitments. That is a tenant-specific
+overlay; it is not Tessera's own governing regime.
 
-## Controls and Procedures
+*[Draft v2.0 circulated 24-02-2025; pending sign-off by the Executive Risk
+Committee (M. Dubois).]*
 
-### Breach Investigation Process
+## 2. Governing framework
 
-1. Discovery of Breach: A data breach shall be treated as "discovered" as of the
-   first day on which such breach is known to the organisation, or, by
-   exercising reasonable diligence would have been known to Tessera (includes
-   breaches by the organisation's Customers, Partners, or subcontractors).
-   Tessera shall be deemed to have knowledge of a breach if such breach is
-   known or by exercising reasonable diligence would have been known, to any
-   person, other than the person committing the breach, who is a workforce
-   member or Partner of the organisation. Following the discovery of a potential
-   breach, the organisation shall begin an investigation (see organisational
-   policies for security incident response and/or risk management incident
-   response) immediately, conduct a risk assessment, and based on the results of
-   the risk assessment, begin the process to notify each Customer affected by
-   the breach. Tessera shall also begin the process of determining what
-   external notifications are required or should be made (e.g., Secretary of
-   Department of Health & Human Services (HHS), media outlets, law enforcement
-   officials, etc.)
+- *Privacy Act 1988* (Cth) — in particular **APP 6** (use and disclosure), **APP
+  11** (security of personal information), and **APP 1, APP 5, APP 12 and APP
+  13**.
+- **Notifiable Data Breaches scheme**, Part IIIC of the Act, administered by the
+  **OAIC**.
+- **ASD Essential Eight** and **ISO/IEC 27001:2022** (A.5.24, A.5.34) as
+  Tessera's baseline control set.
+- The **NDB Playbook (SOP-PRIV-001)** as the authoritative operating procedure
+  for assessment and OAIC notification.
 
-1. Breach Investigation: The Tessera Security Officer shall name an individual
-   to act as the investigator of the breach (e.g., privacy officer, security
-   officer, risk manager, etc.). The investigator shall be responsible for the
-   management of the breach investigation, completion of a risk assessment, and
-   coordinating with others in the organisation as appropriate (e.g.,
-   administration, security incident response team, human resources, risk
-   management, public relations, legal counsel, etc.) The investigator shall be
-   the key facilitator for all breach notification processes to the appropriate
-   entities (e.g., HHS, media, law enforcement officials, etc.). All
-   documentation related to the breach investigation, including the risk
-   assessment, shall be retained for a minimum of seven years. A breach log is
-   kept and maintained by the Security and Privacy Officer.
+## 3. Roles
 
-1. Risk Assessment: A risk assessment is performed in accordance to applicable
-   laws and regulations.
+| Role | Holder | Responsibility under this policy |
+|------|--------|----------------------------------|
+| Response lead | **Isabella Ferreira**, CISO | Owns the breach assessment, decides whether an eligible data breach is suspected or confirmed, and authorises notification to the OAIC and to affected individuals. |
+| Register approval | **Margaux Dubois**, Head of Compliance | Approves the entry recorded against each assessed breach in the Security Incident Register (DOC-SEC-005), and signs off the statement of relevant facts submitted to the OAIC. |
 
-   For an acquisition, access, use or disclosure of ePHI to
-   constitute a breach, it must constitute a violation of the HIPAA Privacy
-   Rule. A use or disclosure of ePHI that is incident to an otherwise
-   permissible use or disclosure and occurs despite reasonable safeguards and
-   proper minimum necessary procedures would not be a violation of the Privacy
-   Rule and would not qualify as a potential breach. To determine if an
-   impermissible use or disclosure of ePHI constitutes a breach and requires
-   further notification, the organisation will need to perform a risk assessment
-   to determine if there is significant risk of harm to the individual as a
-   result of the impermissible use or disclosure. The organisation shall
-   document the risk assessment as part of the investigation in the incident
-   report form noting the outcome of the risk assessment process. The
-   organisation has the burden of proof for demonstrating that all notifications
-   to appropriate Customers or that the use or disclosure did not constitute a
-   breach. Based on the outcome of the risk assessment, the organisation will
-   determine the need to move forward with breach notification. The risk
-   assessment and the supporting documentation shall be fact specific and
-   address:
+The CISO may delegate the day-to-day running of an assessment to the incident
+response lead nominated under the Incident Response Policy; accountability for
+the notification decision remains with the CISO.
 
-    * Consideration of who impermissibility used or to whom the information was
-      impermissibility disclosed;
-    * The type and amount of ePHI involved;
-    * The cause of the breach, and the entity responsible for the breach, either
-      Customer, Tessera, or Partner.
-    * The potential for significant risk of financial, reputation, or other
-      harm.
+## 4. What counts as an eligible data breach
 
-1. Timeliness of Notification: Upon discovery of a breach, notice shall be made
-   to the affected Tessera Customers, usually within 24-48 hours but no later
-   than 10 calendar days after the discovery of the breach. It is the
-   responsibility of the organisation to demonstrate that all notifications were
-   made as required, including evidence demonstrating the necessity of delay.
+An **eligible data breach** occurs when all three of the following are present
+(s 26WE, *Privacy Act 1988*):
 
-1. Delay of Notification Authorised for Law Enforcement Purposes:  If a law
-   enforcement official states to the organisation that a notification, notice,
-   or posting would impede a criminal investigation or cause damage to national
-   security, the organisation shall:
+1. There is **unauthorised access to, unauthorised disclosure of, or loss of**
+   personal information held by Tessera. "Loss" includes theft or accidental loss
+   of a device or storage medium holding personal information.
 
-    * If the statement is in writing and specifies the time for which a delay is
-      required, delay such notification, notice, or posting of the timer period
-      specified by the official; or
-    * If the statement is made orally, document the statement, including the
-      identify of the official making the statement, and delay the notification,
-      notice, or posting temporarily and no longer than 30 days from the date of
-      the oral statement, unless a written statement as described above is
-      submitted during that time.
+2. The access, disclosure or loss is **likely to result in serious harm** to one
+   or more of the individuals to whom the information relates. Serious harm is
+   judged against the kind of information and its sensitivity, whether it remains
+   protected by effective security measures, the circumstances of the access or
+   disclosure, and the nature of the harm — financial, psychological, physical or
+   reputational.
 
-1. Content of the Notice: The notice shall be written in plain language and must
-   contain the following information:
+3. Tessera has **not been able to prevent the likely risk of serious harm** by
+   remediation — for example by re-securing the data, rotating exposed
+   credentials, or recalling the information before harm could crystallise.
 
-    * A brief description of what happened, including the date of the breach and
-      the date of the discovery of the breach, if known;
-    * A description of the types of unsecured protected health information that
-      were involved in the breach (such as whether full name, Social Security
-      number, date of birth, home address, account number, diagnosis, disability
-      code or other types of information were involved), if known;
-    * Any steps the Customer should take to protect Customer data from potential
-      harm resulting from the breach.
-    * A brief description of what Tessera is doing to investigate
-      the breach, to mitigate harm to individuals and Customers, and to protect
-      against further breaches.
-    * Contact procedures for individuals to ask questions or learn additional
-      information, which may include a toll-free telephone number, an e-mail
-      address, a web site, or postal address.
+Where timely remediation removes the likelihood of serious harm, the event is
+still recorded as a security incident but is not treated as an eligible data
+breach requiring notification.
 
-1. Methods of Notification: Tessera Customers will be notified via email and
-   phone within the time frame for reporting breaches, as outlined above.
+## 5. Assessment, notification and record-keeping
 
-1. Maintenance of Breach Information/Log: As described above and in addition to
-   the reports created for each incident, Tessera shall maintain a process to
-   record or log all breaches of unsecured sensitive data regardless of the
-   number of records and Customers affected. The following information should be
-   collected/logged for each breach (see sample Breach Notification Log):
+### 5.1 Assessment
 
-    * A description of what happened, including the date of the breach, the date
-      of the discovery of the breach, and the number of records and Customers
-      affected, if known.
-    * A description of the types of unsecured protected health information that
-      were involved in the breach (such as full name, Social Security number,
-      date of birth, home address, account number, etc.), if known.
-    * A description of the action taken with regard to notification of patients
-      regarding the breach.
-    * Resolution steps taken to mitigate the breach and prevent future
-      occurrences.
+On becoming aware of a suspected breach, the CISO opens an assessment and records
+it in the Security Incident Register (DOC-SEC-005). The assessment is completed
+**as soon as practicable** and in any case within 30 calendar days of becoming
+aware, consistent with the OAIC's expectation that entities be in a position to
+make a notification decision within 30 days. The assessment records the facts,
+applies the three-part test in §4, and documents the remediation attempted.
 
-1. Workforce Training: Tessera shall train all members of its workforce on the
-   policies and procedures with respect to sensitive data as necessary and
-   appropriate for the members to carry out their job responsibilities.
-   Workforce members shall also be trained as to how to identify and report
-   breaches within the organisation.
+### 5.2 Notify the OAIC
 
-1. Complaints: Tessera must provide a process for individuals to make
-   complaints concerning the organisation's patient privacy policies and
-   procedures or its compliance with such policies and procedures.
+If the assessment confirms an eligible data breach — or Tessera remains unable to
+reach a decision within the assessment period — Tessera notifies the OAIC.
 
-1. Sanctions: The organisation shall have in place and apply appropriate
-   sanctions against members of its workforce, Customers, and Partners who fail
-   to comply with privacy policies and procedures.
+- **Statutory timing:** as soon as practicable after the assessment is complete
+  (Part IIIC).
+- **Internal target:** within **72 hours** of the breach being confirmed as
+  eligible. This is Tessera's own operational commitment; it is tighter than the
+  statutory "as soon as practicable" and is the figure tracked against the CISO's
+  objectives.
 
-1. Retaliation/Waiver: Tessera may not intimidate, threaten, coerce,
-   discriminate against, or take other retaliatory action against any individual
-   for the exercise by the individual of any privacy right. The organisation may
-   not require individuals to waive their privacy rights under as a condition of
-   the provision of treatment, payment, enrolment in a health plan, or
-   eligibility for benefits.
+Notification is submitted through the OAIC online portal, using the statement
+template held in SOP-PRIV-001.
 
+### 5.3 Notify affected individuals
 
-### Tessera Platform Customer Responsibilities
+Tessera notifies the individuals to whom the information relates as required by
+Part IIIC. The CISO sets the statement content and, where direct contact is
+impracticable because of the number of individuals, publishes the statement on
+the Tessera website and takes reasonable steps to publicise it. Affected
+individuals are notified within 60 days of discovery in line with the legacy
+notification standard.
 
-The following requirements and guidelines shall be provided to and agreed upon
-by a client organisation using Tessera platform to host sensitive data such as
-ePHI and PII.
+### 5.4 Record-keeping
 
-The agreement may be in the form of a contract or acceptance of terms and
-conditions.
+Every assessed breach — notified or not — is recorded in the Security Incident
+Register (DOC-SEC-005), with the assessment, the notification decision and its
+rationale. The register entry is approved by the Head of Compliance. *(The old
+"Breach Notification Log" referenced in v1.0 was retired and folded into
+DOC-SEC-005; update any templates that still point to it.)* Records are retained
+for the period defined in the Data Lifecycle and Classification Policy.
 
-1. The Tessera Customer that accesses, maintains, retains, modifies, records,
-   stores, destroys, or otherwise holds, uses, or discloses unsecured sensitive
-   data shall, without unreasonable delay and in no case later than 72 hours
-   after discovery of a breach, notify Tessera of such breach. The Customer
-   shall provide Tessera with the following information:
+## 6. Worked reference: TSR-INC-2025-031
 
-    * A description of what happened, including the date of the breach, the date
-      of the discovery of the breach, and the number of records and Customers
-      affected, if known.
-    * A description of the types of unsecured protected health information that
-      were involved in the breach (such as full name, Social Security number,
-      date of birth, home address, account number, etc.), if known.
-    * A description of the action taken with regard to notification of patients
-      regarding the breach.
-    * Resolution steps taken to mitigate the breach and prevent future
-      occurrences.
+The clearest recent worked example is incident **TSR-INC-2025-031**, detected in
+late February 2025. A long-lived AWS access key committed to a misconfigured
+public GitHub repository was used to traverse an unsegmented path between
+Tessera's management plane and tenant data stores, exposing around 14,000 tenant
+records before anomalous egress was caught after roughly five days. Containment
+completed within 48 hours, the OAIC was notified inside the 72-hour internal
+target, and the first-year cost ran to approximately \$1.8M with 23 clients lost.
+The corrective actions — key hygiene, segmentation between the management and
+tenant planes, and egress monitoring — are tracked in DOC-SEC-005 and shaped the
+current NDB Playbook.
 
-1. Depending on the nature of the breach, an investigation may be conducted by
-   Tessera or the Customer or jointly to determine the cause of breach.
+## 7. Tenant responsibilities
 
-1. Notice to Media: Unless Tessera is directly at fault for the cause of
-   breach, Tessera Customers are responsible for providing notice to prominent
-   media outlets at the Customer's discretion.
+Where Tessera acts as a managed service and the tenant is the APP entity for the
+affected personal information, notification duties are shared as follows.
 
-1. Notice to Authorities: Unless Tessera is directly at fault for the cause of
-   breach, Tessera Customers are responsible for providing notice to the
-   appropriate authorities, including the Secretary of Health and Human Services
-   (HHS) and your Lead Supervisory Authority (LSA) under GDPR, at the Customer's
-   discretion.
+(a) The tenant will notify Tessera without delay, and in any case within 24 hours
+    of becoming aware, of any suspected breach involving data Tessera processes
+    on its behalf.
 
+(b) Tessera will give the tenant the factual information needed to meet the
+    tenant's own NDB obligations — the data types and approximate volume
+    affected, the window of exposure, and the remediation taken.
 
-### Sample Letter to Customers in Case of Breach
+(c) Responsibility for notifying the OAIC and affected individuals sits with the
+    party that is the APP entity for the information. Tessera will support that
+    notification and, where Tessera is itself the APP entity, will discharge the
+    duties in §5 directly.
+
+## 8. Sample notification statement
+
+The following is a template only; the live statement is finalised against the
+OAIC template in SOP-PRIV-001.
 
 ```
 [Date]
 
-[Name]
-[Name of Customer]
-[Address 1]
-[Address 2]
-[City, State Zip Code]
+[Name of affected individual or authorised representative]
+[Postal or email address]
 
-Dear [Name of Customer]:
+Dear [Name],
 
-I am writing to you from Tessera, with important information about a recent
-breach that affects your account with us. We became aware of this breach on
-[Insert Date] which occurred on or about [Insert Date]. The breach occurred as
-follows:
+I am writing from Tessera to tell you about a data breach that has affected your
+personal information. We became aware of the breach on [date] and believe it
+occurred on or about [date].
 
-Describe event and include the following information:
+What happened and what information was involved
+A [brief description of the incident]. The personal information involved included
+[your full name / contact details / account identifiers / other data types, as
+applicable].
 
-* A brief description of what happened, including the date of the breach and the
-  date of the discovery of the breach, if known.
-* A description of the types of unsecured protected health information that were
-  involved in the breach (such as whether full name, Social Security number,
-  date of birth, home address, account number, diagnosis, disability code or
-  other types of information were involved), if known.
-* Any steps the Customer should take to protect themselves from potential harm
-  resulting from the breach.
-* A brief description of what Tessera is doing to investigate the breach, to
-  mitigate harm to individuals, and to protect against further breaches.
-* Contact procedures for individuals to ask questions or learn additional
-  information, which includes a toll-free telephone number, an e-mail address,
-  web site, or postal address.
+What we are doing
+We have [containment and remediation steps taken], reported the breach to the
+Office of the Australian Information Commissioner, and are [further steps to
+reduce the risk of harm].
 
-Other Optional Considerations:
+What you can do
+[Specific, practical steps relevant to the data type — for example, monitoring
+account statements, resetting credentials, and being alert to phishing using the
+exposed information.]
 
-* Recommendations to assist customer in remedying the breach.
+If you have questions, contact our Privacy team at privacy@tessera.locoensayo.org or
+write to Privacy, Tessera, St Georges Terrace, Perth WA 6000. You can also make a
+complaint to the OAIC at www.oaic.gov.au.
 
-We will assist you in remedying the situation.
+We sincerely regret that this incident occurred.
 
-Sincerely,
+Yours sincerely,
 
-
-Sec Urity  
-Security Officer  
-Tessera  
+Isabella Ferreira
+Chief Information Security Officer
+Tessera
 ```
+
+---
+
+*Document status: v2.0, last updated 21 March 2025.* Next scheduled review:
+14-03-2026. Questions about this policy go to privacy@tessera.locoensayo.org.

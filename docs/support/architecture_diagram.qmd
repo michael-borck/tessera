@@ -1,0 +1,126 @@
+---
+categories:
+- IT Infrastructure
+- Network Management
+- Security Architecture
+description: Cloud-native reference architecture for the Tessera multi-tenant SaaS platform on AWS, showing the VPC topology, multi-tenant application and data tiers, encryption, identity and AI services.
+title: Cloud-Native Architecture Diagram
+---
+
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Cloud-Native Architecture Diagram          |
+| **Doc#**     | DOC-NET-001                                |
+| **Version**  | 2.0                                        |
+| **Date**     | 08-03-2025                                 |
+| **Owner**    | Cloud Infrastructure Architect (C. Hayes)  |
+
+This diagram depicts the cloud-native architecture of the Tessera multi-tenant
+SaaS platform on AWS. It supersedes the earlier network-logical diagram (which
+depicted a legacy LB/FW/Web/App/DB topology) and reflects the platform as
+operated during the ISO/IEC 27001:2022 certification-readiness audit. The primary
+region is `ap-southeast-2` (Sydney); a declared standby region `ap-southeast-1`
+(Singapore) exists for disaster recovery.
+
+Key characteristics:
+
+- **VPC with public and private subnets.** The Application Load Balancer
+  terminates TLS in public subnets; the application tier and data tier sit in
+  private subnets with no direct internet path.
+- **Multi-tenant application tier.** Stateless containerised services
+  (ECS Fargate) behind the ALB. Every request carries the authenticated tenant
+  context.
+- **Multi-tenant data store with row-level security.** Tenant isolation is
+  enforced at the data layer in **Aurora PostgreSQL** using row-level security
+  (RLS) policies keyed to the tenant context, so that a single shared cluster
+  serves all tenants without cross-tenant data leakage.
+- **Encryption everywhere.** Data at rest is encrypted with **AWS KMS**-managed
+  keys; data in transit uses TLS 1.2+ on every hop.
+- **Identity and least privilege.** Services run under dedicated **IAM roles**
+  with scoped permissions; workforce and tenant identities are federated through
+  the IdP (Auth0) with MFA.
+- **AI services.** An internal **AI summarisation service** and a **support AI
+  assistant** call a third-party model vendor over a TLS API. These services hold
+  no tenant secrets beyond short-lived tokens.
+
+> **IMPLEMENTATION GAP (segmentation):** The management plane (administration,
+  deployments, secrets) and the tenant-data plane were not fully segmented at
+  the time of TSR-INC-2025-031. Remediation (control-plane / data-plane
+  isolation) is tracked against A.8.22 in the Statement of Applicability
+  (DOC-SEC-003).
+
+```{mermaid}
+graph TB
+    subgraph Internet["Internet / Users"]
+        USER[Tenant users - browser & API]
+        ADMIN[Tessera workforce - IdP federated]
+    end
+
+    subgraph AWS["AWS Region ap-southeast-2 - Sydney"]
+        subgraph VPC["VPC"]
+            subgraph Public["Public subnets"]
+                ALB[Application Load Balancer]
+            end
+            subgraph Private["Private subnets - application tier"]
+                APP[Multi-tenant SaaS app tier - ECS Fargate]
+                AI[AI summarisation service]
+                SUP[Support AI assistant]
+            end
+            subgraph Data["Private subnets - data tier"]
+                AURORA[(Aurora PostgreSQL\nmulti-tenant - row-level security)]
+            end
+        end
+
+        KMS[(AWS KMS - CMKs)]
+        IAM[(AWS IAM roles)]
+        CT[CloudTrail + GuardDuty]
+        SECRET[Secrets / parameter store]
+    end
+
+    subgraph Vendor["Third-party model vendor"]
+        LLM[Model API]
+    end
+
+    USER -- "TLS 1.3 / HTTPS" --> ALB
+    ADMIN -- "TLS / SSO+MFA" --> ALB
+    ALB -- "TLS 1.2+" --> APP
+    APP -- "TLS 1.2+ - tenant-scoped queries" --> AURORA
+    APP -- "TLS" --> AI
+    APP -- "TLS" --> SUP
+    AI -- "TLS API - short-lived token" --> LLM
+    SUP -- "TLS API - short-lived token" --> LLM
+
+    AURORA -. "KMS EncryptKey" .-> KMS
+    APP -. "AssumeRole - least privilege" .-> IAM
+    APP -. "read secrets" .-> SECRET
+    ALB -. "audit" .-> CT
+    APP -. "audit" .-> CT
+    AURORA -. "audit" .-> CT
+```
+
+## Narrative
+
+Tenant requests enter through the **Application Load Balancer**, which terminates
+TLS and forwards authenticated traffic to the **multi-tenant SaaS application
+tier**. The application tier is stateless and horizontally scalable; each request
+carries a tenant context established through the IdP. All reads and writes to the
+**Aurora PostgreSQL** cluster are tenant-scoped and additionally constrained by
+**row-level security** at the database, so that even a query executed with shared
+credentials cannot return another tenant's rows. The application tier assumes
+narrow **IAM roles** and retrieves credentials from the secrets store; static
+access keys are not used by the application (their presence in any component is a
+defect — see the CloudTrail and IAM revocation logs).
+
+The **AI summarisation service** and **support AI assistant** are internal
+services that call the **third-party model vendor** over TLS using short-lived
+tokens; they do not persist tenant data and do not hold standing credentials.
+
+All control-plane activity (ALB, application, database) is recorded to
+**CloudTrail** and reviewed by **GuardDuty**. Encryption keys are managed in
+**AWS KMS**. Workforce administration is federated through the IdP with MFA and
+least-privilege IAM roles; direct administrative access to tenant data is logged
+and alertable.
+
+> **STALE REFERENCE:** The superseded diagram (DOC-ITIN-002 in the legacy file)
+> has been renumbered to **DOC-NET-001** to match the document register. Any
+> references still citing DOC-ITIN-002 should be updated.

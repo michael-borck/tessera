@@ -23,8 +23,8 @@ In this organisational chart, you will find:
 - **Executive Leadership**: Showcasing our top management, including the CEO,
   CFO, and CTO, who lead the strategic direction and oversight of the company.
 - **Departmental Structure**: Detailed breakdown of our core departments such as
-  Engineering, Sales, Human Resources, and IT Support, along with their
-  respective heads and teams.
+  Engineering, IT, Compliance, Cloud Operations, People & Culture, and Finance,
+  along with their respective heads and teams.
 - **Reporting Lines**: Clearly marked lines indicate who reports to whom,
   highlighting the flow of accountability and communication within the company.
 - **Support and Administrative Roles**: These roles are depicted to show their
@@ -41,23 +41,21 @@ achieve common goals within Tessera.
 
 ```{mermaid}
 graph TD
-    CEO[Amanda Johnson <br/> CEO] --> CFO
+    CEO[Henrik Larsson<br/>CEO] --> CTO
     CEO --> CIO
     CEO --> COO
+    CEO --> CFO
+    CEO --> CISO
 
-    CIO[Jessica Wong <br/> CIO] --> ITManager[Mark Anderson <br/> IT Manager]
-    ITManager --> InfoSecManager[Julie Park <br/> InfoSec Manager]
-    ITManager --> SysAdmin[Sarah Davies <br/> SysAdmin]
-    ITManager --> SecAnalyst[Juan Peres <br/> SecAnalyst]
-    ITManager --> DPO[Monica Bell <br/> Data Protection Officer]
-    ITManager --> Compliance[James Liu <br/> Compliance Officer]
+    CTO[Dr Sana Qureshi<br/>CTO] --> Eng[Noah Bennett<br/>Head of Engineering]
+    CTO --> Arch[Connor Hayes<br/>Cloud Infrastructure Architect]
 
-    COO[Brian Davis <br/> COO] --> Sales[Robert Martines <br/> Sales VP]
-    COO --> Marketing[Sarah Kim <br/> Marketing Director]
-    COO --> HR[Karen Gonsales <br/> HR Director]
-    COO --> Facilities[Mark Evans <br/> Facilities Manager]
+    CIO[Adrian Vasquez<br/>CIO] --> IT[Hamish Boyd<br/>Head of IT]
 
-    CFO[Michael Stephens <br/> CFO] --> Accounting[Lauren Cooper <br/> Accounting Manager]
-    CFO --> Finance[Neil Wright <br/> Finance Manager]
-    CFO --> Purchasing[Olivia Thompson <br/> Purchasing Manager]
+    CISO[Isabella Ferreira<br/>CISO] --> Comp[Margaux Dubois<br/>Head of Compliance]
+
+    COO[Grace Sullivan<br/>COO] --> Ops[Rafa Costa<br/>Cloud Service Operations]
+    COO --> People[Anika Desai<br/>Head of People]
+
+    CFO[Priya Nair<br/>CFO] --> Finance[Finance &amp; Accounting]
 ```

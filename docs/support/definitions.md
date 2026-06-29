@@ -3,379 +3,143 @@ categories:
 - Education
 - Communication
 - Compliance
-description: 'Application: An application hosted by Tessera, either maintained and created by Tessera, or maintained and created by a Customer or Partner.'
+description: Key definitions used across the Tessera information security and privacy documentation, framed to the Privacy Act 1988 (Cth), the Australian Privacy Principles, and ISO/IEC 27001:2022.
 title: Key Definitions
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Key Definitions             |
-| **Doc#**     | DOC-COMP-012 |
-| **Version**  | 1.0                                 |
-| **Date**     | 14-03-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Key Definitions                            |
+| **Doc#**     | DOC-SEC-004                                |
+| **Version**  | 2.0                                        |
+| **Date**     | 05-03-2025                                 |
 
-* *Application*: An application hosted by Tessera, either maintained and
-  created by Tessera, or maintained and created by a Customer or Partner.
+These definitions apply across the Tessera policy and support documentation.
+The primary frame is the *Privacy Act 1988* (Cth), the Australian Privacy
+Principles (APPs) and ISO/IEC 27001:2022. Sector-specific terms (for example,
+health information under a sector scheme, or personal data under the GDPR) are
+noted where relevant but are not Tessera's primary frame.
 
-* *Application Level*: Controls and security associated with an Application. In
-  the case of PaaS Customers, Tessera does not have access to and cannot assure
-  compliance with security standards and policies at the Application Level.
+## Privacy and data protection
 
-* *Audit*: Internal process of reviewing information system access and activity
-  (e.g., log-ins, file accesses, and security incidents). An audit may be done
-  as a periodic event, as a result of a patient complaint, or suspicion of
-  employee wrongdoing.
+- *Personal information*: Information or an opinion about an identified
+  individual, or an individual who is reasonably identifiable, whether true or
+  not and whether recorded in material form or not — as defined in s 6 of the
+  *Privacy Act 1988* (Cth).
 
-* *Audit Controls*: Technical mechanisms that track and record computer/system
-  activities.
+- *Sensitive information*: A subset of personal information given heightened
+  protection under APP 3, including health information, racial or ethnic origin,
+  political opinions, religious beliefs, biometric and genetic information, and
+  certain criminal information.
 
-* *Audit Logs*: Encrypted records of activity maintained by the system which
-  provide: 1) date and time of activity; 2) origin of activity (app); 3)
-  identification of user doing activity; and 4) data accessed as part of
-  activity.
+- *De-identification*: The process of removing or altering information that
+  identifies a person, or reasonably allows them to be identified, so that the
+  information is no longer personal information.
 
-* *Access*: Means the ability or the means necessary to read, write, modify, or
-  communicate data/ information or otherwise use any system resource.
+- *Australian Privacy Principles (APPs)*: The 13 principles in Schedule 1 of
+  the *Privacy Act* that govern the collection, use, disclosure, storage and
+  security of personal information.
 
-* *BaaS*: Backend-as-a-Service. A set of APIs, and associated SDKs, for rapid
-  mobile and web application development. APIs offer the ability to create
-  users, do authentication, store data, and store files.
+- *Eligible data breach*: Unauthorised access to, unauthorised disclosure of,
+  or loss of, personal information that is likely to result in serious harm to
+  one or more individuals, where the risk cannot be prevented by remedial
+  action. An eligible data breach is notifiable under the NDB scheme.
 
-* *Backup*: The process of making an electronic copy of data stored in a
-  computer system. This can either be complete, meaning all data and programs,
-  or incremental, including just the data that changed from the previous backup.
+- *Notifiable Data Breaches (NDB) scheme*: Established by Part IIIC of the
+  *Privacy Act* and administered by the Office of the Australian Information
+  Commissioner (OAIC). Requires entities to notify the OAIC and affected
+  individuals of eligible data breaches as soon as practicable.
 
-* *Backup Service*: A logging service for unifying system and application logs,
-  encrypting them, and providing a dashboard for them. Offered with all Tessera
-  Add-ons and as an option for PaaS Customers.
+- *Office of the Australian Information Commissioner (OAIC)*: The independent
+  regulator for privacy and freedom of information at the Australian Government
+  level.
 
-* *Breach*: A data breach is the intentional or unintentional release of secure
-  or sensitive information to an untrusted environment or individual. A data
-  breach often involves an incident where information is stolen or taken from a
-  system without the knowledge or authorisation of the system's owner.
-  
-  Under HIPAA, a data breach means the acquisition, access, use, or disclosure
-  of protected health information (PHI) in a manner not permitted under the
-  Privacy Rule which compromises the security or privacy of the PHI. For purpose
-  of this definition, "compromises the security or privacy of the PHI" means
-  poses a significant risk of financial, reputation, or other harm to the
-  individual. A use or disclosure of PHI that does not include the identifiers
-  listed at §164.514(e)(2), limited data set, date of birth, and sip code does
-  not compromise the security or privacy of the PHI. Breach excludes:
+- *Serious harm*: The multi-factor test used to assess notifiability under the
+  NDB scheme, considering the kind and sensitivity of the information, whether
+  it is protected, the circumstances of the breach, and the nature of the harm.
 
-  1. Any unintentional acquisition, access or use of PHI by a workforce member
-     or person acting under the authority of a Covered Entity (CE) or Business
-     Associate (BA) if such acquisition, access, or use was made in good faith
-     and within the scope of authority and does not result in further use or
-     disclosure in a manner not permitted under the Privacy Rule.
-  2. Any inadvertent disclosure by a person who is authorised to access PHI at a
-     CE or BA to another person authorised to access PHI at the same CE or BA,
-     or organised health care arrangement in which the CE participates, and the
-     information received as a result of such disclosure is not further used or
-     disclosed in a manner not permitted under the Privacy Rule.
-  3. A disclosure of PHI where a CE or BA has a good faith belief that an
-     unauthorised person to whom the disclosure was made would not reasonably
-     have been able to retain such information.
+## Information security
 
-* *Business Associate*: A person or entity that performs certain functions or
-  activities that involve the use or disclosure of protected health information
-  on behalf of, or provides services to, a covered entity.
+- *Confidentiality, Integrity, Availability (CIA)*: The three security
+  properties the ISMS is designed to preserve for information assets.
 
-* *Covered Entity*: A health plan, health care clearinghouse, or a healthcare
-  provider who transmits any health information in electronic form.
+- *Information asset*: Anything that stores, processes or transmits Tessera or
+  tenant information — data, systems, accounts, configurations, secrets and the
+  services themselves.
 
-* *De-identification*: The process of removing identifiable information so that
-  data is rendered to not be personally identifiable (not PHI).
+- *Tenant*: A customer organisation whose data is held and processed on the
+  shared Tessera platform, isolated from other tenants.
 
-* *Disaster Recovery*: The ability to recover a system and data after being made
-  unavailable.
+- *Threat*: A potential cause of an unwanted incident that may result in harm
+  to an asset. Threats may be environmental (fire, flood, power), human
+  (external attacker, insider, error), natural, or technological (system or
+  software failure).
 
-* *Disaster Recovery Service*: A disaster recovery service for disaster recovery
-  in the case of system unavailability. This includes both the technical and the
-  non-technical (process) required to effectively stand up an application after
-  an outage. Offered with all Tessera Add-ons and as an option for PaaS
-  Customers.
+- *Vulnerability*: A weakness in an asset or control that a threat could
+  exploit — for example, a static access key, an unsegmented network path, or
+  unpatched software.
 
-* *Disclosure*: Disclosure means the release, transfer, provision of, access to,
-  or divulging in any other manner of information outside the entity holding the
-  information.
+- *Risk*: The combination of the likelihood that a threat exploits a
+  vulnerability and the impact on confidentiality, integrity or availability if
+  it does.
 
-* *Customers*: Contractually bound users of Tessera Platform and/or services.
+- *Risk treatment*: Selecting and implementing controls to modify risk —
+  mitigate, transfer, avoid, or accept — against Tessera's risk appetite.
 
-* *Electronic Protected Health Information (ePHI)*: Any individually
-  identifiable health information protected by HIPAA that is transmitted by,
-  processed in some way, or stored in electronic media.
+- *Security incident*: An occurrence that actually or potentially compromises
+  the confidentiality, integrity or availability of an information asset, or
+  that constitutes a breach of policy. Examples include unauthorised access,
+  unauthorised disclosure, malware, denial of service, and lost or stolen
+  devices.
 
-* *Environment*: The overall technical environment, including all servers,
-  network devices, and applications.
+- *Breach (data breach)*: An unauthorised access to, disclosure of, or loss of
+  personal or sensitive information. A breach that meets the eligible data
+  breach criteria is notifiable under the NDB scheme.
 
-* *Event*: An event is defined as an occurrence that does not constitute a
-  serious adverse effect on Tessera, its operations, or its Customers, though
-  it may be less than optimal. Examples of events include, but are not limited
-  to:
-  * A hard drive malfunction that requires replacement;
-  *  Systems become unavailable due to power outage that is non-hostile in
-     nature, with redundancy to assure ongoing availability of data;
-  * Accidental lockout of an account due to incorrectly entering a password
-    multiple times.
+- *Management plane*: The administrative layer used to operate, deploy and
+  configure the platform — identities, roles, secrets, deployment tooling.
 
-* *Hardware (or hard drive)*: Any computing device able to create and store
-  sensitive data (i.e. ePHI).
+- *Control plane / data plane isolation*: The segmentation that keeps
+  management-plane credentials and paths from reaching tenant data directly.
 
-* *Health and Human Services (HHS)*: The government body that maintains HIPAA.
+## Management system
 
-* *IaaS*: Infrastructure-as-a-Service.
+- *ISMS*: The Information Security Management System operated to ISO/IEC
+  27001:2022 — the policies, processes, controls and review cycles that govern
+  how Tessera manages information security.
 
-* *Individually Identifiable Health Information*: That information that is a
-  subset of health information, including demographic information collected from
-  an individual, and is created or received by a health care provider, health
-  plan, employer, or health care clearinghouse; and relates to the past,
-  present, or future physical or mental health or condition of an individual;
-  the provision of health care to an individual; or the past, present, or future
-  payment for the provision of health care to an individual; and identifies the
-  individual; or with respect to which there is a reasonable basis to believe
-  the information can be used to identify the individual.
+- *Statement of Applicability (SoA)*: The mandatory record of the Annex A
+  controls selected for the ISMS, their implementation status, and the
+  justification for inclusions and exclusions.
 
-* *Indication*: A sign that an Incident may have occurred or may be occurring at
-  the present time. Examples of indications include:
-  * The network intrusion detection sensor alerts when a known exploit occurs
-    against an FTP server. Intrusion detection is generally reactive, looking
-    only for footprints of known attacks. It is important to note that many IDS
-    "hits" are also false positives and are neither an event nor an incident;
-  * The antivirus software alerts when it detects that a host is infected with a
-    worm;
-  * Users complain of slow access to hosts on the Internet;
-  * The system administrator sees a filename with unusual characteristics;
-  * Automated alerts of activity from log monitors like OSSEC;
-  * An alert from OSSEC about file system integrity issues.
+- *Annex A*: The catalogue of information security controls in ISO/IEC
+  27001:2022, organised under the organisational, people, physical and
+  technological themes.
 
-* *Intrusion Detection System (IDS)*: A software tool use to automatically
-  detect and notify in the event of possible unauthorised network and/or system
-  access.
+- *ASD Essential Eight*: The Australian Signals Directorate's baseline of eight
+  mitigation strategies, against which Tessera aligns its hardening.
 
-* *IDS Service*: An Intrusion Detection Service for providing IDS notification
-  to customers in the case of suspicious activity. Offered with all Tessera
-  Add-ons and as an option for PaaS Customers.
+- *Control*: A measure — preventive, detective or corrective — that modifies
+  risk. Controls may be administrative, technical or physical.
 
-* *Law Enforcement Official*: Any officer or employee of an agency or authority
-  of the United States, a State, a territory, a political subdivision of a State
-  or territory, or an Indian tribe, who is empowered by law to investigate or
-  conduct an official inquiry into a potential violation of law; or prosecute or
-  otherwise conduct a criminal, civil, or administrative proceeding arising from
-  an alleged violation of law.
+- *Least privilege*: Granting an identity only the access required for its
+  function, and no more.
 
-* *Logging Service*: A logging service for unifying system and application logs,
-  encrypting them, and providing a dashboard for them. Offered with all Tessera
-  Add-ons and as an option for PaaS Customers.
+## Roles
 
-* *Messaging*: API-based services to deliver and receive SMS messages.
+- *Workforce*: All Tessera employees and contractors whose conduct in the
+  performance of work is under Tessera's direction, whether or not they are
+  paid by Tessera.
 
-* *Minimum Necessary Information*: Protected health information that is the
-  minimum necessary to accomplish the intended purpose of the use, disclosure,
-  or request. The "minimum necessary" standard applies to all protected health
-  information in any form.
+- *Workforce member*: An individual within the workforce.
 
-* *Off-Site*: For the purpose of storage of Backup media, off-site is defined as
-  any location separate from the building in which the backup was created. It
-  must be physically separate from the creating site.
+- *Restricted area*: A location where sensitive information or assets are
+  stored, used or accessible, subject to physical access controls.
 
-* *Organisation*: For the purposes of this policy, the term "organisation" shall
-  mean Tessera.
+- *Vendor*: An external organisation providing products or services to, or
+  processing data for, Tessera.
 
-* *PaaS*: Platform-as-a-Service.
-
-* *Partner*: Contractual bound 3rd party vendor with integration with the
-  Tessera Platform. May offer Add-on services.
-
-* *PMP or Platform*: Tessera Precision Medicine Platform and its overall
-  technical environment.
-
-* *Protected Health Information (PHI)*: Individually identifiable health
-  information that is created by or received by the organisation, including
-  demographic information, that identifies an individual, or provides a
-  reasonable basis to believe the information can be used to identify an
-  individual, and relates to:
-  * Past, present or future physical or mental health or condition of an
-    individual.
-  * The provision of health care to an individual.
-  * The past, present, or future payment for the provision of health care to an
-    individual.
-
-* *Role*: The category or class of person or persons doing a type of job,
-  defined by a set of similar or identical responsibilities.
-
-* *Sanitisation*: Removal or the act of overwriting data to a point of
-  preventing the recovery of the data on the device or media that is being
-  sanitised. Sanitisation is typically done before re-issuing a device or media,
-  donating equipment that contained sensitive information or returning leased
-  equipment to the lending company.
-
-* *Trigger Event*: Activities that may be indicative of a security breach that
-  require further investigation (See Appendix).
-
-* *Restricted Area*: Those areas of the building(s) where protected health
-  information and/or sensitive organisational information is stored, utilised,
-  or accessible at any time.
-
-* *Role*: The category or class of person or persons doing a type of job,
-  defined by a set of similar or identical responsibilities.
-
-* *Precursor*: A sign that an Incident may occur in the future. Examples of
-  precursors include:
-  * Suspicious network and host-based IDS events/attacks;
-  * Alerts as a result of detecting malicious code at the network and host
-    levels;
-  * Alerts from file integrity checking software;
-  * Audit log alerts.
-
-* *Risk*: The likelihood that a threat will exploit a vulnerability, and the
-  impact of that event on the confidentiality, availability, and integrity of
-  sensitive data, other confidential or proprietary electronic information, and
-  other system assets.
-
-* *Risk Management Team*: Individuals who are knowledgeable about the
-  Organisation's Privacy, Security and Compliance policies, procedures,
-  training program, computer system set up, and technical security controls, and
-  who are responsible for the risk management process and procedures outlined
-  below.
-
-* *Risk Assessment*:
-
-  > Referred to as Risk Analysis in the HIPAA Security Rule
-
-  * Identifies the risks to information system security and determines the
-    probability of occurrence and the resulting impact for each
-    threat/vulnerability pair identified given the security controls in place;
-  * Prioritises risks; and
-  * Results in recommended possible actions/controls that could reduce or offset
-    the determined risk.
-
-* *Risk Management*: Within this policy, it refers to two major process
-  components: risk assessment and risk mitigation.
-  
-  This differs from the HIPAA Security Rule, which defines it as a risk
-  mitigation process only. The definition used in this policy is consistent with
-  the one used in documents published by the National Institute of Standards and
-  Technology (NIST).
-
-* *Risk Mitigation*:
-
-  > Referred to as Risk Management in the HIPAA Security Rule
-  
-  A process that prioritises, evaluates, and implements security controls
-  that will reduce or offset the risks determined in the risk assessment process
-  to satisfactory levels within an organisation given its mission and available
-  resources.
-
-* *SaaS*: Software-as-a-Service.
-
-* *Security Incident* (or just Incident): A security incident is an occurrence
-  that exercises a significant adverse effect on people, process, technology, or
-  data. Security incidents include, but are not limited to:
-  * A system or network breach accomplished by an internal or external entity;
-    this breach can be inadvertent or malicious;
-  * Unauthorised disclosure;
-  * Unauthorised change or destruction of sensitive data (i.e. deletion or
-    alterations not following Tessera's procedures);
-  * Denial of service not attributable to identifiable physical, environmental,
-    human or technology causes;
-  * Disaster or enacted threat to business continuity;
-  * Information Security Incident: A violation or imminent threat of violation
-    of information security policies, acceptable use policies, or standard
-    security practices. Examples of information security incidents may include,
-    but are not limited to, the following:
-  * Denial of Service: An attack that prevents or impairs the authorised use of
-    networks, systems, or applications by exhausting resources;
-  * Malicious Code: A virus, worm, Trojan horse, or other code-based malicious
-    entity that infects a host;
-  * Unauthorised Access/System Hijacking: A person gains logical or physical
-    access without permission to a network, system, application, data, or other
-    resource. Hijacking occurs when an attacker takes control of network devices
-    or workstations;
-  * Inappropriate Usage: A person violates acceptable computing use policies;
-  * Other examples of observable information security incidents may include, but
-    are not limited to:
-    * Use of another person's individual password and/or account to login to a
-      system;
-    * Failure to protect passwords and/or access codes (e.g., posting passwords
-      on equipment);
-    * Installation of unauthorised software;
-    * Terminated workforce member accessing applications, systems, or network.
-
-* *Threat*: The potential for a particular threat-source to successfully
-  exercise a particular vulnerability. Threats are commonly categorised as:
-  * Environmental - external fires, HVAC failure/temperature inadequacy, water
-    pipe burst, power failure/fluctuation, etc.
-  * Human - hackers, data entry, workforce/ex-workforce members, impersonation,
-    insertion of malicious code, theft, viruses, SPAM, vandalism, etc.
-  * Natural - fires, floods, electrical storms, tornados, etc.
-  * Technological - server failure, software failure, ancillary equipment
-    failure, etc. and environmental threats, such as power outages, hasardous
-    material spills.
-  * Other - explosions, medical emergencies, misuse or resources, etc.
-
-* *Threat Source*: Any circumstance or event with the potential to cause harm
-  (intentional or unintentional) to an IT system. Common threat sources can be
-  natural, human or environmental which can impact the organisation's ability to
-  protect sensitive data.
-
-* *Threat Action*: The method by which an attack might be carried out (e.g.,
-  hacking, system intrusion, etc.).
-
-* *Unrestricted Area*: Those areas of the building(s) where protected health
-  information and/or sensitive organisational information is not stored or is
-  not utilised or is not accessible there on a regular basis.
-
-* *Unsecured Protected Health Information*: Protected health information (PHI)
-  that is not rendered unusable, unreadable, or indecipherable to unauthorised
-  individuals through the use of technology or methodology specified by the
-  Secretary in the guidance issued under section 13402(h)(2) of Pub. L.111-5 on
-  the HHS website.
-  
-  1. Electronic PHI has been encrypted as specified in the HIPAA Security rule
-     by the use of an algorithmic process to transform data into a form in which
-     there is a low probability of assigning meaning without the use of a
-     confidential process or key and such confidential process or key that might
-     enable decryption has not been breached. To avoid a breach of the
-     confidential process or key, these decryption tools should be stored on a
-     device or at a location separate from the data they are used to encrypt or
-     decrypt. The following encryption processes meet this standard.
-  2. Valid encryption processes for data at rest (i.e. data that resides in
-     databases, file systems and other structured storage systems) are
-     consistent with NIST Special Publication 800-111, Guide to Storage
-     Encryption Technologies for End User Devices.
-  3. Valid encryption processes for data in motion (i.e. data that is moving
-     through a network, including wireless transmission) are those that comply,
-     as appropriate, with NIST Special Publications 800-52, Guidelines for the
-     Selection and Use of Transport Layer Security (TLS) Implementations;
-     800-77, Guide to IPSec VPNs; or 800-113, Guide to SSL VPNs, and may include
-     others which are Federal Information Processing Standards FIPS 140-2
-     validated.
-  4. The media on which the PHI is stored or recorded has been destroyed in the
-     following ways:
-  5. Paper, film, or other hard copy media have been shredded or destroyed such
-     that the PHI cannot be read or otherwise cannot be reconstructed. Redaction
-     is specifically excluded as a means of data destruction.
-  6. Electronic media have been cleared, purged, or destroyed consistent with
-     NIST Special Publications 800-88, Guidelines for Media Sanitisation, such
-     that the PHI cannot be retrieved.
-
-* *Vendor*: External individuals or organisations marketing or selling products
-  or services, or providing services to Tessera.
-
-* *Vulnerability*: A weakness or flaw in an information system that can be
-  accidentally triggered or intentionally exploited by a threat and lead to a
-  compromise in the integrity of that system, i.e., resulting in a security
-  breach or violation of policy.
-
-* *Workstation*: An electronic computing device, such as a laptop or desktop
-  computer, or any other device that performs similar functions, used to create,
-  receive, maintain, or transmit sensitive data. Workstation devices may
-  include, but are not limited to: laptop or desktop computers, smart phones,
-  tablet PCs, and other handheld devices. For the purposes of this policy,
-  "workstation" also includes the combination of hardware, operating system,
-  application software, and network connection.
-
-* *Workforce*: Means employees, volunteers, trainees, and other persons whose
-  conduct, in the performance of work for a covered entity, is under the direct
-  control of such entity, whether or not they are paid by the covered entity.
+> **DRAFT NOTE:** This glossary was rewritten from a legacy HIPAA-oriented set
+> of definitions. References to "PHI", "ePHI", "covered entity" and "business
+> associate" have been removed; any surviving occurrences elsewhere in the
+> policy suite should be treated as legacy and reported for correction.

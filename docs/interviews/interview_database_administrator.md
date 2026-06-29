@@ -4,83 +4,78 @@ categories: ["Data Security", "IT Management", "Risk Assessment"]
 ---
 
 Auditor: I'd like to understand how database security is handled here. Could you
-give me an overview of your database architecture?
+give me an overview of the data tier?
 
-DBA: Sure. We utilise a mix of open source and commercial databases depending on
-the use case. Databases are hosted on segmented servers according to sensitivity
-level and access requirements.
+DBA: The production data store is Aurora PostgreSQL, multi-tenant, serving all
+tenants from a single cluster. Tenant isolation is enforced at the data layer
+using row-level security policies keyed to the tenant context, so even a query
+run with shared credentials can't return another tenant's rows. There's a
+declared cross-region standby, though I'll come back to that.
 
-Auditor: Good overview. And how are the databases secured technically?
+Auditor: How is the cluster secured technically?
 
-DBA: Minimised open ports, encrypted connections, CIS benchmark hardening of the
-servers. The databases themselves have encryption, access controls, and stored
-procedures to limit exposure.
+DBA: It sits in private subnets with no internet path. In-flight connections are
+TLS 1.2 or better, and data at rest is encrypted under AWS KMS-managed keys.
+Access is role-scoped; the application tier connects under a tenant-aware role,
+and administrative access is through short-lived assumed credentials rather
+than standing database users.
 
-Auditor: Great to hear. I'm here to have a collaborative discussion about your
-database controls. If any gaps arise, I'll work through practical
-recommendations with you. Does that sound good?
+Auditor: Good. I'm aiming for a collaborative discussion — if I see a gap I'll
+work through it with you rather than noting it cold. Shall we go on?
 
-DBA: Absolutely, I appreciate you taking that approach. I'm open to constructive
-feedback on how we can evolve our database security measures.
+DBA: Appreciated — I'd rather hear it directly. Happy to keep going.
 
-Auditor: Glad we're aligned. Could you outline your strategies for securing
-database credentials and controlling access?
+Auditor: How do you control and rotate database credentials?
 
-DBA: Of course. We utilise a privileged access management solution to rotate
-credentials and control access to database shells. Access is granted based on
-least privilege principles...
+DBA: The application's database credentials are generated and rotated through
+Secrets Manager and fetched at runtime by the task role, so there are no static
+passwords in configuration. Direct administrative shells are brokered through
+the privileged-access tool with session recording.
 
-Here are 5 additional mock interview questions continuing the friendly database
-security discussion:
+Auditor: What controls do you have for monitoring database activity?
 
-Auditor: What controls do you have in place for monitoring database activity?
+DBA: Query logging and RDS performance insights are on, and the logs are
+shipped to the SIEM. We have a baseline of expected read and write patterns and
+alert on anomalous volumes. I'd be honest that the anomaly thresholds are still
+fairly rough — they catch a wholesale exfiltration but would miss a slow,
+steady read.
 
-events. Logs feed into our central SIEM. We have a baseline of expected activity
-DBA: Database logging is enabled, as well as triggers for sensitive modification
-and alert on anomalies.
+Auditor: Could you explain your backup and recovery strategy?
 
-Auditor: Could you explain your backup and recovery strategies for databases?
+DBA: Aurora's continuous backups and automated snapshots are the backbone, with
+point-in-time restore tested quarterly. The cross-region story is the part I
+flagged earlier: the standby region has a cluster, but the cross-region replica
+that would make failover lossless is still being commissioned, so I wouldn't
+claim a validated RPO today.
 
-DBA: Daily differential backups, weekly full backups with retention policies.
-Critical databases have replicas for high availability. We practice restores and
-have documented recovery plans.
+Auditor: What's your approach to patching and vulnerability management for the
+data tier?
 
-Auditor: What is your approach to database patching and vulnerability
-management?
+DBA: Engine upgrades are evaluated in the staging account first and applied in a
+maintenance window. We track CVEs against the PostgreSQL engine and the
+extensions we use, and we treat anything high or critical as a same-fortnight
+item once a fix is available.
 
-DBA: We classify and test patches in dev environments before rolling out.
-Vulnerability scans are performed periodically to identify risks. We have a
-window for production patching.
+Auditor: How do you evaluate new data technologies before adoption?
 
-Auditor: How do you evaluate and secure new database technologies before
-adoption?
+DBA: Anything new goes through the architecture review board — capability,
+security posture, supportability — and is configured to the hardening standard
+before it touches production.
 
-DBA: Our architecture review board assesses capabilities, security,
-supportability before approval. Security is configured prior to production use
-per our standards.
+Auditor: Is there database-specific training for the team?
 
-Auditor: Finally, what database-specific training exists for your team?
+DBA: Yes, mostly vendor-led on hardening, encryption and logging, and the DBAs
+hold the relevant certifications. Security is treated as part of the craft
+rather than a separate concern.
 
-DBA: Vendor training on database hardening, logging, encryption features. Our
-DBAs are certified on the platforms we use. Security is always emphasised.
+Auditor: Any friction between database management and security controls?
 
-Auditor: Are there any difficulties aligning database management needs with
-security controls?
+DBA: The usual tension between availability and tighter controls. We work it
+out case by case — selective encryption, tiered access — and where we can't
+agree it goes to a risk decision rather than sitting unresolved.
 
-DBA: At times we have to balance performance and availability needs with strict
-security controls. With consultation, we usually find solutions like selective
-encryption or tiered access models.
+Auditor: Is database activity monitoring effective for incident alerting?
 
-Auditor: How are database permission conflicts between security team and
-business users handled?
-
-DBA: We aim to provide the access required for business functions while adhering
-to least privilege principles. Disagreements are resolved collaboratively
-through access reviews.
-
-Auditor: Is database activity monitoring effective for security incident
-alerting?
-
-DBA: Yes, the database logs provide excellent visibility along with our security
-monitoring capabilities. We are able to quickly detect and alert on anomalous
-queries or privilege misuse.
+DBA: For the loud signals, yes. As I mentioned, the thresholds are tuned for
+high-volume events, which is exactly what served us in February. The quieter
+patterns are a known gap we're tightening.

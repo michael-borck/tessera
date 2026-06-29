@@ -1,39 +1,66 @@
 ---
 categories:
-- Security Management
-- Compliance
-- Risk Management
+- Incident Response
+- Internal Communications
+- Security
 description: |
-    I am reaching out to provide an update on the security incident that we identified on September 12, 2024, involving unauthorised access to our customer database. The incident was caused by a phishing attack that compromised the credentials of one of our senior administrators, leading to a data breach.
-title: "Internal Communication to Employees"
+    Internal note to the Tessera workforce on incident TSR-INC-2025-031, the late-February 2025 breach involving a long-lived AWS access key exposed through a misconfigured public repository and an unsegmented path to tenant data.
+title: "Internal communication to the workforce — TSR-INC-2025-031"
 ---
 
-**Subject:** Urgent: Security Incident Response and Next Steps
+**Subject:** Security incident TSR-INC-2025-031 — what happened and what we need from you
 
 ---
 
-**Dear Team,**
+**Team,**
 
-I am reaching out to provide an update on the security incident that we identified on September 12, 2024, involving unauthorised access to our customer database. The incident was caused by a phishing attack that compromised the credentials of one of our senior administrators, leading to a data breach.
+I want to give you a clear account of the security incident we have been working
+through, and to set out what we need from you.
 
-**What You Need to Know:**
-- The attacker gained access to sensitive customer information, including personal and payment data.
-- We have already taken immediate steps to contain the breach, including disabling affected accounts and implementing enhanced security measures.
+In late February we detected unusual data leaving the platform. We established
+that a long-lived access key used by our management systems had been exposed
+through a source-code repository that was configured as public. The key was then
+used to reach tenant data across a path that should have been segregated but was
+not. Around 14,000 tenant records were exposed over a number of days before our
+monitoring flagged the egress. Containment took a further 48 hours. The
+incident is logged as **TSR-INC-2025-031**.
 
-**Immediate Actions Required:**
-- **Security Training:** All employees are required to complete an updated security awareness training by the end of this week. This training will focus on identifying phishing attempts and securing access credentials.
-- **Password Reset:** Effective immediately, all employees must reset their Tessera network passwords. Please ensure your new password meets the updated security requirements.
-- **Incident Reporting:** If you notice any suspicious activity or have concerns about potential security risks, please report them immediately to the Security Operations Center via [Incident Report Link].
+**What you need to know**
 
-**Our Commitment:**
-- We are conducting a comprehensive review of our security policies and procedures to prevent future incidents. Your cooperation and vigilance are crucial in strengthening our security posture.
-- Regular updates will be provided as we progress with our investigation and remediation efforts.
+- The exposure was a leaked static access key and an unsegmented network path —
+  not a compromise of an individual's login. Please don't speculate about or
+  name colleagues.
+- The key has been rotated, sessions revoked, the repository secured, and an
+  interim network change applied.
+- We have notified the OAIC under the Notifiable Data Breaches scheme within our
+  72-hour target, and affected tenants are being contacted.
 
-Your role in safeguarding our systems and data is more important than ever. Please stay alert and committed to our shared goal of protecting Tessera and our valued customers.
+**What we need from you this week**
 
-Thank you for your prompt attention to these matters.
+- **Secrets check.** Run `tessera secret-scan` against any repository you own,
+  internal or public. If it flags anything, do not rotate quietly — raise a
+  ticket so we can check for misuse. No static access keys belong in code,
+  configuration, or chat.
+- **Repository hygiene.** Confirm that any repository you administer is private
+  unless there is a documented reason for it to be public. The default is
+  private.
+- **Credentials.** If you hold a long-lived AWS access key, raise a ticket to
+  move to short-lived credentials via single sign-on. We are phasing static keys
+  out.
+- **Reporting.** If you see egress, unexpected `AssumeRole` activity, or a key in
+  a place it should not be, report it to `security@tessera.locoensayo.org` immediately.
+  Early reports are never penalised.
 
-Best regards,  
-[Your Name]  
-Chief Information Security Officer  
+**What comes next**
+
+The corrective actions are being tracked against the Statement of Applicability,
+and the segmentation work is the priority. There will be further detail as the
+post-incident review closes out, and the ISO/IEC 27001:2022 certification work
+will draw directly on the lessons from this incident.
+
+Protecting tenant data is the whole company's job, not the security team's alone.
+Thank you for the way people have pulled together on this.
+
+Isabella Ferreira
+Chief Information Security Officer
 Tessera

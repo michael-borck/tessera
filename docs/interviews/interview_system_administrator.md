@@ -3,86 +3,78 @@ title: "Transcript of interview with System Administrator"
 categories: ["IT Management", "Security Architecture", "Access Control"]
 ---
 
-Auditor: Thanks for taking the time to speak with me today. I'd like to discuss
-the controls you have in place for managing system security configurations.
-Could you walk me through your configuration hardening standards?
+Auditor: Thanks for making time. As part of the ISO/IEC 27001:2022 audit I'd
+like to talk through how you harden and run the platform's systems. Could you
+walk me through your configuration baseline?
 
-SysAdmin: Sure, we utilise industry standard benchmarks like CIS and NIST to
-lock down settings for OS, firewalls, databases and more according to best
-practices. We keep gold images to simplify patching and deployment.
+SysAdmin: We build from CIS-hardened base images — the Amazon Linux and
+PostgreSQL golden AMIs are rebuilt monthly and picked up by the ECS task
+definitions and the few EC2 hosts we still run. Terraform and SSM State Manager
+enforce the baseline, so drift gets flagged rather than just left.
 
-Auditor: Excellent. And how do you ensure consistency and compliance with those
-standards?
+Auditor: How do you keep that consistent, and how do you know when something
+has drifted?
 
-SysAdmin: Our configuration management system scans new systems against the gold
-benchmark to validate before production. We also run monthly audits to identify
-any drift or issues.
+SysAdmin: SSM reports compliance against the baseline continuously, and we have
+Config rules that mark non-compliant instances. The catch is that we treat the
+output as information, not enforcement — a non-compliant host is flagged, but a
+change ticket can override it. That's a judgement call we'd be happy to be
+challenged on.
 
-Auditor: Great to hear. I'm here to understand how your systems are secured in
-an open discussion. If any gaps arise, I'll work with you on practical
-recommendations. Does that sound agreeable?
+Auditor: That's a useful answer. I'm here for an open discussion; if I see a
+gap I'll raise it with you rather than springing it. Let's move to patching.
 
-SysAdmin: Absolutely, I look forward to the constructive feedback on where we
-can improve. We take a continuous learning approach to security and compliance
-here.
+SysAdmin: Sounds fair. Critical and high patches are bundled into a fortnightly
+window after they've run through the staging account. We lean on SSM Patch
+Manager for the EC2 fleet, and the container base images are rebuilt on a
+schedule so the application tier inherits patching through redeployment rather
+than in-place updates.
 
-Auditor: Glad we're on the same page. Could you tell me about how you perform
-patch management and keep systems up-to-date?
+Auditor: What about secrets and keys — how are they handled day to day?
 
-SysAdmin: Of course. We classify patches by criticality. Critical and security
-updates are applied on a 2 week cycle to production after testing...
+SysAdmin: Application secrets live in Secrets Manager and Parameter Store and
+are fetched at runtime through the task role. We've been moving away from
+static IAM access keys for some time; where they still exist they're meant to
+be short-lived and rotated. I'd be overstating it if I said there were none
+left — that's something we're actively closing off.
 
-Auditor: What tools and capabilities do you utilise for monitoring and logging
-system activity?
+Auditor: I appreciate you flagging that. How do you control privileged access?
 
-SysAdmin: We deploy Sysmon for endpoint logging and have a SIEM collecting logs
-centrally. Critical systems utilise process monitoring to detect malicious
-changes.
+SysAdmin: Administrators go through the identity provider with MFA and then
+assume a scoped role through SSO, with just-in-time elevation for anything
+sensitive. Break-glass accounts live in the vault and every use pages the
+on-call engineer.
 
-Auditor: Could you outline the key controls you have in place to secure
-privileged access to systems?
+Auditor: And monitoring and logging?
 
-SysAdmin: Minimising standing privilege access, enforcing MFA for admin
-accounts, using privilged access management tools for just-in-time elevation.
-Logs are closely monitored.
+SysAdmin: CloudTrail is on for all accounts, VPC Flow Logs are published, and
+the application logs land in CloudWatch and our SIEM. GuardDuty covers the
+identity and credential-exfiltration findings. Whether the alerting on the
+management-plane roles is tuned correctly is something the February incident
+made us revisit.
 
-Auditor: What is your approach to infrastructure automation and configuration
-management?
+Auditor: How do you track and authorise system-level change?
 
-SysAdmin: We utilise Ansible and Terraform to automate deployment,
-configuration, and management based on code. This reduces human errors and
-enforces standards.
+SysAdmin: Everything goes through the change-management board for the
+production account. Infrastructure changes are pull requests against the
+Terraform repos, peer-reviewed and applied through the pipeline, so there's a
+reviewed artefact behind every change.
 
-Auditor: How do you control and track system-level changes to ensure they are
-authorised and audited?
+Auditor: Lastly, disaster recovery — what does that look like for you?
 
-SysAdmin: Change requests are documented and approved in our ticketing system.
-Changes made are logged and compared to tickets for audit purposes.
+SysAdmin: Aurora snapshots run on the automated schedule, and we've a declared
+standby region. I should be honest, though: the cross-region failover is still
+being commissioned, so I wouldn't want to claim a tested four-hour RTO today.
 
-Auditor: Finally, how do you ensure disaster recovery capabilities for critical
-systems?
+Auditor: Are there places where operations and security pull in different
+directions?
 
-SysAdmin: Documented recovery plans, regular backups to secondary sites. Annual
-DR tests validate ability to meet RTO/RPO with failover. Gaps are addressed in
-remediation plans.
+SysAdmin: Occasionally, mostly around legacy pieces where a control would cost
+availability. We tend to work it out jointly with the security team and accept
+the residual risk through the change board rather than working around it.
 
-Auditor: Do you have any difficulties implementing security guidance from
-infosec teams?
+Auditor: Any gaps in how the sysadmin and security teams share knowledge?
 
-SysAdmin: Generally no, we view security collaboration as necessary and
-beneficial. There can be tension around legacy systems where controls introduce
-availability/performance risks. But with consultation we determine workarounds.
-
-Auditor: How are priority conflicts between operations and security handled?
-
-SysAdmin: Health and availability needs take precedence where reasonable. We
-perform risk analysis jointly and identify solutions together - perhaps delaying
-patches, implementing compensating controls or accepting risks with approval.
-
-Auditor: Are there any gaps in training or knowledge transfer between sysadmin
-and infosec teams?
-
-SysAdmin: Knowledge sharing occurs informally via meetings and tickets. More
-formalised cross-training could be beneficial though to expand skills. Shadowing
-and job rotations could help strengthen the partnership and understanding
-between our teams.
+SysAdmin: A lot of it is still informal — tickets and Slack. More structured
+cross-training would help, and we've started pairing on the segmentation work,
+which is a good forcing function.

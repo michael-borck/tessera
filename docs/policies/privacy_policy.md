@@ -3,397 +3,279 @@ categories:
 - Privacy
 - Data Protection
 - Compliance
-description: We at Tessera (Tessera and our subsidiaries and affiliates) are committed
-  to protecting your privacy.
+description: How Tessera collects, uses, holds and discloses personal information
+  as an APP entity under the Privacy Act 1988 (Cth). External-facing Privacy Policy.
 title: Privacy Policy
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Privacy Policy             |
-| **Doc#**     | POL-DATA-022 |
-| **Version**  | 1.0                                 |
-| **Date**     | 08-01-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Privacy Policy                             |
+| **Doc#**     | POL-DATA-022                               |
+| **Version**  | 1.0                                        |
+| **Date**     | 08-01-2023                                 |
 
-We at Tessera (Tessera and our subsidiaries and affiliates) are committed to
-protecting your privacy. This privacy policy applies to our applications,
-software, websites, APIs, products, and services including our associated mobile
-applications ("Mobile Apps"), (each a "Site", "Service", or "Mobile App" or
-collectively, the "Services"), owned and controlled by Tessera.
+This is Tessera's external Privacy Policy. It explains how Tessera Pty Ltd
+("Tessera", "we", "us", "our") collects, uses, holds and discloses personal
+information, and how you can access and correct it. Tessera is an Australian
+company (head office St Georges Terrace, Perth WA 6000) that operates a managed,
+multi-tenant cloud platform for business customers.
 
-This Privacy Policy governs our data collection, processing and usage practices.
-It also describes your choices regarding use, access and correction of your
-personal information. If you do not agree with the data practices described in
-this Privacy Policy, you should not use our Services.
+We handle personal information as an APP entity under the *Privacy Act 1988*
+(Commonwealth) and the **Australian Privacy Principles (APPs)**. Where a customer
+is located in the European Union, the [GDPR Data Processing Addendum
+(POL-DATA-000)](gdpr_dpa.md) applies alongside this policy.
 
-Specifically, this Privacy Policy covers:
+**Last updated:** 4 March 2025.
 
-Topic                                                   | Summary
----                                                     | ---
-**Information we collect about you**                    | We may collect Personal Information, Usage and Device Information (collectively, "information", defined in detail below) about you in connection with your (or your organisation’s) use of our Services that link to this Privacy Policy. <br /><br />[Learn more below](#information-we-collect-about-you)
-**How we use your information**                         | We use the information we collect only in compliance with this Privacy Policy. We may use your information to provide services (either directly to you or to those third parties who have engaged us as service providers to process your information on their behalf); respond to inquiries and provide customer support and technical assistance; communicate with you; process transactions; improve, develop, provide content for, operate, deliver and market our Services; implement social networking features; comply with our company policies and procedures and with applicable law; ensure proper and authorised use of the Services; perform Services tracking and analysis; and, as otherwise permitted by applicable law. <br /><br />[Learn more below](#how-we-use-your-information)
-**How we share your information**                       | We may share your information with our business units, affiliates, subsidiaries, business partners, service providers and/or your representatives, in order to provide or improve our Services to you.  We do not share information with third parties so that they can independently market their own products or services to you unless we have explicitly given you the option to opt-in such disclosures. We will never sell your Personal Information to any third party. <br /><br />[Learn more below](#how-we-share-your-information)
-**Your Rights Regarding Your Personal Information**     | We provide you with the opportunity to be informed of whether we are processing your information and to access, correct, update, oppose, delete, block, limit or object, upon request and free of charge, to our use of your Personal Information to the extent required by applicable law. <br /><br />[Learn more below](#your-rights-regarding-your-personal-information)
-**Retention of your information**                       | We keep your account information, like your name, email address, and password, for as long as your account is in existence because we need it to operate your account. In some cases, when you give us information for a feature of the Services, we delete the data after it is no longer needed for the feature. We keep your account data until you use your account settings or tools to delete the data or your account because we use this data to provide you Services. We also keep information about you and your use of the Services for as long as necessary for our legitimate business interests, for legal reasons, and to prevent harm, including as described in the [How We Use Your Information](#how-we-use-your-information) and [How We Share Your Information](#how-we-share-your-information) sections.
-**Security of your information**                        | We work hard to keep your data safe. We use a combination of technical, administrative, and physical controls to protect the confidentiality, integrity and availability of your data. This includes using Transport Layer Security ("TLS") to encrypt data transmission and Advanced Encryption Standard ("AES") to encrypt data storage. No method of transmitting or storing data is completely secure, however. If you have a security-related concern, please contact [Customer Support](mailto:help@tessera.locoensayo.org) or our [Security team](mailto:security@tessera.locoensayo.org). <br /><br />Click [here](/security) to learn more about our security practices.
-**International Data Transfers**                        | Tessera is a U.S.-based company that offers our Services to U.S. and international customers. As a result, information that we collect, including personal information, may be transferred to our data centers or service providers in the U.S.  By providing your personal information to us, you are consenting to the transfer of your personal information to the U.S. and to our (and our services providers’) use and disclosure of your personal information in accordance with this Privacy Policy. <br /><br />We rely on multiple legal bases to lawfully transfer personal data around the world. These include your consent, the EU-US and Swiss-US Privacy Shield. Tessera complies with the Privacy Shield principles regarding the collection, use, sharing, and retention of personal information as described in our Privacy Shield certifications, and we follow internal procedures for verifying that our commitments under this Privacy Policy have been implemented. Our compliance with this obligation can be investigated and enforced by the U.S. Federal Trade Commission.  Learn more about Privacy Shield [here](https://www.privacyshield.gov/). <br /><br />If you have a complaint about our Privacy Shield compliance, please contact us. You can also refer a complaint to our chosen independent dispute resolution body [JAMS](https://www.jamsadr.com/eu-us-privacy-shield), and in certain circumstances, invoke the Privacy Shield arbitration process or lodge a complaint with the supervisory authority in your country of residence in the EU.
-**Cookies and similar Technologies**                    | We may use “cookies” and similar technologies to help deliver our Services. This technology may involve placing small files/code on your device or browser that serve a number of purposes, such as remembering your preferences and to offer you a more personalised user experience. Read our [Cookie Policy]() to learn more.
-**Marketing Analytics and Communications**              | We work with partners who provide us with marketing analytics and communications services. This includes helping us understand how users interact with our Services, communicating with you about our Services and features, and measuring the performance of those communications. These companies may use cookies and similar technologies to collect information about your interactions with the Services and other websites and applications. To learn more and about your privacy choices, please see more details in the [How We Use Your Information](#how-we-use-your-information) and [How We Share Your Information](#how-we-share-your-information) sections and read our [Cookie Policy]().
-**Links to Other Websites**                             | Our Services may contain links to other websites or services that are not owned or controlled by Tessera, including links to websites of our sponsors and partners. This Privacy Policy only applies to information collected by our Services. We have no control over these third-party websites, and your use of third party websites and features are subject to privacy policies posted on those websites. We are not responsible or liable for the privacy or business practices of any third-party websites linked to our Services. Your use of third parties’ websites linked to our Services is at your own risk, so we encourage you to read the privacy policies of any linked third-party websites when you leave one of our Services.
-**Our Policies for Children**                           | Our Services are directed toward adults. If you are under the age of 16, you must obtain the authorisation of a responsible adult (parent or legal custodian) before using or accessing our Services. We will not knowingly collect or use any personal information from any children under the age of 16. If we become aware that we have collected any personal information from children under 16, we will promptly remove such information from our systems.
-**Situations where this Privacy Policy does not apply** | This Privacy Policy does not apply to job applicants or employees, which are subject to relevant privacy notices. This Privacy Policy does not apply to the extent that: <br />• Our products and services set forth an additional or alternative Privacy Policy; or <br />• Applicable law imposes different processing or privacy requirements on your information.
-**Changes to this Privacy Policy**                      | We periodically update this Privacy Policy. We will post any privacy policy changes on this page and, if the changes are significant, we will provide a more prominent notice by sending you notification by email or notification alert within our Services. While we will notify you of any material changes to this Privacy Policy, we encourage you to review this Privacy Policy periodically. We will also keep prior versions of this Privacy Policy in an archive for your review.
-**How to contact us**                                   | You can contact us using the Contact Us page on our Sites or by mail at Kent Street, Bently. <br /><br />If you have questions, suggestions, or concerns about this policy, or about our use of your information, including filing a complaint, please contact our Data Protection Officer or Privacy Officer at privacy@tessera.locoensayo.org.
+**A note on our role.** Tessera is usually two things at once. We are the **APP
+entity** (the business responsible for the data) for the personal information we
+collect directly to run our commercial relationship with a customer — the
+account, contact, billing and usage information described below. We are also a
+**service provider** (a processor) for the personal information that a customer
+chooses to put through the Tessera platform — for example records the customer
+uploads, or contacts the customer captures in the platform. That
+customer-controlled data is governed by the customer's own privacy policy and, in
+the EU, by the DPA referenced above. This policy covers the personal information
+for which Tessera is itself responsible.
 
-## INFORMATION WE COLLECT ABOUT YOU
+The table below summarises what follows. Each row links to the relevant section.
 
-When you use our Services, we collect the
-following types of information.
+| Topic | Summary |
+|-------|---------|
+| **[Information we collect](#information-we-collect)** | Account and contact information, usage and device information, and billing information we collect to provide and run the Services. |
+| **[How we use your information](#how-we-use-your-information)** | To provide, maintain and secure the Services, to communicate with you, to bill you, and to meet our legal obligations — the uses permitted by APP 6. |
+| **[How we share your information](#how-we-share-your-information)** | With service providers and sub-processors who help us run the Services, and where required by law. We do not sell personal information. |
+| **[International transfers](#international-transfers)** | Data is processed primarily in Australia. Some sub-processors operate outside Australia under the safeguards required by APP 8. |
+| **[Security](#security)** | How we protect personal information (APP 11), including TLS in transit and AES-256 at rest. |
+| **[Your rights: access and correction](#your-rights-access-and-correction)** | How to access and correct your personal information under APP 12 and APP 13. |
+| **[Retention](#retention)** | How long we keep personal information, and when we delete it (APP 11.2). |
+| **[Cookies and similar technologies](#cookies-and-similar-technologies)** | The cookies and similar technologies we use, and how to control them. |
+| **[Children](#children)** | The Services are business services and are not directed at children. |
+| **[Changes to this policy](#changes-to-this-policy)** | How we update this policy and tell you about material changes. |
+| **[Contact and complaints](#contact-and-complaints)** | How to reach our Privacy team, and how to complain to the OAIC. |
 
-### INFORMATION YOU PROVIDE US ("PERSONAL INFORMATION")
+## Information we collect
 
-**ACCOUNT INFORMATION.** Some information is required to create an account on
-Services, such as your
+We collect the personal information we reasonably need to provide and run the
+Services. The main categories are below.
 
-* name,
-* email address,
-* password,
-* company, and
-* phone number.
+**Account and contact information.** When a customer sets up an account, and when
+authorised users are added to it, we collect:
 
-**ADDITIONAL INFORMATION.** To help improve your experience or enable certain
-features of the Services, you may choose to provide us with additional
-information, such as
+- name,
+- work email address,
+- a password (stored only as a salted hash),
+- job title and department,
+- the name of the customer organisation, and
+- a phone number.
 
-* a profile photo,
-* biography,
-* mailing address,
-* country information,
-* date of birth,
-* gender,
-* height,
-* weight,
-* additional health information or activity data such as your logs for food, weight, sleep, water,
-* additional contact phone numbers such as your mobile telephone number,
-* community or social media username, and
-* messages on discussion boards or to your social contacts on the Services.
+We also collect correspondence and attachments you send us when you contact
+support, sales or accounts.
 
-You may also connect with friends on the Services or invite friends who have not
-yet joined by providing their email addresses, accessing social networking
-accounts or using the contact list on your mobile device. We do not store your
-contact list and delete it after it is used for adding contacts as friends.
+**Usage and device information.** When the Services are used we automatically
+collect the operational information needed to run and secure the platform:
 
-If you contact us or participate in a survey, contest, or promotion, we collect
-the information you submit such as your name, email address, contact
-information, and message.
+- account identifiers and audit-trail entries (logins, configuration changes,
+  administrative actions);
+- IP address, browser type and version, operating system, and device type;
+- information about how the Services are used, such as the features invoked,
+  pages viewed and timestamps; and
+- error, performance and security telemetry used to keep the platform available
+  and to investigate incidents.
 
-**INFORMATION FROM THIRD-PARTY SERVICES.** If you choose to connect your
-account on our Services to your account on another service, we may receive
-information from the other service. For example, if you connect to Facebook or
-Google, we may receive information like your name, profile picture, age range,
-language, email address and friend list. You may also choose to grant us access
-to your personal information such as activity data or health data from other
-services. You can stop sharing the information from the other services with us
-by removing our access to each other service.
+We collect this from the platform itself and from our infrastructure providers
+(for example, AWS CloudTrail logs recorded in the `ap-southeast-2` Sydney
+region).
 
-**INFORMATION PROVIDED BY OTHER INDIVIDUALS.** While using our Services,
-individuals may provide information about another individual, or an authorised
-user (such as an account administrator) creating an account on your behalf may
-provide information about You. When one individual provides us with information
-(including personal information) about another individual, we assume that the
-individual has permission and authority to do so and to consent on behalf of
-that individual to the collection and use of personal information as described
-in this Privacy Policy. Please contact us immediately if you become aware of an
-individual providing us with personal information about another individual
-without being authorised to do so, and we will act consistently with this
-Privacy Policy.
+**Billing information.** To issue invoices and take payment we collect:
 
-**PAYMENT AND CARD INFORMATION.** Some Tessera Services
-support payments and transactions with third parties. If you activate this
-feature, you must provide certain information for identification and
-verification, such as your name, billing address, credit, debit or other card
-number, card expiration date and CVV code. This information is used solely to
-check your financial qualifications and collect payment from you. We do not
-store your payment information. We use a third-party service provider to manage
-payment card processing. Note that third-party payment processors may retain
-this information in accordance with their own privacy policies and terms. This
-service provider is not permitted to store, retain or use information you
-provide except for the sole purpose of credit card processing on our behalf.
+- billing contact name and email address;
+- the customer organisation's billing address and ABN/ACN where applicable;
+- purchase-order references; and
+- credit-card details, which are handled entirely by our payment-services
+  provider. We do not store full card numbers on Tessera systems.
 
-### INFORMATION WE RECEIVE FROM YOUR USE OF OUR SERVICES
+**Information we do not actively collect.** The Services are general-purpose
+business tools. Whether any *sensitive* information within the meaning of APP 3.3
+(health information, racial or ethnic origin, political or religious beliefs, and
+so on) enters the platform is a matter for each customer. We do not deliberately
+collect sensitive information about individuals through the Services, and
+customers should not configure the platform in a way that requires sensitive
+information to be collected without their own privacy basis for doing so.
 
-**USAGE AND DEVICE INFORMATION.** When you use our Services, we receive certain
-usage data ("Usage and Device Information"). This includes information about
-your interaction with the Services, for example, when you view or search
-content, install or open applications or software, create or log into your
-account, import data into your account, or integrate a third-party service to
-your account. We may also collect data about the devices and computers you use
-to access our Services, including IP addresses, browser type, language,
-operating system, or mobile device information (including device and application
-identifiers), the referring web page, pages visited, location (depending on the
-permissions you have granted us), and cookie information.
+## How we use your information
 
-**HEALTH AND OTHER SPECIAL CATEGORIES OF PERSONAL DATA.** To the extent that
-information we collect directly from you is health data or another special
-category of sensitive personal data subject to the European Union’s General Data
-Protection Regulation ("GDPR"), we ask for your explicit consent to process such
-sensitive personal data. We obtain this consent separately when you take actions
-leading to our obtaining the data, for example, when you activate the activity
-tracking features in our Mobile Apps or grant us access to your health or
-activity data from another service. You can use your account settings or contact
-us to withdraw your consent at any time, including by stopping use of a feature,
-removing our access to a third-party service, requesting deletion your data or
-closing your account.  
+We use and disclose personal information for the purposes for which it was
+collected (the primary purpose), and for directly related secondary purposes, in
+accordance with **APP 6**. Those purposes are:
 
-However, if we are acting as a service provider (a "Data Processor") processing
-your personal information on behalf of a third party that has collected such
-data from you, and such third party is the party that has the right to determine
-the purposes for which it will process your personal information and the means
-it will use to process your personal information (the "Data Controller"), then
-such Data Controller has the legal obligation to ask for your explicit consent
-to process your sensitive personal data (including health data), and we are not
-responsible for obtaining such consent from you.  In such a scenario, the Data
-Controller may have their own, separate policies regarding the use and
-disclosure of your personal information, including any sensitive personal data
-you provide to such Data Controller.  In such a scenario, this Privacy Policy
-does not apply to, we cannot control the activities of, and we are not
-responsible for the activities of the applicable Data Controller generally; this
-Privacy Policy only applies to our processing of your personal information that
-we, as a Data Processor, have been asked to process on behalf of the Data
-applicable Data Controller.  We encourage you to review such Data Controller’s
-privacy policy and/or contact the applicable Data Controller for more
-information about the policies that apply to their use and disclosure of your
-personal information, including any sensitive personal data.
+- to set up, operate, maintain and secure customer accounts and the Services;
+- to provide technical support and respond to enquiries;
+- to bill customers and to manage the commercial relationship;
+- to communicate about the Services, including service notifications, security
+  advisories and planned maintenance;
+- to detect, prevent and investigate fraud, abuse and security incidents;
+- to produce aggregated and de-identified analytics used to improve the Services;
+  and
+- to meet our legal, regulatory and accounting obligations.
 
-## HOW WE USE YOUR INFORMATION
+We will not use personal information for an unrelated purpose unless you consent,
+or we are required or authorised by law to do so.
 
-We use the information we collect for the following purposes.
+**Direct marketing.** We may send existing customers information about Tessera
+products that relate to the Services they already use. You can opt out at any
+time using the unsubscribe link in any marketing email or by contacting
+privacy@tessera.locoensayo.org. We do not share personal information with third parties
+so they can market to you independently.
 
-### PROVIDE AND MAINTAIN THE SERVICES
+## How we share your information
 
-We use the information we collect to deliver the Services to you and honor our
-Terms of Service for each Service or business contract with you. For example,
+We share personal information only as needed to provide the Services or where we
+are legally required to. We do not sell personal information.
 
-* to administer, operate, maintain and secure our Services;
-* to monitor and analyse trends, usage and activities in connection with our
-  Services;
-* for accounting, recordkeeping, backup and administrative purposes;
-* to customise and improve the content of our communications, websites and
-  social media accounts;
-* to provide customer service and support;
-* to communicate with you, including responding to your comments, questions and
-  requests regarding our Services;
-* to process and complete transactions, and send you related information,
-  including alerts and notifications about your service, purchase confirmations
-  and invoices; and
-* to educate and train our workforce in data protection and
-  customer support.
+**Service providers and sub-processors.** We engage sub-processors to help run
+the Services — for example cloud infrastructure, identity and authentication,
+email delivery, ticketing, analytics and payment processing. Each sub-processor
+is engaged under a written agreement that requires it to protect personal
+information to a standard consistent with this policy and with APP 11, and to use
+it only for the services it provides to Tessera. A current list of sub-processors
+is available on request to privacy@tessera.locoensayo.org.
 
-For the Services’ social features, we may use your information to help you find
-and connect with other users and to allow other users to find and connect with
-you. For example, your account contact information allows other users to add you
-as a friend. When another user has your email or mobile phone number in their
-contact list or in their friend network on a connected service, we may show that
-user that you are a user of the Services.
+**Your other representatives.** Where you direct us to, we will share personal
+information with others — for example the authorised administrator at your
+organisation, or an integration you have connected to your account. Their use of
+the information is governed by their own terms and privacy policy.
 
-### IMPROVE, PERSONALIZE, AND DEVELOP THE SERVICES
+**Legal and safeguarding disclosures.** We may disclose personal information
+where we believe it is necessary to comply with Australian law or a lawful
+request from an Australian authority, to enforce our terms, to protect the
+rights, property or safety of Tessera, our customers or the public, or in
+connection with a restructure, merger or sale of all or part of Tessera's
+business. Where we are permitted to, we will tell affected individuals about a
+lawful request for their information.
 
-We use the information we collect to improve and personalise the Services and to
-develop new ones. For example, we use the information to troubleshoot and
-protect against errors; perform data analysis and testing; conduct research and
-surveys and develop new features and Services.
+## International transfers
 
-### COMMUNICATE WITH YOU
+The Services are hosted primarily in Australia, in the `ap-southeast-2` (Sydney)
+AWS region, with cross-region standby for resilience. Some of our sub-processors
+operate from outside Australia — for example, where a specialist provider runs
+its service from the United States or the European Union.
 
-We use your information when needed to send you Service notifications and
-respond to you when you contact us. We also use your information to promote new
-features or products that we think you would be interested in. You can control
-marketing communications and most Service notifications by using your
-notification preferences in account settings or via the "Unsubscribe" link in an
-email.
+A cross-border disclosure under **APP 8** requires a reasonable step to ensure
+the overseas recipient does not breach the APPs. We rely on a combination of:
+contractual safeguards (in particular the EU Standard Contractual Clauses where a
+sub-processor is in a country without an adequacy finding, and Tessera's own
+sub-processor data-protection terms); the Privacy Shield framework for covered
+transfers; and, where appropriate, your consent.
 
-### PROMOTE SAFETY AND SECURITY
+> *[Reviewer, 2025-04-08: the sentence above still names the Privacy Shield
+> framework. Privacy Shield was invalidated in 2020 and Tessera is not certified
+> under the EU-US Data Privacy Framework that replaced it. Strike the Privacy
+> Shield reference before the next public refresh — for non-adequate countries we
+> rely on the SCCs and our sub-processor terms, not on Privacy Shield. — I.
+> Ferreira]*
 
-We use the information we collect to promote the safety and security of the
-Services, our users and other parties. For example, we may use the information
+If you are an individual whose information may be processed outside Australia and
+you would like more detail before consenting, contact privacy@tessera.locoensayo.org.
 
-* to authenticate users;
-* to facilitate secure payments;
-* to respond to a legal request or claim, conduct audits, and enforce our terms
-  and policies;
-* to investigate and protect against fraud, malicious or unauthorised access,
-  and other illegal activities; and
-* to demonstrate and verify compliance with our internal policies and
-  procedures, and applicable privacy and data security laws and regulations,
-  such as HIPAA and GDPR.
+## Security
 
-### USE AND DISCLOSURE OF DE-IDENTIFIED INFORMATION
+We take reasonable steps to protect personal information from misuse, interference
+and loss, and from unauthorised access, modification or disclosure, as required
+by **APP 11**. The controls in place include:
 
-"De-identified" means that we have removed, or rendered unreadable through
-complex computational algorithms, your personally-identifiable information, such
-as your name, address, or birthdate. We may use de-identified information that
-we have obtained from our Services for various purposes, including for example:
+- encryption of personal information in transit using TLS, and at rest using
+  AES-256;
+- separation of the management plane from tenant data stores, and least-privilege
+  access enforced through our identity provider and AWS IAM;
+- multi-factor authentication for administrative access;
+- logging and monitoring of authentication and control-plane activity; and
+- an information security management system aligned to ISO/IEC 27001:2022 and the
+  ASD Essential Eight.
 
-* In accordance with regulatory requirements, we may de-identify, store and use
-  your information for internal quality control, validation and research and
-  development. This is important for Tessera to maintain high
-  quality Services. We may use de-identified information as permitted by law.
-* We may contribute de-identified genetic variants that we have observed in the
-  course of providing our Services to publicly available databases such as
-  ClinVar. We do this to increase understanding and raise awareness of the
-  significance of genetic variants within the medical and scientific
-  communities.
-* We may use or disclose de-identified information for general research and
-  communications purposes. This may include analysis of this information to
-  communicate observations and learnings, for example in the case of aggregated
-  data. This may also include research collaborations with third parties, such
-  as universities, hospitals or other laboratories, in which we utilise
-  de-identified clinical cases, at the individual level or in the aggregate, in
-  accordance with our study protocols, and we may present or publish such
-  information. This may also include commercial collaborations with private
-  companies for purposes such as to determine the prevalence of particular
-  disorders or variants among the patients we have tested, or to determine
-  whether any of the patients we have tested might be suitable for potential
-  recruitment for research, clinical trials, or clinical care; however, we will
-  not directly contact these patients about these opportunities without their
-  prior written consent.
+No online service can be made completely secure. If a data breach occurs and is
+assessed as an eligible data breach under the Notifiable Data Breaches scheme, we
+will notify affected individuals and the OAIC as required by Part IIIC of the
+Act. You can read more about our security practices on our [security
+page](/security) and in our [data protection policy](data_protection.md).
 
-We use cookies and similar technologies for the purposes described above. For
-more information, please read our [Cookie Policy]().
+## Your rights: access and correction
 
-For personal data subject to the GDPR, we rely on several legal bases to process
-the data. These include when you have given your consent, which you may withdraw
-at any time using your account settings and/or other tools; when the processing
-is necessary to perform a contract with you, like the Terms of Service; and our
-legitimate business interests, such as in improving, personalising, and
-developing the Services, marketing new features or products that may be of
-interest, and promoting safety and security as described above.
+You have the right to access personal information we hold about you, and to ask
+us to correct it if it is inaccurate, out of date, incomplete, irrelevant or
+misleading. These rights sit in **APP 12** (access) and **APP 13** (correction).
 
-## HOW WE SHARE YOUR INFORMATION
+To make a request, contact privacy@tessera.locoensayo.org. We will respond within a
+reasonable period — generally within 30 days — and will not charge for making an
+access or correction request, although we may recover a reasonable cost where a
+request is unusually broad. Before giving access we will take reasonable steps to
+confirm your identity.
 
-We do not share your personal information except in the limited circumstances
-described below.
+Where we hold personal information only as a processor on behalf of a customer,
+access and correction requests for that data should be directed to the customer
+that controls it; we will help the customer respond.
 
-### WHEN YOU AGREE OR DIRECT US TO SHARE
+## Retention
 
-You may direct us to disclose your information to others, such as when you use
-our social features in our Mobile Apps. For certain information, you may change
-your privacy preferences in account settings and use other provided tools to
-control how your information is visible to other users of the Services.
+We keep personal information only for as long as it is needed for the purpose for
+which it was collected, or as required to meet our legal and accounting
+obligations (**APP 11.2**). In practice:
 
-You may also authorise us to share your information with others, for example,
-with a third-party application when you give it access to your account, or with
-your employer company or other organisations and provide consent to each
-organisation. Remember that their use of your information will be governed by
-their privacy policies and terms. You can revoke your consent to share with
-third-party applications or employee wellness programs using your account
-settings.
+- account and contact information is retained while the account is active, and
+  for the period needed to close out the relationship afterwards;
+- usage and security telemetry is retained for the operational and security
+  period defined in our Data Lifecycle and Classification Policy; and
+- billing and tax records are retained for the period required by Australian tax
+  law.
 
-### FOR EXTERNAL PROCESSING
+When information is no longer required we delete it or de-identify it, subject to
+any legal hold.
 
-We transfer information to our corporate affiliates, service providers and other
-partners who process it for us, based on our instructions and in compliance with
-this policy and any other appropriate confidentiality and security measures.
-These partners provide us with services globally, including for customer
-support, information technology, payments, sales, marketing, data analysis,
-research and surveys.
+## Cookies and similar technologies
 
-### FOR LEGAL REASONS OR TO PREVENT HARM
+We use cookies and similar technologies to operate, secure and improve the
+Services — for example, to keep you signed in, to remember preferences, to
+collect the usage and device information described above, and to measure how the
+Services perform. We do not use cookies to build advertising profiles of
+individuals across third-party websites.
 
-We may preserve or disclose information about you to comply with a law,
-regulation, legal process or governmental request; to assert legal rights or
-defend against legal claims; or to prevent, detect or investigate illegal
-activity, fraud, abuse, violations of our terms or threats to the security of
-the Services or the physical safety of any person. Please note: Our policy is to
-notify you of legal process seeking access to your information, such as search
-warrants, court orders or subpoenas, unless we are prohibited by law from doing
-so. In cases where a court order specifies a non-disclosure period, we provide
-delayed notice after the expiration of the non-disclosure period. Exceptions to
-our notice policy include exigent or counterproductive circumstances, for
-example, when there is an emergency involving a danger of death or serious
-physical injury to a person. We may share non-personal information that is
-aggregated or de-identified so that it cannot reasonably be used to identify an
-individual. We may disclose such information publicly and to third parties, for
-example, in public reports about exercise and activity, to partners under
-agreement with us or as part of the community benchmarking information we
-provide to users of our subscription services. If we are involved in a merger,
-acquisition, or sale of assets, we will continue to take measures to protect the
-confidentiality of personal information and give affected users notice for the
-transferring of any personal information to a new entity.
+You can control cookies through your browser settings. Disabling some cookies may
+affect how parts of the Services function.
 
-## YOUR RIGHTS REGARDING YOUR PERSONAL INFORMATION
+## Children
 
-You can access and control your personal information via account settings and/or
-our tools we provide to you, regardless of where you live. If you live in the
-European Economic Area, United Kingdom and Switserland (the “Designated
-Countries”), you have a number of legal rights with respect to your information,
-as outlined below.
+The Services are business services and are not directed at children. We do not
+knowingly collect personal information from children. If you believe a child has
+provided us with personal information, contact privacy@tessera.locoensayo.org and we
+will take steps to delete it.
 
-**Accessing and Exporting Data.** By logging into your account, you can access
-much of your personal information. Using your account settings or by contacting
-us, you can also request a download information in a commonly used file format,
-including data about your activities, body, foods and sleep.
+## Changes to this policy
 
-**Editing and Deleting Data.** Your account settings and certain platform APIs
-let you change and delete your personal information and/or account data. For
-instance, you can edit or delete the profile data you provide and delete your
-account if you wish.
+We review this policy regularly and will post updates on this page. Where a
+change is material we will give affected customers prominent notice — for
+example by email or an in-product notification — before the change takes effect.
+We last materially updated this policy on 18 November 2024. Past versions are
+retained on request.
 
-If you choose to delete your account, please note that while most of your
-information will be deleted within 14 days, it may take up to 90 days to delete
-all of your information, such as the data stored in our backup systems. This is
-due to the sise and complexity of the systems we use to store data. We may also
-preserve data for legal reasons or to prevent harm, including as described in
-the How We Share Your Information section.
+## Contact and complaints
 
-**Objecting to Data Use.** You can control usage of your data via account
-settings or other application APIs or tools. For example, you can
+If you have a question, a request, or a complaint about how we have handled
+personal information, contact our Privacy team:
 
-* limit how your information is visible to other users of the Services;
-* limit the notifications you receive from us; and
-* revoke the access of third-party applications that you previously connected to
-  your account.
+- email: privacy@tessera.locoensayo.org;
+- post: Privacy Team, Tessera, St Georges Terrace, Perth WA 6000; or
+- via your customer success manager.
 
-If you live in a Designated Country, in certain circumstances, you can object to
-our processing of your information based on our legitimate interests, including
-as described in the How We Use Information section. You have a general right to
-object to the use of your information for direct marketing purposes. Please also
-review our Cookie Policy for your options to control how we and our partners use
-cookies and similar technologies for advertising.
+We will acknowledge complaints promptly and aim to resolve them within 30 days.
+If you are not satisfied with our response, you may complain to the Office of the
+Australian Information Commissioner (OAIC):
 
-**Restricting or Limiting Data Use.** In addition to the various controls that
-we offer, if you reside in a Designated Country, you can seek to restrict our
-processing of your data in certain circumstances. Please note that you can
-always delete your account at any time.
+- online at www.oaic.gov.au, or
+- by phone on 1300 363 992.
 
-Onward Transfers of Data.  If we intend to disclose your personal information to
-any third party that will have the right to process it, we will enter into a
-contract with that third party that provides that your personal information may
-be processed only for limited and specified purposes consistent with the consent
-you have provided to us, and that the third party must provide the same level of
-protection for your personal information that we are obligated to provide under
-this Privacy Policy while it is processing your personal information.  In
-addition, we will notify you if that third party will have the right to
-determine the purposes for which it will process your personal information and
-the means it will use to process your personal information (rather than just
-providing requested assistance to us in support of our permitted uses of your
-personal information).
+Making a complaint to the OAIC is free.
 
-**Changes to Privacy Policy.**  If we are using your personal information on the
-basis of your consent, and we change our Privacy Policy to permit any use or
-disclosure of your personal information that is materially different than the
-uses for which it was originally collected or subsequently authorised by you, we
-will obtain your consent before we make such further uses of your personal
-information.
+---
 
-**Further Assistance.**  If you need further assistance regarding your rights,
-please contact our Data Protection Officer at privacy@tessera.locoensayo.org,
-and we will consider your request in accordance with applicable laws. If you
-reside in a Designated Country and you are not satisfied with our response, you
-will have a prompt, no-cost way of asserting your claim by contacting our chosen
-independent dispute resolution body JAMS.  If you reside in a Designated
-Country, you may have the right, under certain conditions, to invoke binding
-arbitration, and, alternatively, you also have a right to lodge a complaint with
-your local data protection authority or with the Irish Data Protection
-Commissioner, our lead supervisory authority, whose contact information is
-available here.
+*Document status: v1.0. Last updated 4 March 2025. Next scheduled review: 4 March 2026.*

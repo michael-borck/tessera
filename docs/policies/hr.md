@@ -3,377 +3,313 @@ categories:
 - Human Resources
 - Employee Management
 - Training
-description: Tessera is committed to ensuring all workforce members actively address
-  security and compliance in their roles at Tessera.
+description: Sets out how Tessera screens, onboards, trains, manages and offboards
+  workforce members in line with ISO/IEC 27001:2022 Annex A.6 and the Privacy Act 1988.
 title: HR and Personnel Security
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | HR and Personnel Security             |
-| **Doc#**     | POL-HUMA-017 |
+| **Title**    | HR and Personnel Security           |
+| **Doc#**     | POL-HUMA-017                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 21-09-2023                              |
+| **Date**     | 21-09-2023                          |
+| **Owner**    | Head of People (A. Desai)           |
+| **Approved By** | CISO (I. Ferreira) / COO (G. Sullivan) |
+| **ISO/IEC 27001:2022** | A.6.1–A.6.5 — HR security (screening, terms, awareness, disciplinary, termination) |
 
-Tessera is committed to ensuring all workforce members actively address
-security and compliance in their roles at Tessera. We encourage self management
-and reward the right behaviours. This policy specifies acceptable use of end-user
-computing devices and technology. Additionally, training is imperative to
-assuring an understanding of current best practices, the different types and
-sensitivities of data, and the sanctions associated with non-compliance.
+This policy governs the personnel-security lifecycle at Tessera: how we screen,
+onboard, train, manage and offboard the people who touch our systems and tenant
+data. It implements the human-resource security controls in **Annex A.6** of
+ISO/IEC 27001:2022 and our obligations under the *Privacy Act 1988* (Cth),
+particularly **APP 11** (security of personal information). The Head of People
+owns this policy; line managers and the Security team operate it.
 
 ## Policy Statements
 
-In addition to the roles and responsibilities stated [earlier](rar.md),
-Tessera policy requires all workforce members to comply with the
-Acceptable Use Policy for End-use Computing and HR Security Policy.
+In addition to the roles and responsibilities set out in [Roles and
+Responsibilities](rar.md), Tessera requires that:
 
-Tessera policy requires that:
+(a) **Screening (A.6.1).** Background verification checks are carried out on all
+prospective employees and contractors before they start, proportional to the
+role, the classification of information they will access, and the perceived
+risk. Checks are conducted in accordance with Australian law and the
+candidate's informed consent.
 
-(a) Background verification checks on all candidates for employees and
-contractors should be carried out in accordance with relevant laws, regulations,
-and ethics, and proportional to the business requirements, the classification of
-the information to be accessed, and the perceived risk.
+(b) **Terms and conditions (A.6.2).** Every employee, contractor and third-party
+user signs a written agreement that binds them to this policy, the Acceptable
+Use Policy (POL-SEC-022) and Tessera's confidentiality obligations before they
+are granted access.
 
-(b) Employees, contractors and third party users must agree and sign the terms
-and conditions of their employment contract, and comply with acceptable use.
+(c) **Awareness and training (A.6.3).** All workforce members complete security
+and privacy awareness training during onboarding and at least annually
+thereafter. Training covers the *Privacy Act 1988* and the Australian Privacy
+Principles, the Notifiable Data Breaches scheme, and Tessera's incident and
+breach-reporting expectations.
 
-(c) Employees will go through an onboarding process that familiarises them with
-the environments, systems, security requirements, and procedures Tessera has in
-place. Employees will also have ongoing security awareness training that is
-audited.
+(d) **Disciplinary process (A.6.4).** A fair, documented disciplinary process
+applies to breaches of this and related policies, up to and including
+termination and referral to authorities.
 
-(d) Employee offboarding will include reiterating any duties and
-responsibilities still valid after terminations, verifying that access to any
-Tessera systems has been removed, as well as ensuring that all company owned
-assets are returned.
+(e) **Termination and offboarding (A.6.5).** Offboarding removes access to all
+Tessera systems, returns company assets, and restates obligations that survive
+termination.
 
-(e) Tessera and its employees will take reasonable measures to
-ensure no sensitive data is transmitted via digital communications such as email
-or posted on social media outlets.
-
-(f) Tessera will maintain a list of prohibited activities that will be part of
-onboarding procedures and have training available if/when the list of those
-activities changes.
-
-(g) A fair disciplinary process will be utilised for employees are suspected of
-committing breaches of security. Multiple factors will be considered when
-deciding the response such as whether or not this was a first offense, training,
-business contracts, etc. Tessera reserves the right to terminate employees in
-the case of serious cases of misconduct.
-
-
+(f) Workforce members must not transmit sensitive information through unmanaged
+channels or post it to public forums. Where technical support requires sharing
+diagnostic detail, the data must be sanitised first.
 
 ## Controls and Procedures
 
-
 ## HR Management and Reporting
 
-Tessera uses  to manage its workforce personnel records.
+Tessera maintains workforce personnel records in **Employment Hero**. The Head
+of People is the system owner. Personal information is retained no longer than
+necessary for the purpose for which it was collected (APP 11.2), in line with
+the retention schedule.
 
 ### Organisation Structure
 
-A reporting structure has been established that aligns with the organisation's
-business lines and/or individual's functional roles. The organisational chart is
-available to all employees via the  and/or posted on the internal
-web portal.
+A reporting structure aligned to Tessera's business lines is maintained and
+published in the org chart on the intranet. Reporting lines are reviewed when a
+team is restructured.
 
 ### Job Functions and Descriptions
 
-Position / Job descriptions are documented and updated as needed that define the
-skills, responsibilities, and knowledge levels required for certain jobs.
+Position descriptions document the skills, responsibilities, access profile and
+knowledge levels required for each role, and are updated when a role changes.
 
 ### Performance Reviews and Feedback
 
-Employees receive regular feedback and acknowledgement from their manager and
-peers. Formal performance reviews are conducted annually using EaseCentral.
-Performance measures, incentives, and other rewards are established by
-management according to responsibilities at all levels, reflecting appropriate
-dimensions of performance and expected standards of conduct.
-
+Employees receive ongoing feedback from their manager and peers. Formal
+performance reviews are conducted annually using the performance module in
+**Employment Hero**. Performance measures and incentives reflect the
+responsibilities of the role and the expected standards of conduct.
 
 ### Acceptable Use of End-user Computing
 
-Tessera requires all workforce members to comply with the following
-acceptable use requirements and procedures, such that:
+Detailed acceptable-use obligations are set out in the standalone [Acceptable
+Use Policy](acceptable_use.md) (POL-SEC-022). The points below highlight the
+HR-relevant obligations and apply to all workforce members:
 
-(a) Per Tessera [security architecture](model.md), all workforce
-members are primarily considered as remote users and therefore must follow all
-system access controls and procedures for remote access.
+(a) Per the [security architecture](model.md), all workforce members are treated
+as remote users and must follow remote-access controls (MFA, managed device,
+encrypted storage).
 
-(b) Use of Tessera computing systems is subject to monitoring by
-Tessera IT and/or Security team.
+(b) Use of Tessera systems is monitored by the IT and Security teams in
+accordance with the *Privacy Act* and applicable workplace-surveillance law.
 
-(c) Employees may not leave computing devices (including laptops and smart
-devices) used for business purpose, including company-provided and BYOD devices,
-unattended in public.
+(c) Computing devices (company-issued or BYOD) must not be left unattended in
+public.
 
-(d) Device encryption must be enabled for all mobile devices accessing company
-data, such as whole-disk encryption for all laptops.
+(d) Whole-disk encryption must be enabled on every device that stores or
+accesses company data.
 
-(e) Use only legal, [approved software](approved_software.md) with a valid
-license installed through a [pre-approved application store](approved_software.md). 
-Do not use personal software for business purposes and vice versa.
+(e) Use only [approved software](approved_software.md) with a valid licence,
+installed from an approved source. Personal software must not be used for
+business purposes, and vice versa.
 
-(f) Encrypt all email messages containing sensitive or confidential data.
+(f) Sensitive or confidential email must be encrypted.
 
-(g) Employees may not post any sensitive or confidential data in public forums
-or chat rooms. If a posting is needed to obtain technical support, data must be
-sanitised to remove any sensitive or confidential information prior to posting.
+(g) Sensitive or confidential data must not be posted to public forums or chat
+rooms. Sanitise data before posting for technical support.
 
-(h) Anti-malware or equivalent protection and monitoring must be installed and
-enabled on all endpoint systems that may be affected by malware, including
-workstations, laptops and servers.
+(h) Anti-malware protection and monitoring must be installed and active on all
+endpoints that could be affected by malware.
 
-(i) All data storage devices and media must be managed according to the Tessera
-Data Classification specifications and Data Handling procedures.
+(i) All storage media must be handled per the Data Classification and Data
+Handling procedures.
 
-(j) It is strictly forbidden to download or store any sensitive data on end-user
-computing devices, including laptops, workstations and mobile devices.
+(j) Sensitive data must not be downloaded or stored on end-user devices.
 
-(k) Mobile devices are not allowed to connect directly to Tessera production
-environments.
-
+(k) Mobile devices must not connect directly to Tessera production environments.
 
 ### Employee Screening Procedures
 
-Tessera publishes job descriptions for available positions and
-conducts interviews to assess a candidates technical skills as well as culture
-fit prior to hiring.
+Tessera advertises roles, assesses technical skills and cultural fit through
+structured interviews, and performs background checks — identity, right-to-work
+in Australia, referees, and, where the role warrants, criminal-history and
+qualification checks — before the start date. Checks are run by the People team
+and a third-party screening provider engaged through Procurement.
 
-Background checks of an employee or contractor is performed by HR/operations
-and/or the hiring team prior to the start date of employment.
-
+*(I. Ferreira, note to self: confirm the screening list still lines up with
+ISMS-PR-014 before the Stage 1 audit — the right-to-work wording changed when we
+updated the joiner-mover-leaver procedure.)*
 
 ### Employee Onboarding Procedures
 
-A master checklist for employee onboarding is maintained by HR/Facilities.  
-It is published in the HR system or the HR folder on
-[Tessera's internal file sharing site](#).
+A joiner checklist is maintained by the People team and published in the HR
+system. The People Coordinator raises a joiner ticket in the **People & IT**
+project in **Jira** to track provisioning and training.
 
-The HR Representative / Facility Manager is responsible to create an Issue in
-the  HR & Facilities project to initiate and track the
-onboarding process. The onboarding process should include the following
-IT/Security items:
+The onboarding process covers:
 
-1. Training.
+1. **Training.**
+   - Security and privacy awareness training covering this policy, the
+     Acceptable Use Policy, and the Employee Handbook.
+   - **Privacy Act / APP / NDB awareness** is the default baseline for all new
+     starters.
+   - Staff who support tenants that are **US healthcare providers** also
+     complete HIPAA awareness training, and a Business Associate Addendum is
+     reflected in the tenant's contract.
+   - Records of training and policy acceptance are kept in Employment Hero and
+     must be completed within 30 days of the start date.
 
-    * New workforce member is provided training on Tessera security policy,
-      acceptable use policy, and given access to the Employee
-      Handbook.
-    * HIPAA awareness training is provided to new workforce member.
-    * Records of training and policy acceptance is kept in the HR system
-      (currently EaseCentral).
-    * The training and acceptance must be completed within 30 days of
-      employment.
+2. **Access.**
+   - Standard access is provisioned to the role profile recorded on the Jira
+     joiner ticket.
+   - Non-standard access follows the [Access Establishment and Modification
+     procedures](access.md).
+   - Joiners, movers and leavers are run through the joiner-mover-leaver
+     procedure (ISMS-PR-014).
 
-2. Access.
+3. **System configuration.**
+   - IT provisions the end-user device with the standard image, endpoint agent,
+     encryption and required software.
+   - Engineers and other technical roles may self-configure within published IT
+     and Security baselines, provided the endpoint agent and required security
+     configuration remain in place.
 
-    * Standard access is provisioned according to the job role and approval as
-      specified in the HR onboarding  ticket.
-    * Non-standard access requires additional approval following the access
-      request procedures.
-    * Request for modifications of access for any Tessera employee
-      can be made using the procedures outlined in the
-      [Access Establishment and Modification policy and procedures](access.md).
+> *[Reviewer, A. Desai, 2025-03-04: the joiner checklist still references the old
+> "new starter pack" PDF that was retired with the 2024 HRIS migration — replace
+> with the Employment Hero onboarding workflow before the next review.]*
 
-3. System configuration.
+### Employee Exiting / Termination Procedures
 
-    * The end-user computing device (e.g. workstation or laptop) may be
-      provisioned by IT to install necessary software, malware protection,
-      security agents, and setting system configurations.
-    * Users in a technical role, such as Development, may choose to self
-      configure their system. In this case, the user is given configuration
-      guidelines defined by IT and Security. The system must have the required
-      security configuration and endpoint agents installed for monitoring and to
-      ensure compliance.
+A leaver checklist is maintained by the People team and published in the HR
+system. When a termination or resignation is confirmed, the People team raises a
+leaver ticket in the **People & IT** Jira project; IT and Security action the
+access and asset steps.
 
-### Employee Exiting/Termination Procedures
-
-A master checklist for employee existing/termination is maintained by
-HR/Facilities.  It is published in the HR system or the HR folder on
-[Tessera's internal file sharing site](#).
-
-1. The Human Resources Department (or other designated department), users, and
-   their supervisors (HR) are required to notify Security upon completion and/or
-   termination of access needs and facilitating completion of the "Termination
-   Checklist".
-2. HR are required to notify Security to terminate a user's access rights if
-   there is evidence or reason to believe the following (these incidents are
-   also reported on an incident report and is filed with the Privacy Officer):
-
-    * The user has been using their access rights inappropriately;
-    * A user's password has been compromised (a new password may be provided to
-      the user if the user is not identified as the individual compromising the
-      original password);
-    * An unauthorised individual is utilising a user's User Login ID and
-      password (a new password may be provided to the user if the user is not
-      identified as providing the unauthorised individual with the User Login ID
-      and password).
-
-3. Security will terminate users' access rights immediately upon notification,
-   and will coordinate with the appropriate Tessera employees to terminate
-   access to any non-production systems managed by those employees.
-4. Security audits and may terminate access of users that have not logged into
-   organisation's information systems/applications for an extended period of
-   time.
+1. The People team notifies IT and Security of a confirmed termination or
+   resignation, and the effective date and time.
+2. **All system access must be revoked within 2 hours of termination**, in line
+   with the offboarding procedure (ISMS-PR-014). This covers SSO / identity
+   provider accounts, cloud console access, source-code repositories, SaaS
+   applications and VPN.
+3. Company assets (laptop, phone, keys, access card) are returned and recorded
+   against the leaver ticket. *(Asset return was previously tracked in a
+   separate Return-of-Assets register that has since been folded into the Jira
+   leaver ticket — some older runbooks still reference the old register.)*
+4. Surviving obligations — confidentiality, IP assignment, return of company
+   information — are restated in writing.
+5. Where there is evidence of misuse, a user's access may be suspended
+   immediately and before the formal termination date; such cases are recorded
+   as a security incident (see [Incident Response](ir.md)).
+6. Security periodically audits for accounts that have not been used for an
+   extended period and disables them.
 
 ### Employee Issue Escalation
 
-Tessera workforce members are to escalate issues using the
-procedures outlined in the Employee Quick Reference. Issues that are brought to
-the Escalation Team are assigned an owner. The membership of the Escalation Team
-is maintained by the Chief Executive Officer or his delegate.
+Workforce members escalate concerns through their manager or the People team. The
+membership of the Escalation Team is maintained by the CEO or their delegate.
 
-Security incidents, particularly those involving sensitive data, are handled
-using the process described in [Incident Response](ir.md). If the incident
-involves a breach of sensitive data, the Security Officer will manage the
-incident using the process described in [Breach Notification](breach.md). Refer
-to [Incident Response](ir.md) for a list of sample items that can trigger
-Tessera's incident response procedures; if you are unsure whether
-the issue is a security incident, contact the Security team immediately.
+Security incidents, particularly those involving personal or tenant data, follow
+the [Incident Response](ir.md) process. Suspected privacy breaches follow the
+NDB Playbook (SOP-PRIV-001). The incident owner:
 
-It is the duty of the incident owner to follow the process outlined below:
-
-1. Create an Issue in the  Security Project.
-2. The Issue is investigated, documented, and, when a conclusion or remediation
-   is reached, it is moved to Review.
-3. The Issue is reviewed by another member of the Escalation Team. If the Issue
-   is rejected, it goes back for further evaluation and review.
-4. If the Issue is approved, it is marked as Done, adding any pertinent notes
-   required.
-5. The workforce member that initiated the process is notified of the outcome
-   via email.
-
+1. Raises an issue in the Security project in Jira.
+2. Investigates and documents it, then moves it to Review.
+3. Has a second reviewer check the conclusion; rejected items return for further
+   work.
+4. Marks approved items Done, with notes.
+5. Notifies the reporter of the outcome.
 
 ### Whistleblower Policy and Process
 
-The Tessera requires all workforce members to observe high
-standards of business and personal ethics in the conduct of their duties and
-responsibilities. All workforce members must practice honesty and integrity in
-fulfilling their responsibilities and comply with all applicable laws and
-regulations.
+Tessera requires high standards of conduct from all workforce members. This
+section aligns with the whistleblower protections in **Part 9.4AAA of the
+Corporations Act 2001 (Cth)**, which protects eligible whistleblowers who
+disclose reportable conduct about Tessera or a related body corporate.
 
-(a) Reporting Responsibility. Each workforce member is required and encouraged
-to report serious concerns so that Tessera can address and correct
-inappropriate internal conduct and actions. This includes
+(a) **Reportable conduct.** Workforce members are encouraged to report:
+   - dishonest, fraudulent or corrupt conduct;
+   - illegal conduct or a breach of any law enforced by the ACCC, ASIC or
+     another regulator;
+   - conduct that endangers the public or the financial system; and
+   - conduct that otherwise poses a serious risk to Tessera's reputation or
+     viability.
 
-  * questionable or improper accounting or auditing matters,
-  * violations and suspected violations of company policies or ethics, or
-  * suspected violations of law or regulations that govern
-    Tessera’s operations
+(b) **Eligible whistleblowers.** Officers, employees, contractors and their
+relatives, dependants and spouses can qualify for protection under Pt 9.4AAA.
 
-(b) Acting in Good Faith. Anyone filing a written complaint concerning a
-violation or suspected violation must be acting in good faith and have
-reasonable grounds for believing the information disclosed indicates a
-violation. Any allegations that prove not to be substantiated and which prove to
-have been made maliciously or knowingly to be false will be viewed as a serious
-disciplinary offense.
+(c) **How to report.** Reports can be made to the Head of People, the CEO, the
+CFO, or the external Whistleblower Officer engaged by Tessera. Reports may be
+made anonymously and still qualify for protection.
 
-(c) Confidentiality. Insofar as possible, the confidentiality of the
-whistleblower will be maintained. However, identity may have to be disclosed to
-conduct a thorough investigation, to comply with the law, and to provide accused
-individuals their legal rights of defence.
+(d) **Confidentiality.** The identity of a whistleblower, and information likely
+to identify them, is kept confidential to the fullest extent permitted by law,
+and is disclosed only with consent or where the law requires or permits.
 
-(d) No Retaliation. Workforce members, in good faith, reporting a concern under
-the Whistleblower Policy shall NOT be subject to retaliation or adverse
-employment consequences. Moreover, any workforce member who retaliates against
-someone who has reported a concern in good faith is subject to disciplinary
-actions up to and including termination of employment.
+(e) **No detriment.** Tessera prohibits any act that causes detriment, or
+threatens detriment, to a person because they made, or may make, a protected
+disclosure. Workforce members who breach this prohibition are subject to
+disciplinary action up to and including termination. A whistleblower who suffers
+detriment may seek compensation and other remedies through the courts.
 
-(e) Reporting. Reports of concerns may be filed directly with the company CEO,
-COO, and/or the Compliance Officer. Additional reporting procedure details can
-be found in the employee handbook.
-
+(f) **Investigations.** Reports are handled by the Whistleblower Officer and
+reported to the Audit and Risk Committee. Frivolous or knowingly false reports
+made maliciously are a disciplinary matter; a report made honestly but
+ultimately unsubstantiated is not.
 
 ## Employee Performance Review Process
 
-Formal performance reviews are conducted annually using Small Improvements.
+Formal performance reviews are conducted annually using the performance module in
+**Employment Hero**.
 
-- 360 feedback is collected from team members working directly with the employee
-- Employee provides their own self assessment for both performance outcome and
-  behaviour
-- Manager reviews employee self-assessment and peer feedback, and documents
-  the final review and rating
-- The final review and rating is reviewed and signed by both the employee and
-  their manager
-
+- 360° feedback is gathered from colleagues who work closely with the employee.
+- The employee completes a self-assessment covering outcomes and behaviours.
+- The manager reviews the self-assessment and peer feedback and documents the
+  rating.
+- The final review is signed by the employee and the manager.
 
 ## Employee Incentives and Rewards
 
-Tessera encourages employees to go above and beyond to contribute
-to the business objectives and help their peers and customers. Employees are
-recognised and rewarded for positive behaviour on a regular basis via peer
-recognition, appreciation, feedback, and rewards using Motivosity.
-
+Tessera recognises contribution through peer recognition, manager acknowledgement
+and the rewards available through the Employment Hero perks module. Recognition
+is intended to reinforce behaviours that support security, service and teamwork.
 
 ## Continuous Education and Skills Development
 
-Tessera provides employees the opportunity to attend conferences,
-trade shows, and/or ongoing training/studies relevant to their job function
-and business objectives.
-
+Employees may attend conferences, training and study relevant to their role,
+subject to manager approval and the training budget.
 
 ### Non-Compliance Investigation and Sanctions
 
-Workforce members shall report non-compliance of Tessera's policies and
-procedures to the Security Officer or other individual as assigned by the
-Security Officer. Individuals that report violations in good faith may not be
-subjected to intimidation, threats, coercion, discrimination against, or any
-other retaliatory action as a consequence.
+Workforce members must report suspected non-compliance with this or any related
+policy to the Head of People or the Security team. Good-faith reporters are
+protected from retaliation.
 
-1. The Security Officer promptly facilitates a thorough investigation of all
-   reported violations of Tessera's security policies and procedures. The
-   Security Officer may request the assistance from others.
+1. The Head of People, with the Security team, investigates reported violations.
+   An investigation may include:
+   - collecting and reviewing logs and audit trails;
+   - interviewing those who may be aware of or involved;
+   - requiring cooperation from all individuals; and
+   - giving the individual an opportunity to respond.
 
-    * Complete an audit trail/log to identify and verify the violation and
-      sequence of events.
-    * Interview any individual that may be aware of or involved in the incident.
-    * All individuals are required to cooperate with the investigation process
-      and provide factual information to those conducting the investigation.
-    * Provide individuals suspected of non-compliance of the Security rule
-      and/or Tessera's policies and procedures the opportunity to explain their
-      actions.
-    * The investigator thoroughly documents the investigation as the
-      investigation occurs. This documentation must include a list of all
-      employees involved in the violation.
+   The investigator documents the investigation as it proceeds, including the
+   individuals involved.
 
-2. Violation of any security policy or procedure by workforce members may result
-   in corrective disciplinary action, up to and including termination of
-   employment. Violation of this policy and procedures by others, including
-   business associates, customers, and partners may result in termination of the
-   relationship and/or associated privileges. Violation may also result in civil
-   and criminal penalties as determined by federal and state laws and
-   regulations.
+2. Violations may result in corrective action up to and including termination.
+   Violations by contractors, customers or partners may result in termination of
+   the relationship and may be referred to law enforcement.
 
-    * A fair disciplinary process will be utilised for employees are suspected
-      of committing breaches of security. Multiple factors will be considered
-      when deciding the response such as whether or not this was a first
-      offense, training, business contracts, etc.
-    * Tessera reserves the right to terminate employees in the case of serious
-      cases of misconduct.
-    * A violation resulting in a breach of confidentiality (i.e. release of
-      sensitive data to an unauthorised individual), change of the data
-      integrity, or inability to access data by other users, requires immediate
-      termination of the workforce member from Tessera.
+   - A fair process weighs factors such as whether this is a first offence, the
+     individual's training, and the seriousness of the conduct.
+   - Serious misconduct may warrant summary termination.
+   - A violation that causes a breach of confidentiality, a change to data
+     integrity, or denial of access for others may warrant immediate
+     termination.
 
-3. The Security Officer facilitates taking appropriate steps to prevent
-   recurrence of the violation (when possible and feasible).
+3. The investigator recommends steps to prevent recurrence.
 
-4. In the case of an insider threat, the Security Officer and Privacy Officer
-   are to set up a team to investigate and mitigate the risk of insider
-   malicious activity. Tessera workforce members are encouraged to come forward
-   with information about insider threats, and can do so anonymously.
+4. Suspected insider threats are handled by a small, privileged team convened by
+   the CISO and the Head of People; reports may be made anonymously.
 
-5. The Security Officer maintains all documentation of the investigation,
-   sanctions provided, and actions taken to prevent reoccurrence for a minimum
-   of seven years after the conclusion of the investigation.
+5. Investigation records are retained for a minimum of seven years.
 
-6. When the Security Officer identifies a violation and begins a formal
-   sanction process, they will notify the appropriate management or supervisors
-   within 24 hours. That notification will include 1) identifying the
-   individual sanctioned, 2) the reason for the sanction, and 3) specific
-   procedures for service or account restriction / revocation or other
-   disciplinary actions as required.
+6. When a formal sanction is commenced, the Head of People notifies the
+   individual's manager within 24 hours, setting out the individual, the reason,
+   and the access restrictions or other actions to be applied.
 
 [Warning Notice Template](ref/sanction-notice.pdf)

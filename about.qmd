@@ -3,83 +3,98 @@ title: "About Tessera"
 toc: false
 ---
 
-# Building Australia's Cloud Infrastructure Future
+# Managed cloud and multi-tenant SaaS, built for Australian business
 
-## Our Mission
+## Our purpose
 
-To empower Australian businesses with world-class cloud infrastructure and managed services that drive digital transformation, ensure security compliance, and deliver exceptional value.
+To give Australian organisations a secure, locally run platform for their
+software and data — one that takes privacy, sovereignty and operational
+resilience seriously, and that can be audited against recognised standards.
 
-## Our Story
+## Our story
 
-Founded in 2019, Tessera emerged from a vision to provide enterprise-grade cloud solutions tailored for the Australian market. With two state-of-the-art data centers in Perth and a team of certified cloud experts, we've grown to serve over 500 organizations across diverse industries.
+Tessera was founded in 2011 and is headquartered at St Georges Terrace in
+Perth, with offices in Sydney and an operations centre in Malaga, Western
+Australia. We run a multi-tenant software-as-a-service platform on AWS and a
+managed cloud practice, serving more than 600 clients across the SME and
+enterprise segments. A team of around 210 people across engineering, cloud
+operations, security, compliance and customer success keeps the platform
+running.
 
-## Why Choose Tessera?
+## Why organisations choose Tessera
 
-- **Local Expertise**: Australian-owned and operated with data sovereignty guarantee
-- **Proven Track Record**: 99.9% uptime SLA consistently exceeded for 5 years
-- **Security First**: ISO/IEC 27001:2022 certified with comprehensive compliance
-- **24/7 Support**: Local support team available round the clock
-- **Innovation Driven**: Continuous investment in cutting-edge technologies
+- **Australian-owned and operated**: data sovereignty is the default, not an
+  option, with the primary workload in `ap-southeast-2` (Sydney) and a declared
+  standby in `ap-southeast-1` (Singapore).
+- **Certified, and getting recertified**: we hold ISO/IEC 27001 certification
+  and SOC 2 Type II, and we are working to ISO/IEC 27001:2022
+  certification-readiness following a board mandate.
+- **Tenant isolation by design**: a shared platform with tenant separation
+  enforced at the data layer, so one tenant's data is not exposed to another.
+- **Security and continuity first**: encryption everywhere, federated identity
+  with MFA, and continuity arrangements that are exercised, not just documented.
+- **Local support**: an Australian-based team available around the clock.
 
+## Leadership team
 
-## Leadership Team
+:::: {layout-ncol=3}
 
-::: {layout-ncol=3}
-
-::: { .card }
+:::: { .card }
 ![](assets/henrik_larsson.webp){ .rounded }
 
-**Henrik Larsson**  
-*Chief Executive Officer*
+**Henrik Larsson**
+:*Chief Executive Officer*
 
-20+ years in enterprise technology leadership. Former CTO at major Australian telco. MBA from AGSM.
-:::
+20+ years in enterprise technology leadership. Former CTO at a major Australian
+telco. MBA from AGSM.
+::::
 
-::: { .card }
+:::: { .card }
 ![](assets/adrian_vasquez.webp){ .rounded }
 
-**Adrian Vasquez**  
-*Chief Information Officer*
+**Adrian Vasquez**
+:*Chief Information Officer*
 
-Cloud architecture expert with 15+ years experience. AWS and Azure certified solutions architect. 
-:::
+Cloud architecture specialist with 15+ years across AWS-native platforms.
+AWS-certified solutions architect.
+::::
 
-::: { .card }
+:::: { .card }
 ![](assets/grace_sullivan.webp){ .rounded }
-**Grace Sullivan**  
-*Chief Operations Officer*
+**Grace Sullivan**
+:*Chief Operations Officer*
 
-Specializes in operational excellence and service delivery. ITIL Master certified with proven SLA track record.
-:::
+Operations and service-delivery lead. ITIL-certified, with a record of holding
+SLAs through periods of rapid growth.
+::::
 
-:::
+::::
 
-## Our Certifications & Partnerships
+## Certifications and partnerships
 
-::: {.certifications-grid}
-- **ISO/IEC 27001:2022** - Information Security Management
-- **SOC 2 Type II** - Security & Availability 
-- **ISO 9001:2015** - Quality Management Systems
-- **AWS Advanced Partner** - Cloud Solutions
-- **Microsoft Gold Partner** - Azure Infrastructure
-- **VMware Principal Partner** - Virtualization
-:::
+:::: {.certifications-grid}
+- **ISO/IEC 27001** — Information Security Management (certified; 27001:2022
+  transition in progress)
+- **SOC 2 Type II** — Security and Availability
+- **ASD Essential Eight** alignment — baseline hardening and mitigation
+- **AWS Partner** — cloud solutions
+::::
 
-## Our Values
+## Our values
 
-::: {layout-ncol=3}
-::: {.value-card}
-**Security First**  
-Every decision prioritizes data protection and compliance
-:::
+:::: {layout-ncol=3}
+:::: {.value-card}
+**Security first**
+Every decision starts from protecting tenant data
+::::
 
-::: {.value-card}
-**Customer Success**  
-Your growth drives our innovation
-:::
+:::: {.value-card}
+**Customer success**
+Your outcomes are how we measure ours
+::::
 
-::: {.value-card}
-**Continuous Innovation**  
-Investing in tomorrow's technology today
-:::
-:::
+:::: {.value-card}
+**Evidence over assertion**
+We show our working, and we audit it
+::::
+::::

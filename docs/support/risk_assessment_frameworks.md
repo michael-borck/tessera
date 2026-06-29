@@ -3,107 +3,71 @@ categories:
 - Risk Management
 - Security
 - Compliance
-description: Simplified overview of risk assessment frameworks based on ISO 27005 and NIST SP 800-30, with templates for identifying, analyzing, and prioritizing risks.
+description: Tessera's risk assessment method, based on ISO/IEC 27005 and NIST SP 800-30, with the matrix and templates used to identify, analyse, evaluate and treat information security risks.
 title: Risk Assessment Frameworks
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Risk Assessment Frameworks          |
-| **Doc#**     | DOC-RISK-002                        |
-| **Version**  | 1.0                                 |
-| **Date**     | 14-09-2024                          |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Risk Assessment Frameworks                 |
+| **Doc#**     | DOC-RISK-002                               |
+| **Version**  | 1.1                                        |
+| **Date**     | 05-03-2025                                 |
 
-This document provides simplified risk assessment frameworks based on ISO 27005 and NIST SP 800-30, along with templates that guide the process of identifying, analysing, and prioritising risks.
+This document sets out how Tessera assesses information security risk. The
+method draws on ISO/IEC 27005 (information security risk management) and NIST
+SP 800-30 (risk assessment), and is the engine behind the risk register
+(DOC-SEC-001), the risk treatment plan and the Statement of Applicability
+(DOC-SEC-003). It supports Clause 6.1 of ISO/IEC 27001:2022.
 
-## ISO 27005-Based Risk Assessment Framework
+## Method
 
-ISO 27005 is an international standard specifically focused on information security risk management. It provides guidelines for identifying, assessing, and managing risks in an information security context.
+1. **Establish context.** Define the assessment scope and the assets within it;
+   agree the risk criteria, including Tessera's risk appetite and tolerance.
+2. **Identify risk.** For each asset, identify the threats that could act on it
+   and the vulnerabilities they could exploit, alongside the controls already
+   in place.
+3. **Analyse risk.** Combine likelihood and impact to produce an inherent
+   rating, then re-rate against the controls in place to give a residual
+   rating.
+4. **Evaluate risk.** Compare residual ratings against the risk criteria;
+   prioritise what exceeds appetite.
+5. **Treat risk.** Select a treatment — mitigate, transfer, accept or avoid —
+   and assign an owner and a date.
+6. **Monitor and review.** Reassess on a schedule and after material change or
+   incident.
 
-### Framework Overview
+## Rating matrix
 
-1. **Context Establishment:**
-   - Define the scope of the risk assessment (e.g., specific systems, data types)
-   - Identify the assets, threats, vulnerabilities, and controls related to the scope
-   - Determine the risk criteria, including risk appetite and tolerance levels
+Likelihood and impact are each rated on a four-point scale. The rating bands
+drive prioritisation and reporting to the Executive Risk Committee.
 
-2. **Risk Identification:**
-   - Identify potential threats to the assets (e.g., cyber-attacks, insider threats)
-   - Identify vulnerabilities that could be exploited by these threats
-   - Determine the existing controls that mitigate these vulnerabilities
+| Likelihood ↓ / Impact → | Low | Medium | High | Critical |
+|---|---|---|---|---|
+| Rare | Low | Low | Medium | Medium |
+| Unlikely | Low | Medium | Medium | High |
+| Possible | Medium | Medium | High | High |
+| Likely | Medium | High | High | Critical |
 
-3. **Risk Analysis:**
-   - Assess the likelihood of each threat exploiting a vulnerability
-   - Determine the potential impact on the organisation if the threat is realised
-   - Combine likelihood and impact to calculate the risk level (e.g., low, medium, high)
+## Working template
 
-4. **Risk Evaluation:**
-   - Compare the calculated risk levels against the risk criteria to determine which risks are acceptable and which require treatment
-   - Prioritise risks based on their levels to focus on the most critical ones
+| Risk ID | Asset | Threat | Vulnerability | Controls in place | Likelihood | Impact | Residual | Treatment | Owner | Status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| RR-01 | Tenant data (Aurora) | Unauthorised access via leaked static credential | Long-lived access keys; absent control-plane/data-plane segmentation | Short-lived credentials (in progress); secret scanning (in progress) | Medium | High | Medium | Mitigate — eliminate static keys; complete segmentation | CISO | In progress |
+| RR-02 | Tenant data | Cross-tenant exposure | Shared cluster failure of RLS | Row-level security; tenant-scoped roles | Low | Critical | Low | Mitigate (sustained) | Head of Engineering | Ongoing |
+| RR-03 | Tenant data | Data loss or corruption | Backup failure | Aurora continuous backups; restore tests | Low | High | Low | Mitigate (sustained) | Cloud Service Ops | Ongoing |
+| RR-05 | Platform egress | Delayed detection of exfiltration | Untuned alert routing | CloudTrail, GuardDuty, VPC Flow Logs, SIEM | Medium | High | Medium | Mitigate — retune management-plane alerts; egress baseline | CISO | In progress |
 
-5. **Risk Treatment:**
-   - Identify options for mitigating, transferring, accepting, or avoiding risks
-   - Select and implement appropriate risk treatment measures (e.g., additional controls, policy changes)
+## Using the framework
 
-6. **Risk Monitoring and Review:**
-   - Continuously monitor the risk environment and the effectiveness of the risk treatment measures
-   - Review and update the risk assessment regularly or when significant changes occur
+The register is the live artefact; this document is the method behind it. New
+risks are logged as they are identified — through threat modelling, vendor
+assessments, audit findings or incidents — and walked through the analyse →
+evaluate → treat → monitor cycle. TSR-INC-2025-031 is the clearest recent
+example: a control gap surfaced by an incident became tracked risks (RR-01,
+RR-05) with owners and treatment dates, rather than a one-off fix.
 
-### ISO 27005 Risk Assessment Template
-
-| **Risk ID** | **Asset** | **Threat** | **Vulnerability** | **Existing Controls** | **Likelihood** | **Impact** | **Risk Level** | **Treatment Option** | **Responsible** | **Status** |
-|-------------|-----------|------------|-------------------|----------------------|----------------|------------|----------------|---------------------|-----------------|------------|
-| R-001 | Customer Data | Phishing Attack | Weak MFA enforcement | Basic MFA, Phishing training | High | High | High | Strengthen MFA, Enhance Training | CISO | In Progress |
-| R-002 | Network Access | Misconfiguration | Inadequate firewall rules | Manual reviews | Medium | High | Medium | Automate configuration reviews | IT Manager | Planned |
-| R-003 | Financial Records | Data Exfiltration | Lack of DLP controls | Basic monitoring | High | Very High | Critical | Implement advanced DLP | Security Team | Not Started |
-
-## NIST SP 800-30-Based Risk Assessment Framework
-
-NIST SP 800-30 provides a comprehensive guide for conducting risk assessments, emphasising a risk management approach that identifies, assesses, and prioritises risks to organisational operations, assets, and individuals.
-
-### Framework Overview
-
-1. **Prepare for Assessment:**
-   - Establish the context, including the scope, objectives, and stakeholders involved in the risk assessment
-   - Gather information on the systems, processes, and environment to be assessed
-
-2. **Conduct Risk Assessment:**
-   - **Risk Identification:** Identify sources of risk, including threat actors, threat events, vulnerabilities, and impacted assets
-   - **Risk Analysis:** Determine the likelihood and impact of threat events exploiting vulnerabilities
-   - **Risk Determination:** Calculate the risk by considering the combined likelihood and impact, often using qualitative or quantitative scales
-
-3. **Communicate and Share Assessment Results:**
-   - Document the findings, including identified risks, their levels, and recommended actions
-   - Communicate results to stakeholders in a clear and actionable manner
-
-4. **Maintain Assessment:**
-   - Regularly review and update the risk assessment to reflect changes in the threat landscape, vulnerabilities, or organisational priorities
-
-### NIST SP 800-30 Risk Assessment Template
-
-| **Risk ID** | **System/Process** | **Threat Source** | **Threat Event** | **Vulnerability** | **Impact** | **Likelihood** | **Risk Score** | **Risk Response** | **Action Plan** | **Owner** |
-|-------------|--------------------|-------------------|------------------|-------------------|------------|----------------|----------------|-------------------|-----------------|-----------|
-| NIST-001 | Customer Database | External Actors | Phishing for Credentials | Weak Phishing Awareness | High | Likely | High | Mitigate | Improve training, Enhance MFA | Security Team |
-| NIST-002 | Internal Network | Internal Threats | Misuse of Privileged Access | Excessive Privilege | Medium | Possible | Medium | Mitigate | Conduct access reviews | IT Manager |
-| NIST-003 | Financial Systems | External Hackers | Ransomware Attack | Inadequate Endpoint Protection | Very High | Unlikely | High | Transfer (Insurance) | Improve endpoint security | CISO |
-
-## Using These Frameworks
-
-### Step 1: Identify Assets, Threats, and Vulnerabilities
-Start by listing all critical assets (e.g., customer data, network systems) and identifying potential threats (e.g., phishing, insider misuse). Then identify vulnerabilities that could be exploited by these threats.
-
-### Step 2: Analyse Risks
-Assess the likelihood of each threat exploiting a vulnerability and the potential impact on the organisation if the threat is realised. Use a simple scale (e.g., Low, Medium, High).
-
-### Step 3: Evaluate and Prioritise Risks
-Compare the assessed risks against the organisation's risk criteria to determine which risks are acceptable and which need treatment. Prioritisation should be based on risk levels, focusing on high and critical risks.
-
-### Step 4: Determine Risk Treatments
-For each identified risk, decide on a treatment option:
-- **Mitigate:** Reduce the risk through controls
-- **Transfer:** Shift the risk (e.g., insurance)
-- **Accept:** Acknowledge the risk
-- **Avoid:** Eliminate the risk source
-
-### Step 5: Develop Action Plans
-Outline specific action plans for the chosen risk treatments, including what actions will be taken, who is responsible, and the status of these actions.
+> **REVIEWER NOTE:** Several "residual" ratings in the register still reflect
+> controls that are in progress rather than closed. A residual rating is only
+> credible once the treating control has been substantiated; treat in-progress
+> mitigations as not yet effective when reading the register.

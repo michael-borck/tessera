@@ -1,0 +1,49 @@
+employee_id,name,role,termination_date,access_revoked_timestamp,within_24h,notes
+DATA-0002,Henry Lee,Machine Learning Engineer,2024-01-30,2024-01-30T17:45:00Z,TRUE,Compliant; laptop wiped and reassigned.
+PROD-0003,Ruby Ward,Product Manager,2024-02-03,2024-02-03T13:24:00Z,TRUE,Offboarding completed within SLA.
+ENG-0003,Aisha Bryant,Software Engineer,2024-02-20,2024-02-20T21:57:00Z,TRUE,Within-window revocation; no exceptions raised.
+OPS-0006,Thomas Adams,Site Reliability Engineer,2024-03-21,2024-03-22T00:44:00Z,TRUE,Offboarding completed within SLA.
+PROD-0005,Hazel Garcia,Technical Writer,2024-04-18,2024-04-19T00:11:00Z,TRUE,Same-day revocation; devices returned and wiped.
+ENG-0001,Abigail Long,DevOps Engineer,2024-05-01,2024-05-02T05:21:00Z,TRUE,Access removed; final review signed off.
+LEG-0001,Niamh Russo,Legal Counsel,2024-05-10,2024-05-10T12:57:00Z,TRUE,Access removed; final review signed off.
+FIN-0003,Ethan Hughes,Finance Analyst,2024-05-28,2024-05-28T20:37:00Z,TRUE,Access removed; final review signed off.
+SUP-0004,Cleo Sanders,Onboarding Specialist,2024-06-02,2024-06-02T22:40:00Z,TRUE,Offboarding completed within SLA.
+HR-0001,Audrey Young,People & Culture Advisor,2024-06-12,2024-06-12T12:34:00Z,TRUE,Access revoked via ISMS-PR-014; compliant.
+DATA-0005,Leo Garcia,Data Engineer,2024-06-20,2024-06-20T18:58:00Z,TRUE,Within-window revocation; no exceptions raised.
+OPS-0007,Zoe Brooks,Cloud Engineer,2024-06-24,2024-06-24T18:43:00Z,TRUE,Same-day revocation; devices returned and wiped.
+FIN-0006,Nathan Bowman,Finance Analyst,2024-06-25,2024-06-25T17:08:00Z,TRUE,Compliant; laptop wiped and reassigned.
+DATA-0001,Aoife Richardson,Data Analyst,2024-07-09,2024-07-10T05:51:00Z,TRUE,Timely offboarding; access review clean.
+OPS-0001,Jack Foster,Site Reliability Engineer,2024-07-30,2024-07-30T15:39:00Z,TRUE,Access revoked via ISMS-PR-014; compliant.
+FIN-0088,Hannah Pierce,Finance Analyst,2024-08-02,2024-08-05T14:02:00Z,FALSE,SSO + AWS console session retained ~3 days; offboarding ticket delayed over the weekend.
+FIN-0005,Anya Wright,Finance Analyst,2024-08-23,2024-08-23T13:24:00Z,TRUE,Offboarding completed within SLA.
+FIN-0002,Lily Gray,Accounts Payable Officer,2024-08-31,2024-09-01T04:48:00Z,TRUE,Routine exit; credentials deactivated same day.
+HR-0002,Genevieve Bowman,People & Culture Advisor,2024-10-07,2024-10-07T13:08:00Z,TRUE,Compliant; laptop wiped and reassigned.
+SAL-0002,Matilda Russo,Sales Development Rep,2024-10-20,2024-10-21T00:47:00Z,TRUE,Access revoked via ISMS-PR-014; compliant.
+DATA-0003,Eli Reed,Machine Learning Engineer,2024-11-02,2024-11-02T23:04:00Z,TRUE,Offboarding completed within SLA.
+OPS-0005,Anya Jackson,Cloud Engineer,2024-11-09,2024-11-09T18:53:00Z,TRUE,Access removed; final review signed off.
+PROD-0002,Sebastian Stewart,Product Manager,2024-11-10,2024-11-11T01:43:00Z,TRUE,Offboarding completed within SLA.
+SAL-0003,Esther Ward,Sales Development Rep,2024-11-12,2024-11-13T03:23:00Z,TRUE,Compliant; laptop wiped and reassigned.
+ENG-0331,David Marchetti,Software Engineer,2024-11-20,2024-11-22T07:18:00Z,FALSE,GitHub + AWS access retained ~50h; exit ticket misrouted to decommissioned queue.
+OPS-0002,Evelyn Bell,Site Reliability Engineer,2024-11-26,2024-11-26T12:08:00Z,TRUE,Compliant; laptop wiped and reassigned.
+PROD-0001,Saoirse Hughes,Business Analyst,2024-12-04,2024-12-05T02:17:00Z,TRUE,Routine exit; credentials deactivated same day.
+IT-0001,Phoebe Morgan,Security Analyst,2024-12-16,2024-12-16T17:34:00Z,TRUE,Within-window revocation; no exceptions raised.
+PROD-0004,Yuki Jones,Product Manager,2024-12-21,2024-12-21T11:57:00Z,TRUE,Same-day revocation; devices returned and wiped.
+IT-0002,Beatrice Cook,Security Analyst,2024-12-22,2024-12-22T22:34:00Z,TRUE,Access revoked via ISMS-PR-014; compliant.
+DATA-0006,Mason Howard,Data Engineer,2024-12-31,2024-12-31T10:58:00Z,TRUE,Offboarding completed within SLA.
+FIN-0004,Cooper Howard,Accounts Payable Officer,2025-01-07,2025-01-07T10:05:00Z,TRUE,Timely offboarding; access review clean.
+C-2041,Marcus Webb,Cloud Contractor (DevOps),2025-01-09,2025-02-25T00:48:00Z,FALSE,Static AWS access key (AKIA****7Q3F) remained active ~47 days after termination; key attributed to TSR-INC-2025-031.
+MKT-0001,Florence Green,Marketing Coordinator,2025-01-22,2025-01-23T02:57:00Z,TRUE,Routine exit; credentials deactivated same day.
+SUP-0005,Esther Sanders,Customer Support Specialist,2025-01-29,2025-01-29T22:11:00Z,TRUE,Timely offboarding; access review clean.
+IT-0003,Esther Freeman,Security Analyst,2025-02-14,2025-02-14T15:34:00Z,TRUE,Access removed; final review signed off.
+SAL-0001,Hunter Williams,Account Executive,2025-02-24,2025-02-24T10:09:00Z,TRUE,Routine exit; credentials deactivated same day.
+OPS-0004,Charlie Cook,Cloud Engineer,2025-02-25,2025-02-25T14:00:00Z,TRUE,Timely offboarding; access review clean.
+SUP-0001,Ivy Long,Implementation Consultant,2025-03-02,2025-03-02T19:36:00Z,TRUE,Within-window revocation; no exceptions raised.
+ENG-0005,Hana Phillips,Software Engineer,2025-03-09,2025-03-09T11:49:00Z,TRUE,Within-window revocation; no exceptions raised.
+ENG-0006,Ivy Bryant,QA Engineer,2025-03-16,2025-03-16T22:59:00Z,TRUE,Offboarding completed within SLA.
+ENG-0002,Matilda Jackson,Software Engineer,2025-03-25,2025-03-26T04:29:00Z,TRUE,Access removed; final review signed off.
+SUP-0003,Ivy Morgan,Implementation Consultant,2025-03-26,2025-03-26T16:38:00Z,TRUE,Access removed; final review signed off.
+DATA-0004,Jacob Scott,Data Engineer,2025-03-27,2025-03-27T23:13:00Z,TRUE,Routine exit; credentials deactivated same day.
+ENG-0004,Hudson Garcia,DevOps Engineer,2025-04-06,2025-04-06T13:04:00Z,TRUE,Same-day revocation; devices returned and wiped.
+SUP-0002,Hazel Young,Onboarding Specialist,2025-04-21,2025-04-21T11:06:00Z,TRUE,Routine exit; credentials deactivated same day.
+FIN-0001,Zoe Foster,Finance Analyst,2025-06-14,2025-06-15T04:18:00Z,TRUE,Same-day revocation; devices returned and wiped.
+OPS-0003,Hudson Wright,Site Reliability Engineer,2025-06-15,2025-06-15T23:20:00Z,TRUE,Access revoked via ISMS-PR-014; compliant.

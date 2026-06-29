@@ -3,252 +3,246 @@ categories:
 - Data Security
 - Compliance
 - Encryption Standards
-description: Tessera takes the confidentiality and integrity of its customer data
-  very seriously.
+description: How Tessera protects the confidentiality, integrity, and availability
+  of tenant and corporate data across its production and corporate systems.
 title: Data Protection
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Data Protection             |
-| **Doc#**     | POL-DATA-004 |
-| **Version**  | 1.0                                 |
-| **Date**     | 25-08-2023                              |
+|                   |                                                   |
+|-------------------|---------------------------------------------------|
+| **Title**         | Data Protection                                   |
+| **Doc#**          | POL-DATA-004                                      |
+| **Version**       | 1.0                                               |
+| **Date**          | 25-08-2023                                        |
+| **Owner**         | CISO — I. Ferreira                                |
+| **Approved By**   | Head of IT — H. Boyd                              |
+| **ISO/IEC 27001:2022** | A.8.24 Use of cryptography; A.8.21 Security of network services; A.8.2 Privileged access rights |
 
-Tessera takes the confidentiality and integrity of its customer data very
-seriously. As stewards and partners of Tessera Customers, we strive to assure
-data is protected from unauthorised access and that it is available when needed.
-The following policies drive many of our procedures and technical controls in
-support of the Tessera mission of data protection.
+This policy sets out how Tessera protects the confidentiality, integrity, and
+availability of the data it holds — tenant data on the multi-tenant SaaS platform
+and the corporate data that runs the business. It works with the Data
+Classification Policy (POL-DATA-001) and the Data Management Policy
+(POL-DATA-015): classification decides what a dataset *is*, data management
+decides its *lifecycle*, and this policy decides how it is *protected* in motion,
+at rest, and in use.
 
-Production systems that create, receive, store, or transmit Customer data
-(hereafter "Production Systems") must follow the requirements and guidelines
-described in this section.
+Tessera holds personal information within the meaning of the *Privacy Act 1988*
+(Cth) and must take such steps as are reasonable to protect it under **APP 11**.
+The encryption, network-service, and access controls described here are how
+Tessera discharges that obligation, mapped to **ISO/IEC 27001:2022** Annex A
+controls **A.8.24** (use of cryptography) and **A.8.21** (security of network
+services).
 
-## Policy Statements
+Production systems that create, receive, store, or transmit tenant data
+(hereafter "Production Systems") must follow the requirements below.
 
-Tessera policy requires that:
+## Policy statements
 
-(a) Data must be handled and protected according to its classification
-requirements and following approved encryption standards, if applicable.
+Tessera requires that:
 
-(b) Whenever possible, store data of the same classification in a given data
-repository and avoid mixing sensitive and non-sensitive data in the same
-repository. Security controls, including authentication, authorisation, data
-encryption, and auditing, should be applied according to the highest
-classification of data in a given repository.
+(a) data is handled and protected according to its classification (POL-DATA-001)
+and the encryption standards in this policy, where applicable;
 
-(c) Workforce members shall not have direct administrative access to production
-data during normal business operations.  Exceptions include emergency operations
-such as forensic analysis and manual disaster recovery.
+(b) data of the same classification is kept together in a given repository, and
+sensitive and non-sensitive data are not mixed; controls — authentication,
+authorisation, encryption, auditing — are applied to the highest classification
+held in any repository;
 
-(d) All Production Systems must disable services that are not required to
-achieve the business purpose or function of the system.
+(c) workforce members do not hold standing administrative access to production
+data during normal operations; exceptions are emergency operations such as
+forensic analysis and manual disaster recovery, conducted under the break-glass
+process in POL-SECU-010;
 
-(e) All access to Production Systems must be logged, following the Tessera
-Auditing Policy.
+(d) Production Systems disable every service not required for their business
+purpose;
 
-(f) All Production Systems must have security monitoring enabled, including
-activity and file integrity monitoring, vulnerability scanning, and/or malware
-detection, as applicable.
+(e) all access to Production Systems is logged, in line with the Tessera Auditing
+requirements; and
 
+(f) Production Systems have security monitoring enabled — activity and
+file-integrity monitoring, vulnerability scanning, and malware detection, as
+applicable.
 
+## Controls and procedures
 
-## Controls and Procedures
+### Data protection implementation
 
+Data is classified and handled per the Tessera Data Classification Policy
+(POL-DATA-001) and the handling matrix in POL-DATA-015. Confidential and
+Restricted data is tagged at creation where the platform supports tagging; each
+tag maps to a data type, which maps in turn to a protection level for encryption,
+access control, backup, and retention. Classification may also be inferred from
+location — source held in Tessera repositories is treated as **Internal** by
+default, even where no tag is applied to an individual file.
 
-### Data Protection Implementation and Processes
+Confidential and Restricted data is always stored and transmitted using approved
+encryption. The multi-tenant VPC layout, the KMS key hierarchy, and the IAM
+separation that underpin these controls are described in the [cloud architecture
+diagram](../support/architecture_diagram.qmd); this policy states the *controls*
+the diagram *implements*.
 
-Data is classified and handled according to the Tessera Data Handling
-Specifications and Data Classification document.
+IT systems that process or store sensitive data follow the provisioning,
+configuration, change-management, patching, and anti-malware standards defined in
+the [Configuration and Change Management policy](ccm.md).
 
-Critical, confidential and internal data will be tagged upon creation, if
-tagging is supported. Each tag maps to a data type defined in the data
-classification scheme, which then maps to a protection level for encryption,
-access control, backup, and retention. Data classification may alternatively be
-identified by its location/repository. For example, source codes in Tessera’s
- repos are considered “Internal” by default, even though a tag is not
-directly applied to each source file.
+#### Customer and production data protection
 
-Critical and confidential data is always stored and transmitted securely, using
-approved encryption standards. More details are specified in Tessera’s Data
-Classification and Handling document.
+Tessera hosts on **Amazon Web Services**, with the primary region
+`ap-southeast-2` (Sydney) and a cross-region standby for redundancy and disaster
+recovery. Data is replicated across regions within Australia.
 
-All IT systems that process and store sensitive data follow the provisioning
-process, configuration, change management, patching and anti-malware standards
-as defined in [Configuration and Change Management document](ccm.md).
+All Tessera employees, systems, and resources follow the practices below to
+reduce the risk of compromise of production data:
 
-#### Customer/Production Data Protection
+1. Controls are implemented and reviewed to protect production data from improper
+   alteration or destruction.
+2. Confidential data is stored so that user access is logged and automatically
+   monitored for signs of incident.
+3. Tenant production data is segmented and accessible only to the tenant it
+   belongs to.
+4. Production data at rest sits on encrypted volumes, using keys managed by
+   Tessera. Encryption at rest is enforced through the automated deployment
+   scripts referenced in [Configuration and Change Management](ccm.md).
+5. Volume-encryption keys, and the systems that generate them, are protected from
+   unauthorised access — key material is reachable only by privileged accounts.
+6. Encrypted volumes use the approved cipher algorithms, key strengths, and key
+   management process defined in §"Encryption key management" below.
+7. RAID volume members are individually encrypted and assembled at boot, which
+   requires manual entry of the key material to mount the encrypted volume.
 
-Tessera hosts on Amason Web Services in the US-East (Ohio) region by default.
-Data is replicated across multiple regions for redundancy and disaster recovery.
-
-All Tessera employees, systems, and resources adhere to the following standards
-and processes to reduce the risk of compromise of Production Data:
-
-1. Implement and/or review controls designed to protect Production Data from
-   improper alteration or destruction.
-2. Ensure that confidential data is stored in a manner that supports user access
-   logs and automated monitoring for potential security incidents.
-3. Ensure Tessera Customer Production Data is segmented and only accessible to
-   Customer authorised to access data.
-4. All Production Data at rest is stored on encrypted volumes using encryption
-   keys managed by Tessera. Encryption at rest is ensured through the use of
-   automated deployment scripts referenced in [Configuration and Change Management](ccm.md).
-5. Volume encryption keys and machines that generate volume encryption keys are
-   protected from unauthorised access. Volume encryption key material is
-   protected with access controls such that the key material is only accessible
-   by privileged accounts.
-6. Encrypted volumes use approved cipher algorithms, key strength, and key
-   management process as defined in §12.3.1 above.
-7. Raid volume drives are individually encrypted and assembled on boot requiring
-   a manual input of the key to mount the encrypted volume.
+> *[Reviewer, 2025-03-04: item 6 originally pointed at "§12.3.1," a numbering
+> carried over from an earlier draft. That section was renumbered when the policy
+> was restructured; point it at the Key Management heading above instead.]*
 
 #### Access
 
-Tessera employee access to production is guarded by an approval process and by
-default is disabled. When access is approved, temporary access is granted that
-allows access to production. Production access is reviewed by the security team
-on a case by case basis.
+Employee access to production is guarded by an approval workflow and is disabled
+by default. When access is approved, time-bound temporary access is granted. The
+Security team reviews production access on a case-by-case basis, and standing
+access is re-attested under the access control policy (POL-SECU-021). Access is
+revoked under the joiner-mover-leaver procedure (**ISMS-PR-014**) within 24 hours
+of a termination or role change.
 
 #### Separation
 
-Customer data is logically separated at the database/datastore level using a
-unique identifier for the institution. The separation is enforced at the API
-layer where the client must authenticate with a chosen institution and then the
-customer unique identifier is included in the access token and used by the API
-to restrict access to data to the institution. All database/datastore queries
-then include the institution identifier.
+Tenant data is logically separated at the database or datastore level using a
+unique identifier per tenant. The separation is enforced at the API layer: the
+caller authenticates against a chosen tenant, the tenant identifier is carried in
+the access token, and every database or datastore query is scoped by that
+identifier. The VPC, KMS, and IAM structures that back this separation are shown
+in the [cloud architecture diagram](../support/architecture_diagram.qmd).
 
-#### Backup and Recovery
+#### Backup and recovery
 
-For details on the backup and recovery process, see controls and procedures
-defined in [Data Management](data_mgmt.md).
+For the backup and recovery process, see the controls and procedures in
+[Data Management](data_mgmt.md).
 
 #### Monitoring
 
-Tessera uses AWS CloudWatch/CloudTrail to monitor the entire cloud service
-operation. If a system failure and alarm is triggered, key personnel are
-notified by text, chat, and/or email message in order to take appropriate
-corrective action. Escalation may be required and there is an on-call rotation
-for major services when further support is necessary.
+Tessera uses AWS CloudWatch and CloudTrail to monitor the cloud estate. On a
+system failure or alarm, key personnel are notified by text, chat, and email so
+that corrective action can begin; an on-call rotation covers major services where
+further support is needed.
 
-Tessera uses a security agent to monitor production systems. The
-agents monitor system activities, generate alerts on suspicious activities and
-report on vulnerability findings to a centralised management console.
+A security agent monitors production systems. The agents track system activity,
+raise alerts on suspicious behaviour, and report vulnerability findings to a
+centralised management console. The agent is installed on all on-premises Linux
+servers and is baked into the Amazon Machine Images (AMIs) used in the Tessera
+AWS environments.
 
-The security agent is installed on all on premise Linux servers. It is also
-built into Amason Machine Images (AMIs) for use in Tessera AWS
-environments.
+### Protecting data at rest
 
-### Protecting Data At Rest
+#### Encryption of data at rest
 
-#### Encryption of Data at Rest
+All databases, data stores, and file systems are encrypted with AES-256, using
+separate keys for each storage type. Keys are rotated on the schedule set out in
+the key management section below.
 
-All databases, data stores, and file systems are encrypted with AES-256 using
-separate keys for each storage type. The keys are rotated periodically.
+#### Local disk and volume encryption
 
-#### Local Disk/Volume Encryption
+Encryption and key management for the local disks of on-premises servers and
+end-user devices follow the platform standards for Windows, macOS, and Linux —
+BitLocker, FileVault, and LUKS respectively.
 
-Encryption and key management for local disk encryption of on-premise servers
-and end-user devices follow the defined best practices for Windows, macOS, and
-Linux/Unix operating systems, such as Bitlocker and FileVault.
+### Protecting data in transit
 
-### Protecting Data In Transit
-
-1. All external data transmission is encrypted end-to-end using encryption keys
-   managed by Tessera. This includes, but is not limited to, cloud
-   infrastructure and third party vendors and applications.
-
-2. Transmission encryption keys and systems that generate keys are protected
-   from unauthorised access. Transmission encryption key materials are protected
-   with access controls, and may only be accessed by privileged accounts.
-
-3. Transmission encryption keys use a minimum of 4096-bit RSA keys, or keys and
-   ciphers of equivalent or higher cryptographic strength (e.g., 256-bit AES
-   session keys in the case of IPSec encryption).
-
-4. Transmission encryption keys are limited to use for one year and then must be
+1. All external data transmission is encrypted end to end using keys managed by
+   Tessera. This includes cloud infrastructure and third-party vendors and
+   applications.
+2. Transmission-encryption keys, and the systems that generate them, are
+   protected from unauthorised access; key material is reachable only by
+   privileged accounts.
+3. Transmission-encryption keys use a minimum of 4096-bit RSA, or keys and
+   ciphers of equivalent or higher strength (for example, 256-bit AES session
+   keys in the IPSec case).
+4. Transmission-encryption keys are limited to one year of use and then
    regenerated.
+5. For every Tessera API, authentication, authorisation, and auditing are
+   enforced for all remote systems sending, receiving, or storing data.
+6. System logs of all production-data transmissions are kept and made available
+   for audit.
 
-5. For all Tessera APIs, enforcement of authentication, authorisation, and
-   auditing is used for all remote systems sending, receiving, or storing data.
-
-6. System logs of all transmissions of Production Data access are kept. These logs must
-   be available for audit.
-
-#### Encryption of Data in Transit
+#### Encryption of data in transit
 
 All internet and intranet connections are encrypted and authenticated using TLS
-1.2 (a strong protocol), ECDHE_RSA with P-256 (a strong key exchange), and
-AES_128_GCM (a strong cipher).
+1.2 (or above), ECDHE_RSA with P-256 key exchange, and AES_128_GCM.
 
-#### Data protection via end-user messaging channels
+#### End-user messaging channels
 
-Restricted and sensitive data is not allowed to be sent over electronic end-user
-messaging channels such as email or chat, unless end-to-end encryption is
-enabled.
+Restricted and Confidential data is not sent over end-user messaging channels —
+email or chat — unless end-to-end encryption is enabled.
 
+### Protecting data in use
 
-### Protecting Data In Use
+Data in use is the active data held in system memory, CPU caches, or registers
+while an application processes it. Protection of data in use relies on
+application-layer controls and system access controls. See the SDLC and access
+controls for details.
 
-Data in Use, sometimes known as Data in Process, refers to active data being
-processed by systems and applications which is typically stored in a
-non-persistent digital state such as in computer random-access memory (RAM), CPU
-caches, or CPU registers.
+> *[Reviewer, 2025-02-18: the two links above pointed at `sdlc.md`, which was
+> consolidated into the secure development lifecycle section of the Engineering
+> Handbook in 2024. The handbook is not yet published on the policy site; until
+> it is, leave the references as prose rather than dead links. — I. Ferreira]*
 
-Protection of data in use relies on application layer controls and system access
-controls. See the [Production Security / SDLC][1] and [Access][2] sections for
-details.
+Tessera applications implement logical account-level data segregation to protect
+data in a multi-tenant deployment, and may incorporate Runtime Application
+Self-Protection (RASP) and attribute-based access control (ABAC) for additional
+protection of data in use.
 
-[1]: sdlc.md
-[2]: access.md
-
-Tessera applications implement logical account-level data
-segregation to protect data in a multi-tenancy deployment. In addition,
-Tessera applications may incorporate advanced security features
-such as Runtime Application Self Protection (RASP) modules and Attribute Based
-Access Control (ABAC) for protection of data in use.
-
-### Encryption Key Management
+### Encryption key management
 
 Tessera uses AWS Key Management Service (KMS) for encryption key management.
 
 - KMS keys are unique to Tessera environments and services.
+- KMS keys are rotated automatically each year.
+- Administrative access to KMS is restricted to the Cloud Infrastructure team
+  (C. Hayes) and the CISO's office (I. Ferreira), and key administrative actions
+  are logged via CloudTrail.
 
-- KMS keys are automatically rotated yearly.
+### Certificate management
 
-### Certificate Management
-
-Tessera uses AWS Certificate Manager (ACM) and LetsEncrypt for
-certificate management.
+Tessera uses AWS Certificate Manager (ACM) and Let's Encrypt for certificate
+management.
 
 - Certificates are renewed automatically.
+- The Security team monitors certificates for expiry, potential compromise, and
+  validity of use; the revocation process is invoked when a certificate is no
+  longer needed or on discovery of potential compromise.
 
-- Security team monitors the certificates for expiration, potential compromise
-  and use/validity. Certificate revocation process is invoked if the certificate
-  is no longer needed or upon discovery of potential compromise.
+### Data integrity protection
 
-### Data Integrity Protection
+Where appropriate, Tessera Engineering implements versioning and lifecycle (or an
+equivalent data-management mechanism) so that direct edit and delete are not
+permitted on the data — this guards against accidental or malicious overwrite,
+including ransomware. In AWS, IAM and S3 bucket policy in production enforce this
+when environments are configured; when a change is required, a new version is
+created rather than overwriting the existing object.
 
-When appropriate, Tessera engineering should implement "Versioning"
-and "Lifecycle", or equivalent data management mechanism, such that direct edit
-and delete actions are not allowed on the data to prevent accidental or
-malicious overwrite. This protects against human errors and cyberattacks such as
-ransomware.
+- Every edit creates a new version, and old versions are preserved for the period
+  defined in the lifecycle policy.
+- Data objects are "marked for deletion" so they remain recoverable within the
+  window set by the retention policy.
+- Data is archived off-site — to a separate AWS account and/or region.
 
-In AWS, the IAM and S3 bucket policy in production will be implemented
-accordingly when the environments are configured. When changes must be made, a
-new version is created instead of editing and overwriting existing data.
-
-* All edits create a new version and old versions are preserved for a period of
-  time defined in the lifecycle policy.
-
-* Data objects are "marked for deletion" when deleted so that they are
-  recoverable if needed within a period of time defined according to the data
-  retention policy.
-
-* Data is archived offsite -- i.e. to separate AWS account and/or region.
-
-Additionally, all access to sensitive data is authenticated, and audited via
-logging of the infrastructure, systems and/or application.
+Additionally, all access to sensitive data is authenticated and audited through
+logging of the infrastructure, systems, and applications involved.

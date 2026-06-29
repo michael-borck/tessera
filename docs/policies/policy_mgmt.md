@@ -3,205 +3,166 @@ categories:
 - Compliance
 - Policy Development
 - Version Control
-description: Tessera implements policies and procedures to maintain compliance and
-  integrity of data.
+description: Describes how Tessera develops, versions, approves, publishes and
+  retires policy documents, and the compliance drivers they implement.
 title: Policy Management
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Policy Management             |
-| **Doc#**     | POL-COMP-019 |
+| **Title**    | Policy Management                   |
+| **Doc#**     | POL-COMP-019                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 04-03-2023                              |
+| **Date**     | 04-03-2023                          |
+| **Owner**    | CISO (I. Ferreira)                  |
+| **Approved By** | Head of Compliance (M. Dubois)   |
+| **ISO/IEC 27001:2022** | A.5.1 — Policies for information security |
 
-Tessera implements policies and procedures to maintain compliance and integrity
-of data. The Security Officer and Privacy Officer are responsible for
-maintaining policies and procedures and assuring all Tessera workforce members,
-business associates, customers, and partners are adherent to all applicable
-policies. Previous versions of policies are retained to assure ease of finding
-policies at specific historic dates in time.
+This policy sets out how Tessera's policy suite is written, reviewed, approved,
+published and retired, and the compliance drivers it implements. The CISO owns
+the policy suite; the Head of Compliance co-owns the compliance mapping.
+
+## Compliance drivers
+
+Tessera policies are written and maintained to implement the following drivers:
+
+- **ISO/IEC 27001:2022** — the primary framework for our information security
+  management system; Annex A control references appear in each policy's control
+  table.
+- **Privacy Act 1988 (Cth)**, the **Australian Privacy Principles (APPs)** and
+  the **Notifiable Data Breaches (NDB) scheme** — our own governing privacy
+  regime, administered by the OAIC.
+- **ASD Essential Eight** — the baseline technical hardening applied across the
+  estate.
+- **SOC 2** — for customer assurance.
+- **HIPAA** — only as a tenant-driven add-on: where a tenant is a US healthcare
+  provider, a Business Associate Addendum applies and the relevant HIPAA
+  obligations are reflected in the tenant's schedule.
 
 ## Policy Statements
 
-Tessera policy requires that:
+Tessera requires that:
 
-(a) Tessera policies must be developed and maintained to meet all applicable
-compliance requirements adhere to security best practices, including but not
-limited to:
+(a) Policies are developed and maintained to meet the compliance drivers above
+and recognised security best practice.
 
-- HIPAA
-- SOC 2
+(b) All policies are reviewed at least annually, and after any significant
+incident or change to the threat or regulatory landscape.
 
-(b) All policies must be reviewed at least annually.
+(c) All policy changes are approved by the CISO. In addition:
+  - Major changes may require approval by the CEO or their delegate.
+  - Changes touching product development may require approval by the Head of
+    Engineering.
 
-(c) All policy changes must be approved by Tessera Security Officer.
-Additionally,
+(d) All policy documents are version-controlled, and previous versions are
+retained for a minimum of seven years.
 
-  * Major changes may require approval by Tessera CEO or designee;
-  * Changes to policies and procedures related to product development may
-    require approval by the Head of Engineering.
-
-(d) All policy documents must be maintained with version control, and previous
-versions must be retained for a minimum of seven years.
-
-(e) Policy exceptions are handled on a case-by-case basis.
-
-  * All exceptions must be fully documented with business purpose and reasons
-    why the policy requirement cannot be met.
-  * All policy exceptions must be approved by both Tessera Security Officer and COO.
-  * An exception must have an expiration date no longer than one year from date
-    of exception approval and it must be reviewed and re-evaluated on or before
-    the expiration date.
-
+(e) Policy exceptions are handled case by case:
+  - Each exception is documented with the business purpose and the reason the
+    requirement cannot be met.
+  - Each exception is approved by both the CISO and the COO.
+  - An exception expires no later than one year after approval and is
+    re-reviewed before it expires.
 
 ## Controls and Procedures
 
+### Policy management process
 
-### Policy Management Process
+#### Document structure
 
-#### Document Structure
+Each policy is a standalone document covering one domain. A document carries its
+version in `YYYY.#` form (e.g. `2023.1`), followed by a control table (title,
+doc#, version, date, owner, approver, and the ISO/IEC 27001:2022 Annex A control
+reference where applicable) and then:
 
-Policies are written in individual documents, each pertaining to a specific
-domain of concern.
-
-Each document starts with the current version number in the format of `YYYY.#`
-(e.g. `2017.1`), followed by a brief summary.  The remaining of the document is
-structured to contain the following subsections:
-
-* Policy Statements
-* Applicable Standards
-* Controls and Procedures
+- Policy Statements
+- Applicable Standards (where relevant)
+- Controls and Procedures
 
 #### Versioning
 
-Each Tessera policy document contains a version and optionally a
-revision number. The version number is the four digit year followed by a number,
-to indicate the year and sequence number of the policy at which time it was
-written or updated.
-
-The version number shall be incremented by one with each material change to the
-policy content.  For example, if a new policy statement is added or a technical
-control/procedure is updated to `2017.1` version of a policy, the new version
-should be numbered `2017.2`.
-
-The policy document may also include a revision number, in the format of
-`rev.#`, immediately following the main version number. A revision number
-indicate minor, non-material changes to the document, such as formatting
-changes, fixing typos, or adding minor details.
+Each policy carries a version number — the four-digit year plus a sequence
+number indicating when it was written or updated. A material change increments
+the sequence number (e.g. `2023.1` → `2023.2`). A minor, non-material change
+(reformatting, typos, small details) increments a revision number in `rev.#`
+form immediately after the version.
 
 #### Numbering
 
-If sequencing numbers are included in the policy headings:
+Policies keep their assigned document numbers under the [Document Numbering
+System Policy](document_numbering.md) (POL-COMP-025). Procedure documents use
+the **ISMS-PR** prefix for ISMS procedures (for example, the joiner-mover-leaver
+procedure **ISMS-PR-014**), alongside the standard POL, SOP and DOC prefixes.
+Statement references such as `§2.1(a)` are used in cross references; to protect
+cross-reference integrity, statement numbering is not reordered or renumbered on
+update. New statements are appended, and retired statements are marked
+deprecated rather than deleted.
 
-* Policy may be referenced by its statement number, such as `§2.1(a)`, in
-  internal/external communications as well as in other Tessera policies or
-  technical/business documentation for cross reference.
+#### Review and maintenance
 
-* As such, to maintain cross referencing integrity, starting from version
-  `2017.2`, all numbering shall remain intact for policy documents and
-  statements.
+1. Policies are maintained to stay aligned with ISO/IEC 27001:2022, the Privacy
+   Act / APPs / NDB, the ASD Essential Eight, and SOC 2. Updates are
+   version-controlled like source code, in **git**.
 
-* When updating, avoid reordering and renumbering of policy documents and
-  statements. For example:
+2. Any workforce member may request a change at any time. The CISO and Head of
+   Compliance review the suite at least annually.
 
-    - Append at the end of the list by adding new statement(s) as needed instead
-      of inserting.
-    - If a policy or policy statement is no longer applicable, mark it
-      deprecated instead of removing the file or statement completely.
+3. To request a change:
+   1. The requester raises a **policy change request** in the **GRC** project in
+      **Jira**, optionally with a **git** pull request from a branch containing
+      the proposed change.
+   2. The CISO or Head of Compliance is assigned to review.
+   3. The reviewer approves or rejects the request in Jira; rejected items
+      return for further work.
+   4. On approval, the reviewer marks the Jira request Done, with notes.
+   5. Where a change requires a production configuration change, the change is
+      made by authorised personnel through Tessera's [change management process](ccm.md).
+   6. Where the change creates a new version (not a revision), the current
+      version is archived under its version number before the new version is
+      adopted and before the pull request is merged, so prior versions remain
+      retrievable.
 
-#### Review and Maintenance of Policies
+   !!! note
 
-1. All policies are stored and up to date to maintain Tessera compliance with
-   HIPAA,
-   
-   
-   SOC 2 and other relevant standards. Updates and version
-   control are done similar to source code control.
+       - Changes are made on a `drafts` branch, not `master`.
+       - Where multiple authors are involved, additional branches and pull
+         requests may be used before merging into `drafts`.
+       - Changes are not merged to `master` without CISO approval, and not
+         without archiving the current version unless the change is a minor
+         revision.
+       - Once final and approved, a pull request from `drafts` to `master`
+         includes the relevant team as approvers; the approvals serve as a
+         record of review and training.
+       - Communication and training for non-engineering staff are run separately
+         by the Security team.
 
-2. Policy update requests can be made by any workforce member at any time.
-   Furthermore, all policies are reviewed annually by the Security and Privacy
-   Officer to assure they are accurate and up-to-date.
+4. Current master policies are published on the **Compliance SharePoint site**
+   (and mirrored to Confluence for the engineering wiki). The policy index was
+   moved from the old intranet portal in 2024; some older documents still link
+   to the [intranet index](#), which is no longer maintained.
 
-3. Tessera employees may request changes to policies using the following
-   process:
+   - Changes are announced to the workforce through a SharePoint ↔ Slack
+     integration that posts to a dedicated channel.
+   - The CISO also emails a plain-language summary of material changes.
 
-    1. The Tessera employee initiates a policy change request by creating an
-       Issue in the  Security project. The change request may optionally
-       include a  pull request from a separate branch or
-       repository containing the desired changes.
+5. Policies and associated documentation are retained for seven years from
+   creation or last effective date, whichever is later.
+   1. Version history is maintained in **git**.
+   2. Backup storage is in AWS S3 and on the Microsoft 365 SharePoint tenant.
 
-    2. The Security Officer or the Privacy Officer is assigned to review the
-       policy change request.
+6. The policy suite is reviewed and audited at least annually, and after a
+   significant change to Tessera's environment, by the Security Committee.
+   Findings are tracked to closure.
+   1. The CISO initiates the review via a Jira issue or pull request.
+   2. Security Committee members and other reviewers are notified by email or in
+      the pull request.
+   3. Changes follow the process above and are documented in the issue or pull
+      request.
+   4. The CISO approves or rejects; approved items are marked Done or merged.
+   5. Review status is reported through Jira and the security scorecard.
 
-    3. Once the review is completed, the Security Officer approves or rejects
-       the Issue. If the Issue is rejected, it goes back for further review and
-       documentation.
+> *[Reviewer, M. Dubois: statement 5 says "seven years" but the Records
+> Retention Schedule (DOC-COMP-011) lists policy records at "life of the
+> document plus three years" — reconcile before the next review.]*
 
-    4. If the review is approved, the Security Officer then marks the Issue as
-       Done, adding any pertinent notes required.
-
-    5. If the policy change requires technical modifications to production
-       systems, those changes are carried out by authorised personnel using
-       Tessera's [change management process](ccm.md).
-
-    6. If the change results in a new version instead of a new revision (see
-       §3.3.1 for definitions), the current version of the policy document(s)
-       must be saved to archive under the corresponding version number prior to
-       the new policy being adopted/published and prior to merging the pull
-       request containing the changes. This allows easy reference to previous
-       versions if necessary.
-
-    !!! important
-
-        * Changes are made on the `drafts` (or equivalent) branch instead of on the `master` branch for commits.
-        * If multiple authors are working on the changes, additional separate branches and pull requests may be necessary before changes are merged in `drafts`.
-        * Changes must not be merged to `master` without the approval of Security and Privacy Officer.
-        * Changes must not be merged to `master` without archiving the existing version of policy document(s), unless the change is a minor revision.
-        * Once the changes are final and approved, a pull request shall be created from the `drafts` branch to the `master` branch and all members of the development team shall be included as approvers.  This serves as communication and training of policy updates to the development organisation, and the pull request approvals serve as records of training received.
-        * Policy update communication and training for non-development staff is conducted separately by the Security team.
-
-4. All policies are made accessible to all Tessera workforce members. The
-   current master policies are published at
-   []().
-
-    * Changes are automatically communicated to all Tessera team members
-      through integrations between  and Slack that log changes
-      to a predefined Tessera Slack Channel.
-    * The Security Officer also communicates policy changes to all employees via
-      email. These emails include a high-level description of the policy change
-      using terminology appropriate for the target audience.
-
-5. All policies, and associated documentation, are retained for 7 years from the
-   date of its creation or the date when it last was in effect, whichever is
-   later
-
-     1. Version history of all Tessera policies is done via .
-     2. Backup storage of all policies is done with AWS S3 and/or internal file
-        share (e.g. Microsoft Office365 SharePoint or Box).
-
-6. The policies and information security policies are reviewed and audited
-   annually, or after significant changes occur to Tessera's
-   organisational environment, by the security committee members. Issues that
-   come up as part of this process are reviewed by Tessera
-   management to assure all risks and potential gaps are mitigated and/or fully
-   addressed. The process for reviewing polices is outlined below:
-
-    1. The Security Officer initiates the policy review by creating an Issue in
-       the  Security project or via a Pull Request (PR).
-    2. The Security Committee members and additional reviewers are notified by
-       email or via the PR to review the current policies.
-    3. If changes are made, the above process is used. All changes are
-       documented in the Issue/PR.
-    4. Once the review is completed, the Security Officer approves or rejects
-       the Issue/PR. If the Issue/PR is rejected, it goes back for further
-       review and documentation.
-    5. If the review is approved, the Security Officer then marks the Issue as
-       Done, or merges the PR into master branch, adding any pertinent notes
-       required.
-    6. Policy review is monitored using  or 
-       reporting to assess compliance with above policy.
-
-
-Additional documentation related to maintenance of policies is outlined in
-[Roles and Responsibilities](rar.md).
+Additional responsibilities are set out in [Roles and Responsibilities](rar.md).

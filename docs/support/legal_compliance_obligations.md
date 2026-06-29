@@ -1,95 +1,85 @@
 ---
 categories:
-- Healthcare Compliance
+- Compliance
 - Risk Management
 - Data Protection
 description: |
-   As a provider of cloud services to various industries, including finance, healthcare, and education, Tessera must comply with a range of regulatory standards designed to protect personal data and ensure information security. The recent data breach exposes the company to potential legal repercussions under these frameworks, emphasising the importance of maintaining compliance to avoid fines, penalties, and reputational damage
-title: Legal and Compliance Insights for Tessera
+   Tessera's legal and compliance obligations, framed primarily to the Privacy Act 1988 (Cth), the Australian Privacy Principles and the Notifiable Data Breaches scheme, with ASD Essential Eight and ISO/IEC 27001:2022 as the control baseline. GDPR, HIPAA and PCI DSS apply only where specific clients or data bring them into scope.
+title: Legal and Compliance Obligations
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Legal and Comliance Insights             |
-| **Doc#**     | DOC-DATA-024 |
-| **Version**  | 1.0                                 |
-| **Date**     | 07-07-2024                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Legal and Compliance Obligations           |
+| **Doc#**     | DOC-COMP-005                               |
+| **Version**  | 1.1                                        |
+| **Date**     | 06-03-2025                                 |
 
----
+As an Australian entity holding the personal information of Australian
+individuals, Tessera's primary compliance frame is the *Privacy Act 1988* (Cth)
+and the Australian Privacy Principles (APPs), with the Notifiable Data Breaches
+(NDB) scheme administered by the Office of the Australian Information
+Commissioner (OAIC). The control baseline is ISO/IEC 27001:2022, with hardening
+aligned to the ASD Essential Eight and the ASD Information Security Manual.
+Sector and foreign regimes apply only where specific clients or data bring them
+into scope, as set out below. The February 2025 breach (TSR-INC-2025-031) is
+the clearest illustration of why these obligations are taken seriously.
 
-### **Overview of Relevant Regulatory Obligations**
+## 1. Privacy Act 1988 (Cth) and the Australian Privacy Principles
 
-As a provider of cloud services to various industries, including finance, healthcare, and education, Tessera must comply with a range of regulatory standards designed to protect personal data and ensure information security. The recent data breach exposes the company to potential legal repercussions under these frameworks, emphasising the importance of maintaining compliance to avoid fines, penalties, and reputational damage.
+Tessera holds personal information on behalf of its tenants and for its own
+workforce. The APPs govern how that information is collected, used, disclosed,
+stored and protected. APP 11 requires Tessera to take such steps as are
+reasonable to protect personal information from misuse, interference and loss,
+and from unauthorised access, modification or disclosure.
 
-### **1. General Data Protection Regulation (GDPR)**
+- **Security obligation (APP 11):** Reasonable steps include encryption,
+  access control, monitoring, and timely revocation of access.
+- **Notifiable Data Breaches scheme:** Where an eligible data breach is
+  assessed as likely to result in serious harm, Tessera must notify the OAIC
+  and, in most cases, affected individuals as soon as practicable. Tessera
+  operates to an internal 72-hour assessment target.
+- **Serious harm:** Assessed on the multi-factor test — the kind and sensitivity
+  of the information, whether it is protected, and the circumstances of the
+  breach.
+- **Individual rights:** Individuals may seek access to, and correction of,
+  their personal information.
 
-**Overview:**
-- The GDPR is a comprehensive data protection law that applies to organisations handling the personal data of individuals within the European Union (EU).
-- Key principles include data minimisation, purpose limitation, accuracy, storage limitation, integrity and confidentiality, and accountability.
+## 2. ISO/IEC 27001:2022 and the ASD Essential Eight
 
-**Obligations:**
-- **Data Protection:** Organisations must implement appropriate technical and organisational measures to protect personal data against accidental or unlawful destruction, loss, alteration, unauthorised disclosure, or access.
-- **Breach Notification:** GDPR requires organisations to notify the relevant supervisory authority of a data breach within 72 hours of becoming aware of it, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals.
-- **Data Subject Rights:** Individuals have the right to access their data, request corrections, and demand deletion (the right to be forgotten). Organisations must facilitate these rights promptly and transparently.
-- **Penalties:** Non-compliance can result in significant fines, up to €20 million or 4% of the organisation’s annual global turnover, whichever is higher.
+- **ISO/IEC 27001:2022** is the management-system standard the ISMS is operated
+  to, and the subject of the current certification-readiness audit.
+- The **ASD Essential Eight** and the **ASD Information Security Manual (ISM)**
+  provide the baseline mitigation and hardening expectations Tessera aligns to,
+  particularly for application control, application hardening, patching and
+  privileged access.
 
-**Relevance to Tessera:**
-- As a cloud service provider, Tessera must ensure that all customer data, including that of EU residents, is handled in compliance with GDPR requirements, particularly concerning data protection and breach notification protocols.
+## 3. Sector and foreign regimes (in scope only where triggered)
 
-### **2. Health Insurance Portability and Accountability Act (HIPAA)**
+- **GDPR.** Applies to Tessera's handling of EU residents' personal data where
+  an EU client or EU data brings it into scope. Tessera then meets the EU
+  breach-notification and individual-rights obligations for that data.
+- **Health information.** Where Tessera holds health information for an
+  Australian client, it is treated as sensitive information under APP 3 and
+  handled to the higher standard that implies. Tessera is not a "health service
+  provider" for the purposes of state health-records legislation in its own
+  right, but it supports clients who are.
+- **PCI DSS.** Tessera does not store payment-card data; card processing is
+  performed by a third-party payment processor engaged under its own SOC 2
+  Type II report, which keeps PCI scope off Tessera's environment.
 
-**Overview:**
-- HIPAA is a U.S. law that establishes national standards for the protection of individuals' medical records and other personal health information (PHI).
-- It applies to healthcare providers, health plans, healthcare clearinghouses, and their business associates, including cloud service providers that handle PHI.
+## Implications and current focus
 
-**Obligations:**
-- **Security Rule:** Organisations must implement administrative, physical, and technical safeguards to ensure the confidentiality, integrity, and availability of PHI.
-- **Breach Notification Rule:** HIPAA mandates that covered entities notify affected individuals, the Secretary of Health and Human Services (HHS), and, in some cases, the media, of a breach of unsecured PHI.
-- **Business Associate Agreements (BAAs):** Tessera, as a business associate, must have a BAA with covered entities, outlining its responsibilities for safeguarding PHI and compliance with HIPAA.
+The TSR-INC-2025-031 breach was assessed as an eligible data breach and
+notified to the OAIC within the internal 72-hour target — a compliance strength
+on the notification side. The control weaknesses that enabled it (a leaked
+static key and absent segmentation) are the focus of the remediation programme
+and the ISO/IEC 27001:2022 certification-readiness work, tracked against the
+Statement of Applicability. Ongoing compliance depends on those preventive
+controls being substantively closed, not just the notification process being
+fast.
 
-**Penalties:**
-- Penalties for non-compliance can range from $100 to $50,000 per violation, with a maximum annual penalty of $1.5 million for repeated violations. Criminal charges may apply in cases of willful neglect.
-
-**Relevance to Tessera:**
-- Tessera must ensure strict compliance with HIPAA when providing services to healthcare clients, including implementing robust security controls and maintaining breach response protocols.
-
-### **3. Payment Card Industry Data Security Standard (PCI DSS)**
-
-**Overview:**
-- PCI DSS is a set of security standards designed to ensure that all companies that accept, process, store, or transmit credit card information maintain a secure environment.
-- The standard applies to merchants and service providers, including cloud service providers that handle payment information.
-
-**Obligations:**
-- **Data Protection:** PCI DSS requires the encryption of cardholder data, secure network configurations, strong access control measures, regular monitoring, and security testing.
-- **Incident Response:** Organisations must have an incident response plan in place to address data breaches involving payment information.
-- **Compliance Validation:** Organisations are required to perform regular compliance assessments, which may include self-assessment questionnaires or third-party audits.
-
-**Penalties:**
-- Non-compliance can result in fines from credit card companies, increased transaction fees, and potential revocation of the right to process payment cards.
-
-**Relevance to Tessera:**
-- Tessera must comply with PCI DSS requirements when handling payment data for its clients, ensuring that encryption and security monitoring are in place to protect cardholder information.
-
-### **4. Industry-Specific Standards and Best Practices**
-
-**NIST Cybersecurity Framework:**
-- Although not legally binding, the NIST Cybersecurity Framework provides guidelines, best practices, and standards for managing cybersecurity risks.
-- Tessera can use the NIST framework as a foundation for strengthening its cybersecurity posture, including risk assessments, continuous monitoring, and incident response planning.
-
-**California Consumer Privacy Act (CCPA):**
-- Similar to GDPR, CCPA provides California residents with rights related to the access, deletion, and sharing of their personal information.
-- Obligations include providing privacy notices, honouring opt-out requests, and ensuring that personal data is not sold without consent.
-
-**Relevance to Tessera:**
-- While Tessera may not be directly subject to all industry-specific regulations, aligning with best practices from NIST and preparing for compliance with state laws like CCPA enhances its overall security posture and readiness.
-
-### **Summary of Legal Implications for Tessera**
-
-The recent data breach at Tessera raises significant concerns under various regulatory frameworks, particularly GDPR and HIPAA, due to the exposure of personal and sensitive information. Immediate actions are required to mitigate potential legal repercussions, including:
-
-1. **Strengthening Data Protection Measures:** Enhance encryption, access controls, and monitoring to safeguard personal data and comply with regulatory standards.
-2. **Ensuring Prompt Breach Notifications:** Develop and test robust breach notification protocols to ensure timely communication with regulatory authorities, customers, and affected parties.
-3. **Conducting Compliance Audits:** Regularly review and audit compliance with GDPR, HIPAA, PCI DSS, and other relevant standards to identify gaps and implement corrective actions.
-4. **Training and Awareness:** Expand training programs for employees to increase awareness of data protection obligations and the importance of compliance with applicable laws.
-
-Tessera must prioritise compliance with these regulatory obligations to avoid significant fines, legal challenges, and damage to its reputation. By addressing identified vulnerabilities and aligning with best practices, Tessera can enhance its resilience against future breaches and build trust with its clients.
+> **DRAFT NOTE:** This document was rewritten from a US-centric (GDPR/HIPAA
+   primary) version. The primary frame is now the Privacy Act and the APPs.
+   Any policy still framing Tessera's obligations as HIPAA-primary should be
+   treated as legacy and corrected.

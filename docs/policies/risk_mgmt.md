@@ -3,446 +3,316 @@ categories:
 - Risk Management
 - Security Management
 - Operational Security
-description: This policy establishes the scope, objectives, and procedures of Tessera's
+description: This policy establishes the scope, objectives and procedures of Tessera's
   information security risk management process.
 title: Risk Management
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Risk Management             |
+| **Title**    | Risk Management                     |
 | **Doc#**     | POL-RISK-014 |
 | **Version**  | 1.0                                 |
-| **Date**     | 24-07-2023                              |
+| **Date**     | 24-07-2023                          |
+| **Owner**    | Isabella Ferreira, Chief Information Security Officer |
+| **Approved By** | Henrik Larsson, Chief Executive Officer |
+| **ISO/IEC 27001:2022** | Clause 6.1 Planning (risk assessment & risk treatment); A.8.8 Management of technical vulnerabilities |
 
-This policy establishes the scope, objectives, and procedures of Tessera's
-information security risk management process. The risk management process is
-intended to support and protect the organisation and its ability to fulfill its
-mission.
+This policy sets out the scope, objectives and procedures of Tessera's
+information security risk management process. Risk management is how we decide
+which controls to put in place, which risks to accept, and where to spend. It
+is the backbone of our ISMS.
+
+The process is aligned to **Clause 6.1 of ISO/IEC 27001:2022** (planning —
+risk assessment at 6.1.2 and risk treatment at 6.1.3). It is also the control
+we use to discharge our obligation under **APP 11** of the Privacy Act 1988
+(Cth) to take reasonable steps to protect personal information, and to keep
+pace with the **ASD Essential Eight** and the ACSC threat picture. The output
+that ties identified risks to selected controls is the **Statement of
+Applicability (DOC-SEC-003)**.
+
+The owner of this process is the **CISO (I. Ferreira)**.
 
 ## Policy Statements
 
 Tessera policy requires that:
 
-(a) A thorough risk assessment must be conducted to evaluate the potential
-threats and vulnerabilities to the confidentiality, integrity, and availability
-of sensitive, confidential and proprietary electronic information it stores,
-transmits, and/or processes.
+(a) A risk assessment must be conducted to evaluate threats and vulnerabilities
+to the confidentiality, integrity and availability of the sensitive,
+confidential and proprietary information Tessera stores, transmits and
+processes — including personal information held under the Privacy Act.
 
-(b) Risk assessments must be performed with any major change to Tessera's
-business or technical operations and/or supporting infrastructure, no less than
-once per year.
+(b) Risk assessments must be performed at least annually and whenever there is
+a major change to Tessera's business, technical operations or supporting
+infrastructure.
 
-(c) Strategies shall be developed to mitigate or accept the risks identified in
-the risk assessment process.
+(c) Risks identified must be treated — mitigated, transferred or accepted — and
+the treatment recorded.
 
-(d) Maintain documentation of all risk assessment, risk management, and risk
-mitigation efforts for a minimum of seven years.
-
-
+(d) Documentation of all risk assessment, treatment and acceptance decisions
+must be retained for a minimum of seven years.
 
 ## Controls and Procedures
 
-
 ### Risk Management Objectives
 
-Tessera has established formal risk analysis and risk management
-processes to
+Tessera maintains formal risk assessment and risk treatment processes to:
 
-- identify risks that may impact its business operations or the confidentiality,
-  integrity and availability of its critical data; and
-
-- reduce risk to an acceptable level by implementation of mitigation controls.
-
-Unmitigated risk above the pre-defined acceptable level must be reviewed,
-approved and accepted by senior management.
+- identify risks that may affect business operations or the confidentiality,
+  integrity and availability of critical data, including tenant data and
+  personal information; and
+- reduce risk to an acceptable level through mitigation controls, with residual
+  risk above the acceptable level formally accepted by senior management.
 
 #### Acceptable Risk Levels
 
-Risks that are either low impact or low probability, based on the scoring
-mechanism defined in the risk assessment process, are generally
-considered acceptable.
-
-All other risks must be individually reviewed and managed according to the
-the risk management process.
-
+Risks scoring low impact or low likelihood under the scoring mechanism below
+are generally treated as acceptable. All other risks are individually reviewed
+and managed through the risk treatment process. Residual risk above the
+acceptable level requires sign-off by the CISO and a member of the executive.
 
 ### Risk Management Process
 
-Risk analysis and risk management are recognised as important components of
-Tessera's corporate compliance and information security program.
+Risk assessment and risk treatment are core parts of Tessera's ISMS. The
+process satisfies Clause 6.1 of ISO/IEC 27001:2022 and supports our APP 11
+obligations.
 
-Tessera's risk management process is developed in accordance with
-the Risk Analysis and Risk Management implementation specifications within the
-Security Management standard and the evaluation standards set forth in the HIPAA
-Security Rule, 45 CFR 164.308(a)(1)(ii)(A), 164.308(a)(1)(ii)(B),
-164.308(a)(1)(i), and 164.308(a)(8).
+Tessera adopts the **nine-step risk assessment method described in NIST SP
+800-30 Rev. 1** as its standard method. SP 800-30 is a widely used, public
+methodology; we use it because it is well-understood by auditors and produces
+results we can compare year on year. The steps are written in Tessera's own
+terms below.
 
-Risk assessments are done throughout product life cycles:
+Risk assessments are run:
 
-  * Before the integration of new system technologies and before changes are
-    made to Tessera physical and technical safeguards; and (Note that these
-    changes do not include routine updates to existing systems, deployments of
-    new systems created based on previously configured systems, deployments of
-    new Customers, or new code developed for operations and management of the
-    Tessera Platform)
-  * While making changes to Tessera physical equipment and facilities that
-    introduce new, untested configurations.
+* Before integrating new system technologies and before non-routine changes to
+  physical or technical safeguards. (Routine updates, deployments based on an
+  existing baseline, new tenant onboarding and ordinary platform code changes
+  are not in scope of a fresh assessment — they are covered by change
+  management.)
+* When changes to physical equipment or facilities introduce new, untested
+  configurations.
+* In response to environmental or operational change affecting the security of
+  sensitive data.
 
-Tessera performs periodic technical and non-technical assessments of the
-security rule requirements as well as in response to environmental or
-operational changes affecting the security of sensitive data.
+Tessera implements controls sufficient to reduce risk to a reasonable and
+appropriate level in order to:
 
-Tessera implements security measures sufficient to reduce risks and
-vulnerabilities to a reasonable and appropriate level to:
+1. Protect the confidentiality, integrity and availability of the sensitive
+   data Tessera holds for its tenants.
+2. Protect against reasonably anticipated threats to the security or integrity
+   of tenant and sensitive data.
+3. Protect against unauthorised use or disclosure of tenant and sensitive data.
+4. Ensure workforce members comply with these controls.
 
-  1. Ensure the confidentiality, integrity, and availability of all sensitive data
-     Tessera receives, maintains, processes, and/or transmits for its
-     Customers;
-  2. Protect against any reasonably anticipated threats or hasards to the
-     security or integrity of Customer data and/or sensitive data;
-  3. Protect against any reasonably anticipated uses or disclosures of Customer
-     data and/or sensitive data that are not permitted or required; and
-  4. Ensure compliance by all workforce members.
+In addition:
 
-In addition, Tessera risk management process requires that:
+1. Any residual risk remaining after controls are applied requires sign-off by
+   the CISO and senior management.
+2. All workforce members are expected to cooperate with those doing risk work,
+   including contractors and auditors. Breaches of this policy are dealt with
+   under the HR and Personnel Security Policy.
+3. Operation and maintenance of the risk process is the responsibility of the
+   CISO and the Risk Management Team.
+4. All risk decisions — including decisions *not* to implement a control — are
+   documented and retained for seven years.
+5. The process is tracked, measured and monitored as follows:
 
-1. Any risk remaining (residual) after other risk controls have been applied,
-   requires sign off by the senior management and Tessera's Security Officer.
-2. All Tessera workforce members are expected to fully cooperate with all
-   persons charged with doing risk management work, including contractors and
-   audit personnel. Any workforce member that violates this policy will be
-   subject to disciplinary action based on the severity of the violation, as
-   outlined in the Tessera Roles Policy.
-3. The implementation, execution, and maintenance of the information security
-   risk analysis and risk management process is the responsibility of Tessera's
-   Security Officer (or other designated employee), and the identified Risk
-   Management Team.
-4. All risk management efforts, including decisions made on what controls to put
-   in place as well as those to not put into place, are documented and the
-   documentation is maintained for six years.
-5. The details of the Risk Management Process, including risk assessment,
-   discovery, and mitigation, are outlined in detail below. The process is
-   tracked, measured, and monitored using the following procedures:
+    1. The CISO (or delegate) opens a **Jira** issue in the Security project
+       (SEC) to initiate a risk assessment.
+    2. The CISO assigns an analyst to carry it out.
+    3. Findings are documented and linked to the Jira issue.
+    4. When the assessment and treatment plan are complete, the CISO approves
+       or rejects the issue. A rejected issue returns for further work.
+    5. On approval, the CISO closes the issue, with notes. Treatment actions
+       become tracked Jira sub-tasks.
 
-    1. The Security Officer or the Privacy Officer initiates the Risk Management
-       Procedures by creating an Issue in the  Security Project.
-    2. The Security Officer or the Privacy Officer is assigned to carry out the
-       Risk Management Procedures.
-    3. All findings are documented and linked to the Issue.
-    4. Once the Risk Assessment steps are complete, along with corresponding
-       documentation, the Security Officer approves or rejects the Issue. If the
-       Issue is rejected, it goes back for further review and documentation.
-    5. If the review is approved, the Security Officer then marks the Issue as
-       Done, adding any pertinent notes required.
+6. The process is monitored quarterly through reporting to the Executive Risk
+   Committee.
 
-6. The Risk Management Procedure is monitored on a quarterly basis using 
-   reporting to assess compliance with above policy.
-
-Third party risk management details including procurement and systems
-acquisition can be found in [§vendor](vendor.md).
+Third-party risk, including procurement and systems acquisition, is covered in
+[Vendor Risk Management](vendor.md).
 
 #### Risk Management Schedule
 
-The two principle components of the risk management process - risk assessment
-and risk mitigation - will be carried out according to the following schedule to
-ensure the continued adequacy and continuous improvement of Tessera's
-information security program:
+The two components — assessment and treatment — run on this schedule:
 
-* Scheduled Basis - an overall risk assessment of Tessera's information system
-  infrastructure will be conducted annually. The assessment process should be
-  completed in a timely fashion so that risk mitigation strategies can be
-  determined and included in the corporate budgeting process.
-
-* Throughout a System's Development Life Cycle - from the time that a need for a
-  new, untested information system configuration and/or application is
-  identified through the time it is disposed of, ongoing assessments of the
-  potential threats to a system and its vulnerabilities should be undertaken as
-  a part of the maintenance of the system.
-
-* As Needed - the Security Officer (or other designated employee) or Risk
-  Management Team may call for a full or partial risk assessment in response to
-  changes in business strategies, information technology, information
-  sensitivity, threats, legal liabilities, or other significant factors that
-  affect Tessera's Platform.
-
-
+* *Scheduled basis* — an overall risk assessment of Tessera's information
+  system environment is conducted annually. It is timed so that treatment
+  decisions feed the corporate budgeting cycle.
+* *Through the system life cycle* — from the identification of a need for a new
+  or untested configuration or application through to disposal, ongoing
+  assessment of threats and vulnerabilities is part of maintenance.
+* *As needed* — the CISO or Risk Management Team may call a full or partial
+  assessment in response to changes in business strategy, technology,
+  information sensitivity, the threat landscape, legal liability, or other
+  significant factors.
 
 ### Risk Assessment and Analysis
 
-The intent of completing a risk assessment is to determine potential threats and
-vulnerabilities and the likelihood and impact should they occur. The output of
-this process helps to identify appropriate controls for reducing or eliminating
-risk.
+The point of a risk assessment is to identify threats and vulnerabilities and
+to estimate their likelihood and impact, so that appropriate controls can be
+chosen. The nine steps below are the adopted SP 800-30 method.
 
-* Step 1. System Characterisation
+* **Step 1. System characterisation.** Define the scope: where sensitive data
+  is received, maintained, processed or transmitted, and the boundaries of the
+  Tessera platform under assessment. *Output — a characterisation of the system
+  assessed and a clear statement of its boundaries.*
 
-    * The first step in assessing risk is to define the scope of the effort. To
-      do this, identify where sensitive data is received, maintained, processed, or
-      transmitted. Using information-gathering techniques, the Tessera Platform
-      boundaries are identified.
+* **Step 2. Threat identification.** Identify and document potential
+  threats — the ways a threat-source could exercise a vulnerability. We draw on
+  historical incidents, ACSC and vendor threat intelligence, and lessons from
+  TSR-INC-2025-031. *Output — a threat list of sources that could exploit
+  platform vulnerabilities.*
 
-    * Output - Characterisation of the Tessera Platform system assessed, a good
-      picture of the Platform environment, and delineation of Platform
-      boundaries.
+* **Step 3. Vulnerability identification.** Build a list of technical and
+  non-technical platform vulnerabilities that threat-sources could exploit or
+  trigger — from policy gaps to weak safeguards to software, hardware or
+  configuration weaknesses. *Output — a list of platform vulnerabilities.*
 
-* Step 2. Threat Identification
+* **Step 4. Control analysis.** Document and assess the effectiveness of the
+  technical and non-technical controls already in place or planned, to
+  minimise the likelihood of a vulnerability being exploited. *Output — a list
+  of current or planned controls used to mitigate likelihood and impact.*
 
-    * Potential threats (the potential for threat-sources to successfully
-      exercise a particular vulnerability) are identified and documented. All
-      potential threat-sources through the review of historical incidents and
-      data from intelligence agencies, the government, etc., to help generate a
-      list of potential threats.
+* **Step 5. Likelihood determination.** Determine the overall likelihood that a
+  vulnerability could be exploited by a threat-source, given the existing or
+  planned controls. *Output — likelihood of low (0.1), medium (0.5) or high
+  (1.0), per SP 800-30.*
 
-    * Output - A threat list containing a list of threat-sources that could
-      exploit Platform vulnerabilities.
+* **Step 6. Impact analysis.** Determine the adverse impact if a threat
+  successfully exploited a vulnerability — considering importance to Tessera's
+  mission, sensitivity and criticality of the data, cost, and loss of
+  confidentiality, integrity or availability. *Output — magnitude of impact of
+  low (10), medium (50) or high (100), per SP 800-30.*
 
-* Step 3. Vulnerability Identification
+* **Step 7. Risk determination.** Multiply likelihood by impact to establish a
+  risk level, which drives the action senior management must take. *Output —
+  risk level of low (1–10), medium (>10–50) or high (>50–100), per SP
+  800-30.*
 
-    * Develop a list of technical and non-technical Platform vulnerabilities
-      that could be exploited or triggered by potential threat-sources.
-      Vulnerabilities can range from incomplete or conflicting policies that
-      govern an organisation's computer usage to insufficient safeguards to
-      protect facilities that house computer equipment to any number of
-      software, hardware, or other deficiencies that comprise an organisation's
-      computer network.
+* **Step 8. Control recommendations.** Identify controls that could reduce or
+  eliminate the identified risks to an acceptable level — considering
+  effectiveness, legislation and regulation (including the Privacy Act and
+  APP 11), organisational policy, operational impact, and reliability.
+  *Output — recommended controls and alternatives.*
 
-    * Output - A list of the Platform vulnerabilities (observations) that could
-      be exercised by potential threat-sources.
+* **Step 9. Results documentation.** Record the results in a risk assessment
+  report and brief senior management, so decisions on policy, budget and
+  platform change are evidence-based. *Output — the risk assessment report.*
 
-* Step 4. Control Analysis
+> *[I. Ferreira, note to self: the likelihood/impact numeric bands above are
+> the SP 800-30 defaults. The risk register (docs/support/risk_register.md)
+> uses the same bands — keep them aligned before the Stage 1 audit, and check
+> whether the SoA (DOC-SEC-003) still quotes the old 1–5 scale anywhere.]*
 
-    * Document and assess the effectiveness of technical and non-technical
-      controls that have been or will be implemented by Tessera to minimise or
-      eliminate the likelihood / probability of a threat-source exploiting a
-      Platform vulnerability.
+### Risk Treatment and Monitoring
 
-    * Output - List of current or planned controls (policies, procedures,
-      training, technical mechanisms, insurance, etc.) used for the Platform to
-      mitigate the likelihood of a vulnerability being exercised and reduce the
-      impact of such an adverse event.
+Risk treatment prioritises, evaluates and implements the controls recommended
+by the assessment, to protect the confidentiality, integrity and availability
+of Tessera platform data. Control selection depends on the organisation's risk
+appetite, set by the executive.
 
-* Step 5. Likelihood Determination
+* **Step 1. Prioritise actions.** Using Step 7 of the assessment, sort
+  threat/vulnerability pairs by risk level, descending. The top of the list
+  gets immediate attention and priority for resources. *Output — actions
+  ranked high to low.*
 
-    * Determine the overall likelihood rating that indicates the probability
-      that a vulnerability could be exploited by a threat-source given the
-      existing or planned security controls.
+* **Step 2. Evaluate control options.** Review the recommended controls and
+  alternatives for reasonableness and appropriateness — feasibility
+  (compatibility, user acceptance) and effectiveness (degree of protection).
+  Select the most appropriate option for each pair. *Output — a list of
+  feasible controls.*
 
-    * Output - Likelihood rating of low (.1), medium (.5), or high (1). Refer to
-      the NIST SP 800-30 definitions of low, medium, and high.
+* **Step 3. Cost-benefit analysis.** Compare the benefit (risk reduction) of
+  each control against its cost. Controls that are not cost-effective are
+  flagged. *Output — documented cost-benefit analysis for each control.*
 
-* Step 6. Impact Analysis
+* **Step 4. Select controls.** The Risk Management Team selects the best
+  controls — a mix of administrative, physical and technical safeguards — to
+  reduce risk to an acceptable level. Selected controls are recorded in the
+  **Statement of Applicability (DOC-SEC-003)**, which is the document that ties
+  treatment decisions to Annex A controls. *Output — selected controls, mapped
+  in the SoA.*
 
-    * Determine the level of adverse impact that would result from a threat
-      successfully exploiting a vulnerability. Factors of the data and systems
-      to consider should include the importance to Tessera's mission;
-      sensitivity and criticality (value or importance); costs associated; loss
-      of confidentiality, integrity, and availability of systems and data.
+* **Step 5. Assign responsibility.** Identify the people with the skills to
+  implement each control, and assign owners. Identify the equipment, training
+  and resources required. *Output — owners and resource assignments.*
 
-    * Output - Magnitude of impact rating of low (10), medium (50), or high
-      (100). Refer to the NIST SP 800-30 definitions of low, medium, and high.
+* **Step 6. Develop implementation plan.** Build the overall and per-control
+  implementation plans: each risk/threat pair and level; prioritised actions;
+  the recommended controls; required resources; owners; start and target dates;
+  maintenance requirements. Status, metrics and milestones are reported to
+  senior management. *Output — the safeguard implementation plan.*
 
-* Step 7. Risk Determination
+* **Step 7. Implement and monitor.** As controls are implemented, monitor the
+  affected systems to confirm the controls meet expectations. Eliminating all
+  risk is not realistic; controls lower risk, they do not necessarily remove
+  it. If expectations are not met, repeat part of the process. Additional
+  monitoring matters most during major environmental, organisational or
+  facilities change. *Output — residual-risk documentation.*
 
-    * Establish a risk level. By multiplying the ratings from the likelihood
-      determination and impact analysis, a risk level is determined. This
-      represents the degree or level of risk to which an IT system, facility, or
-      procedure might be exposed if a given vulnerability were exercised. The
-      risk rating also presents actions that senior management must take for
-      each risk level.
+### Technical Vulnerability Management
 
-    * Output - Risk level of low (1-10), medium (>10-50) or high (>50-100).
-      Refer to the NIST SP 800-30 definitions of low, medium, and high.
+Vulnerabilities identified in production components are managed under the
+vulnerability management process that satisfies **A.8.8 (Management of
+technical vulnerabilities)** of ISO/IEC 27001:2022. Patch and vulnerability
+SLAs follow the ASD Essential Eight maturity targets. Findings from
+vulnerability scanning and from the ACSC and vendor feeds feed the risk
+register and, where they change the risk picture, trigger a partial assessment
+under this policy.
 
-* Step 8. Control Recommendations
+### Risk Register
 
-    * Identify controls that could reduce or eliminate the identified risks, as
-      appropriate to the organisation's operations to an acceptable level.
-      Factors to consider when developing controls may include effectiveness of
-      recommended options (i.e., system compatibility), legislation and
-      regulation, organisational policy, operational impact, and safety and
-      reliability. Control recommendations provide input to the risk mitigation
-      process, during which the recommended procedural and technical security
-      controls are evaluated, prioritised, and implemented.
+The CISO maintains the ISMS risk register. It is the single source of truth for
+identified risks and their treatment status, and it is the working copy that
+feeds the Statement of Applicability.
 
-    * Output - Recommendation of control(s) and alternative solutions to
-      mitigate risk.
+The register is held in **Jira** (the SEC project) and mirrored to the ISMS
+Confluence space for review. It captures every risk and threat identified
+during the annual assessment and all interim reviews, with owner, treatment,
+current status and review date.
 
-* Step 9. Results Documentation
-
-    * Results of the risk assessment are documented in an official report,
-      spreadsheet, or briefing and provided to senior management to make
-      decisions on policy, procedure, budget, and Platform operational and
-      management changes.
-
-    * Output - A risk assessment report that describes the threats and
-      vulnerabilities, measures the risk, and provides recommendations for
-      control implementation.
-
-### Risk Mitigation and Monitoring
-
-Risk mitigation involves prioritising, evaluating, and implementing the
-appropriate risk-reducing controls recommended from the Risk Assessment process
-to ensure the confidentiality, integrity and availability of Tessera Platform
-data. Determination of appropriate controls to reduce risk is dependent upon the
-risk tolerance of the organisation consistent with its goals and mission.
-
-* Step 1. Prioritise Actions
-
-    * Using results from Step 7 of the Risk Assessment, sort the threat and
-      vulnerability pairs according to their risk-levels in descending order.
-      This establishes a prioritised list of actions needing to be taken, with
-      the pairs at the top of the list getting/requiring the most immediate
-      attention and top priority in allocating resources
-
-    * Output - Actions ranked from high to low
-
-* Step 2. Evaluate Recommended Control Options
-
-    * Although possible controls for each threat and vulnerability pair are
-      arrived at in Step 8 of the Risk Assessment, review the recommended
-      control(s) and alternative solutions for reasonableness and
-      appropriateness. The feasibility (e.g., compatibility, user acceptance,
-      etc.) and effectiveness (e.g., degree of protection and level of risk
-      mitigation) of the recommended controls should be analysed. In the end,
-      select a "most appropriate" control option for each threat and
-      vulnerability pair.
-
-    * Output - list of feasible controls
-
-* Step 3. Conduct Cost-Benefit Analysis
-
-    * Determine the extent to which a control is cost-effective. Compare the
-      benefit (e.g., risk reduction) of applying a control with its subsequent
-      cost of application. Controls that are not cost-effective are also
-      identified during this step. Analysing each control or set of controls in
-      this manner, and prioritising across all controls being considered, can
-      greatly aid in the decision-making process.
-
-    * Output - Documented cost-benefit analysis of either implementing or not
-      implementing each specific control
-
-* Step 4. Select Control(s)
-
-    * Taking into account the information and results from previous steps,
-      Tessera's mission, and other important criteria, the Risk Management Team
-      determines the best control(s) for reducing risks to the information
-      systems and to data confidentiality, integrity, and availability.
-      These controls may consist of a mix of administrative, physical, and/or
-      technical safeguards.
-
-    * Output - Selected control(s)
-
-* Step 5. Assign Responsibility
-
-    * Identify the workforce members with the skills necessary to implement each
-      of the specific controls outlined in the previous step, and assign their
-      responsibilities. Also identify the equipment, training and other
-      resources needed for the successful implementation of controls. Resources
-      may include time, money, equipment, etc.
-
-    * Output - List of resources, responsible persons and their assignments
-
-* Step 6. Develop Safeguard Implementation Plan
-
-    * Develop an overall implementation or action plan and individual project
-      plans needed to implement the safeguards and controls identified. The
-      Implementation Plan should contain the following information:
-
-        * Each risk or vulnerability/threat pair and risk level;
-        * Prioritised actions;
-        * The recommended feasible control(s) for each identified risk;
-        * Required resources for implementation of selected controls;
-        * Team member responsible for implementation of each control;
-        * Start date for implementation
-        * Target date for completion of implementation;
-        * Maintenance requirements.
-
-    * The overall implementation plan provides a broad overview of the safeguard
-      implementation, identifying important milestones and timeframes, resource
-      requirements (staff and other individuals' time, budget, etc.),
-      interrelationships between projects, and any other relevant information.
-      Regular status reporting of the plan, along with key metrics and success
-      indicators should be reported to Tessera Senior Management.
-
-    * Individual project plans for safeguard implementation may be developed and
-      contain detailed steps that resources assigned carry out to meet
-      implementation timeframe and expectations. Additionally, consider
-      including items in individual project plans such as a project scope, a
-      list deliverables, key assumptions, objectives, task completion dates and
-      project requirements.
-
-    * Output - Safeguard Implementation Plan
-
-* Step 7. Implement Selected Controls
-
-    * As controls are implemented, monitor the affected system(s) to verify that
-      the implemented controls continue to meet expectations. Elimination of all
-      risk is not practical. Depending on individual situations, implemented
-      controls may lower a risk level but not completely eliminate the risk.
-
-    * Continually and consistently communicate expectations to all Risk
-      Management Team members, as well as senior management and other key people
-      throughout the risk mitigation process. Identify when new risks are
-      identified and when controls lower or offset risk rather than eliminate
-      it.
-
-    * Additional monitoring is especially crucial during times of major
-      environmental changes, organisational or process changes, or major
-      facilities changes.
-
-    * If risk reduction expectations are not met, then repeat all or a part of
-      the risk management process so that additional controls needed to lower
-      risk to an acceptable level can be identified.
-
-    * Output - Residual Risk documentation
-
-### Risk Registry
-
-Tessera Security team maintains a registry of risks, captured and kept updated
-
-* in a document on company SharePoint; and/or
-* in the security operations tool/database.
-
-The risk registry includes all risks and threats identified during annual risk
-assessment and all interim reviews.
+> *[Reviewer, 2025-02: the register is being migrated off SharePoint to Jira/
+> Confluence. If you find a copy still pointing at the old SharePoint
+> `Risk Register.xlsx`, treat it as stale — the Jira SEC project is
+> authoritative.]*
 
 ### Cyber Liability Insurance
 
-Tessera holds cyber liability insurance with sufficient coverage
-based on the organisation's risk profile.
-
-Our current cyber policy is covered by .
-
+Tessera holds cyber liability insurance with coverage matched to the
+organisation's risk profile. The current policy is placed with **Aon** and the
+policy schedule is held by Finance (DOC-FIN-001).
 
 ### Fraud Risks
 
-Due to its transparent culture, team sise and operating model, including
-separation of duties, comprehensive controls, continuous monitoring and auditing,
-Tessera considers its fraud-related risk to be very low.
+Given its size, operating model, separation of duties, continuous monitoring
+and audit coverage, Tessera assesses its fraud-related risk as low.
 
-Tessera hires  to perform accounting services and
-annual financial audits.
+Tessera engages **Carstairs & Ng, Chartered Accountants** for accounting
+services and the annual financial audit.
 
-Fraud risk is re-evaluated as part of the organisation's annual risk assessment.
-The assessment considers the following aspects of fraud:
+Fraud risk is re-evaluated as part of the annual risk assessment. The
+assessment considers the standard fraud triangle:
 
 - Pressures and/or incentives
 - Opportunities
-- Rationalities
+- Rationalisation
 
-Financial-related fraud assessment is led by the COO/CFO.
+Financial-related fraud assessment is led by the **CFO, Priya Nair**, supported
+by the COO (Grace Sullivan).
 
-IT-related fraud assessment is led by the Compliance Officer or CISO.
+IT-related fraud assessment is led by the **CISO, Isabella Ferreira**, with the
+Head of Compliance (M. Dubois).
 
 #### Potential Frauds and Likelihood
 
-Fraud Risk                       | Likelihood | In Place Controls/Monitors
-----------                       | ---------- | --------------------------
-Fraudulent Financial Reporting   | Low        | Monthly executive team reviews of business plan and revenue; Financial review by external accounting firm
-Misappropriation of Assets       | Low        | Expense reporting and asset tracking in place
-Regulatory and Legal Misconduct  | Low        | Audit and compliance policies and processes, including whistleblower procedures; engage external law firm to review legal conduct
-Payroll Fraud                    | Low        | Payroll is reviewed by at least two people internally as well as by external accounting firm
-Kickbacks / Conflict of Interest | Low        | Team-based vendor review and selection process
-Misuse of Cloud Resources        | Low        | Continuous resource monitoring for all cloud accounts and regions and expense monitoring
-Other IT Fraud                   | Low        | IT assets and resources tracking
+| Fraud Risk                       | Likelihood | In Place Controls/Monitors |
+|----------                        |----------  |--------------------------  |
+| Fraudulent Financial Reporting   | Low        | Monthly executive review of business plan and revenue; external audit by Carstairs & Ng |
+| Misappropriation of Assets       | Low        | Expense reporting and asset tracking under the Asset Management policy |
+| Regulatory and Legal Misconduct  | Low        | Compliance policies and whistleblower procedure; external law firm review of legal conduct |
+| Payroll Fraud                    | Low        | Payroll reviewed by at least two people internally and by Carstairs & Ng |
+| Kickbacks / Conflict of Interest | Low        | Team-based vendor review and selection (see Vendor Risk Management) |
+| Misuse of Cloud Resources        | Low        | Continuous monitoring of all cloud accounts and regions; spend alerts |
+| Other IT Fraud                   | Low        | IT asset and resource tracking |

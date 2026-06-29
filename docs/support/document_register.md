@@ -2,30 +2,34 @@
 categories:
 - Document Management
 - Compliance
-description: The document register serves as a comprehensive and systematic catalog of documents related to Tessera operations.
+description: The Tessera document register is the controlled catalogue of policies, procedures and supporting documents — their current status, owner and version — maintained to support document control and the ISO/IEC 27001:2022 audit.
 title: Document Register
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Document Register             |
-| **Doc#**     | DOC-COMP-006 |
-| **Version**  | 1.0                                 |
-| **Date**     | 18-09-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Document Register                          |
+| **Doc#**     | DOC-COMP-006                               |
+| **Version**  | 1.4                                        |
+| **Date**     | 06-03-2025                                 |
 
-The document register serves as a comprehensive and systematic catalog of
-documents related to Tessera operations. Its primary purpose is to maintain a
-record of all documents, including their current status, location, and version,
-ensuring that stakeholders can quickly access accurate and up-to-date
-information. This register helps in enforcing document control practices,
-enhancing transparency, and facilitating effective communication among all
-parties involved. 
+The document register is the controlled catalogue of Tessera's policies,
+standard operating procedures and supporting documents. Its purpose is to give
+a single, current view of what each document is, who owns it, and which version
+is in force — so that the workforce, auditors and the certification body are
+all looking at the same artefacts. It underpins document control, supports the
+ISO/IEC 27001:2022 certification-readiness audit, and is maintained alongside
+the Statement of Applicability (DOC-SEC-003).
+
+Documents are versioned and reviewed at least annually, or sooner where a
+material change or an incident requires it. The register is the index; the
+authoritative content lives in each linked document.
 
 **Policies**
 
 | Document Number | Policy Title                                           |
 |-----------------|--------------------------------------------------------|
-| POL-COMP-001    | GDPR Compliance                                        |
+| POL-DATA-000   | GDPR Data Processing Addendum (EU clients)             |
 | POL-COMP-002    | Compliance Audits and External Communications          |
 | POL-HR-001      | Roles, Responsibilities, and Training                  |
 | POL-SEC-001     | Facility Access and Physical Security                  |
@@ -49,9 +53,8 @@ parties involved.
 | POL-SEC-006    | Access Control                                         |
 | POL-PRIV-002   | Privacy Policy                                         |
 | POL-PRIV-003   | Privacy and Consent                                    |
-| POL-COMPL-001  | HIPAA Compliance                                       |
 | POL-SEC-007    | Security Architecture and Operating Model              |
-
+| POL-SEC-022    | Acceptable Use Policy                                  |
 
 **Standard Operating Procedures**
 
@@ -77,21 +80,33 @@ parties involved.
 | SOP-COM-003     | Handling Legal Requests                   |
 | SOP-IT-004      | IT Asset Management                       |
 | SOP-SEC-007     | Physical Security Checks                  |
+| SOP-BCDR-001     | Failover Runbook                          |
+| SOP-PRIV-001     | Notifiable Data Breaches (NDB) Playbook   |
 
 **Other Documents**
 
 | Document Number | Document Title                                         |
 |-----------------|--------------------------------------------------------|
 | DOC-SEC-001     | Risk Register                                          |
-| DOC-SEC-002     | Tessera Information Security Management System |
+| DOC-SEC-002     | Tessera Information Security Management System         |
 | DOC-IT-001      | Approved Software                                      |
-| DOC-COMPL-001   | HIPPA Mappings                                         |
 | DOC-COMPL-002   | NIST Mappings                                          |
 | DOC-ORG-001     | Org Chart                                              |
 | DOC-PROC-001    | Approved Vendors                                       |
 | DOC-HR-001      | Employee Handbook and Policy Quick Reference           |
 | DOC-COMPL-003   | ISO27001 Prep                                          |
-| DOC-NET-001     | Network Diagram                                        |
-| DOC-SEC-003     | Security Program Overview                              |
+| DOC-NET-001     | Cloud-Native Architecture Diagram                      |
+| DOC-SEC-003     | Statement of Applicability (SoA)                       |
 | DOC-SEC-004     | Key Definitions                                        |
 | DOC-EDU-001     | Training Register                                      |
+| DOC-BCDR-001    | Business Impact Analysis                               |
+| DOC-SEC-005     | Security Incident Register                             |
+
+> **REGISTER HYGIENE:** The phantom "GDPR Compliance" (POL-COMP-001) and "HIPAA
+> Compliance" (POL-COMPL-001) entries have been removed — no policy files carry
+> those numbers. The real GDPR artefact is the Data Processing Addendum
+> (POL-DATA-000), retained for EU clients. The legacy "HIPPA Mappings" entry
+> (DOC-COMPL-001) has been removed in line with the HIPAA-mapping cull; the NIST
+> cross-reference (DOC-COMPL-002) remains. The policy suite is being rationalised
+> as part of certification-readiness; treat remaining policy titles as provisional
+> until the next revision.

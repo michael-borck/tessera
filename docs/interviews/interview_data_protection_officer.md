@@ -3,92 +3,95 @@ title: "Transcript of interview with DPO"
 categories: ["Privacy", "Data Protection", "Compliance"]
 ---
 
-Auditor: Thank you for meeting with me today. I'd like to understand your
-organisation's data protection strategy and controls. Could you give me an
-overview of your data privacy policies?
+Auditor: Thanks for sitting down. I'd like to understand Tessera's data
+protection strategy. Could you give me an overview of the privacy framework you
+operate under?
 
-DPO: Absolutely. We have comprehensive data protection policies aligned to
-regulations like GDPR that outline data subject rights, lawful processing,
-consent requirements and more.
+DPO: The governing regime is the *Privacy Act 1988* (Cth) and the Australian
+Privacy Principles. As an Australian entity holding personal information of
+Australian individuals, that's our primary frame; the Notifiable Data Breaches
+scheme is the part that gets exercised most often. We layer contractual
+obligations on top for tenants, and we apply the GDPR only where we have EU
+clients whose data is in scope.
 
-Auditor: Great start. How do you perform data discovery and classification?
+Auditor: How do you perform data discovery and classification?
 
-DPO: Our data owners classify information assets based on sensitivity. Data maps
-outline what we collect and process. Anything containing personal data is
-specially tagged.
+DPO: Information owners classify assets against the four-tier scheme in the data
+classification policy. We maintain a data map of what personal information we
+collect and where it flows, and personal information is tagged so it's visible
+downstream.
 
-Auditor: Excellent. And how is data access controlled?
+Auditor: How is access to personal information controlled?
 
-DPO: Role-based access controls enforced by our IT team. Encryption for data at
-rest and in transit. Analytics data is anonymised and minimised before use.
+DPO: Role-based access through the identity provider, scoped to the tenant
+context the application carries. Data at rest is encrypted under KMS and in
+transit under TLS, and analytics datasets are de-identified and minimised
+before use.
 
-Auditor: That covers some key points. I'm here to have a collaborative
-discussion on how your DPO program operates. If I identify any areas of
-non-conformance, I'll discuss with you first to clarify and work out
-recommendations before finalising audit findings. Does that align with your
-expectations?
+Auditor: That covers the main points. I'm running this as a collaborative
+discussion — if I find something that looks like non-conformance I'll raise it
+with you to clarify before I finalise anything. Does that suit?
 
-DPO: Absolutely, I appreciate you taking that approach! I'm sure we'll have an
-open and beneficial dialogue about our data policies and find ways to strengthen
-our program. Shall we move on to retention and disposal next?
+DPO: It does, thank you. I'd rather we worked through things openly.
 
-Auditor: Yes, that would be great. How do you manage data retention and secure
-destruction?
+Auditor: How do you manage retention and secure disposal?
 
-DPO: We have defined retention schedules based on legal and business needs.
-Disposal procedures like shredding for physical data and wiping for digital
-assets are enforced...
+DPO: Retention is driven by the schedule — legal and operational hold periods
+per data type. Digital disposal is cryptographic erasure on the KMS-backed
+assets and secure wipe on endpoints; physical material is shredded under the
+facilities process.
 
-Auditor: How do you perform privacy impact assessments for new initiatives
-involving personal data?
+Auditor: How do you run privacy impact assessments for new initiatives?
 
-DPO: Our PIA process evaluates risks early in projects, recommends controls,
-documents decisions, and obtains approvals before launch.
+DPO: A privacy impact assessment is a required gate in the project process. It
+identifies the personal information involved, the APPs in play, the risks, and
+the controls, and it has to be signed off before launch. The aim is to catch
+issues at design time, not after go-live.
 
-Auditor: What is your approach for performing security risk assessments focused
-on data protection?
+Auditor: And security risk assessments with a data-protection lens?
 
-DPO: Our infosec team partners with me to do annual DPIAs analysing threats,
-evaluating controls, and mitigating high risks to sensitive data.
+DPO: The security team and I run these together, at minimum annually for the
+high-risk processing and whenever a material change lands. We work the findings
+into the risk register and the treatment plan.
 
-Auditor: How do you ensure any data processors or third parties comply with your
-data policies?
+Auditor: How do you ensure third parties and processors meet your standard?
 
-DPO: Contracts mandate compliance to our standards. Vendors complete security
-assessments providing evidence of compliance which is validated by audit.
+DPO: Contracts carry the privacy and security terms, and higher-risk vendors
+complete an assessment and provide evidence — a SOC 2 report, typically — which
+we validate rather than take at face value.
 
-Auditor: Could you explain your data breach response plan and how it is
-regularly tested?
+Auditor: Could you explain the breach response plan and how it's tested?
 
-DPO: Our incident response plan has specific steps for breaches including
-notification timelines. We test annually with breach simulation exercises across
-teams.
+DPO: The NDB playbook governs privacy-affected incidents end to end — triage,
+the 72-hour assessment target, the serious-harm test, and notification to the
+OAIC. We tested the process in February on a real incident, and it held up
+well on the notification side. The preventive side is a separate conversation.
 
-Auditor: What privacy and security training and awareness exists for employees?
+Auditor: What privacy training exists for staff?
 
-DPO: New hires are trained on data policies. Existing staff retake the course
-annually. We share reminders on data handling via email, intranet, and
-presentations.
+DPO: New starters complete privacy and data handling on induction, and everyone
+retakes it annually. We push targeted refreshers off the back of incidents and
+near-misses so the training stays tied to things that have actually happened.
 
-Auditor: What are the processes if other teams do not cooperate with data
-protection efforts?
+Auditor: How do you handle it when other teams push back on data-protection
+requirements?
 
-DPO: I engage directly with responsible executives to escalate roadblocks.
-Demonstrating regulatory risk exposure, financial impacts, and reputation harms
-helps motivate compliance. As a last resort, formal warnings may be issued
-recommending employment action.
+DPO: I go to the responsible executive and frame it in terms of regulatory
+exposure and the harm to individuals, which usually lands. It rarely needs to
+go further than that, but escalation through the Executive Risk Committee is
+available if it does.
 
-Auditor: How are data protection responsibilities communicated across business
-units?
+Auditor: How are data-protection responsibilities communicated across the
+business?
 
-DPO: Our data protection policies outline the requirements per role. I conduct
-training on proper data handling, legal obligations, and incident reporting.
-Data owners and line managers are accountable for disseminating and enforcing
-within their teams.
+DPO: The policy sets out the per-role obligations, and I run sessions with line
+managers and data owners so they can carry it into their teams. The
+accountability sits with the owners; my role is to make the expectations clear
+and to check they're being met.
 
-Auditor: What security collaboration exists with legal/compliance groups?
+Auditor: How does the privacy function work with Legal and Compliance?
 
-DPO: We have joint responsibility along with legal for data protection
-oversight. Our departments review policies and controls together. We also liaise
-on incident response, regulator interactions, and advice to the business
-regarding data practices.
+DPO: We share oversight of data protection. Legal advises on privilege and
+contractual exposure, Compliance owns the register and the regulator-facing
+record, and I hold the privacy judgement. On an incident we work as one team
+rather than three handoffs.

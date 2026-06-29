@@ -3,80 +3,74 @@ categories:
 - Security Management
 - Compliance
 - Operational Security
-description: Tessera is committed to protecting its employees, partners, clients/customers and the company itself from damaging acts either malicious or unintentional in nature.
-title: Security Program Overview
+description: Overview of the Tessera information security programme — its scope, the principles it is built on, and the control domains it covers, aligned to ISO/IEC 27001:2022 and the Privacy Act 1988 (Cth).
+title: Security Programme Overview
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Security Program Overview             |
-| **Doc#**     | DOC-SECU-011 |
-| **Version**  | 1.0                                 |
-| **Date**     | 05-09-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Security Programme Overview                |
+| **Doc#**     | DOC-SECU-011                               |
+| **Version**  | 1.1                                        |
+| **Date**     | 05-03-2025                                 |
 
-Tessera is committed to protecting its employees, partners, clients/customers
-and the company itself from damaging acts either malicious or unintentional in
-nature. This includes implementation of policies, standards, controls and
-procedures to ensure the Confidentiality, Integrity, and Availability of systems
-and data according to their risk level.
+Tessera's security programme exists to protect the workforce, partners,
+tenants and the company itself from harmful acts — whether malicious or
+unintentional. It does this through a set of policies, standards, controls and
+procedures designed to preserve the confidentiality, integrity and availability
+of systems and data in proportion to their risk.
 
-The Tessera security program and policies are developed on the principles that
-(1) security is everyone's responsibility and (2) self-management is best
-encouraged by rewarding the right behaviours. [Quick Reference / Employee Handbook](employee_handbook.md)
+The programme rests on two principles: that security is everyone's
+responsibility, and that the right behaviours are best encouraged by making
+them straightforward to follow. [Quick Reference / Employee
+Handbook](employee_handbook.md)
 
-## Controls and Procedures
+## Scope
 
-## Information Security Program and Scope
+The programme covers all Tessera workforce members — full-time and part-time
+employees, contractors, temporary staff, interns and managers — and the third
+parties granted access to Tessera systems or data. It is operated to ISO/IEC
+27001:2022, aligned to the ASD Essential Eight, and meets Tessera's obligations
+under the *Privacy Act 1988* (Cth) and the Australian Privacy Principles. SOC 2
+Type II is maintained in parallel; GDPR and sector schemes apply only where
+clients bring them into scope.
 
-Tessera has developed a security program and implemented controls to meet and
-exceed all compliance requirements, including but not limited to HIPAA,
+At a glance, the programme covers:
 
-SOC 2 Common Criteria and other applicable industry best practices.
+1. Inventory and protection of critical assets.
+2. Visibility and management of the data lifecycle — creation, retention,
+   deletion.
+3. Protection of data at rest, in transit and in use.
+4. Network architecture with enforced segmentation between control and data
+   planes.
+5. Automated security configuration and remediation.
+6. Centralised identity and access management on a least-privilege baseline.
+7. Secure product development.
+8. Continuous monitoring, logging and auditing.
+9. Exercised plans for business continuity, disaster recovery and incident
+   response.
+10. Endpoint protection and security awareness.
 
-On a high level, Tessera’s information security program covers:
+The programme is run by dedicated security and compliance staff under the CISO,
+using a governance, risk and compliance (GRC) platform to evidence controls and
+track corrective actions.
 
-1. Inventory and protection of all critical assets
-2. Visibility into and the management of data lifecycle, from creation to
-   retention to deletion
-3. Protection of data-at-rest, data-in-transit, and data-in-use
-4. Segmented network architecture
-5. Automated security configuration and remediation
-6. Centralised identity and access management
-7. Secure product development
-8. Continuous monitoring and auditing
-9. Validated plan and practice for business continuity, disaster recovery, and
-   emergency response
-10. End-user computing protection and awareness training
+## How the documents fit together
 
-More information about the Tessera Security and Privacy program can be found
-at []() and []().
+Each policy addresses a specific domain. Every document carries its version and
+last-updated date, followed by a summary and then its policy statements and the
+controls and procedures that give effect to them. Policy documents are
+maintained, reviewed and approved under [Policy Management](../policies/policy_mgmt.md).
 
-The information security program and its policies and procedures cover all
-Tessera workforce members, including full-time and part-time employees in all
-job roles, temporary staff, contractors and subcontractors, volunteers, interns,
-managers, executives employees, and third parties.
+> **DRAFT NOTE:** The policy suite is being rationalised as part of
+   certification-readiness. Some legacy policy titles still in the document
+   register are scheduled for re-titling or consolidation; cross-references
+   will be updated as those land.
 
-The information security program is managed by dedicated security and compliance
-personnel, using JupiterOne as a GRC platform.
+## Review and reporting
 
-
-## Understanding the Policies and Documents
-
-Policies are written in individual documents, each pertaining to a specific
-domain of concern.
-
-Each document starts with the current version number and/or last updated date,
-followed by a brief summary.  The remaining of the document is structured to
-contain two main sections:
-
-* Policy Statements
-* Controls and Procedures
-
-All policy documents are maintained, reviewed, updated and approved following
-standards and procedures outlined in [Policy Management](../policies/policy_mgmt.md).
-
-## Review and Reporting
-
-The information security program, policies, procedures and controls are reviewed
-on a regular basis internally by cross functional team members and externally by
-qualified assessors.
+The programme, its policies, procedures and controls are reviewed regularly —
+internally by cross-functional reviewers and externally by qualified
+assessors, including the ISO/IEC 27001:2022 certification body. Material
+findings, incidents and corrective actions are reported to the Executive Risk
+Committee.

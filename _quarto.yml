@@ -8,6 +8,9 @@ project:
     - "*"
     - "!pricing.qmd"
     - "!prototype.html"
+    - "!REDESIGN_TRACKER.md"
+    - "!BOOK_UPDATE_SUGGESTIONS.md"
+    - "!_instructor/"
 
 website:
   title: "Tessera"

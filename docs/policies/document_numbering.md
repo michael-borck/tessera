@@ -2,132 +2,123 @@
 categories:
 - Document Management
 - Compliance
-description: The Policy Document Numbering System is established to provide a structured
-  and consistent method for assigning document numbers to all policy documents within
-  Tessera.
+description: Defines the document numbering system used for Tessera policy,
+  procedure and reference documents.
 title: Document Numbering System Policy
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Document Numbering System Policy             |
-| **Doc#**     | POL-COMP-025 |
+| **Title**    | Document Numbering System Policy    |
+| **Doc#**     | POL-COMP-025                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 26-11-2023                              |
+| **Date**     | 26-11-2023                          |
+| **Owner**    | Head of Compliance (M. Dubois)      |
+| **Approved By** | CISO (I. Ferreira)              |
+| **ISO/IEC 27001:2022** | A.5.1 — Policies for information security |
 
 ## Introduction
 
-The Policy Document Numbering System is established to provide a structured and
-consistent method for assigning document numbers to all policy documents within
-Tessera. This system ensures easy identification, categorisation, and
-retrieval of policy documents across various departments and facilitates
-effective document management and compliance tracking.
+The document numbering system gives every Tessera policy, procedure and
+reference document a unique, structured identifier so that documents can be
+identified, categorised, retrieved and cross-referenced consistently across
+teams.
 
 ## Policy Statements
 
-1. **System Design:** The document numbering system shall be a hybrid model,
-   incorporating both sequential numbering and category-specific prefixes to
-   reflect the nature of the policy content.
-2. **Abbreviation Usage:** Each policy document shall be assigned a unique
-   abbreviation based on its primary category, as outlined in the "Category
-   Abbreviations" table.
-3. **Sequential Numbering:** Following the category prefix, a sequential
-   numbering format will be used starting from 001 for each category, ensuring
-   unique identifiers for each policy within a category.
-4. **Version Control:** All policy documents must include a version number and
-   revision date in their headers to track amendments and updates effectively.
+1. **System design.** The numbering system is a hybrid of category-specific
+   prefixes and sequential numbering, reflecting the nature of the document.
+2. **Abbreviation usage.** Each document carries a category abbreviation from
+   the "Category Abbreviations" table below.
+3. **Sequential numbering.** A sequential number, starting at 001 within each
+   category, follows the category prefix to keep identifiers unique.
+4. **Version control.** Every document carries a version number and date in its
+   header so amendments can be tracked.
 
 ## Controls and Procedures
 
-1. **Assigning Document Numbers:**
-   - Upon creation, each policy document is to be assigned a document number by
-     the Document Control Officer. The number will consist of a category
-     abbreviation followed by a sequential number, formatted as `ABB-XXX`, where
-     `ABB` represents the abbreviation and `XXX` is the sequential number.
-   - Example: The first policy document in the Data Protection category will be
-     numbered as `POL-DATA-001`.
+1. **Assigning document numbers.**
+   - On creation, the Document Control Officer assigns a number of the form
+     `ABB-XXX`, where `ABB` is the category abbreviation and `XXX` is the
+     sequential number.
+   - Example: the first policy in the Data category is `POL-DATA-001`.
 
-2. **Category Abbreviations:**
-   - A standardised set of abbreviations for each policy category is maintained
-     and updated by the Document Control Officer. This list is publicly
-     accessible to all departments for reference.
+2. **Category abbreviations.**
+   - The Document Control Officer maintains the list below; it is published for
+     reference across all teams.
 
-| Abbreviation | Category Description                               |
-|--- | ---|
-| ACCE | Access Control|
-| ASSE | Asset Inventory|
-| AUDI | Audit Management|
+| Abbreviation | Category Description                |
+|--------------|-------------------------------------|
+| ACCE | Access Control                  |
+| ASSE | Asset Inventory                 |
+| AUDI | Audit Management                |
 | AUTH | Authentication and Authorization|
-| BACK | Backup and Recovery|
-| CHAN | Change Management|
-| COMM | Communication|
-| COMP | Compliance|
-| DATA | Data|
-| DATA | Data Classification|
-| DATA | Data Lifecycle|
-| DATA | Data Protection|
-| DATA | Data Security|
-| DEVI | Device Security|
-| DISA | Disaster Recovery|
-| DOCU | Document Management|
-| EDUC | Education|
-| EMPL | Employee Management|
-| ENCR | Encryption Standards|
-| EXTE | External Communication|
-| FACI | Facility Management|
-| FINA | Financial|
-| HEAL | Healthcare Compliance|
-| HUMA | Human Resources|
-| ITIN | IT Infrastructure|
-| ITMA | IT Management|
-| INCI | Incident Response|
-| INTR | Intrusion Detection|
-| NETW | Network Management|
-| OPER | Operational Continuity|
-| OPER | Operational Security|
-| ORGA | Organisational Structure|
-| PHYS | Physical Security|
-| POLI | Policy Development|
-| PRIV | Privacy|
-| PROC | Procurement|
-| REGU | Regulatory Compliance|
-| RISK | Risk Assessment|
-| RISK | Risk Management|
-| SECU | Secure Development|
-| SECU | Security|
-| SECU | Security Architecture|
-| SECU | Security Awareness|
-| SECU | Security Management|
-| SKIL | Skills Development|
-| SOFT | Software|
-| THRE | Threat Intelligence|
-| TRAI | Training|
-| USER | User Consent|
-| VEND | Vendor Management|
-| VERS | Version Control|
-| WEBT | Web Technologies|
+| BACK | Backup and Recovery             |
+| CHAN | Change Management               |
+| COMM | Communication                   |
+| COMP | Compliance                      |
+| DATA | Data (classification, lifecycle, protection, security) |
+| DEVI | Device Security                 |
+| DISA | Disaster Recovery               |
+| DOCU | Document Management             |
+| EDUC | Education                       |
+| EMPL | Employee Management             |
+| ENCR | Encryption Standards            |
+| EXTE | External Communication          |
+| FACI | Facility Management             |
+| FINA | Financial                       |
+| HUMA | Human Resources                 |
+| INCI | Incident Response               |
+| ITIN | IT Infrastructure               |
+| ITMA | IT Management                   |
+| NETW | Network Management              |
+| OPER | Operational Continuity / Security |
+| ORGA | Organisational Structure        |
+| PHYS | Physical Security               |
+| POLI | Policy Development              |
+| PRIV | Privacy                         |
+| PROC | Procurement                     |
+| REGU | Regulatory Compliance           |
+| RISK | Risk Assessment / Management    |
+| SECU | Security (architecture, awareness, management, secure development) |
+| SECU | Security Awareness              |
+| SKIL | Skills Development              |
+| SOFT | Software                        |
+| THRE | Threat Intelligence             |
+| TRAI | Training                        |
+| USER | User Consent                    |
+| VEND | Vendor Management               |
+| VERS | Version Control                 |
+| WEBT | Web Technologies                |
 
-1. **Document Abbreviations:**
-   - A standardised set of abbreviations for each document type is maintained and
-     updated by the Document Control Officer.  This list is publicly accessible
-     to all department for reference.
+> *[M. Dubois: the legacy "HEAL" (Healthcare Compliance) category was removed in
+> the 2025 cleanup — Tessera is not a healthcare-covered entity. Two historical
+> documents still carry HEAL prefixes and will be renumbered under COMP at their
+> next review. If you need a healthcare-specific control, scope it under COMP and
+> tie it to the relevant tenant schedule, not a separate category.]*
 
-    | Abbreviation | Type Description                                   |
-    |--------------|----------------------------------------------------|
-    | POL          | Prefix for Policies                                |
-    | SOP          | Prefix for Standard Operating Procedures           |
-    | DOC          | Prefix for other documents                         |
+> *[Reviewer note: there is a duplicate SECU row above (Security / Security
+> Awareness) — known drift from the 2024 consolidation. Flagged for cleanup at
+> the next version bump; do not re-issue either number in the meantime.]*
 
+3. **Document-type prefixes.**
+   - The Document Control Officer maintains the document-type prefixes below.
 
-4. **Document Updates and Version Control:**
-   - Any updates to a policy document require an update to both the version
-     number and the document date. These changes must be recorded in the policy
+   | Abbreviation | Type Description                                   |
+   |--------------|----------------------------------------------------|
+   | POL          | Policy                                             |
+   | SOP          | Standard Operating Procedure                       |
+   | ISMS-PR      | ISMS procedure (e.g. ISMS-PR-014, joiner-mover-leaver) |
+   | DOC          | Other document (reference, register, plan)         |
+
+4. **Document updates and version control.**
+   - Any update requires a new version number and date, recorded in the policy
      document log maintained by the Document Control Officer.
-   - Revisions must reflect changes in the policy content or scope, and each
-     version must be archived for future reference.
+   - Revisions reflect changes in content or scope; each version is archived for
+     future reference.
 
-5. **Compliance and Monitoring:**
-   - The compliance of the numbering system is regularly audited to ensure
-     adherence to internal standards and effectiveness in policy management.
-   - Non-compliance or inconsistencies in the document numbering must be
-     addressed immediately to prevent documentation errors.
+5. **Compliance and monitoring.**
+   - The numbering system is audited regularly to ensure adherence to internal
+     standards and that it remains effective.
+   - Non-compliance or inconsistencies in document numbering are corrected
+     promptly to prevent documentation errors.

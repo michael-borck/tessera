@@ -1,34 +1,53 @@
 ---
-title: "Customers Voice Frustration Over Tessera Data Breach"
+title: "Tessera tenants weigh their options after cloud-key breach"
 categories: ["Customer Reactions", "Data Breach"]
 ---
 
-**Publication:** The Digital Ledger  
-**Date:** September 15, 2024  
+**Publication:** The Digital Ledger (Australia)
+**Date:** 12 March 2025
 **Author:** Laura King
 
-**Tessera is facing a growing backlash from customers following the recent data breach that exposed sensitive information belonging to 250,000 individuals.** The breach has left many customers feeling vulnerable and questioning the effectiveness of Tessera’s security measures.
+**Tessera is working to retain enterprise tenants after its February data
+breach, with at least one major customer publicly reassessing the
+relationship and the company bracing for churn.**
 
-**“I’ve been a loyal customer of Tessera for years, and this breach has shaken my confidence,”** said Maya Morgan, a small business owner who uses Tessera’s services for data storage. **“I trusted them with my information, and now I’m not sure if I can continue to rely on them.”**
+The Perth-based platform notified the Office of the Australian Information
+Commissioner last month after a long-lived cloud access key, exposed through a
+public source-code repository, was used to read roughly 14,000 tenant records.
+Tessera has told tenants the exposure arose from a leaked static key and an
+unsegmented network path, and that encryption and multi-factor authentication
+were not the point of failure.
 
-Tessera has promised to offer credit monitoring services to affected customers and has set up a dedicated hotline to address their concerns. However, for many, these measures feel like too little, too late.
+For tenants, the technical detail has cut two ways. Several told *The Digital
+Ledger* that the company's openness about the cause — a static key and a missing
+segmentation boundary rather than a phished login — was more reassuring than a
+vague "sophisticated attack" would have been. Others said the specifics were
+precisely what worried them.
 
-**“The real problem is that this breach happened in the first place,”** said Thomas Nakamura, another affected customer. **“Offering credit monitoring doesn’t change the fact that my data was exposed. I want to know what Tessera is doing to make sure this doesn’t happen again.”**
+"It's the kind of failure that's easy to explain and hard to forgive," said a
+technology lead at a mid-sized tenant who asked not to be named. "A static key
+in a public repo shouldn't exist in 2025. The question I have to answer for my
+board is whether the rest of their environment is built the same way."
 
-**Impact on Business Relationships**
+Olivia Tan, Director of Operations at Northbridge Group, an enterprise tenant,
+said the incident had prompted a formal review. "We hold our suppliers to the
+same bar we're held to," she said. "Tessera notified us promptly and were clear
+about what happened and what they're fixing. That counts for something. But
+we'll make a decision on the relationship on the basis of the remediation, not
+the apology."
 
-The breach has also raised concerns among Tessera’s business clients, many of whom operate in highly regulated industries such as finance and healthcare. For these clients, the potential impact of compromised data extends beyond personal inconvenience to significant regulatory and financial consequences.
+Tessera has said it expects around 23 tenants not to renew as a consequence of
+the incident, and has put the first-year impact at roughly $1.8 million. The
+company is offering affected individuals support and has stood up a dedicated
+contact line.
 
-**“Our clients demand the highest levels of data security, and this incident has put us in a difficult position,”** said a spokesperson for a financial services company that partners with Tessera. **“We need to be assured that Tessera is taking every possible step to prevent future breaches, or we will have to consider alternative providers.”**
+Industry observers said the churn figure will be the real test of how the
+incident lands. "Notification speed gets you credit, but retention is decided by
+whether tenants believe the root cause is fixed," said Amanda Lewis, a technology
+analyst at TechVentures. "For a multi-tenant provider, the segmentation question
+is the one every customer will now ask."
 
-**Tessera’s Response**
-
-In response to the growing criticism, Tessera has emphasized its commitment to transparency and accountability. **“We understand the frustration and concerns of our customers, and we are doing everything in our power to address the situation,”** said Isabella Ferreira, CISO of Tessera. **“Our top priority is to secure our systems and rebuild the trust of our customers.”**
-
-Despite these assurances, the damage to Tessera’s reputation may take time to repair. The company has announced plans to overhaul its security protocols and invest in new technologies to enhance its defenses against future attacks.
-
-**A Warning for the Industry**
-
-As the fallout from the breach continues, industry observers note that Tessera’s experience serves as a cautionary tale for other companies in the cloud services space. **“Data security is a critical factor for any business today,”** said Amanda Lewis, a technology analyst at TechVentures. **“Cloud providers, in particular, must ensure that their security practices are not just adequate, but exemplary. The repercussions of failing to do so are clear for everyone to see.”**
-
-For Tessera, the immediate focus will be on addressing the breach’s impact, communicating effectively with affected customers, and taking concrete steps to prevent a recurrence. Whether these efforts will be enough to restore customer confidence remains to be seen.
+Tessera said the breach has accelerated its ISO/IEC 27001:2022
+certification-readiness programme and its work to remove static access keys and
+complete control-plane isolation. Whether that is enough to hold its enterprise
+base will become clearer at renewal.

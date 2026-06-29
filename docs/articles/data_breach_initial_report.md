@@ -1,31 +1,50 @@
 ---
-title: "Massive Data Breach Hits Tessera, Exposing Customer Records"
+title: "Cloud key leak exposes 14,000 records at Perth SaaS firm Tessera"
 categories: ["Initial Report", "Data Breach"]
 ---
 
-**Publication:** TechSecurity Daily  
-**Date:** September 13, 2024  
+**Publication:** AUSCERT Threat Wire
+**Date:** 3 March 2025
 **Author:** Megan Thompson
 
-**Tessera, a prominent provider of cloud services, has confirmed a major data breach that exposed the personal and financial information of approximately 250,000 customers. The breach was discovered on September 12, 2024, and is believed to have been caused by a sophisticated cyber-attack involving compromised employee credentials.**
+**Tessera, the Perth-based multi-tenant software platform, has disclosed a data
+breach affecting roughly 14,000 tenant records after a long-lived cloud access
+key was found exposed in a public source-code repository.**
 
-According to Tessera’s initial statement, the attackers gained unauthorized access to a critical customer database, resulting in the exposure of sensitive data, including names, addresses, email addresses, and payment information. The company has assured customers that no passwords or social security numbers were compromised, though financial information such as credit card details was part of the breach.
+The company said the activity was picked up in late February when monitoring
+flagged unusual data leaving its environment. In a statement, Tessera said the
+exposed key had been used to read records held on behalf of its tenants across a
+network path that should have been segregated from its management systems.
 
-**“We deeply regret this incident and are working diligently to mitigate its impact,”** said Isabella Ferreira, Chief Information Security Officer at Tessera. **“We have taken immediate steps to contain the breach and are cooperating with cybersecurity experts and law enforcement to investigate the matter thoroughly.”**
+"An access key used by our management systems was exposed through a repository
+that was incorrectly set to public, and it was then used to reach tenant data,"
+said Isabella Ferreira, Tessera's Chief Information Security Officer. "We
+rotated the key, secured the repository, and notified the Office of the
+Australian Information Commissioner within our internal 72-hour target."
 
-Initial reports suggest that the breach originated from a phishing attack that compromised the credentials of a senior system administrator, allowing the attackers to bypass multi-factor authentication. This highlights the persistent threat of phishing as a primary vector for cyber-attacks, even among companies with robust security measures in place.
+The records involved are understood to be personal and contact information —
+names, email addresses, telephone numbers and account metadata. Tessera said it
+does not store payment-card details, which are handled by a separate provider,
+and that data at rest remained encrypted throughout.
 
-**Industry Response**
+What sets the incident apart from the credential-theft breaches that dominate
+the headlines is the absence of phishing or a stolen login as the starting
+point. According to people familiar with the investigation, the entry was a
+static cloud credential committed to code, and the damage was amplified by the
+lack of a hard boundary between the management plane and tenant data.
 
-Industry experts are urging companies to review their security protocols in light of this incident. **“This breach serves as a reminder that even organizations with strong security postures are vulnerable to sophisticated attacks,”** said John Harper, a cybersecurity analyst at SecureNet Consulting. **“Organizations need to continuously evaluate and update their security measures, particularly around access controls and employee training.”**
+"That combination — a non-rotating key plus a missing segmentation boundary — is
+exactly the failure mode that cloud-native operators are meant to design
+against," said John Harper, a cloud security analyst at SecureNet Consulting.
+"The identity layer and the encryption both held. The weak point was a leftover
+static key and an over-trusting network path."
 
-Tessera has begun notifying affected customers and is offering credit monitoring services as a precautionary measure. The company has also launched a dedicated support line to assist those impacted by the breach.
+Tessera has begun notifying affected tenants and, through them, affected
+individuals, and has stood up a dedicated contact line. The company said the
+incident has accelerated its programme to remove static access keys entirely and
+to complete control-plane isolation.
 
-**Customer Concerns**
-
-While Tessera has acted swiftly, customer concerns are growing as more details emerge. **“I’m worried about how this will affect my personal information,”** said Mary Collins, a long-time Tessera customer. **“It’s alarming to think that such a trusted company could be compromised.”**
-
-The breach has prompted an investigation by regulatory authorities, including the Federal Trade Commission (FTC), which has been increasingly scrutinizing data breaches that affect consumer privacy.
-
-As the investigation unfolds, Tessera is expected to face intense scrutiny over its security practices and the effectiveness of its incident response. The full scope of the breach’s impact remains to be seen, but the incident is already shaping up to be one of the most significant cybersecurity challenges the company has faced.
-
+The Office of the Australian Information Commissioner has been notified under
+the Notifiable Data Breaches scheme. Tessera said it does not yet have a full
+figure for the financial impact but expects a "material" effect on the current
+financial year.

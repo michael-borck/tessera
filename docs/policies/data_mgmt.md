@@ -3,329 +3,242 @@ categories:
 - Data Lifecycle
 - Backup and Recovery
 - Data Classification
-description: This policy outlines the requirements and controls/procedures Tessera
-  has implemented to manage the end-to-end data lifecycle, from data creation/acquisition
-  to retention and deletion.
+description: This policy sets out how Tessera manages the end-to-end data lifecycle
+  for its own information and for tenant data held on the platform, from creation
+  and acquisition through retention, backup, and secure deletion.
 title: Data Management Policy
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Data Management Policy             |
-| **Doc#**     | POL-DATA-015 |
-| **Version**  | 1.0                                 |
-| **Date**     | 01-03-2023                              |
-
-This policy outlines the requirements and controls/procedures Tessera has
-implemented to manage the end-to-end data lifecycle, from data
-creation/acquisition to retention and deletion.
-
-Additionally, this policy outlines requirements and procedures to create and
-maintain retrievable exact copies of electronic protected health
-information(ePHI), PII and other critical customer/business data.
-
-Data backup is an important part of the day-to-day operations of Tessera. To
-protect the confidentiality, integrity, and availability of sensitive and
-critical data, both for Tessera and Tessera Customers, complete backups are
-done daily to assure that data remains available when it needed and in case of a
-disaster. 
-
-## Policy Statements
-
-Tessera policy requires that
-
-(a) Data should be classified at time of creation or acquisition according to
-the [Tessera data classification model](data_mgmt.md#data-classification-model),
-by labeling or tagging the data.
-
-(b) Maintain an up-to-date inventory and data flows mapping of all critical
-data.
-
-(c) All business data should be stored or replicated to a company controlled
-repository, including data on end-user computing systems.
-
-(d) Data must be backed up according to its level defined in Tessera data
-classification.
-
-(e) Data backup must be validated for integrity.
-
-(f) Data retention period must be defined and comply with any and all applicable
-regulatory and contractual requirements.  More specifically,
-
-  * Data and records belonging to Tessera platform customer must be retained
-    per Tessera product terms and conditions and/or specific contractual
-    agreements.
-
-(g) By default, all security documentation and audit trails are kept for a
-minimum of seven years, unless otherwise specified by Tessera data
-classification, specific regulations or contractual agreement.
-
-## Controls and Procedures
-
-### Data Classification Model
-
-Tessera defines the following four classifications of data:
-
-* **Critical**
-* **Confidential**
-* **Internal**
-* **Public**
-
-#### Definitions and Examples
-
-**Critical** data includes data that must be protected due to regulatory requirements, privacy,
-and/or security sensitivities.
-
-Unauthorised disclosure of critical data may result in major disruption to
-business operations, significant cost, irreparable reputation damage, and/or
-legal prosecution to the company.
-
-External disclosure of critical data is strictly prohibited without an approved
-process and agreement in place.
-
-*Example Critical Data Types* includes
-
-* PII
-* PHI or ePHI
-* Production Security data, such as
-    - Production secrets, passwords, access keys, certificates, etc.
-    - Production security audit logs, events, and incident data
-
-**Confidential** and proprietary data represents company secrets and is of
-significant value to the company.
-
-Unauthorised disclosure may result in disruption to business operations and loss
-in value.
-
-Disclosure requires the signing of NDA and management approval.
-
-*Example Confidential Data Types* includes
-
-* Business plans
-* Employee/HR data
-* News and public announcements (pre-announcement)
-* Patents (pre-filing)
-* Specialised source codes
-* Non-production Security data, including
-    - Non-prod secrets, passwords, access keys, certificates, etc.
-    - Non-prod security audit logs, events, reports, and incident data
-    - Audit/compliance reports, security architecture docs, etc.
-
-**Internal** data contains information used for internal operations.
-
-Unauthorised disclosure may cause undesirable outcome to business operations.
-
-Disclosure requires management approval.  NDA is usually required but may be
-waived on a case-by-case basis.
-
-*Example Internal Data Types* includes
-
-* Internal documentation
-* Policies and procedures
-* Product roadmaps
-* Most source codes
-
-**Public** data is Information intended for public consumption. Although
-non-confidential, the integrity and availability of public data should be
-protected.
-
-*Example Internal Data Types* includes
-
-* News and public announcements (post-announcement)
-* Marketing materials
-* Product documentation
-* Contents posted on company website(s) and social media channel(s)
-
-
-### Data Handling Requirements Matrix
-
-Requirements for data handling, such as the need for encryption and the duration
-of retention, are defined according to the Tessera Data
-Classifications.
-
-| Data             | Labeling or Tagging | Segregated Storage | Endpoint Storage | Encrypt At Rest | Encrypt In Transit | Encrypt In Use | Controlled Access | Monitoring | Destruction at Disposal | Retention Period | Backup Recovery |
-|------------------|---------------------|--------------------|------------------|-----------------|--------------------|----------------|-------------------|------------|------------------------|------------------|-----------------|
-| **Critical**     | Required            | Required           | Prohibited       | Required        | Required           | Required       | Access is blocked to end users by default; Temporary access for privileged users only | Required   | Required   | 7 years for audit trails; Varies for customer-owned data† | Required   |
-| **Confidential** | Required            | N/R                | Allowed          | Required        | Required           | Required       | All access is based on need-to-know | Required   | Required   | 7 years for official documentation; Others vary based on business need | Required   |
-| **Internal**     | Required            | N/R                | Allowed          | N/R             | N/R                | N/R            | All employees and contractors (read); Data owners and authorised individuals (write) | N/R | N/R | 7 years for official documentation; Others vary based on business need | Optional   |
-| **Public**       | N/R                 | N/R                | Allowed          | N/R             | N/R                | N/R            | Everyone (read); Data owners and authorised individuals (write) | N/R     | N/R     | Varies based on business need | Optional   |
-
-N/R = Not Required
-
-† customer-owned data is stored for as long as they remain as a
-Tessera customer, or as required by regulations, whichever is
-longer. Customer may request their data to be deleted at any time; unless
-retention is required by law.
-
-### Data Inventory and Lifecycle Management
-
-Tessera Security team uses an automated system to query across our cloud-based
-infrastructure, including but is not limited to AWS, to obtain detailed records
-of all data repositories, including but not limited to:
-
-* AWS S3 repositories
-* AWS RDS and DynamoDB instances
-* AWS EC2 volumes
-* Source code repositories
-* Office 365
-* On-premise storage systems (manually maintained)
-
-The records are stored in a database system maintained by Tessera security
-team. Records are tagged with owner/project and classification when applicable.
-All records are kept up to date via automation.  The system is also designed to
-track movement of data and update/alert accordingly.
-
-**AWS S3 Object Lifecycle Management**
-
-The Tessera platform will automatically adjust the storage class for certain
-types of data based on its usage pattern and age. This allows the Tessera
-platform to provide competitive pricing while still allowing the customer to
-store large amounts of data.
-
-AWS provides the following [storage
-classes](<https://aws.amason.com/s3/storage-classes/>):
-
-* General Purpose
-* Infrequent Access
-* Archive (Amason Glacier)
-
-S3 lifecycle policies are used to manage the storage class for certain types of
-data. In most cases, the Tessera platform automatically adjusts the storage
-class but we may give customers the ability to adjust the storage class manually
-to meet their pricing or performance needs.
-
-Tessera performs regular full backups of all production data. We leverage S3
-lifecycle policies to automatically remove old backup data. This allows older
-data to "age out" instead of having to explicitly delete it. S3 lifecycle
-policies are also used to adjust the storage class of data backups based on the
-age of the backup.
-
-**Other Business Data**
-
-All internal and confidential business records and documents, such as product
-plans, business strategies, presentations and reports, are stored outside of an
-employee workstation or laptop.
-
-*   Official records are stored in record management systems such as
-    -  (tickets),
-    -  (source code),
-    -  (HR),
-    -  (expense reports), etc.
-
-*   Unstructured business documents such as Word documents, Excel spreadsheets
-    and PowerPoint presentations are stored on Tessera internal
-    file share.
-
-*   Confidential business documents/records are be stored in encrypted form and
-    with access control enabled on a need-to-know basis.
-
-**Transient Data Managemet**
-
-Data may be temporarily stored by a system for processing. For example, a
-storage device may be used to stage temp/raw files prior to being uploaded
-to the production environment in AWS. These transient data repositories are not
-intended for long term storage, and data is purged immediately after use.
-
-*Tessera currently does NOT use transient storage for any sensitive data.*
-
-
-### Backup and Recovery
-
-#### Customer Data
-
-Tessera stores data in a secure production account in AWS, using a
-combination of S3, DynamoDB, and Aurora SQL databases. By default, Amason S3
-provides durable infrastructure to store important data and is designed for
-durability of 99.999999999% of objects.
-
-All data store services and platforms in use are HIPAA compliant.
-
-Tessera performs automatic backup of all customer and system data to protect
-against catastrophic loss due to unforeseen events that impact the entire
-system. An automated process will back up all data to a separate AWS region in
-the same country (e.g. US East to US West). By default, data will be backed up
-daily. The backups are encrypted in the same way as live production data.
-
-Customers can also utilise the Tessera Application Programming Interface (API)
-to extract and store their data elsewhere. Standard API usage fees will apply.
+|                   |                                                   |
+|-------------------|---------------------------------------------------|
+| **Title**         | Data Management Policy                            |
+| **Doc#**          | POL-DATA-015                                      |
+| **Version**       | 1.0                                               |
+| **Date**          | 01-03-2023                                        |
+| **Owner**         | Head of IT — H. Boyd                              |
+| **Approved By**   | CISO — I. Ferreira                                |
+| **ISO/IEC 27001:2022** | A.8.10 Information deletion; A.8.13 Information backup; A.8.3 Information access restriction |
+
+This policy sets out how Tessera manages the end-to-end data lifecycle — for its
+own corporate information and for the tenant data it holds on the multi-tenant
+SaaS platform — from creation and acquisition through storage, backup, retention,
+and secure deletion. It works alongside the Data Classification Policy
+(POL-DATA-001), which defines the four classification tiers referenced
+throughout.
+
+Tessera holds personal information within the meaning of the *Privacy Act 1988*
+(Cth) and must take reasonable steps to protect it under **APP 11**, to limit its
+use and disclosure to what is necessary under **APP 6**, and to destroy or
+de-identify it when it is no longer needed (APP 11.2). Retention is therefore
+driven by what the law and the tenant contract actually require, not by habit;
+where no obligation to keep data exists, the default is to dispose of it.
+
+## Policy statements
+
+Tessera requires that:
+
+(a) data is classified at the point of creation or acquisition according to the
+[Tessera classification model](#data-classification-model), by label or tag;
+
+(b) an up-to-date inventory and data-flow map is maintained for all Restricted
+and Confidential data;
+
+(c) all business data is stored in, or replicated to, a Tessera-controlled
+repository — including data that originates on end-user devices;
+
+(d) data is backed up at a frequency and durability appropriate to its
+classification, and backups are validated for integrity;
+
+(e) retention periods are defined and observed, and meet every applicable
+regulatory and contractual requirement — for tenant data, the product terms and
+any tenant-specific agreement govern; and
+
+(f) security documentation and audit trails are retained for a minimum of seven
+years unless a longer period is required by law, contract, or the classification
+scheme.
+
+## Controls and procedures
+
+### Data classification model
+
+Tessera defines four classifications of data. The tiers and examples are
+governed by POL-DATA-001; they are summarised here so the handling matrix below
+is self-contained.
+
+- **Restricted** — the highest-sensitivity tier. Tenant records and tenant
+  personal information, production secrets (access keys, certificates, passwords),
+  security incident and audit records, and payment-card data covered by PCI DSS.
+  Unauthorised disclosure could cause severe harm or regulatory breach; external
+  disclosure is prohibited without an approved and contractually supported
+  process.
+- **Confidential** — proprietary information of significant value to Tessera:
+  business plans, employee and HR records, pre-announcement material, specialised
+  source code, non-production security artefacts, and audit or compliance
+  reports. Disclosure requires an NDA and management approval.
+- **Internal** — information used in day-to-day operations: internal procedures
+  and runbooks, policies, product roadmaps, most source code. Disclosure requires
+  management approval; an NDA is usual but may be waived case by case.
+- **Public** — information intended for external consumption (post-announcement
+  material, marketing collateral, published product documentation, website and
+  social-channel content). Integrity and availability still matter, even though
+  confidentiality does not.
+
+### Data handling requirements matrix
+
+Handling requirements — encryption, access, retention, backup — are determined by
+classification. The matrix below is the authoritative quick reference; where it
+and POL-DATA-001 appear to differ, POL-DATA-001 §7 governs and the matrix is
+corrected at the next review.
+
+| Data             | Labelling or tagging | Segregated storage | Endpoint storage | Encrypt at rest | Encrypt in transit | Encrypt in use | Controlled access | Monitoring | Destruction at disposal | Retention period | Backup recovery |
+|------------------|----------------------|--------------------|------------------|-----------------|--------------------|----------------|-------------------|------------|-------------------------|------------------|-----------------|
+| **Restricted**   | Required             | Required           | Prohibited       | Required        | Required           | Required       | Blocked to end users by default; temporary privileged access only | Required  | Required  | 7 years for audit trails; varies for tenant-owned data † | Required        |
+| **Confidential** | Required             | N/R                | Allowed          | Required        | Required           | Required       | All access on need-to-know       | Required  | Required  | 7 years for official documentation; otherwise per business need | Required        |
+| **Internal**     | Required             | N/R                | Allowed          | N/R             | N/R                | N/R            | All staff and contractors (read); owners and authorised individuals (write) | N/R        | N/R       | 7 years for official documentation; otherwise per business need | Optional        |
+| **Public**       | N/R                  | N/R                | Allowed          | N/R             | N/R                | N/R            | Everyone (read); owners and authorised individuals (write) | N/R        | N/R       | Per business need       | Optional        |
+
+N/R = Not Required.
+
+† Tenant-owned data is retained for as long as the tenant remains a Tessera
+customer, or as required by law or contract, whichever is longer. A tenant may
+request deletion of their data at any time, unless retention is required by law
+(for example, records relating to a notifiable data breach, which are retained
+for the period the OAIC may reasonably require for assessment and enforcement).
+
+### Data inventory and lifecycle management
+
+The Security team runs an automated inventory that queries the cloud estate —
+principally the AWS account structure — to maintain a current record of data
+repositories, including:
+
+- Amazon S3 buckets
+- Amazon RDS and DynamoDB instances
+- Amazon EBS volumes
+- source code repositories
+- the Microsoft 365 tenant (Exchange, SharePoint, OneDrive)
+- on-premises storage at the Perth and Malaga WA facilities (maintained manually)
+
+The inventory record is held in a Security-team database, tagged with owner and
+classification where applicable, and kept current through automation. The same
+system is designed to track the movement of data between repositories and to
+alert on unsanctioned movement.
+
+**Amazon S3 object lifecycle management.** The platform adjusts the storage class
+of certain data automatically, based on its usage pattern and age, so that
+tenants can hold large volumes without paying for hot storage they no longer
+need. The current S3 storage classes in use are:
+
+- General Purpose (S3 Standard)
+- Infrequent Access (S3 Standard-IA)
+- Archive (S3 Glacier and Glacier Deep Archive)
+
+S3 lifecycle policies transition data between these classes. In most cases the
+platform applies the policy automatically; tenants may also adjust the storage
+class of their own objects through the API to meet a specific price or
+performance goal. Backups are governed by the same lifecycle mechanism — older
+backups age out rather than requiring explicit deletion, and their storage class
+steps down as they age.
+
+> *[Reviewer, 2025-02-27: confirm the Glacier Deep Archive line is live in
+> production — the storage-cost review in January suggested only Standard and
+> Standard-IA were in use. Strike the tier if it is not yet enabled.]*
+
+**Other business data.** Internal and confidential business records — product
+plans, strategy documents, presentations, reports — are kept off individual
+workstations where practical and stored in Tessera-managed systems:
+
+- Tickets and engineering work items — **Jira** (Cloud).
+- Source code — **GitHub Enterprise** (see *Source code* below).
+- HR records — the HRIS (**Employment Hero**).
+- Expense and procurement records — *(tool to be confirmed at sign-off; the
+  current draft assumes the finance platform, but the 2024 move off the legacy
+  expense system is not yet reflected here — R. Costa, please confirm).*
+- Unstructured documents (Word, Excel, PowerPoint) — the Tessera SharePoint team
+  site.
+- Confidential business documents are stored encrypted, with access controlled on
+  a need-to-know basis.
+
+**Transient data.** Data may be staged temporarily during processing — for
+example, raw files held briefly on a transfer host before being loaded into the
+production environment. These transient stores are not intended for retention and
+are purged immediately after use. Tessera does not use transient storage for
+Restricted data.
+
+### Backup and recovery
+
+#### Customer data
+
+Tenant data is held in a dedicated production AWS account, using a combination of
+Amazon S3, DynamoDB, and Aurora PostgreSQL. The primary region is
+`ap-southeast-2` (Sydney); data is replicated to a standby region for redundancy
+and disaster recovery. By default, Amazon S3 provides the durability expected of
+its eleven-nines design across the buckets in use.
+
+The data-store services and platforms in use meet the security and resilience
+controls required for the data classifications held on the platform. Where a
+tenant is a US healthcare provider, a Business Associate Addendum is executed and
+the relevant HIPAA security obligations are mapped to the controls in this
+policy and POL-DATA-004 — Tessera is not itself a covered entity.
+
+Tessera backs up all customer and system data automatically to protect against
+catastrophic loss. An automated process backs data up to a separate AWS region
+within Australia — the primary copy is written to `ap-southeast-2` (Sydney) and
+cross-region replication carries a standby copy to a second Australian region.
+Backups run daily by default and are encrypted with the same standards as live
+production data.
+
+Tenants may also use the Tessera API to extract and store their data elsewhere;
+standard API usage fees apply.
 
 #### Source code
 
-Tessera stores its source in git repositories hosted by .
-
-Source code repositories are backed up to Tessera’s AWS S3 infrastructure
-account on a weekly basis with a common set of configuration for each repository
-to enforce SDLC processes.
-
-In the event that  suffers a catastrophic loss of data, source code
-will be restored from the backups in AWS S3.
-
-Because AWS and  can both host git repositories, we are able to
-leverage git's ability to maintain a full history of all changes to our git
-repos via the commit log.
+Tessera hosts its source in git repositories on **GitHub Enterprise**. Source
+repositories are backed up to the Tessera AWS S3 infrastructure account weekly,
+with a common configuration applied to each repository to enforce the SDLC
+controls. Should GitHub suffer a catastrophic loss, source is restored from the
+S3 backups. Because both GitHub and AWS can host git, the commit history provides
+an additional layer of recoverability across repositories.
 
 #### Business records and documents
 
-Each data owner/creator is responsible for maintaining a backup copy of their
-business files local on their laptop/workstation to the appropriate location on
-Tessera SharePoint team site. Examples of business files include, but are not
-limited to:
+Each data owner or creator is responsible for keeping a backed-up copy of their
+business files — documents, presentations, reports, design files, meeting notes —
+in the appropriate location on the Tessera SharePoint team site rather than only
+on a local workstation. Unless the local workstation handles **Restricted** data,
+workstation backups are self-managed by the device owner and may sit on an
+encrypted external drive or a cloud service (such as iCloud) provided the data is
+both encrypted and password-protected to Tessera's password standard.
 
-* Documents (e.g. product specs, business plans)
-* Presentations
-* Reports and spreadsheets
-* Design files/images/diagrams
-* Meeting notes/recordings
-* Important records (e.g. approval notes)
+### Data deletion procedures
 
-Unless the local workstation/device has access to **Critical** data, backups of
-user workstations/devices are self managed by the device owner. Backups may be
-stored on an external hard drive or using a cloud service such as iCloud if and
-only if the data is both encrypted and password protected (passwords must meet
-Tessera requirements).
+#### For platform customers
 
+Tenant data is retained for as long as the account is in active status. When an
+account is voluntarily closed, the data enters an expired state and is retained
+for 14 days, after which the project or account and its related data are removed.
+Tenants who wish to close their account should download their data manually or
+via the API beforehand.
 
-### Data Deletion Procedures
+If an account is involuntarily suspended, a 14-day grace period applies during
+which the account is inaccessible but can be reopened once the tenant meets their
+payment obligations and resolves any terms-of-service issues. A tenant who wants
+to back up data from a suspended account must first return the account to good
+standing so that the API and user interface are available. After 14 days the
+suspended account is closed and the data is permanently removed — except where
+Tessera is required by law to retain it.
 
-#### For Platform Customers
+Where deletion of data is required, it is carried out in line with APP 11.2
+(destruction or de-identification of personal information no longer needed) and
+the secure-disposal controls in POL-DATA-001. Records relating to a notifiable
+data breach — including the assessment, notifications made to the OAIC and to
+affected individuals, and the remediation record — are retained for the period
+the OAIC may reasonably require, and are not deleted on tenant account closure.
 
-Despite not being a requirement within HIPAA, Tessera understands and
-appreciates the importance of health data retention. Acting as a
-subcontractor/service provider, and at times a business associate, Tessera is
-not directly responsible for health and medical records retention as set forth
-by each state.
+#### Access revocation on departure
 
-Tessera has created and implemented the following procedures to
-make it easier for Tessera Customers to support data retention
-laws.
-
-Some types of customer data may be automatically transitioned to a storage class
-that is appropriate for archival or infrequent usage. The guidelines for
-transitioning data to different storage classes is at the discretion of
-Tessera.
-
-Customer data is retained for as long as the account is in active status. Data
-enters an expired state when the account is voluntarily closed. Expired account
-data will be retained for 14 days. After 14 days, the project/account and
-related data will be removed. Customers that wish to voluntarily close their
-account should download their data manually or via the API prior to closing
-their account.
-
-If an account is involuntarily suspended, then there is a 14 day grace period
-during which the account will be inaccessible but can be re-opened if the customer
-meets their payment obligations and resolves any terms of service violations. If
-a customer wishes to manually backup their data in a suspended account, then
-they must ensure that their account is brought back to good standing so that the
-API and user interface will be available for their use. After 14 days, the
-suspended account will be closed and the data will be permanently removed
-(except when required by law to retain).
-
-#### For patient data as as a Covered Entity
-
-Tessera is NOT a covered entity.  Should we become a covered entity in the
-future, we would be required by law to retain healthcare records for up to 10
-years beyond when service was last provided when providing healthcare services
-directly to patients. Any patient data that is marked for deletion will be
-archived for the time required by law. This archived data can be retrieved by
-the customer as long as it is retrieved within 10 years from date of last
-service.
+When a member of the workforce leaves Tessera or changes role, their access to
+data repositories is revoked under the joiner-mover-leaver procedure
+(**ISMS-PR-014**), which requires access to be removed within 24 hours of
+termination. Data custodians in Cloud Infrastructure (C. Hayes) confirm removal of
+repository, database, and source-control access against the offboarding checklist
+in that procedure.

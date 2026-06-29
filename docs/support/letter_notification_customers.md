@@ -1,51 +1,78 @@
 ---
 categories:
-- Security Management
+- Incident Response
+- Privacy
 - Compliance
-- Risk Management
 description: |
-    We are writing to inform you about a recent security incident at Tessera that may have involved your personal information. On September 12, 2024, we discovered unauthorised access to our customer database, which occurred due to a sophisticated cyber-attack. We take the protection of your personal data very seriously, and we deeply regret any concern or inconvenience this incident may cause you.
-title: "Breach Notification Letter to Customers"
+    Notification to individuals whose personal information was exposed in incident TSR-INC-2025-031. In late February 2025 Tessera detected anomalous egress from its multi-tenant platform caused by a long-lived AWS access key exposed through a misconfigured public repository and an unsegmented path to tenant data.
+title: "Notification to affected individuals — TSR-INC-2025-031"
 ---
 
-**Subject:** Important Security Notice: Data Breach Notification
+**Subject:** Important security notice — your personal information
 
 ---
 
-**Dear [Customer Name],**
+**Dear [Name],**
 
-We are writing to inform you about a recent security incident at Tessera that may have involved your personal information. On September 12, 2024, we discovered unauthorised access to our customer database, which occurred due to a sophisticated cyber-attack. We take the protection of your personal data very seriously, and we deeply regret any concern or inconvenience this incident may cause you.
+We are writing to let you know about a security incident at Tessera that may
+have involved your personal information, and to explain the steps we have taken.
+We are sorry for the concern this will cause, and we want to be straightforward
+with you about what happened.
 
-**What Happened:**
-- On September 11, 2024, an unauthorised party gained access to our customer database by exploiting compromised credentials of one of our employees.
-- The attacker accessed and exported a portion of customer records containing personal information.
+**What happened**
 
-**What Information Was Involved:**
-The information that may have been accessed includes:
-- Your name, email address, phone number, and address.
-- Details of your account status and subscription plan.
-- Payment information, such as credit card details and billing history.
+In late February 2025 we identified unauthorised access to data held on our
+multi-tenant platform. Our investigation found that a long-lived access key used
+by our management systems had been exposed through a source-code repository that
+was incorrectly configured as public. Because the path between our management
+systems and the data we hold for tenants was not fully segregated, that key was
+used to read tenant records. We became aware of the activity through monitoring
+that flagged unusual data leaving our environment.
 
-**What We Are Doing:**
-- Upon discovery, we immediately took steps to contain the breach, including disabling compromised accounts and enhancing our security protocols.
-- We are working with leading cybersecurity experts to conduct a thorough investigation and to implement additional measures to protect against future incidents.
-- We have reported this incident to the appropriate authorities and are fully cooperating with ongoing investigations.
+**What information was involved**
 
-**What You Can Do:**
-- We recommend that you remain vigilant for any suspicious activity related to your personal accounts.
-- Please monitor your financial statements and report any unauthorised transactions to your financial institution.
-- For your security, we encourage you to reset your passwords and use unique, strong passwords across your accounts.
+The records that may have been read include personal and contact information held
+on your behalf — your name, email address, telephone number, and account and
+subscription details. We do not hold your payment-card details; card processing
+is handled by a separate provider and was not affected. The information remained
+encrypted while stored; the exposure arose from authorised reads by the
+compromised key, not from our encryption failing.
 
-**For More Information:**
-We are committed to keeping you informed and supporting you through this process. If you have any questions or need further assistance, please contact our dedicated support line at [Support Phone Number] or visit our website at [Support Website Link].
+**What we have done**
 
-We sincerely apologise for this incident and the impact it may have on you. Your trust is our top priority, and we are taking all necessary steps to safeguard your information.
+- We deactivated and rotated the exposed key and ended every session it had
+  opened.
+- We secured the repository, removed the credential from its history, and scanned
+  all of our repositories for any other committed secrets.
+- We put a network change in place to restrict that path to your data.
+- We assessed the incident as an eligible data breach under the Notifiable Data
+  Breaches scheme and notified the Office of the Australian Information
+  Commissioner (OAIC) within our 72-hour target.
 
-Thank you for your understanding and continued support.
+**What you can do**
 
-Sincerely,  
-[Your Name]  
-Chief Information Security Officer  
+- Watch for any unexpected contact or account activity that uses the details
+  above, and be cautious of messages that refer to your Tessera account.
+- If you reuse your Tessera password elsewhere, we suggest changing it and using
+  a unique password for each service.
+- You can contact your bank or telco if you notice anything unusual, and you are
+  entitled to seek advice from a community legal service or the OAIC if you have
+  concerns about how your information has been handled.
+
+**For more information**
+
+We have set up a dedicated line for people affected by this incident. You can
+reach the response team at `1800 000 000` (business hours) or
+`incident@tessera.locoensayo.org`, and our incident page at `tessera.locoensayo.org/incident`
+will be kept up to date.
+
+We take our responsibility for your information seriously, and we are making the
+changes described above to prevent this happening again. Thank you for your
+patience while we worked through it.
+
+Sincerely,
+Isabella Ferreira
+Chief Information Security Officer
 Tessera
 
 ---

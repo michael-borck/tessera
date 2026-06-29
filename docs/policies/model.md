@@ -3,348 +3,211 @@ categories:
 - IT Management
 - Security Architecture
 - Operational Security
-description: In the digital age, cyber attacks are inevitable.
+description: Describes the security architecture and operating model that underpin
+  the Tessera platform and internal environment.
 title: Security Architecture and Operating Model
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Security Architecture and Operating Model             |
-| **Doc#**     | POL-ITMA-026 |
+| **Title**    | Security Architecture and Operating Model |
+| **Doc#**     | POL-ITMA-026                        |
 | **Version**  | 1.0                                 |
-| **Date**     | 07-06-2023                              |
+| **Date**     | 07-06-2023                          |
+| **Owner**    | CISO (I. Ferreira)                  |
+| **Approved By** | CTO (S. Qureshi)                |
+| **ISO/IEC 27001:2022** | A.8 — Reference controls (architecture) |
 
-In the digital age, cyber attacks are inevitable. At Tessera, we are taking a
-“zero trust”, “minimal infrastructure” approach to managing risk and information
-security. This document describes our guiding principles and aspirations in
-managing risk and the building blocks of our security model.
+This document describes the security architecture and operating model that
+underpin the Tessera platform and our internal environment. It is written for
+engineers, operations and auditors: a working description of how the platform is
+built and run, not a marketing statement. The detailed multi-tenant VPC, KMS and
+IAM design — including tenant isolation and the management-plane / data-plane
+separation — is shown in the cloud architecture diagram
+(docs/support/architecture_diagram.qmd).
 
 ## Policy Statements
 
-Tessera policy requires that:
+Tessera requires that:
 
-(a) Tessera's security program and operations should be designed and
-implemented with the following objectives and best practices:
+(a) The security program and platform are designed and operated against the
+following objectives:
 
-* data-centric, cloud-first
-* assume compromise therefore never trust, always verify
-* apply controls using least-privilege and defence-in-depth principles
-* avoid single point of compromise
-* automate whenever possible, the simpler the better, less is more
-* prompt self management and reward good behaviours
+- data-centric, cloud-first;
+- assume compromise — never trust, always verify;
+- least privilege and defence in depth;
+- no single point of compromise;
+- automate wherever it removes human error, and prefer the simpler design;
+- make secure behaviour the easy behaviour.
 
-(b) Security shall remain a top priority in all aspects of Tessera's business
-operations and product development.
-
+(b) Security is treated as a first-class requirement in platform design and
+product development, not a downstream gate.
 
 ## Controls and Procedures
 
+### Security principles
 
-### Tessera Security Principles
+#### (1) Data-centric model and zero-trust architecture
 
-#### (1) Data-centric model; zero-trust architecture
+Tessera's design is data-centric. Rather than relying on a network perimeter, we
+put narrow controls around specific data and assets so that access decisions are
+granular and explicit. The guiding rule is "never trust, always verify": no
+entity — user, device, application or packet — is trusted by default, regardless
+of where it sits relative to the corporate network. Authorised entities are
+expected to do only what they are authorised to do, and that expectation is
+enforced rather than assumed.
 
-“Zero Trust” is a data-centric security design that puts micro-perimeters around
-specific data or assets so that more granular rules can be enforced. It remedies
-the deficiencies with perimeter-centric strategies and the legacy devices and
-technologies used to implement them. It does this by promoting “never trust,
-always verify” as its guiding principle. This differs substantially from
-conventional security models which operate on the basis of “trust but verify.”
+In practice this means: (almost) no internal network and (almost) 100% cloud;
+segregation enforced by policy; and individually secured devices with no
+production access by default.
 
-In particular, with Zero Trust there is no default trust for any entity —
-including users, devices, applications, and packets—regardless of what it is and
-its location on or relative to the corporate network. In addition, verifying
-that authorised entities are always doing only what they’re allowed to do is no
-longer optional; it’s now mandatory.
+#### (2) Minimal infrastructure and short-lived processes
 
-!!! Summary
+We extend zero trust with a minimal-infrastructure approach, using managed cloud
+services wherever they reduce our own attack surface. Cloud services expose rich
+APIs that let us integrate and automate security operations, and turning off
+services we are not using removes always-on attack surface. Short-lived,
+purpose-bound processes reduce the window in which a compromised credential is
+useful.
 
-    * No internal network. (Almost) 100% cloud.
-    * Fully segregated with Granular policy enforcements.
-    * Individually secured devices. No production access by default.
-
-#### (2) “Air-Gapped” environments meet short-lived processes
-
-We extend the zero-trust security model with a “Minimal Infrastructure”
-approach, where we use “Anything-as-a-Service” whenever possible, to harness the
-full power of the cloud. Cloud services allow us to contain and control access
-at a much more granular level, compared to operating on-premise infrastructure.
-Via access to the extensive APIs provided by the cloud services, we would be
-able to more easily integrate and automate security operations. Additionally,
-minimising infrastructure significantly reduces always-on attack surfaces.
-Services that are not used are turned off, instead of being idly available which
-opens itself up to attacks. Together with Zero Trust, this security model and
-architecture enables a high degree of flexibility for end-user computing while
-maintaining the highest level of security assurance.
-
-!!! Summary
-
-    * No direct administrative or broad network connectivity into production.
-    * Processes are short-lived and killed after use.
-    * Minimal persistent attack surface making it virtually impenetrable.
+In practice: no standing administrative or broad network connectivity into
+production; processes are short-lived and torn down after use; minimal
+persistent attack surface.
 
 #### (3) Least-privilege temporary access
 
-Cyber attacks are inevitable. When it comes to preparing for potential attacks,
-Tessera security operations take the approach that assumes a compromise can
-happen at any time, to any device, with little to no indicators. This is also an
-extension of the “zero trust” model. When building security operations, we
-carefully perform risk analysis and threat model, to identify potential single
-point of compromise and to avoid having the “keys to the kingdom”.
+We design on the assumption that a compromise can happen at any time, to any
+device, with little warning. Access to production and to sensitive data is
+closed by default and granted on demand, for a defined purpose and a short
+window, protected by strong multi-factor authentication. No single credential
+should be "the keys to the kingdom" — compromise of one user, device or key must
+not cascade into broad compromise. This is why, for example, an administrator
+credential cannot, by itself, reach all systems and data in the environment.
 
-In other words, compromise of any single system or user or credential, should
-not easily lead to a broad or full compromise of the entire infrastructure or
-operations. For example, if an attacker gains access to a admin credential (e.g.
-Active Directory domain), it should not directly lead to the compromise of all
-systems and data in the environment.
-
-!!! Summary
-
-    * Need-based access control for both employees and computing services.
-    * Access to critical systems and resources are closed by default, granted on demand.
-    * Protected by strong multi-factor authentication.
-    * No “keys to the kingdom”; no single points of compromise.
-    * "Secrets" (such as SSH Keys) must remain secret at all times.
+Secrets — access keys, service credentials, SSH keys — are stored in a managed
+secrets store, rotated, and scoped to the narrowest role that does the job. The
+February 2025 incident (TSR-INC-2025-031), in which a long-lived AWS access key
+leaked through a misconfigured public repository and reached tenant data, is the
+reference case for why long-lived keys must never be committed to source
+control.
 
 #### (4) Immutable builds and deploys
 
-The Tessera platform leverages a micro-service architecture. This means that
-the system has been decomposed into numerous small components that can be built
-and deployed individually. Before these components get deployed to our
-_production_ environments, we thoroughly test and validate the changes in our
-_lower_ environments which are completely isolated from production. This allows
-us to test upcoming changes while ensuring there is no impact to our customers.
+The Tessera platform is built as a set of small services that can be built and
+deployed independently. A build is validated in lower, isolated environments
+before it reaches production, and once validated it is deployed immutably — the
+artefact that was tested is the artefact that runs. Infrastructure — database
+schemas, buckets, load balancers, DNS — is described as code and deployed through
+the same pipeline. Infrastructure-as-code is a prerequisite for repeatable,
+low-touch deployments and for the audit trail from commit to production.
 
-As a particular build of a component progresses through our environments, it is
-important that the build does not change thus we ensure that each build is
-immutable. Once an _immutable build_ has been validated in our _lower_
-(non-production) environments, we then deploy it to our _production_ environment
-where the change will be available to Tessera customers and end-users.
+#### (5) End-to-end data protection
 
-Changes to our infrastructure (database schema changes, storage buckets, load
-balances, DNS entries, etc.) are also described in our source code and deployed
-to our environments just like the applications. This architectural approach to
-managing infrastructure is referred to as _infrastructure as code_ and is a key
-requirement for fully automated deployments with minimal human touch.
+Tenant data is encrypted in transit and at rest, with keys held in AWS KMS under
+tight IAM policy. Internal staff do not have standing access to tenant data in
+production; where access is genuinely required for support, it is requested,
+approved, logged and time-boxed. Tenant data is used only to deliver the
+tenant's service and is never used to train shared models or sold onward.
 
-!!! Summary
+#### (6) Strong but usable access
 
-    * Infrastructure as code with active protection.
-    * Automated security scans and full traceability from code commit to production.
-    * “Hands-free” deployment ensures each build is free from human error or malicious contamination.
+Authentication uses standards-based protocols — OAuth 2.0, OpenID Connect and
+SAML — with multi-factor authentication and fine-grained, attribute- or
+role-based authorisation. **Auth0** is the identity provider for the platform
+and for workforce single sign-on.
 
-#### (5) End-to-end data protection and privacy
+#### (7) Watch everything, including the watchers
 
-It is of the utmost importance that Tessera provides for confidentiality (privacy), integrity
-and availability of its customer's data. Your data is protected with end-to-end
-encryption, combined with strong access control and key management. We also
-prohibit our internal employees to access customer data directly in production.
-So your data remains safe and private at all times. We will never use or share
-your data without your prior consent.
+Visibility is the precondition for detection. We inventory assets, log events,
+run vulnerability and penetration testing, and monitor production continuously.
+Logging is redundant and tamper-resistant so that the systems doing the watching
+are themselves watched. The goal is to move manual detection effort into
+automated correlation as the platform grows.
 
-We are proud to offer our customers data storage peace of mind with a money-back
-guarantee. We guarantee your private data stored on our platform is always safe
-and protected from cyberattacks such as ransomware, and we will reimburse you
-for certain losses of such data due to unauthorised activity in eligible
-accounts that resulted through no fault of your own.
+Tessera consumes threat intelligence from **AusCERT** and the **Australian Cyber
+Security Centre (ACSC)**, and participates in sector information sharing, to
+stay current on attacker tooling and methodology.
 
-!!! Summary
+#### (8) Centralised, automated operations
 
-    * Data is safe both at rest and in transit, using strong encryption, access control and key management.
-    * No internal user access is allowed to customer data in production.
-
-#### (6) Strong yet flexible user access
-
-We all know by now that "Passw0rd" makes a terrible password. Access control is
-so important we must get it right. That's why we leverage tried-and-true
-technology such as SAML, OAuth, multi-factor authentication, and fine-grained
-authorisation to provide strong yet intuitive access options, both for our
-internal staff to access business resources and for our customers to access
-Tessera platform and services.
-
-!!! Summary
-
-    * OAuth 2.0, OpenID Connect, SAML for customer authentication and single sign-on.
-    * Multi-factor authentication.
-    * Fine-grain attribute-based or role-based authorisation.
-
-#### (7) Watch everything, even the watchers
-
-You can’t protect what you can’t see.
-
-As the famous strategist, Sun Tsu, once said, “Know thy self, know thy enemy. A
-thousand battles, a thousand victories.” It all starts with knowing ourselves.
-This applies to the infrastructure, environments, operations, users, systems,
-resources, and most importantly, data. It is important to inventory all assets,
-document all operations, identify all weaknesses, and visualise/understand all
-events.
-
-This includes conducting various risk analysis, threat modeling, vulnerability
-assessments, application scanning, and penetration testing. Not only that, this
-requires security operations to keep an eye on everything, and someone should
-also "watch the watchers".
-
-At first, this would require significant manual effort and may seem impossible
-to keep up-to-date. Our goal is to automate security operations, so that this
-can be achieved programmatically as our operations evolve to become more
-complex.
-
-Additionally, Tessera security team will actively monitor threat intelligence
-in the community, with feeds and information sharing platform such as NH-ISAC to
-stay abreast of the attacker activities and methodologies.
-
-!!! Summary
-
-    * All environments are monitored; All events are logged; All alerts are analysed; All assets are tracked.
-    * No privileged access without prior approval or full auditing.
-    * We deploy monitoring redundancy to “watch the watchers”.
-
-#### (8) Centralised and automated operations
-
-As much as possible, Tessera security will translate policy and compliance
-requirements into reusable code for easy implementation and maintenance. This
-allows us to truly be able to enforce policy and compliance in a fast and
-scalable way, rather than relying solely on written policies and intermittent
-manual audits. For example, end-point device policies may be translated into
-Chef InSpec code and compliance may be enforced through the agent. Access
-Control policies for production environments are translated into AWS IAM JSON
-policies and implemented via Terraform code.
-
-Automation makes it truly possible to centralise security operations, including
-not only event aggregation and correlation, but also the orchestration and
-management of previously siloed security controls and remediation efforts.
-
-!!! Summary
-
-    * API-driven cloud-native security fabric that
-        - centrally monitors security events,
-        - visualises risk management,
-        - automates compliance audits, and
-        - orchestrates near real-time remediation.
+Where it is sound to do so, we express policy and compliance requirements as
+code so they are enforced rather than asserted — for example, endpoint baselines
+as configuration management, and production access policy as AWS IAM in
+Terraform. Centralising event aggregation and control orchestration is what lets
+a small team run detection and response across a cloud-native estate.
 
 #### (9) Usable security
 
-Security benefits from transparency, and should operate as an open-book. This
-allows the entire organisation to take responsibility for and accountability of
-adopting security best practices. Similar to code reviews and pull requests in
-the development process, Tessera security team makes security standards and
-practices available to all employees for feedback prior to adoption.
+A control that is not used provides no protection. We favour simple, practical
+controls, publish standards openly so the whole organisation can adopt them, and
+treat security as part of the engineering culture rather than a separate
+function. Security awareness is run regularly and kept short and relevant; the
+test of a control is whether people actually use it.
 
-We emphasise on the usability and practicality of security. A security solution
-or process is not effective, if it is not being used, no matter how good it may
-be. Having impractical security would only generate noise, provide a false sense
-of security, and incur unnecessary cost. Nothing is perfect, but we embrace an
-agile mindset to test and try, and to continuously improve.
+#### (10) Assessed and certified
 
-!!! Summary
+Compliance and security are not the same thing, but Tessera pursues both: we
+maintain alignment to ISO/IEC 27001:2022, work to the ASD Essential Eight, and
+subject the platform to independent assessment and periodic penetration testing.
 
-    * All employees receive security awareness training not annually, but monthly.
-    * Simple policies, processes, and procedures.
-    * No “Shadow IT”.
-    * DevSecOps with common goals and an integrated team.
-    * Processes that encourage self management and reward good behaviour.
+### Security architecture
 
-#### (10) Regulatory compliant and hacker verified
+Tessera's security architecture sits on three environments: the **AWS cloud**
+(the platform), **DevOps** (build and deploy), and **workforce / end-user
+computing**.
 
-Security != Compliance. We cannot have one without the other.
+The detailed network, VPC, KMS and IAM design — including tenant isolation and
+the management-plane / data-plane separation — is documented in the cloud
+architecture diagram (docs/support/architecture_diagram.qmd), maintained by Cloud
+Infrastructure.
 
-!!! Summary
+#### Cloud architecture
 
-    * Regulatory Compliant;
-    * Independently assessed and certified;
-    * Hacker verified.
+- Designed for the cloud, using a true multi-tenant architecture.
+- Deployed into private subnets of a Virtual Private Cloud (VPC) in **AWS Sydney
+  (ap-southeast-2)**, with cross-region standby.
+- Tenant isolation and key management enforced through VPC design, KMS and IAM
+  policy.
+- AWS's own certifications and testing provide assurance about the underlying
+  service.
 
+#### Compute model
 
-### Security Architecture
+Tessera uses the full range of AWS compute building blocks, choosing the
+smallest sufficient unit for each workload:
 
-Tessera developed a security architecture on top of its three main
-infrastructure environments - Cloud (AWS), DevOps, and workforce collaboration /
-end-user computing.
+- **Virtual machines** (EC2), launched from an Amazon Machine Image (AMI).
+- **Containers** — a packaged application and its libraries without the host OS,
+  simpler to scale, typically run as a Docker image.
+- **Functions** (Lambda) — just the application code in a prebuilt runtime,
+  scaled automatically by AWS and short-lived by design. Where a workload suits
+  it, we prefer functions: they deploy quickly, scale on demand, and minimise
+  attack surface because they are not long-running.
 
-#### Architecture Diagrams
+*(I. Ferreira, note to self: the container paragraph above predates the Fargate
+migration — refresh it next cycle so it reflects what actually runs.)*
 
-Detailed architecture diagrams of the in-scope networks, endpoints, applications
-as well as the security operations are developed and maintained by JupiterOne.
+### Metrics, measurement and continuous monitoring
 
-#### Cloud Architecture
+A set of metrics tracks the adoption and effectiveness of the security program.
+A security scorecard is produced each month and reviewed by the Security
+Committee. Scorecards and the underlying asset and event data are available in
+the security operations tooling.
 
-##### Cloud Native
+### Quality of service
 
-* Designed for the cloud using true multi-tenant architecture
-* Auto scaling across multiple data centers in multiple regions around the world
-* Tessera services deployed inside private subnets of Virtual Private Cloud (VPC)
-* Comprehensive security and compliance via AWS certifications
-* Ongoing security testing by AWS and AWS customers
+Service quality is a function of the architecture above — confidentiality,
+integrity and availability treated together. Availability is maintained through
+a scalable cloud design, real-time monitoring, and the recovery procedures in
+the BCDR policy. Development follows the DevOps practices set out in the Software
+Development Process. Customer-facing status is published on the status page.
 
-##### Customer Benefits
+> *[C. Hayes, margin note: the "monthly" scorecard cadence above disagrees with
+> the SOC metric pack, which still produces it quarterly. Pick one before the
+> Stage 1 audit — I. Ferreira to confirm.]*
 
-* Infrastructure is tailored to our customer's goals and usage patterns
-* "Shared use" model reduces cost
-* Nearly infinite compute and data capacity via AWS cloud provider
-* Customers can focus on solving business problems and not worry about infrastructure
-* Automatic backup and recovery
-* Continuous improvements via change control process
-* Faster adoption of new technology
+### Architecture diagrams
 
-##### Evolution of Cloud Computing
-
-1. Baremetal
-
-    - A computer in someone else's data center
-
-1. Virtual Machine
-
-    - A portion of a computer in someone else's data center
-    - In AWS, a Virtual Machine is created from Amason Machine Image (AMI)
-
-1. Container
-
-    - A package of essential application libraries and code but not
-      the core OS libraries - Simpler to scale a docker image because - No
-      duplication of core OS processes (networking, filesystem, etc) - Typically
-      a Docker container
-
-1. Function
-
-    - Just the application code that runs in a pre-built container
-
-Tessera strives to leverage functions as the primary building
-blocks for our platform because:
-
-* functions deploy more quickly than containers and virtual machines
-* AWS automatically scales Lambda functions based on the number of incoming invocations
-* they are short-lived processes which minimises attack surface
-
-### Metrics, Measurements and Continuous Monitoring
-
-A set of metrics / KPIs have been defined to assist in the measuring, reporting
-and optimising the security program and the controls in place.
-
-A security scorecard is produced every  with updates
-to key metrics of the Tessera information security program, to
-measure its adoption and effectiveness.
-
-The reports and scorecards are maintained by and can be accessed at JupiterOne.
-
-
-### Quality of Service
-
-Tessera strives to provide a high quality of service
-to all of its customers. This is accomplished through a security
-architecture that encompasses all of Tessera's operations
-and provides high data confidentiality, integrity, and availability.
-
-An overview of Tessera's architecture can be found in
-Security Architecture.
-Tessera uses a highly scalable cloud architecture to
-provide system quality at all times.
-
-All systems are monitored and measured in real time as described in
-Application Service Event Recovery.
-
-Tessera uses DevOps methodology as described in
-Software Development Process
-to ensure a smooth delivery process of all systems and applications.
-
-Status for external facing, customer applications and systems is published
-at .
+Detailed architecture diagrams of the in-scope networks, endpoints and
+applications, and of security operations, are developed and maintained alongside
+the cloud architecture diagram (docs/support/architecture_diagram.qmd).

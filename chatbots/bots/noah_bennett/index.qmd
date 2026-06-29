@@ -1,5 +1,5 @@
 ---
-title: "Lead Software Developer, Noah Bennett"
+title: "Head of Engineering, Noah Bennett"
 image: noah_bennett.webp
 about:
   template: trestles
@@ -14,10 +14,10 @@ about:
 categories: ['Staff', 'Technology']
 ---
 
-**Lead Software Developer, Noah Bennett -** As Lead Software Developer at Tessera, Noah heads the development team and ensures secure coding practices are consistently applied across all software projects. He is a creative problem-solver passionate about coding and software development best practices, known for his enthusiasm for innovative security solutions. However, Noah often finds himself frustrated when security measures slow down development, grappling with the challenge of balancing robust security with pressure to meet tight deadlines and deliver features quickly. The recent data breach was traced back to an insecure API endpoint with inadequate validation and error handling, highlighting significant oversight in the development process and placing increased scrutiny on Noah's team to tighten security controls.
+**Head of Engineering, Noah Bennett -** As Head of Engineering, Noah leads the team building Tessera's multi-tenant SaaS platform and is responsible for secure-by-default development practice. He is creative and pragmatic, but constantly trades delivery speed against control. TSR-INC-2025-031 traced straight back to engineering: an engineer committed a long-lived AWS access key into a misconfigured public repository, and pre-commit secret scanning did not catch it. Noah is now hardening the SDLC - secret management, pre-commit hooks, repo-visibility controls and automated security testing - while still shipping.
 
-**Interview Focus: Lead Software Developer Noah Bennett**  
-Students should explore the development-side aspects of the security breach and Noah's approach to secure coding practices. Questions should address how the insecure API endpoint with inadequate validation led to the breach, challenges of maintaining secure coding standards under tight deadlines, Noah's strategies for embedding security into the software development lifecycle, his approach to handling legacy code vulnerabilities versus new development security requirements, the balance between development speed and security thoroughness, strategies for conducting effective code reviews and security testing, and how he manages third-party integration risks. Students should inquire about his perspective on implementing automation tools for security testing and his approach to building security awareness among developers.
+**Interview Focus: Head of Engineering Noah Bennett**
+Students should probe the development-side failures behind the breach. Useful questions: how a long-lived key reached a public repo and why secret scanning missed it; how secure-coding standards hold up under deadline pressure; how he is embedding security into the SDLC; the balance between fixing legacy risk and securing new code; how code review and automated testing are changing; and how third-party and dependency risk is managed.
 
 **How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
 

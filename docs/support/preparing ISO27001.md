@@ -3,70 +3,73 @@ categories:
 - Compliance
 - Security Management
 - Risk Assessment
-description: Preparing for an ISO 27001 certification, which is a specification for an information security management system (ISMS), is a significant task for a Chief Information Security Officer (CISO).
-title: ISO27001 Prep
+description: How Tessera is preparing for ISO/IEC 27001:2022 certification-readiness — the CISO's duties, the stage gates, and the evidence the certification body will test.
+title: Preparing for ISO/IEC 27001:2022
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | ISO27001 Prep             |
-| **Doc#**     | DOC-SECU-009 |
-| **Version**  | 1.0                                 |
-| **Date**     | 06-06-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Preparing for ISO/IEC 27001:2022           |
+| **Doc#**     | DOC-COMPL-003                              |
+| **Version**  | 1.1                                        |
+| **Date**     | 05-03-2025                                 |
 
-Preparing for an ISO 27001 certification, which is a specification for an
-information security management system (ISMS), is a significant task for a Chief
-Information Security Officer (CISO). In this context, the primary duties and
-responsibilities of the CISO include:
+ISO/IEC 27001:2022 certification-readiness is the board mandate that came out
+of the TSR-INC-2025-031 breach. This note sets out what certification-readiness
+involves for Tessera and the CISO's part in it. Certification is earned in two
+stages: a Stage 1 documentation review and a Stage 2 substantive audit, after
+which the certification body issues (or declines) the certificate. "Readiness"
+means being able to evidence the management system and its controls — not just
+describe them.
 
-1.  **Setting Security Policies and Procedures:** The CISO is responsible for
-    creating, implementing, and managing the organization's security policies
-    and procedures that are aligned with ISO 27001 standards. These include
-    policies for data access, usage, storage, and transmission. These policies
-    must be detailed, clear, and enforceable.
+## What the CISO is accountable for
 
-2.  **Risk Assessment:** Conducting a comprehensive risk assessment is crucial
-    in the ISO 27001 process. The CISO must identify all assets, threats,
-    vulnerabilities, impacts, and the likelihood of occurrence to calculate the
-    risk. They must also provide appropriate mitigation strategies.
+1. **Operating the ISMS.** Owning the management system — the scope, policies,
+   risk assessment and treatment, and the review cycles — and keeping it
+   current against ISO/IEC 27001:2022.
 
-3.  **Security Awareness Training:** The CISO must ensure that all staff are
-    aware of the security policies and trained in security best practices. They
-    must conduct regular training sessions and drills to ensure that the staff
-    can identify security threats and understand their responsibilities to
-    prevent security breaches.
+2. **Risk assessment and treatment.** Running the risk method (DOC-RISK-002),
+   maintaining the risk register (DOC-SEC-001) and the Statement of
+   Applicability (DOC-SEC-003), and making sure every selected Annex A control
+   has a credible status and evidence.
 
-4.  **Regular Audits:** Conducting regular audits is essential to measure the
-    effectiveness of security controls. The CISO must ensure that audits are
-    carried out at regular intervals and any non-compliance found during audits
-    is addressed promptly.
+3. **Awareness and training.** Ensuring the workforce understands its
+   obligations and that training is completed and recorded (DOC-EDU-001).
 
-5.  **Incident Management:** The CISO needs to establish and manage the incident
-    response process. This involves creating an incident response team,
-    developing a response plan, testing the plan, and conducting a post-incident
-    review to identify areas for improvement.
+4. **Internal audit and management review.** Running internal audit
+   independently of the audited areas, and chairing the annual management
+   review that considers audit results, incidents, risk changes and feedback.
 
-6.  **Continuous Improvement:** The CISO should ensure that the ISMS is
-    continuously improved through the use of metrics, audits, management
-    reviews, and other feedback mechanisms. This means keeping up-to-date with
-    the latest threats, vulnerabilities, and best practices in the field of
-    information security.
+5. **Incident management.** Operating the incident response and NDB processes,
+   and feeding post-incident reviews back into the controls and the register.
 
-7.  **Liaison with External Parties:** The CISO should also act as a point of
-    contact during the ISO 27001 certification audit. They need to ensure that
-    the external auditors have all the necessary information and can freely
-    perform their tasks.
+6. **Continual improvement.** Converting incidents, nonconformities and audit
+   findings into corrective actions with owners and dates, and tracking them to
+   closure.
 
-8.  **Management Reviews:** The CISO needs to present reviews to the top
-    management, showcasing the performance of the ISMS, its effectiveness, and
-    any changes in the risk environment or business operations.
+7. **Regulatory and contractual compliance.** Ensuring Tessera meets its
+   *Privacy Act* / APP / NDB obligations and its contractual security
+   commitments, with GDPR and sector schemes applied only where clients bring
+   them into scope.
 
-9.  **Ensuring Legal and Contractual Compliance:** The CISO must ensure that the
-    company complies with all relevant legal, regulatory, and contractual
-    requirements. This includes data protection laws, cybersecurity laws, and
-    any specific contractual obligations with clients or third parties.
+8. **Liaison with the certification body.** Acting as the point of contact for
+   the external auditors, providing accurate evidence and not over-claiming
+   implementation status.
 
+## Where Tessera is in the process
 
-By adhering to these duties, the CISO plays a crucial role in ensuring that the
-organization can meet the requirements of the ISO 27001 standard, thus
-demonstrating to clients and partners its commitment to information security.
+Tessera already holds ISO/IEC 27001 certification and SOC 2 Type II, so the
+management system exists; the work now is the 2022 transition and closing the
+gaps surfaced by the breach. The SoA records which controls are implemented,
+partially implemented or in progress, and the corrective actions from
+TSR-INC-2025-031 — static-key elimination, control-plane / data-plane
+segmentation, secret scanning, and detection retuning — are the priority items
+before Stage 2.
+
+> **TEACHING NOTE:** Certification-readiness turns on evidence, not assertion.
+   An Annex A control marked "Implemented" in the SoA is a claim; the Stage 2
+   audit tests whether the claim holds. The areas most exposed to that test at
+   Tessera are the access and offboarding controls (A.5.15, A.5.18, A.6.5,
+   A.8.2, A.8.3) and the segmentation control (A.8.22), all of which depend on
+   the timeliness and completeness of access revocation and the segmentation
+   remediation.

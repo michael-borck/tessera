@@ -1,0 +1,39 @@
+---
+title: "Cloud Service Operations Manager, Rafa Costa"
+image: "rafa_costa.webp"
+about:
+  template: trestles
+  image: rafa_costa.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Operations']
+---
+
+**Cloud Service Operations Manager, Rafa Costa -** Rafa has been with Tessera for over a decade, rising from network technician to Cloud Service Operations Manager. He holds a Master's in network security, is meticulous and proactive, and is directly accountable for the performance and reliability of the platform - automated provisioning, real-time monitoring and incident management. He was on the sharp end of TSR-INC-2025-031: anomalous egress tripped after roughly five days, with containment taking a further 48 hours. He values automation that cuts human error and catches exposure earlier across Tessera's diverse client base.
+
+**Interview Focus: Cloud Service Operations Manager Rafa Costa**
+Students should explore the operational perspective on the breach and platform reliability. Useful questions: how the anomalous egress surfaced and why detection lagged; what containment involved over the 48 hours; where monitoring gaps delayed the response; how automated provisioning and real-time monitoring could reduce manual error; the operational challenges of serving SME and enterprise clients together; and how incident management is changing under the certification work.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="db8dd3d6-3f69-46d8-ab2c-a0919d78e523"
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  data-brand-image-url="https://tessera.locoensayo.org/assets/tessera.png"
+  data-assistant-name="Rafa Costa"
+  data-assistant-icon="rafa_costa.webp"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->
+

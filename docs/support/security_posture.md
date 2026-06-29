@@ -1,77 +1,96 @@
 ---
 categories:
 - IT Management
-- Software
+- Security
 - Compliance
 description: |
-  Tessera is a mid-sized cloud service provider specialising in delivering scalable and efficient cloud solutions to clients across industries such as finance, healthcare, and education. With recent expansions into enterprise-level services, Tessera has prioritised cybersecurity as a critical component of its business operations.
+  A plain-language summary of Tessera's security posture following the TSR-INC-2025-031 breach — where the platform is strong, where it was weak, and what the remediation programme is closing.
 title: Security Posture Summary
 ---
 
-### **Overview**
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Security Posture Summary                   |
+| **Doc#**     | DOC-SEC-006                                |
+| **Version**  | 1.1                                        |
+| **Date**     | 06-03-2025                                 |
 
-Tessera is a mid-sized cloud service provider specialising in delivering scalable and efficient cloud solutions to clients across industries such as finance, healthcare, and education. With recent expansions into enterprise-level services, Tessera has prioritised cybersecurity as a critical component of its business operations. However, the recent data breach has exposed significant vulnerabilities, prompting a comprehensive review of its security posture.
+### Overview
 
-### **Strengths**
+Tessera operates a multi-tenant SaaS platform on AWS, serving more than 600
+clients from offices in Perth, Sydney and Malaga. Security is treated as a
+load-bearing part of how the platform is run, not a separate function. The
+February 2025 breach (TSR-INC-2025-031) exposed a specific set of weaknesses
+and has driven a focused remediation programme and the board's ISO/IEC
+27001:2022 certification-readiness mandate. This summary sets out, honestly,
+where the platform is strong and where it is still being fixed.
 
-1. **Advanced Cloud Infrastructure:**
-   - Tessera operates a hybrid cloud environment integrating both public and private clouds, providing flexibility and scalability tailored to client needs.
-   - Use of advanced virtualisation technologies and distributed data centers enhances redundancy, disaster recovery, and operational efficiency.
+### Strengths
 
-2. **Compliance with Industry Standards:**
-   - The company adheres to major cybersecurity frameworks, including ISO 27001 and the NIST Cybersecurity Framework, aligning its policies and procedures with industry best practices.
-   - Regular internal audits and compliance checks ensure that security measures are up to date with regulatory requirements, especially in high-stakes industries like healthcare and finance.
+1. **Cloud-native by design.**
+   - The platform runs in a VPC with public and private subnets; the
+     application and data tiers have no direct internet path, and traffic
+     terminates at the Application Load Balancer over TLS.
+   - A multi-AZ deployment in the primary region and a declared standby region
+     provide in-region redundancy and a regional recovery option.
 
-3. **Automated Monitoring and Incident Detection:**
-   - Tessera has implemented automated monitoring systems that provide real-time alerts for unusual activities, such as high-volume database queries and unauthorised access attempts.
-   - Security Information and Event Management (SIEM) systems are in place to correlate and analyse logs across the network, helping to identify potential threats promptly.
+2. **Tenant isolation at the data layer.**
+   - Tenant separation is enforced in Aurora PostgreSQL through row-level
+     security keyed to the tenant context, so a shared cluster serves all
+     tenants without cross-tenant exposure under normal operation.
 
-4. **Strong Network Security Measures:**
-   - Use of multi-tier firewall architectures, intrusion detection and prevention systems (IDPS), and encrypted communication channels between data centers help protect the network perimeter.
-   - Regular network security assessments and penetration testing are conducted to identify and mitigate vulnerabilities.
+3. **Encryption everywhere.**
+   - Data at rest is encrypted under AWS KMS-managed keys; data in transit uses
+     TLS 1.2 or better on every hop, including calls to the third-party model
+     vendor.
 
-5. **Customer-Centric Approach to Data Protection:**
-   - Tessera places a high priority on protecting customer data, with encryption in transit and at rest, along with stringent access controls for sensitive information.
-   - Dedicated support for security issues and transparency in communication help maintain customer trust and engagement.
+4. **Identity and least privilege.**
+   - Workforce and tenant identities are federated through the identity provider
+     with phishing-resistant MFA. Services run under narrow IAM roles, and
+     privileged access is just-in-time through SSO.
 
-6. **Proactive Security Culture:**
-   - Security awareness training is mandatory for all employees, with additional emphasis on phishing and social engineering defenses.
-   - The security team actively engages in threat intelligence sharing with industry partners, enhancing its ability to anticipate and defend against emerging threats.
+5. **Cloud-native monitoring.**
+   - CloudTrail, VPC Flow Logs and application logs are centralised, with
+     GuardDuty covering identity and credential-exfiltration findings and a
+     24×7 on-call rotation.
 
-### **Identified Vulnerabilities**
+6. **Certified, and recertifying.**
+   - Tessera holds ISO/IEC 27001 certification and SOC 2 Type II, and is working
+     to ISO/IEC 27001:2022 certification-readiness, with the controls aligned to
+     the ASD Essential Eight where applicable.
 
-1. **Inconsistent Multi-Factor Authentication (MFA) Enforcement:**
-   - While MFA is deployed across most user accounts, it is inconsistently enforced for senior-level administrative accounts. This inconsistency allowed attackers to exploit compromised credentials in the recent breach.
-   - A review of access control policies is needed to ensure uniform application of MFA across all access levels, especially for privileged accounts.
+### Weaknesses exposed by TSR-INC-2025-031
 
-2. **Phishing Susceptibility:**
-   - The recent breach highlighted weaknesses in employee recognition of phishing attempts, indicating that current security training programs may not be sufficiently effective.
-   - Enhancing training programs and implementing advanced phishing simulation exercises could help reduce susceptibility.
+1. **A long-lived static access key.**
+   - A management-plane role carried a non-rotating access key with broad
+     permissions, committed to a repository misconfigured as public. Static keys
+     are being eliminated in favour of short-lived credentials obtained via SSO.
 
-3. **Overly Broad Access Permissions:**
-   - Some administrative accounts have access privileges that exceed their operational requirements, violating the principle of least privilege.
-   - A comprehensive access review and rights-sizing initiative are necessary to minimise unnecessary access and potential insider threats.
+2. **Absent management-plane / tenant-data segmentation.**
+   - The key's role could reach tenant data without traversing an enforced
+     boundary. Control-plane / data-plane isolation is the priority remediation,
+     tracked against A.8.22 in the SoA.
 
-4. **Gaps in API Security:**
-   - Vulnerabilities in the security of exposed APIs, including insufficient validation and inadequate rate limiting, pose a risk of unauthorised data access.
-   - Regular API security assessments and implementation of API gateways with integrated security controls are recommended to address these gaps.
+3. **No enforced pre-commit secret scanning.**
+   - The committed credential was not caught at push time. Secret scanning is
+     being enforced across all repositories, with private configuration as the
+     default.
 
-5. **Delayed Detection and Response:**
-   - Although automated monitoring systems are in place, the initial detection of the breach was delayed due to insufficient prioritisation of anomalous behaviour.
-   - Enhancing SIEM rules and increasing the frequency of incident response drills could improve the speed and effectiveness of breach detection and containment.
+4. **Detection latency.**
+   - The activity ran for an estimated five days before the GuardDuty finding
+     was actioned. Alert routing for management-plane roles is being retuned, and
+     an egress-baseline alert added to the application subnet.
 
-6. **Weak Endpoint Security:**
-   - Endpoint Detection and Response (EDR) solutions are not fully integrated across all devices, leading to inconsistent endpoint security measures.
-   - Expanding EDR coverage and enforcing strict endpoint security protocols would provide better visibility and control over potential entry points.
+5. **Unvalidated continuity targets.**
+   - The cross-region failover assumed by the BIA and runbook is not yet
+     provisioned; the RTO/RPO figures are benchmarks, not tested outcomes.
 
-7. **Lack of Regular Security Updates and Patch Management:**
-   - Some systems and software components were found to be outdated, with critical security patches not applied promptly, increasing the risk of exploitation.
-   - A robust patch management process, including automated patch deployment and regular update schedules, is needed to ensure all systems remain secure.
+### Where the programme is focused
 
-8. **Insufficient Data Encryption Key Management:**
-   - Although data encryption is in place, the recent breach revealed that decryption keys were accessible within the compromised environment, highlighting a weakness in key management practices.
-   - Implementing a secure key management solution, such as a Hardware Security Module (HSM) or cloud-based key management service, would strengthen data protection.
-
-### **Summary and Recommendations**
-
-Tessera has established a strong foundation in cybersecurity with advanced infrastructure, compliance with industry standards, and a proactive approach to security culture. However, the identified vulnerabilities—particularly in access control, phishing defences, API security, and endpoint management—require urgent attention to prevent future breaches.
+The remediation is tracked against the Statement of Applicability (DOC-SEC-003)
+and the risk register (DOC-SEC-001): eliminate static keys, complete the
+control-plane / data-plane segmentation, enforce secret scanning, retune
+detection, and validate continuity. The certification-readiness work is the
+accountability structure for seeing these through, and an honest posture summary
+is part of that — the preventive controls failed in February, and the strength
+of the notification response does not change that.

@@ -3,19 +3,25 @@ categories:
 - Data
 - IT Management
 - Software
-description: This schema offers a comprehensive view of operational data, supporting both transactional processing and analytical queries for educational purposes.
+description: A simplified conceptual entity-relationship diagram for the Tessera multi-tenant platform, showing the core operational entities and their relationships.
 title: Entity Relationship Diagram
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Entity Relationship Diagram             |
-| **Doc#**     | DOC-DATA-001 |
-| **Version**  | 1.0                                 |
-| **Date**     | 18-02-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Entity Relationship Diagram                |
+| **Doc#**     | DOC-DATA-001                               |
+| **Version**  | 1.1                                        |
+| **Date**     | 05-03-2025                                 |
 
-This schema offers a comprehensive view of operational data, supporting both
-transactional processing and analytical queries for educational purposes.
+This is a simplified conceptual schema for the Tessera multi-tenant platform,
+showing the core operational entities and how they relate. It is intended to
+support transactional and analytical discussion rather than to be a faithful
+representation of every table. In the production data store (Aurora
+PostgreSQL), every entity below carries a tenant context, and tenant isolation
+is enforced through row-level security — so the relationships shown here hold
+within a tenant, and the database prevents one tenant's rows from being
+returned in another tenant's context.
 
 ```{mermaid}
 erDiagram
@@ -23,9 +29,9 @@ erDiagram
     USERS {
         int userId PK
         string username
-        string password
         string email
         string role
+        string tenantId
     }
     SERVICES ||--o{ TRANSACTIONS : "triggers"
     SERVICES {
@@ -34,6 +40,7 @@ erDiagram
         string description
         float price
         string status
+        string tenantId
     }
     TRANSACTIONS {
         int transactionId PK
@@ -42,6 +49,7 @@ erDiagram
         dateTime transactionDate
         string transactionType
         float amount
+        string tenantId
     }
     USERS ||--o{ TICKETS : files
     TICKETS {
@@ -50,6 +58,7 @@ erDiagram
         dateTime creationDate
         string status
         text description
+        string tenantId
     }
     USERS ||--o{ LOGS : generates
     LOGS {
@@ -58,17 +67,22 @@ erDiagram
         dateTime logDate
         string logType
         text logDescription
+        string tenantId
     }
 ```
 
-### Explanation:
-- **Users Table**: Manages user credentials and roles. Each user can use
-  multiple services.
-- **Services Table**: Lists the services offered by Tessera. Services
-  can trigger multiple transactions.
-- **Transactions Table**: Logs financial transactions or service changes linked
-  to users and services.
-- **Tickets Table**: Manages support tickets created by users, providing a
-  connection for customer support activities.
-- **Logs Table**: Keeps records of activities, which could be system-generated
-  or user-generated, providing audit trails or system operation insights.
+### Explanation
+
+- **Users.** Workforce and tenant user identities, scoped to a tenant. A user
+  may use multiple services.
+- **Services.** The services offered on the platform, each belonging to a
+  tenant; a service may trigger multiple transactions.
+- **Transactions.** Service and billing events linked to users and services.
+- **Tickets.** Support tickets raised by users, connecting to customer support
+  activity.
+- **Logs.** Activity records — system- or user-generated — providing audit
+  trails and operational insight.
+
+> **CONCEPTUAL NOTE:** The `tenantId` on each entity represents the tenant
+   context that row-level security enforces in production. The diagram is
+   conceptual; the actual schema is larger and normalised.

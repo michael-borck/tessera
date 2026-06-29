@@ -3,139 +3,160 @@ categories:
 - Vendor Management
 - Risk Management
 - Compliance
-description: Tessera makes every effort to assure all third party organisations
-  are compliant and do not compromise the integrity, security, and privacy of Tessera
-  or Tessera Customer data.
-title: Third Party Security, Vendor Risk Management and Systems/Services Acquisition
+description: Sets out how Tessera assesses and manages the security and privacy risk of
+  suppliers, cloud services and acquired systems.
+title: Third-Party Security, Vendor Risk Management and Systems/Services Acquisition
 ---
 
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Third Party Security, Vendor Risk Management and Systems/Services Acquisition             |
+| **Title**    | Third-Party Security, Vendor Risk Management and Systems/Services Acquisition |
 | **Doc#**     | POL-RISK-005 |
 | **Version**  | 1.0                                 |
-| **Date**     | 10-06-2023                              |
+| **Date**     | 10-06-2023                          |
+| **Owner**    | Isabella Ferreira, Chief Information Security Officer |
+| **Approved By** | Grace Sullivan, Chief Operating Officer |
+| **ISO/IEC 27001:2022** | A.5.19–A.5.23 Supplier relationships and cloud services |
 
-Tessera makes every effort to assure all third party organisations are
-compliant and do not compromise the integrity, security, and privacy of
-Tessera or Tessera Customer data. Third Parties include Vendors, Customers,
-Partners, Subcontractors, and Contracted Developers.
+Tessera runs on third-party services — cloud infrastructure, SaaS tools,
+contractors and sub-processors — and our tenants' data flows through them. This
+policy sets out how we make sure those third parties do not compromise the
+integrity, security or privacy of Tessera or tenant data. "Third parties" here
+means vendors, customers acting as partners, sub-contractors and contracted
+developers.
+
+The policy satisfies **A.5.19 to A.5.23** of ISO/IEC 27001:2022 (information
+security in supplier relationships, supplier agreements, the ICT supply chain,
+monitoring and change of supplier services, and cloud services). It also
+discharges Tessera's obligations under **APP 11** (security of personal
+information) and **APP 8** (cross-border disclosure) of the Privacy Act 1988
+(Cth): where a supplier will receive or process personal information, we
+confirm the transfer is permitted and that the supplier is bound to protect it
+to a standard no lower than Tessera's own.
+
+The owner of this process is the **CISO (I. Ferreira)**.
 
 ## Policy Statements
 
 Tessera policy requires that:
 
-(a) A list of approved vendors/partners must be maintained and reviewed
+(a) A list of approved vendors and partners is maintained and reviewed at least
 annually.
 
-(b) Approval from management, procurement and security must be in place prior to
-onboarding any new vendor or contractor.  Additionally, all changes to existing
-contract agreements must be reviewed and approved prior to implementation.
+(b) Approval from management, procurement and Security must be in place before
+onboarding any new vendor or contractor, and before implementing any change to
+an existing contract.
 
-(c) For any technology solution that needs to be integrated with Tessera
-production environment or operations, a Vendor Technology Review must be
-performed by the security team to understand and approve the risk.  Periodic
-compliance assessment and SLA review may be required.
+(c) For any technology that will integrate with the Tessera production
+environment or operations, a vendor technology review must be performed by the
+Security team to understand and approve the risk. Periodic compliance
+assessment and SLA review may also apply.
 
-(d) Tessera Customers or Partners should not be allowed access outside of their
-own environment, meaning they cannot access, modify, or delete any data
-belonging to other 3rd parties.
+(d) Tessera tenants and partners must not be granted access outside their own
+environment — they cannot access, modify or delete data belonging to other
+tenants or third parties.
 
-(e) Additional vendor agreements are obtained as required by applicable
-regulatory compliance requirements.
+(e) Additional vendor agreements are put in place as required by applicable law
+and contract — including a Business Associate Addendum (BAA) for the specific
+carve-out in (f).
 
-* A standard HIPAA Business Associate Agreement (BAA) is defined and includes
-  the required security controls in accordance with the organisation's security
-  policies. Additionally, responsibility is assigned in these agreements. A BAA
-  must be signed with any vendor that may have a business need to access, and/or
-  unsupervised access to PHI or ePHI.
-
-
-
-
-## Controls and Procedures
-
-
-### Vendor Technology Risk Review
-
-Tessera security policy requires a risk review of vendor
-technology, prior to any technology being integrated to Tessera
-operations and/or infrastructure. Employees are required to engage security team
-to conduct such review. The request may be submitted by email directly to the
-security team, or by opening a  ticket through the
-Tessera internal service desk.
-
-Security team is responsible to conduct the reviews via interviews and reviews
-of documentation, to ensure the vendor complies with regulatory requirements and
-follows security best practices to minimise risk to an acceptable level.
-
-A vendor technology risk (VTR) assessment is conducted using Google VSAQ, in
-the following steps:
-
-1. Reviewer sends questionnaire link(s) to vendor contact.
-1. Vendor completes the questionnaire(s).
-1. Vendor saves/exports answers to the assessment questionnaire(s).
-1. Vendor contact sends the answers file back to reviewer.
-1. Reviewer opens the same questionnaire(s) and loads the answers received from
-   the vendor to complete the assessment.
-1. Reviewer follows up with vendor contact as needed.
-1. Reviewer facilities discussion with business owner to determine if the risk
-   is acceptable. Vendor remediation may be required depending on the results.
-
-A list of [approved vendors / contractors][1] is maintained by the Security and
-Operations teams.
-
-[1]: approved_vendors.md
-
-### Vendor Contractual Agreements
-
-**HIPAA.** If the vendor needs access to PHI/ePHI, the vendor must be HIPAA
-compliant and a [Business Associate Agreement (BAA)][BAA] is required.
+(f) **US-healthcare carve-out.** For vendors that will handle protected health
+information (PHI/ePHI) in support of Tessera tenants who are US healthcare
+providers, a [HIPAA Business Associate Addendum (BAA)][BAA] is required. This
+is a justified carve-out for a specific regulated data type and a specific
+tenant segment; it is **not** the default arrangement for Tessera suppliers.
+Tessera's own governing regime is the *Privacy Act 1988* (Cth) and ISO/IEC
+27001:2022; the BAA exists only where US healthcare data is genuinely in scope.
 
 [BAA]: hipaa_baa.md
 
+## Controls and Procedures
 
-**SLA for Service Providers.** For network and infrastructure service providers
-that support production and/or critical operations at Tessera, a
-Service Level Agreement (SLA) is defined and included in the service contract.
+### Vendor Technology Risk Review
 
-As appropriate, the executed agreement(s) are linked or attached to the vendor
-on the [approved vendors list][2].
+Before any technology is integrated into Tessera operations or infrastructure,
+the Security team runs a vendor technology review. The request goes to the
+Security team by email or through the internal service desk (Jira, the SEC
+project).
+
+The review uses interviews and documentation to confirm the vendor meets
+regulatory requirements and follows security good practice, so that risk is
+reduced to an acceptable level.
+
+A Vendor Technology Risk (VTR) assessment is run using a VSAQ-style
+questionnaire (the open Vendor Security Assessment Questionnaire format). The
+process:
+
+1. The reviewer sends the questionnaire link(s) to the vendor contact.
+2. The vendor completes the questionnaire(s).
+3. The vendor saves/exports its answers.
+4. The vendor returns the answers file to the reviewer.
+5. The reviewer loads the answers into the assessment and scores them.
+6. The reviewer follows up with the vendor as needed.
+7. The reviewer and the business owner discuss whether the residual risk is
+   acceptable; vendor remediation may be required.
+
+A list of [approved vendors and contractors][1] is maintained jointly by the
+Security and Operations teams.
+
+[1]: approved_vendors.md
+
+> *[I. Ferreira, note to self: the VTR scoring rubric was last updated in
+> 2024. Cross-check that the VSAQ template still matches the A.5.20 control
+> evidence the auditor asked for before we re-issue it.]*
+
+### Vendor Contractual Agreements
+
+**Privacy Act / sub-processor terms.** Where a vendor will receive or process
+personal information held by Tessera, the contract must address APP 8
+(cross-border disclosure) and APP 11 (security): the vendor must handle the
+information only for the engaged purpose, protect it to a standard no lower
+than Tessera's own, support Tessera's NDB obligations, and notify Tessera
+without delay of any suspected breach. Sub-processor chains must be disclosed
+and approved.
+
+**SLA for service providers.** For network and infrastructure providers that
+support production or critical operations, a Service Level Agreement is defined
+and included in the contract.
+
+Executed agreements are linked or attached to the vendor entry on the
+[approved vendors list][2].
 
 [2]: approved_vendors.md
 
 ### Monitoring Vendor Risks
 
-Vendor contracts are reviewed either annually or according to the signed
-contract duration.
+Vendor contracts are reviewed annually or according to the signed contract
+term, whichever is shorter.
 
-Based on the risk level and the sensitivity/criticality of data the vendor has
-access to, the vendor review may include an updated risk analysis performed by
-the security team in addition to legal and business review of contract terms.
+Based on the risk level and the sensitivity and criticality of the data the
+vendor can access, the review may include an updated risk assessment by the
+Security team, plus legal and business review of contract terms.
 
-If the vendor is a service provider, the DevOps team monitors the service status
-of the provider according to its SLA. This is done by either manually reviewing
-the posted service status on the vendor's status pages at least quarterly, or by
-setting up alarms for service interruption using automation.
-
+For service providers, Cloud Service Operations monitors service status against
+the SLA — either by reviewing the vendor's status page at least quarterly, or
+through automated alerting for service interruption.
 
 ### Software and Systems Acquisition Process
 
-Tessera Security maintains
-a list of [pre-approved business software][3] and
-a list of [approved vendors / contractors][4].
+Security maintains a list of [pre-approved business software][3] and a list of
+[approved vendors and contractors][4].
 
 [3]: approved_software.md
 [4]: approved_vendors.md
 
-If additional commercial software, hardware system, or cloud services is needed,
-a request should be submitted through Tessera internal service
-desk. This will trigger the approval by manager/security and procurement
-process.
+Where additional commercial software, hardware or cloud services are needed, a
+request is raised through the internal service desk (Jira), which triggers
+manager/Security approval and the procurement process.
 
-As applicable, Tessera security team may conduct a risk analysis on
-the software or system to ensure it complies with Tessera security,
-compliance and legal requirements and does not interfere with the security
-controls. If a risk is identified, additional controls should be identified and
-implemented (or planned) prior to acquisition. An alternative product may be
-considered as a result of the risk analysis.
+The Security team may run a risk analysis on the software or system to confirm
+it meets Tessera's security, compliance and legal requirements and does not
+interfere with existing controls. Where a risk is identified, additional
+controls are identified and implemented (or planned) before acquisition; an
+alternative product may be chosen.
+
+> *[Reviewer, 2025-02: the old default clause requiring a HIPAA BAA with "any
+> vendor that may access PHI/ePHI" was removed when this policy was
+> Australianised. If you find a downstream doc (e.g. the procurement checklist)
+> still quoting the old default, update it to the carve-out in Policy Statement
+> (f).]*

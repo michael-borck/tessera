@@ -1,0 +1,35 @@
+---
+title: "Head of IT, Hamish Boyd"
+image: hamish_boyd.webp
+about:
+  template: trestles
+  image: hamish_boyd.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Technology']
+---
+
+**Head of IT, Hamish Boyd -** As Head of IT, Hamish runs the internal layer - networks, endpoints, identity and the on-prem and hybrid environments that sit alongside the cloud platform. He is hands-on and practical, focused on keeping services running while configurations stay honest. TSR-INC-2025-031 exposed IT-side gaps: long-lived credentials were in routine use and the management and tenant planes were not separated, with configuration drift across the hybrid setup going uncaught. Hamish is now tightening identity, key management and network controls under the pressure of the certification programme.
+
+**Interview Focus: Head of IT Hamish Boyd**
+Students should dig into the IT and network realities behind the breach. Useful questions: how long-lived keys came to be in routine use; why management and tenant planes were not segmented; how configuration drift went undetected across the hybrid environment; how he balances uptime pressure with the controls certification demands; how identity, least privilege and patching are being strengthened; and where automation could reduce manual error.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="7ce9ddc4-7302-4152-b734-1a6cba86ac82"
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

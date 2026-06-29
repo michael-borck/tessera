@@ -2,41 +2,32 @@
 categories:
 - IT Infrastructure
 - Network Management
-description: Welcome to our visual representation of the Tessera Network, designed to provide a clear overview of our cloud infrastructure's architecture.
-title: Network Diagram
+description: Legacy network-logical diagram for the Tessera platform. Superseded by the cloud-native architecture diagram (DOC-NET-001) and retained for historical reference.
+title: Network Diagram (legacy)
 ---
 
-|              |                                     |
-|--------------|-------------------------------------|
-| **Title**    | Network Diagram             |
-| **Doc#**     | DOC-ITIN-002 |
-| **Version**  | 1.0                                 |
-| **Date**     | 08-03-2023                              |
+|              |                                            |
+|--------------|--------------------------------------------|
+| **Title**    | Network Diagram (legacy)                   |
+| **Doc#**     | DOC-ITIN-002                               |
+| **Version**  | 1.0                                        |
+| **Date**     | 08-03-2023                                 |
 
-Welcome to our visual representation of the Tessera Network, designed to
-provide a clear overview of our cloud infrastructure's architecture. This
-diagram, crafted in Mermaid markup, details the interconnections between various
-components essential for maintaining efficient, secure, and scalable cloud
-operations. In this diagram, you will find:
+> **SUPERSEDED:** This legacy network-logical diagram depicted an earlier
+> load-balancer / firewall / web / app / database topology and no longer
+> reflects the platform as operated. The current, cloud-native reference
+> architecture — VPC topology, multi-tenant application and data tiers,
+> encryption, identity and AI services on AWS — is the **Cloud-Native
+> Architecture Diagram ([DOC-NET-001](architecture_diagram.qmd), v2.0)**. Refer
+> to that document for anything relating to the ISO/IEC 27001:2022
+> certification-readiness audit or to the TSR-INC-2025-031 incident. This page
+> is retained for historical comparison only.
 
--   **Cloud Data Centers**: The nodes representing our main operational hubs
-    that store and manage data, ensuring high availability and redundancy.
--   **Networking Equipment**: Including routers, switches, and load balancers
-    that facilitate smooth data flow and optimal distribution of network
-    traffic.
--   **Security Measures**: Highlighted through firewalls and other security
-    appliances that safeguard our network against potential threats.
--   **Connectivity Routes**: Illustrated paths show how data travels between
-    components and the external connections that link our network with the
-    internet and other external networks.
--   **Service Layers**: Depicting various cloud services such as SaaS, PaaS, and
-    IaaS, which demonstrate the versatility and capability of our network to
-    support diverse applications and services.
-
-This network diagram serves as a strategic tool to visualise the relationships
-and operational pathways within our network. It is an essential reference for
-understanding how we manage data flows, ensure security, and deliver services
-efficiently across our cloud infrastructure.
+The diagram below shows the earlier logical layout, in which traffic entered
+through a public-facing load balancer and firewall, reached a web and
+application tier, and was served from a database tier, with a separate
+management subnet for domain controllers. It predates the move to the
+VPC-based, containerised, multi-tenant design documented in DOC-NET-001.
 
 ```{mermaid}
 graph TB
@@ -45,7 +36,7 @@ graph TB
         ISP2[ISP]
     end
 
-    subgraph "TesseraNetworks"
+    subgraph "Tessera (legacy topology)"
         subgraph "PublicSubnet"
             LB[Load Balancer]
             FW[Firewall]
@@ -67,16 +58,15 @@ graph TB
 
         LB -- HTTPS --> FW
         FW -- HTTP --> WS
-        WS-- "App Traffic" --> AP
+        WS -- "App traffic" --> AP
         AP --- DB
         DC1 --- DC2
 
         ISP1 -->|Internet| NAT
         ISP2 -->|Internet| NAT
         NAT --> RTR
-        RTR -- "App Subnet" --> AP
-        RTR -- "Mgmt Subnet" --> DC1
-        RTR -- "Mgmt Subnet" --> DC2
-
+        RTR -- "App subnet" --> AP
+        RTR -- "Mgmt subnet" --> DC1
+        RTR -- "Mgmt subnet" --> DC2
     end
 ```
