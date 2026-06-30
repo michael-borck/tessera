@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="HIPAA Mappings to Tessera Policies and Controls Below is a list of HIPAA Safeguards and Requirements and the Tessera policies and controls in place to meet those.">
+<meta name="description" content="Incident report for TSR-INC-2025-031, the February 2025 data breach in which a long-lived AWS access key — belonging to a contractor whose engagement had ended — was exposed through a misconfigured public repository and used to read tenant data from an unsegmented path.">
 
-<title>Incident Report CCN-BR-0924 – Tessera</title>
+<title>Incident Report TSR-INC-2025-031 – Tessera</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -102,88 +102,61 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-solutions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Solutions</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-solutions">    
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Cloud Hosting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Managed Services</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Security &amp; Compliance</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resources</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-interviews" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Interviews</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
-        <li>
-    <a class="dropdown-item" href="../../docs/policies.html">
- <span class="dropdown-text">Documentation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/support.html">
- <span class="dropdown-text">Support Center</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../blog/index.html">
- <span class="dropdown-text">Blog</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-interviews">    
         <li>
     <a class="dropdown-item" href="../../chatbots/index.html">
- <span class="dropdown-text">Consultant Portal</span></a>
+ <span class="dropdown-text">Chat with Staff</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/interviews.html">
+ <span class="dropdown-text">Written Transcripts</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-docs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Docs</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-company-files" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Company Files</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-docs">    
-        <li>
-    <a class="dropdown-item" href="../../docs/interviews.html">
- <span class="dropdown-text">Transcripts</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-company-files">    
         <li>
     <a class="dropdown-item" href="../../docs/policies.html">
  <span class="dropdown-text">Policies</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/logs.html">
+ <span class="dropdown-text">Logs</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/support.html">
- <span class="dropdown-text">Other</span></a>
+ <span class="dropdown-text">Internal Records</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/articles.html">
  <span class="dropdown-text">In the News</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/logs.html">
- <span class="dropdown-text">Logs</span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../legal.html"> 
-<span class="menu-text">Educational Site</span></a>
+    <a class="nav-link" href="../../contact.html"> 
+<span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../contact.html"> 
-<span class="menu-text">Contact Us</span></a>
+    <a class="nav-link" href="../../legal.html"> 
+<span class="menu-text">Legal</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -210,17 +183,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Incident Report CCN-BR-0924</h1>
+<h1 class="title">Incident Report TSR-INC-2025-031</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">Incident Response</div>
+    <div class="quarto-category">Security</div>
     <div class="quarto-category">Compliance</div>
-    <div class="quarto-category">Risk Management</div>
-    <div class="quarto-category">Data Protection</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    HIPAA Mappings to Tessera Policies and Controls Below is a list of HIPAA Safeguards and Requirements and the Tessera policies and controls in place to meet those.
+    Incident report for TSR-INC-2025-031, the February 2025 data breach in which a long-lived AWS access key — belonging to a contractor whose engagement had ended — was exposed through a misconfigured public repository and used to read tenant data from an unsegmented path.
   </div>
 </div>
 
@@ -241,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><strong>Title</strong></td>
-<td>Incident Report</td>
+<td>Incident Report — TSR-INC-2025-031</td>
 </tr>
 <tr class="even">
 <td><strong>Doc#</strong></td>
@@ -253,78 +226,93 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><strong>Date</strong></td>
-<td>15-09-2024</td>
+<td>06-03-2025</td>
 </tr>
 </tbody>
 </table>
 <section id="tessera-incident-report" class="level2">
 <h2 class="anchored" data-anchor-id="tessera-incident-report">Tessera Incident Report</h2>
-<p><strong>Incident ID:</strong> CCN-BR-0924<br>
-<strong>Report Date:</strong> September 14, 2024<br>
-<strong>Incident Reported By:</strong> Network Operations Center (NOC) Team<br>
-<strong>Severity Level:</strong> Critical<br>
-<strong>Affected Systems:</strong> Customer Database, User Authentication System<br>
-<strong>Status:</strong> Contained and Under Investigation</p>
-<section id="overview-of-the-incident" class="level4">
-<h4 class="anchored" data-anchor-id="overview-of-the-incident"><strong>1. Overview of the Incident</strong></h4>
-<p>On September 12, 2024, Tessera detected unusual activity involving unauthorised access to the customer database. The breach was discovered when automated monitoring systems flagged a spike in database queries originating from an internal network segment typically reserved for administrative purposes. Upon further investigation, it was revealed that the attackers had gained access using compromised credentials of a senior system administrator.</p>
+<p><strong>Incident ID:</strong> TSR-INC-2025-031 <strong>Report Date:</strong> 06 March 2025 <strong>Incident Reported By:</strong> Cloud Service Operations (R. Costa) <strong>Severity Level:</strong> Critical <strong>Incident Lead:</strong> Chief Information Security Officer (I. Ferreira) <strong>Affected Systems:</strong> Multi-tenant SaaS platform; tenant-uploads object store (Amazon S3) <strong>Status:</strong> Contained; post-incident review complete</p>
+<section id="overview" class="level4">
+<h4 class="anchored" data-anchor-id="overview">1. Overview</h4>
+<p>In late February 2025 Tessera detected anomalous data egress from its multi-tenant SaaS platform. Investigation established that a <strong>long-lived AWS access key</strong> had been exposed through a <strong>misconfigured public source-code repository</strong> and used to read tenant data held in the tenant-uploads object store, across a path between the management plane and tenant data that was <strong>not fully segmented</strong>. The key belonged to a contractor whose engagement had ended on 9 January 2025 but whose credentials had not been revoked within the required 24 hours. Approximately 14,000 tenant records were exposed over an estimated five-day window before the activity was detected; full containment took a further 48 hours.</p>
+<p>The incident is recorded as Critical in the Security Incident Register (DOC-SEC-005) and is the subject of the NDB Playbook worked example (SOP-PRIV-001). It was the direct trigger for the Board’s ISO/IEC 27001:2022 certification-readiness mandate.</p>
 </section>
 <section id="timeline-of-events" class="level4">
-<h4 class="anchored" data-anchor-id="timeline-of-events"><strong>2. Timeline of Events</strong></h4>
+<h4 class="anchored" data-anchor-id="timeline-of-events">2. Timeline of events</h4>
 <ul>
-<li><p><strong>September 11, 2024, 14:00:</strong> A phishing email was sent to multiple employees, crafted to appear as a security update notice from Tessera’s internal IT team. The email contained a link to a malicious website mimicking the company’s login portal.</p></li>
-<li><p><strong>September 11, 2024, 14:30:</strong> A senior system administrator, John Doe, unknowingly clicked on the phishing link and entered his credentials on the fake portal. The attacker immediately captured these credentials.</p></li>
-<li><p><strong>September 11, 2024, 15:00:</strong> The attacker used John Doe’s credentials to log into Tessera’s network via the VPN, bypassing multi-factor authentication due to the senior-level access privileges that were not properly configured for MFA enforcement.</p></li>
-<li><p><strong>September 11, 2024, 16:00:</strong> The attacker escalated privileges to gain access to the customer database using John Doe’s admin credentials. Data exfiltration scripts were executed to export customer records.</p></li>
-<li><p><strong>September 12, 2024, 09:00:</strong> The NOC team’s automated monitoring systems detected an unusual volume of database queries and flagged the activity as suspicious. An alert was generated.</p></li>
-<li><p><strong>September 12, 2024, 09:15:</strong> The Security Operations Center (SOC) initiated an investigation into the alert and confirmed unauthorised access to the customer database. Immediate actions were taken to contain the breach by revoking access privileges and isolating the compromised accounts.</p></li>
-<li><p><strong>September 12, 2024, 10:00:</strong> The incident was escalated to the incident response team, who began a comprehensive forensic investigation to assess the extent of the breach and identify vulnerabilities.</p></li>
+<li><strong>Prior to 9 Jan 2025:</strong> A long-lived AWS access key (<code>AKIA****7Q3F</code>) belonging to a contractor held a role with a path to tenant data. The key had been committed to a source-code repository that was misconfigured as public.</li>
+<li><strong>9 Jan 2025:</strong> The contractor’s engagement ended. The access key was <strong>not</strong> revoked within the 24-hour objective of the offboarding procedure (ISMS-PR-014) and remained active.</li>
+<li><strong>20 Feb 2025 (03:12 UTC):</strong> The exposed key was first used from an IP in an AWS NAT range — consistent with the credential having been harvested and automated from another cloud workload. Because the management plane and tenant data were not segregated, the key’s role reached the tenant-uploads object store. Tenant record reads began.</li>
+<li><strong>20–24 Feb 2025:</strong> Reads of tenant data objects continued across multiple tenants over an estimated five-day window.</li>
+<li><strong>24 Feb 2025 (23:02 UTC):</strong> GuardDuty raised a <code>Tessera:Exfiltration/S3</code> finding against the tenant-uploads bucket. Cloud Service Operations triaged the alert and escalated to the CISO within the hour.</li>
+<li><strong>25 Feb 2025 (00:48 UTC):</strong> The CISO declared an incident, opened TSR-INC-2025-031, and the response team disabled the exposed key (<code>DisableKey</code>, attributed to Security Ops / I. Ferreira). The 72-hour NDB assessment clock started.</li>
+<li><strong>25–26 Feb 2025:</strong> Forensic review of CloudTrail and the IAM revocation log confirmed the scope of reads and established the link to the terminated contractor. Full containment was declared complete at approximately <strong>+48 hours</strong>.</li>
+<li><strong>27 Feb 2025:</strong> The exposed key was deleted (<code>DeleteAccessKey</code>) as final cleanup. The Data Protection Officer and Legal completed the serious-harm assessment and assessed the breach as eligible under Part IIIC of the <em>Privacy Act 1988</em> (Cth).</li>
+<li><strong>within 72 hours of awareness:</strong> Tessera notified the Office of the Australian Information Commissioner (OAIC) via the Notifiable Data Breaches portal and notified affected tenants and, through them, affected individuals.</li>
 </ul>
 </section>
-<section id="extent-of-data-compromised" class="level4">
-<h4 class="anchored" data-anchor-id="extent-of-data-compromised"><strong>3. Extent of Data Compromised</strong></h4>
+<section id="information-exposed" class="level4">
+<h4 class="anchored" data-anchor-id="information-exposed">3. Information exposed</h4>
 <ul>
-<li>Approximately 250,000 customer records were compromised, including personally identifiable information (PII) such as names, addresses, emails, phone numbers, and payment information.</li>
-<li>No encrypted data was directly exposed; however, the attacker had access to decryption keys stored within the compromised environment.</li>
-<li>No system integrity alterations were detected, but the risk of data manipulation remains under investigation.</li>
+<li>Approximately <strong>14,000 tenant records</strong> were exposed. The records were tenant data objects read from the tenant-uploads object store — principally the personal and contact information of identifiable individuals held on behalf of tenants (names, email addresses, telephone numbers, and account and subscription metadata).</li>
+<li>No payment-card data was held by Tessera; card processing is performed by a third-party payment processor engaged under its own SOC 2 Type II report and was not within reach of the exposed key.</li>
+<li>Data at rest remained encrypted under AWS KMS-managed keys; the exposure arose from authenticated reads by the key’s role, not from a cryptographic failure.</li>
 </ul>
 </section>
 <section id="immediate-actions-taken" class="level4">
-<h4 class="anchored" data-anchor-id="immediate-actions-taken"><strong>4. Immediate Actions Taken</strong></h4>
+<h4 class="anchored" data-anchor-id="immediate-actions-taken">4. Immediate actions taken</h4>
 <ul>
-<li>All compromised accounts were disabled, and passwords reset protocols were initiated across the affected systems.</li>
-<li>Multi-factor authentication enforcement was immediately expanded to include all administrative access accounts.</li>
-<li>The affected database was taken offline to prevent further unauthorised access, and a backup restoration process was started.</li>
-<li>An incident response team was deployed to conduct a full forensic analysis and identify the root cause.</li>
+<li>The exposed key was disabled and then deleted; associated IAM sessions were revoked.</li>
+<li>The repository was made private and a credential-history purge was run; a repository-wide secret scan was completed to locate any further committed secrets.</li>
+<li>A review of all leaver accounts for the test window was undertaken with the Head of People, and outstanding credentials were revoked.</li>
+<li>A network-segmentation change was applied as an interim control to restrict the management-plane role’s reach to tenant data.</li>
+<li>GuardDuty and CloudTrail alerting on <code>AssumeRole</code> and S3 <code>GetObject</code> anomalies for management-plane roles was tightened.</li>
+<li>The CISO notified the Executive Risk Committee and initiated the NDB assessment with the DPO and Legal.</li>
 </ul>
 </section>
-<section id="technical-details-and-logs" class="level4">
-<h4 class="anchored" data-anchor-id="technical-details-and-logs"><strong>5. Technical Details and Logs</strong></h4>
-<p><strong>Log Entry Sample - VPN Access:</strong></p>
-<pre><code>Sep 11 15:00:03 CCN-VPN-01: User 'jdoe' authenticated from IP 192.168.100.101 via VPN. Authentication method: password.
-Sep 11 15:00:05 CCN-VPN-01: MFA check bypassed for user 'jdoe' due to admin-level privilege exception.</code></pre>
-<p><strong>Log Entry Sample - Database Queries:</strong></p>
-<pre><code>Sep 11 16:02:47 DB-Server-01: QUERY - SELECT * FROM customer_data WHERE sensitive_info = 'true';
-Sep 11 16:05:30 DB-Server-01: EXPORT - User 'jdoe_admin' executed data export script on customer_data table.</code></pre>
-<p><strong>Error Messages:</strong> - <strong>System Alert:</strong> “Unusual query volume detected on DB-Server-01. Review required.” - <strong>SOC Alert:</strong> “Potential data breach detected. User ‘jdoe_admin’ executing high-risk operations. Immediate containment required.”</p>
+<section id="technical-detail-and-log-excerpts" class="level4">
+<h4 class="anchored" data-anchor-id="technical-detail-and-log-excerpts">5. Technical detail and log excerpts</h4>
+<p><strong>CloudTrail — first use and tenant-data reads (key <code>AKIA****7Q3F</code>):</strong></p>
+<pre><code>2025-02-20T03:12:47Z  AssumeRole   role/TesseraPlatformReadOnly  userId=AROA****7Q3F  srcIP=54.x.x.x
+2025-02-21T07:42:33Z  GetBucketAcl  bucket=tessera-tenant-uploads-REDACTED   userId=AROA****7Q3F
+2025-02-21T07:43:10Z  GetObject   bucket=tessera-tenant-uploads  key=tenants/northbridge/exports/2024Q4.csv   bytes=4823119
+2025-02-23T19:27:41Z  GetObject   bucket=tessera-tenant-uploads  key=tenants/meridian/profiles.csv            bytes=9120557
+2025-02-24T22:10:14Z  GetObject   bucket=tessera-tenant-uploads  key=tenants/vividleaf/members.parquet        bytes=15423001</code></pre>
+<p><strong>GuardDuty finding and containment:</strong></p>
+<pre><code>2025-02-24T23:02:31Z  DETECTION-ANOMALY  GuardDuty finding:Tessera:Exfiltration/S3  severity=High
+2025-02-25T00:48:12Z  DisableKey   access-key-id=AKIA****7Q3F  actor=SecurityOps/I.Ferreira  "Containment - credential revoked"
+2025-02-27T09:30:00Z  DeleteAccessKey  access-key-id=AKIA****7Q3F  actor=SecurityOps  "Final cleanup post-incident"</code></pre>
+<p><strong>IAM revocation log (attribution):</strong></p>
+<pre><code>mwebb-contractor  AKIA****7Q3F  TERMINATED 2025-01-09 (C-2041)
+                  key disabled 2025-02-25 (~47d post-term)   within_24h = FALSE</code></pre>
+<blockquote class="blockquote">
+<p><strong>EVIDENCE CROSS-REFERENCE:</strong> The full event set is in the CloudTrail export (<code>logs/cloudtrail_export.md</code>); the credential attribution and the wider leaver-revocation failures are in the IAM revocation log (<code>logs/iam_revocation_log.md</code>) and the HR leavers dataset (<code>tessera-hr-leavers.csv</code>, row C-2041). A reviewer should trace the key from termination through first use to detection across all three.</p>
+</blockquote>
 </section>
 <section id="vulnerabilities-identified" class="level4">
-<h4 class="anchored" data-anchor-id="vulnerabilities-identified"><strong>6. Vulnerabilities Identified</strong></h4>
+<h4 class="anchored" data-anchor-id="vulnerabilities-identified">6. Vulnerabilities identified</h4>
 <ul>
-<li><strong>Phishing Vulnerability:</strong> Lack of robust email filtering and user training on identifying phishing attempts.</li>
-<li><strong>MFA Gaps:</strong> Inconsistent enforcement of multi-factor authentication, particularly for senior-level administrative accounts.</li>
-<li><strong>Access Control Weaknesses:</strong> Overly broad administrative privileges and failure to adhere to the principle of least privilege.</li>
-<li><strong>Monitoring and Response Delay:</strong> Initial detection was delayed due to the failure of real-time monitoring to prioritise anomalous behavior adequately.</li>
+<li><strong>Offboarding control failure.</strong> The contractor’s key was not revoked within 24 hours of the 9 January termination, contrary to ISMS-PR-014 and control A.6.5. Revocation depended on a manual ticket, and the ticket did not fire.</li>
+<li><strong>Long-lived static access key.</strong> The role carried a non-rotating access key with broad permissions, contrary to the least-privilege and short-lived expectations in the SoA (A.8.2, A.8.24).</li>
+<li><strong>Secret in a public repository.</strong> The key was committed to a repository misconfigured as public. Pre-commit secret scanning was not enforced.</li>
+<li><strong>Absent management-plane / tenant-data segmentation.</strong> The key’s role could reach tenant data without traversing an enforced boundary (A.8.22, recorded as Partially implemented).</li>
+<li><strong>Detection latency.</strong> Reads continued for an estimated five days before the GuardDuty <code>Exfiltration/S3</code> finding was raised; S3 anomaly alerting was not tuned to treat bulk <code>GetObject</code> from management-plane roles as high priority.</li>
 </ul>
 </section>
 <section id="next-steps" class="level4">
-<h4 class="anchored" data-anchor-id="next-steps"><strong>7. Next Steps</strong></h4>
+<h4 class="anchored" data-anchor-id="next-steps">7. Next steps</h4>
 <ul>
-<li>A detailed audit of all user accounts and access privileges is underway to tighten security controls.</li>
-<li>Immediate rollout of enhanced security training for all employees, focusing on phishing awareness and secure access practices.</li>
-<li>Comprehensive review and upgrade of the current MFA implementation to ensure uniform enforcement across all access levels.</li>
-<li>Full incident report to be compiled with recommendations for further security improvements and presented to the executive board.</li>
+<li>Close the offboarding gap: automate key deactivation at the termination timestamp received from HR, removing dependence on a manual ISMS-PR-014 ticket; back-test all leavers in the window.</li>
+<li>Eliminate static access keys for management-plane roles; move to short-lived credentials obtained via SSO and the task metadata service.</li>
+<li>Enforce pre-commit secret scanning across all repositories; require private configuration by default.</li>
+<li>Complete the control-plane / data-plane segmentation tracked against A.8.22 in the Statement of Applicability (DOC-SEC-003).</li>
+<li>Tune GuardDuty and CloudTrail alerting for management-plane roles; add S3 egress-baseline alerting on tenant-data buckets.</li>
+<li>Track all corrective actions to closure in the risk treatment plan and reflect residual status in the next SoA revision.</li>
 </ul>
+<blockquote class="blockquote">
+<p><strong>TEACHING NOTE:</strong> Two distinct control failures enabled this incident — a preventive one (the key was not revoked when the contractor left) and an architectural one (the unsegmented path let the key reach tenant data). The speed of OAIC notification was a compliance strength; do not read it as evidence that the preventive or architectural controls were effective.</p>
+</blockquote>
 
 
 </section>

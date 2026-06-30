@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Tessera is a mid-sized cloud service provider specialising in delivering scalable and efficient cloud solutions to clients across industries such as finance, healthcare, and education. With recent expansions into enterprise-level services, Tessera has prioritised cybersecurity as a critical component of its business operations.">
+<meta name="description" content="A plain-language summary of Tessera’s security posture following the TSR-INC-2025-031 breach — where the platform is strong, where it was weak, and what the remediation programme is closing.">
 
 <title>Security Posture Summary – Tessera</title>
 <style>
@@ -102,88 +102,61 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-solutions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Solutions</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-solutions">    
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Cloud Hosting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Managed Services</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Security &amp; Compliance</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resources</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-interviews" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Interviews</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
-        <li>
-    <a class="dropdown-item" href="../../docs/policies.html">
- <span class="dropdown-text">Documentation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/support.html">
- <span class="dropdown-text">Support Center</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../blog/index.html">
- <span class="dropdown-text">Blog</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-interviews">    
         <li>
     <a class="dropdown-item" href="../../chatbots/index.html">
- <span class="dropdown-text">Consultant Portal</span></a>
+ <span class="dropdown-text">Chat with Staff</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/interviews.html">
+ <span class="dropdown-text">Written Transcripts</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-docs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Docs</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-company-files" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Company Files</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-docs">    
-        <li>
-    <a class="dropdown-item" href="../../docs/interviews.html">
- <span class="dropdown-text">Transcripts</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-company-files">    
         <li>
     <a class="dropdown-item" href="../../docs/policies.html">
  <span class="dropdown-text">Policies</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/logs.html">
+ <span class="dropdown-text">Logs</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/support.html">
- <span class="dropdown-text">Other</span></a>
+ <span class="dropdown-text">Internal Records</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/articles.html">
  <span class="dropdown-text">In the News</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/logs.html">
- <span class="dropdown-text">Logs</span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../legal.html"> 
-<span class="menu-text">Educational Site</span></a>
+    <a class="nav-link" href="../../contact.html"> 
+<span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../contact.html"> 
-<span class="menu-text">Contact Us</span></a>
+    <a class="nav-link" href="../../legal.html"> 
+<span class="menu-text">Legal</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -201,10 +174,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
-  <li><a href="#strengths" id="toc-strengths" class="nav-link" data-scroll-target="#strengths"><strong>Strengths</strong></a></li>
-  <li><a href="#identified-vulnerabilities" id="toc-identified-vulnerabilities" class="nav-link" data-scroll-target="#identified-vulnerabilities"><strong>Identified Vulnerabilities</strong></a></li>
-  <li><a href="#summary-and-recommendations" id="toc-summary-and-recommendations" class="nav-link" data-scroll-target="#summary-and-recommendations"><strong>Summary and Recommendations</strong></a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#strengths" id="toc-strengths" class="nav-link" data-scroll-target="#strengths">Strengths</a></li>
+  <li><a href="#weaknesses-exposed-by-tsr-inc-2025-031" id="toc-weaknesses-exposed-by-tsr-inc-2025-031" class="nav-link" data-scroll-target="#weaknesses-exposed-by-tsr-inc-2025-031">Weaknesses exposed by TSR-INC-2025-031</a></li>
+  <li><a href="#where-the-programme-is-focused" id="toc-where-the-programme-is-focused" class="nav-link" data-scroll-target="#where-the-programme-is-focused">Where the programme is focused</a></li>
   </ul>
 </nav>
     </div>
@@ -216,14 +189,14 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Security Posture Summary</h1>
   <div class="quarto-categories">
     <div class="quarto-category">IT Management</div>
-    <div class="quarto-category">Software</div>
+    <div class="quarto-category">Security</div>
     <div class="quarto-category">Compliance</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    <p>Tessera is a mid-sized cloud service provider specialising in delivering scalable and efficient cloud solutions to clients across industries such as finance, healthcare, and education. With recent expansions into enterprise-level services, Tessera has prioritised cybersecurity as a critical component of its business operations.</p>
+    <p>A plain-language summary of Tessera’s security posture following the TSR-INC-2025-031 breach — where the platform is strong, where it was weak, and what the remediation programme is closing.</p>
   </div>
 </div>
 
@@ -240,93 +213,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Title</strong></td>
+<td>Security Posture Summary</td>
+</tr>
+<tr class="even">
+<td><strong>Doc#</strong></td>
+<td>DOC-SEC-006</td>
+</tr>
+<tr class="odd">
+<td><strong>Version</strong></td>
+<td>1.1</td>
+</tr>
+<tr class="even">
+<td><strong>Date</strong></td>
+<td>06-03-2025</td>
+</tr>
+</tbody>
+</table>
 <section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h3>
-<p>Tessera is a mid-sized cloud service provider specialising in delivering scalable and efficient cloud solutions to clients across industries such as finance, healthcare, and education. With recent expansions into enterprise-level services, Tessera has prioritised cybersecurity as a critical component of its business operations. However, the recent data breach has exposed significant vulnerabilities, prompting a comprehensive review of its security posture.</p>
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>Tessera operates a multi-tenant SaaS platform on AWS, serving more than 600 clients from offices in Perth, Sydney and Malaga. Security is treated as a load-bearing part of how the platform is run, not a separate function. The February 2025 breach (TSR-INC-2025-031) exposed a specific set of weaknesses and has driven a focused remediation programme and the board’s ISO/IEC 27001:2022 certification-readiness mandate. This summary sets out, honestly, where the platform is strong and where it is still being fixed.</p>
 </section>
 <section id="strengths" class="level3">
-<h3 class="anchored" data-anchor-id="strengths"><strong>Strengths</strong></h3>
+<h3 class="anchored" data-anchor-id="strengths">Strengths</h3>
 <ol type="1">
-<li><strong>Advanced Cloud Infrastructure:</strong>
+<li><strong>Cloud-native by design.</strong>
 <ul>
-<li>Tessera operates a hybrid cloud environment integrating both public and private clouds, providing flexibility and scalability tailored to client needs.</li>
-<li>Use of advanced virtualisation technologies and distributed data centers enhances redundancy, disaster recovery, and operational efficiency.</li>
+<li>The platform runs in a VPC with public and private subnets; the application and data tiers have no direct internet path, and traffic terminates at the Application Load Balancer over TLS.</li>
+<li>A multi-AZ deployment in the primary region and a declared standby region provide in-region redundancy and a regional recovery option.</li>
 </ul></li>
-<li><strong>Compliance with Industry Standards:</strong>
+<li><strong>Tenant isolation at the data layer.</strong>
 <ul>
-<li>The company adheres to major cybersecurity frameworks, including ISO 27001 and the NIST Cybersecurity Framework, aligning its policies and procedures with industry best practices.</li>
-<li>Regular internal audits and compliance checks ensure that security measures are up to date with regulatory requirements, especially in high-stakes industries like healthcare and finance.</li>
+<li>Tenant separation is enforced in Aurora PostgreSQL through row-level security keyed to the tenant context, so a shared cluster serves all tenants without cross-tenant exposure under normal operation.</li>
 </ul></li>
-<li><strong>Automated Monitoring and Incident Detection:</strong>
+<li><strong>Encryption everywhere.</strong>
 <ul>
-<li>Tessera has implemented automated monitoring systems that provide real-time alerts for unusual activities, such as high-volume database queries and unauthorised access attempts.</li>
-<li>Security Information and Event Management (SIEM) systems are in place to correlate and analyse logs across the network, helping to identify potential threats promptly.</li>
+<li>Data at rest is encrypted under AWS KMS-managed keys; data in transit uses TLS 1.2 or better on every hop, including calls to the third-party model vendor.</li>
 </ul></li>
-<li><strong>Strong Network Security Measures:</strong>
+<li><strong>Identity and least privilege.</strong>
 <ul>
-<li>Use of multi-tier firewall architectures, intrusion detection and prevention systems (IDPS), and encrypted communication channels between data centers help protect the network perimeter.</li>
-<li>Regular network security assessments and penetration testing are conducted to identify and mitigate vulnerabilities.</li>
+<li>Workforce and tenant identities are federated through the identity provider with phishing-resistant MFA. Services run under narrow IAM roles, and privileged access is just-in-time through SSO.</li>
 </ul></li>
-<li><strong>Customer-Centric Approach to Data Protection:</strong>
+<li><strong>Cloud-native monitoring.</strong>
 <ul>
-<li>Tessera places a high priority on protecting customer data, with encryption in transit and at rest, along with stringent access controls for sensitive information.</li>
-<li>Dedicated support for security issues and transparency in communication help maintain customer trust and engagement.</li>
+<li>CloudTrail, VPC Flow Logs and application logs are centralised, with GuardDuty covering identity and credential-exfiltration findings and a 24×7 on-call rotation.</li>
 </ul></li>
-<li><strong>Proactive Security Culture:</strong>
+<li><strong>Certified, and recertifying.</strong>
 <ul>
-<li>Security awareness training is mandatory for all employees, with additional emphasis on phishing and social engineering defenses.</li>
-<li>The security team actively engages in threat intelligence sharing with industry partners, enhancing its ability to anticipate and defend against emerging threats.</li>
+<li>Tessera holds ISO/IEC 27001 certification and SOC 2 Type II, and is working to ISO/IEC 27001:2022 certification-readiness, with the controls aligned to the ASD Essential Eight where applicable.</li>
 </ul></li>
 </ol>
 </section>
-<section id="identified-vulnerabilities" class="level3">
-<h3 class="anchored" data-anchor-id="identified-vulnerabilities"><strong>Identified Vulnerabilities</strong></h3>
+<section id="weaknesses-exposed-by-tsr-inc-2025-031" class="level3">
+<h3 class="anchored" data-anchor-id="weaknesses-exposed-by-tsr-inc-2025-031">Weaknesses exposed by TSR-INC-2025-031</h3>
 <ol type="1">
-<li><strong>Inconsistent Multi-Factor Authentication (MFA) Enforcement:</strong>
+<li><strong>A long-lived static access key.</strong>
 <ul>
-<li>While MFA is deployed across most user accounts, it is inconsistently enforced for senior-level administrative accounts. This inconsistency allowed attackers to exploit compromised credentials in the recent breach.</li>
-<li>A review of access control policies is needed to ensure uniform application of MFA across all access levels, especially for privileged accounts.</li>
+<li>A management-plane role carried a non-rotating access key with broad permissions, committed to a repository misconfigured as public. Static keys are being eliminated in favour of short-lived credentials obtained via SSO.</li>
 </ul></li>
-<li><strong>Phishing Susceptibility:</strong>
+<li><strong>Absent management-plane / tenant-data segmentation.</strong>
 <ul>
-<li>The recent breach highlighted weaknesses in employee recognition of phishing attempts, indicating that current security training programs may not be sufficiently effective.</li>
-<li>Enhancing training programs and implementing advanced phishing simulation exercises could help reduce susceptibility.</li>
+<li>The key’s role could reach tenant data without traversing an enforced boundary. Control-plane / data-plane isolation is the priority remediation, tracked against A.8.22 in the SoA.</li>
 </ul></li>
-<li><strong>Overly Broad Access Permissions:</strong>
+<li><strong>No enforced pre-commit secret scanning.</strong>
 <ul>
-<li>Some administrative accounts have access privileges that exceed their operational requirements, violating the principle of least privilege.</li>
-<li>A comprehensive access review and rights-sizing initiative are necessary to minimise unnecessary access and potential insider threats.</li>
+<li>The committed credential was not caught at push time. Secret scanning is being enforced across all repositories, with private configuration as the default.</li>
 </ul></li>
-<li><strong>Gaps in API Security:</strong>
+<li><strong>Detection latency.</strong>
 <ul>
-<li>Vulnerabilities in the security of exposed APIs, including insufficient validation and inadequate rate limiting, pose a risk of unauthorised data access.</li>
-<li>Regular API security assessments and implementation of API gateways with integrated security controls are recommended to address these gaps.</li>
+<li>The activity ran for an estimated five days before the GuardDuty finding was actioned. Alert routing for management-plane roles is being retuned, and an egress-baseline alert added to the application subnet.</li>
 </ul></li>
-<li><strong>Delayed Detection and Response:</strong>
+<li><strong>Unvalidated continuity targets.</strong>
 <ul>
-<li>Although automated monitoring systems are in place, the initial detection of the breach was delayed due to insufficient prioritisation of anomalous behaviour.</li>
-<li>Enhancing SIEM rules and increasing the frequency of incident response drills could improve the speed and effectiveness of breach detection and containment.</li>
-</ul></li>
-<li><strong>Weak Endpoint Security:</strong>
-<ul>
-<li>Endpoint Detection and Response (EDR) solutions are not fully integrated across all devices, leading to inconsistent endpoint security measures.</li>
-<li>Expanding EDR coverage and enforcing strict endpoint security protocols would provide better visibility and control over potential entry points.</li>
-</ul></li>
-<li><strong>Lack of Regular Security Updates and Patch Management:</strong>
-<ul>
-<li>Some systems and software components were found to be outdated, with critical security patches not applied promptly, increasing the risk of exploitation.</li>
-<li>A robust patch management process, including automated patch deployment and regular update schedules, is needed to ensure all systems remain secure.</li>
-</ul></li>
-<li><strong>Insufficient Data Encryption Key Management:</strong>
-<ul>
-<li>Although data encryption is in place, the recent breach revealed that decryption keys were accessible within the compromised environment, highlighting a weakness in key management practices.</li>
-<li>Implementing a secure key management solution, such as a Hardware Security Module (HSM) or cloud-based key management service, would strengthen data protection.</li>
+<li>The cross-region failover assumed by the BIA and runbook is not yet provisioned; the RTO/RPO figures are benchmarks, not tested outcomes.</li>
 </ul></li>
 </ol>
 </section>
-<section id="summary-and-recommendations" class="level3">
-<h3 class="anchored" data-anchor-id="summary-and-recommendations"><strong>Summary and Recommendations</strong></h3>
-<p>Tessera has established a strong foundation in cybersecurity with advanced infrastructure, compliance with industry standards, and a proactive approach to security culture. However, the identified vulnerabilities—particularly in access control, phishing defences, API security, and endpoint management—require urgent attention to prevent future breaches.</p>
+<section id="where-the-programme-is-focused" class="level3">
+<h3 class="anchored" data-anchor-id="where-the-programme-is-focused">Where the programme is focused</h3>
+<p>The remediation is tracked against the Statement of Applicability (DOC-SEC-003) and the risk register (DOC-SEC-001): eliminate static keys, complete the control-plane / data-plane segmentation, enforce secret scanning, retune detection, and validate continuity. The certification-readiness work is the accountability structure for seeing these through, and an honest posture summary is part of that — the preventive controls failed in February, and the strength of the notification response does not change that.</p>
 
 
 </section>

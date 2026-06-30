@@ -101,88 +101,61 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-solutions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Solutions</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-solutions">    
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Cloud Hosting</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Managed Services</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../index.html#solutions">
- <span class="dropdown-text">Security &amp; Compliance</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resources</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-interviews" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Interviews</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
-        <li>
-    <a class="dropdown-item" href="../../docs/policies.html">
- <span class="dropdown-text">Documentation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/support.html">
- <span class="dropdown-text">Support Center</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../blog/index.html">
- <span class="dropdown-text">Blog</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-interviews">    
         <li>
     <a class="dropdown-item" href="../../chatbots/index.html">
- <span class="dropdown-text">Consultant Portal</span></a>
+ <span class="dropdown-text">Chat with Staff</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/interviews.html">
+ <span class="dropdown-text">Written Transcripts</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-docs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Docs</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-company-files" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Company Files</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-docs">    
-        <li>
-    <a class="dropdown-item" href="../../docs/interviews.html">
- <span class="dropdown-text">Transcripts</span></a>
-  </li>  
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-company-files">    
         <li>
     <a class="dropdown-item" href="../../docs/policies.html">
  <span class="dropdown-text">Policies</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/logs.html">
+ <span class="dropdown-text">Logs</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/support.html">
- <span class="dropdown-text">Other</span></a>
+ <span class="dropdown-text">Internal Records</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/articles.html">
  <span class="dropdown-text">In the News</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/logs.html">
- <span class="dropdown-text">Logs</span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../legal.html"> 
-<span class="menu-text">Educational Site</span></a>
+    <a class="nav-link" href="../../contact.html"> 
+<span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../contact.html"> 
-<span class="menu-text">Contact Us</span></a>
+    <a class="nav-link" href="../../legal.html"> 
+<span class="menu-text">Legal</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -225,30 +198,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Auditor: I’d like to discuss the network security controls you have in place. Could you give me an overview of your network architecture?</p>
-<p>Network Engineer: Certainly. We utilise a segmented architecture based on business units and system types. Critical assets are in a separate sone with ACLs limiting access. Edge firewalls provide filtering.</p>
-<p>Auditor: Good to hear. How do you monitor and protect against malicious network activity?</p>
-<p>on known bad signatures. We also capture netflow data and use a SIEM for Network Engineer: Intrusion detection sensors analyse traffic patterns and alert visibility. Access to monitoring tools is tightly controlled.</p>
-<p>Auditor: Excellent. And could you outline some of your network access and authentication controls?</p>
-<p>Network Engineer: 802.1x and Radius enforce access policies and restrictions on ports. Wireless uses WPA2 encryption at minimum. VPN concentrators allow MFA protected remote access into business systems. The network is fully switched with protected infrastructure management.</p>
-<p>Auditor: That provides a solid baseline. I’m here to have an open discussion about network security. If any potential gaps arise, I’ll work through recommendations with you. Does that sound good?</p>
-<p>Network Engineer: Absolutely, I welcome the feedback on improving our security posture. Our network is constantly evolving and I want to stay ahead of emerging threats.</p>
-<p>Auditor: Could you outline your remote access capabilities and security controls?</p>
-<p>Network Engineer: VPN access with MFA for employees. Site-to-site VPNs with partners using encryption and mutual authentication. Remote access is restricted based on least privilege and logged.</p>
-<p>Auditor: What protections do you have against DDoS attacks or network flooding scenarios?</p>
-<p>Network Engineer: Our internet edge has DDoS prevention scrubbing high volume attacks before they hit internal infrastructure. Rate limiting and ACLs also help minimise impact.</p>
-<p>Auditor: How do you perform vulnerability scanning and penetration testing on the network environment?</p>
-<p>Network Engineer: Quarterly internal and external vulnerability scans, including from wireless perspectives. Annual third-party pen testing under the guidance of our infosec team.</p>
-<p>Auditor: What capabilities exist for network traffic monitoring, capture and analysis?</p>
-<p>Network Engineer: We utilise full packet capture and taps to feed network detection systems. Flow data gives us visibility into communications between systems.</p>
-<p>Auditor: Finally, could you speak about the redundancy built into the network in case of device failure?</p>
-<p>Network Engineer: Redundant internet links, load balancing firewalls, cluster router configurations. We design availability into the architecture for high uptime. Maintenance is scheduled to limit impact.</p>
-<p>Auditor: How are network access issues escalated and resolved with security teams?</p>
-<p>Network Engineer: We engage infosec on access change tickets if there are questions or potential risks. My team meets regularly with security to review network ACLs and firewall rules for appropriate controls.</p>
-<p>Auditor: Do network changes ever get pushed back due to security concerns?</p>
-<p>Network Engineer: Yes occasionally, we then work jointly to determine alternative solutions. An example is implementing a DMZ or additional monitoring rather than opening access.</p>
-<p>Auditor: Is collaboration effective between network and security ops teams?</p>
-<p>Network Engineer: Collaboration is generally strong as the groups need to work very closely. Minor misalignments on priorities which are worked through. Overall we support each other in enabling secure network operations.</p>
+<p>Auditor: I’d like to understand the network controls around the platform. Could you give me an overview of the architecture?</p>
+<p>Network Engineer: The platform runs inside a VPC in <code>ap-southeast-2</code>, split into public subnets for the Application Load Balancer and private subnets for the application and data tiers. There’s no direct internet path to the application or database hosts — traffic terminates at the ALB and is forwarded over TLS. We mirror that in <code>ap-southeast-1</code> as the standby region.</p>
+<p>Auditor: How is east-west traffic controlled?</p>
+<p>Network Engineer: Security groups and network ACLs do the heavy lifting. The application tier can talk to the Aurora cluster on the database port and nothing else of consequence; the database tier has no outbound path to the internet. Inter-subnet rules are scoped to the ports the services actually use.</p>
+<p>Auditor: That’s a clean baseline. How do you monitor for malicious activity on the network?</p>
+<p>Network Engineer: VPC Flow Logs are published to CloudWatch and the SIEM, and GuardDuty covers the behavioural side — unusual <code>AssumeRole</code>, instance credential exfiltration, that kind of finding. AWS Shield and the WAF sit in front of the ALB and absorb or rate-limit volumetric and Layer 7 attacks.</p>
+<p>Auditor: Good. I’m running this as an open discussion; if something looks like a gap I’ll raise it with you directly. Walk me through remote access.</p>
+<p>Network Engineer: Workforce access is through the identity provider with MFA and a zero-trust network access layer rather than a flat VPN into the VPC. Administrators assume scoped roles via SSO; there’s no standing route into the data subnets. Site-to-site connectivity to our offices is encrypted and mutually authenticated.</p>
+<p>Auditor: How do you handle DDoS or flooding?</p>
+<p>Network Engineer: Shield Standard is on everywhere and Shield Advanced sits in front of the public endpoints. The WAF applies rate-based rules, and we’ve tuned a few custom rules for the application’s known abuse patterns.</p>
+<p>Auditor: Vulnerability scanning and penetration testing?</p>
+<p>Network Engineer: We run network-layer scans each quarter from outside and inside, and there’s an annual third-party assessment scoped with the security team. Findings go into the risk register and are tracked to closure.</p>
+<p>Network Engineer: One thing I’d want to be precise about: the boundary between the management plane and the tenant data tier. The intended design is that management roles can’t reach tenant data directly — tenant reads go through the application tier under a tenant-scoped role. In practice that segregation wasn’t fully enforced, and that’s the gap the February incident exposed. The fix is in flight but I wouldn’t claim it’s closed yet.</p>
+<p>Auditor: That’s exactly the kind of thing I need to hear. Redundancy — what’s built in?</p>
+<p>Network Engineer: Multi-AZ within the region for the ALB and Aurora, redundant transit and NAT paths, and the standby region for the bigger events. Capacity changes are scheduled to avoid customer impact.</p>
+<p>Auditor: How do access issues between network and security get resolved?</p>
+<p>Network Engineer: Anything that touches a security group or routing table goes through a change ticket that the security team reviews. We meet fortnightly to walk the rule base and prune anything stale.</p>
+<p>Auditor: Do security concerns ever push back on a network change?</p>
+<p>Network Engineer: Yes — the usual outcome is a compensating control, like an additional guardrail or monitoring, rather than opening a path. It’s a good working relationship; the priorities don’t always line up but we resolve it together.</p>
 
 
 
