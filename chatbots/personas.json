@@ -110,6 +110,16 @@
       ]
     },
     {
+      "slug": "theo_nowak",
+      "prompt": "bots/theo_nowak/prompt.txt",
+      "page": "bots/theo_nowak/index.qmd",
+      "backstory": "_backstories/theo_nowak_soe_administrator.md",
+      "extra_docs": [
+        "_backstories/csmp_project.md",
+        "_backstories/data_breach_overview.md"
+      ]
+    },
+    {
       "slug": "grace_sullivan",
       "prompt": "bots/grace_sullivan/prompt.txt",
       "page": "bots/grace_sullivan/index.qmd",
