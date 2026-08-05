@@ -10,6 +10,10 @@ project:
     - "!prototype.html"
     - "!REDESIGN_TRACKER.md"
     - "!BOOK_UPDATE_SUGGESTIONS.md"
+    # Was missing from this list and was therefore RENDERED AND PUBLISHED at
+    # /scenario-analysis.html — it names the breach specifics and lists the
+    # designed teaching scenarios, including the security audit. Keep excluded.
+    - "!scenario-analysis.md"
     - "!_instructor/"
     - "!assets/portrait_backups/"
 

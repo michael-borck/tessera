@@ -6,3 +6,23 @@
 node_modules/
 
 **/*.quarto_ipynb
+
+# ---------------------------------------------------------------------------
+# NEVER TRACK: this repository is PUBLIC and Tessera is a live assessment
+# target. Anything that explains the scenario is an answer key.
+# ---------------------------------------------------------------------------
+
+# Instructor-only material (lecturer guide, briefs, reference/companion keys).
+_instructor/
+
+# Character persona ground-truth. Students must discover this by interviewing
+# the bots, not by reading the repo. Theo Nowak's file in particular states the
+# macro-exception, GPO-enforcement and Malaga-patching findings verbatim.
+chatbots/_backstories/
+
+# Internal design docs: canon, breach specifics, distractor strategy, scenario
+# map. Excluded from render in _quarto.yml, so untracking does not affect the
+# published site.
+REDESIGN_TRACKER.md
+scenario-analysis.md
+BOOK_UPDATE_SUGGESTIONS.md
