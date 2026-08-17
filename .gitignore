@@ -26,3 +26,12 @@ chatbots/_backstories/
 REDESIGN_TRACKER.md
 scenario-analysis.md
 BOOK_UPDATE_SUGGESTIONS.md
+
+# Persona ground truth — NEVER publish. Source-of-record only; bots run on AnythingLLM.
+chatbots/bots/*/prompt.txt
+chatbots/_backstories/
+docs/interviews/
+scenario-analysis.md
+REDESIGN_TRACKER.md
+BOOK_UPDATE_SUGGESTIONS.md
+docs/interviews.qmd

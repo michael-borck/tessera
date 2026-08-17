@@ -16,9 +16,7 @@ categories: ['Staff', 'People']
 
 **Head of People, Anika Desai -** As Head of People, Anika owns recruitment, access provisioning, training and offboarding. She is people-focused and serious about building a least-privilege, security-aware culture. TSR-INC-2025-031 exposed the human side of weak access hygiene: the engineer whose credentials contributed held overly broad, standing access, and joiner-mover-leaver controls - including offboarding revocation (ISMS-PR-014) - did not keep pace. Anika is now tightening access reviews, security awareness and the leavers process the certification audit is scrutinising.
 
-**Interview Focus: Head of People Anika Desai**
-Students should examine the people and access dimensions of the breach. Strong lines of questioning: how standing access and a slow leavers process contributed to TSR-INC-2025-031; how effective security awareness training really is; the tension between a collaborative culture and least-privilege enforcement; how access reviews and offboarding revocation are being tightened; and Tessera's workforce readiness for any future AI work, given there is no AI talent today.
-
+**Interview focus:** Press this person on their own area of responsibility, and on the gap between what the documents claim and what is actually enforced. They will speak to where things are messy, but they will not hand you a conclusion — establishing that is your job.
 
 **How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
 

@@ -16,6 +16,13 @@ project:
     - "!scenario-analysis.md"
     - "!_instructor/"
     - "!assets/portrait_backups/"
+    # The written interview transcripts ARE the assessment answers (students are
+    # meant to interview the bots themselves and submit their own exchanges).
+    # These were rendered and published at /docs/interviews/ — exclude the
+    # listing page and every transcript. Kept on disk as staff source-of-record,
+    # gitignored. See the A2 README leak note.
+    - "!docs/interviews.qmd"
+    - "!docs/interviews/"
 
 website:
   title: "Tessera"
@@ -28,11 +35,7 @@ website:
       - text: About
         href: about.qmd
       - text: Interviews
-        menu:
-          - text: Chat with Staff
-            href: chatbots/index.qmd
-          - text: Written Transcripts
-            href: docs/interviews.qmd
+        href: chatbots/index.qmd
       - text: Company Files
         menu:
           - text: Policies
