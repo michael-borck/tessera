@@ -22,7 +22,7 @@ project:
     # listing page and every transcript. Kept on disk as staff source-of-record,
     # gitignored. See the A2 README leak note.
     - "!docs/interviews.qmd"
-    - "!docs/interviews/"
+    - "!docs/interviews/*"
 
 website:
   title: "Tessera"
