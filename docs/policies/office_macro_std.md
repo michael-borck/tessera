@@ -105,10 +105,10 @@ Tessera policy requires that:
 1. Any need to run unsigned macros requires a formal, time-boxed exception
    approved by the Head of IT and reviewed by the CISO, with a compensating
    control and an expiry date.
-2. A standing exception currently permits **Finance's legacy spreadsheet
+2. A standing exception currently permits **Payroll's legacy spreadsheet
    templates** to run **unsigned** macros from a shared network location.
 
-> *[Reviewer, 2025-03-24: the Finance carve-out is a material weakening of this
+> *[Reviewer, 2025-03-24: the Payroll carve-out is a material weakening of this
 > standard. It permits unsigned macros from a shared location that multiple users
 > can write to, which is exactly the vector §2 is meant to close. It has no
 > expiry date and no compensating control recorded. This needs a remediation plan
@@ -116,7 +116,7 @@ Tessera policy requires that:
 > before the Stage 1 audit.]*
 
 > *[Reviewer, 2025-03-25: more fundamentally, I can find **no evidence of central
-> GPO/Intune enforcement** of the settings in §3.1–§3.2. The baseline is asserted
+> Intune enforcement** of the settings in §3.1–§3.2. The baseline is asserted
 > in this document but is not demonstrably pushed to, or locked on, the fleet —
 > especially the Malaga legacy machines, which are outside the main Intune
 > ring. Without a configuration-compliance report this control cannot be
