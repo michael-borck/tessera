@@ -1,116 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tessera.locoensayo.org/scenario-analysis.html</loc>
-    <lastmod>2026-06-28T03:48:39.810Z</lastmod>
+    <loc>https://tessera.locoensayo.org/legal.html</loc>
+    <lastmod>2026-06-28T03:55:39.490Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/index.html</loc>
-    <lastmod>2026-06-28T16:02:22.510Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/docs/policies.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support.html</loc>
     <lastmod>2026-06-28T03:55:39.450Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/logs.html</loc>
-    <lastmod>2026-06-28T03:55:39.440Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/staged-content-example.html</loc>
+    <lastmod>2026-06-29T01:02:48.910Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/training.html</loc>
-    <lastmod>2026-06-29T01:38:00.120Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/interviews.html</loc>
+    <lastmod>2026-06-28T03:55:39.430Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/security_posture.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/risk_register.html</loc>
     <lastmod>2026-06-29T01:34:09.770Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/program.html</loc>
-    <lastmod>2026-06-29T01:36:51.730Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/risk_assessment_frameworks.html</loc>
+    <lastmod>2026-06-29T01:36:51.720Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/preparing ISO27001.html</loc>
-    <lastmod>2026-06-29T01:36:51.730Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/org_chart.html</loc>
+    <lastmod>2026-06-29T00:48:31.670Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/network_logical.html</loc>
-    <lastmod>2026-06-29T01:34:09.760Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/nist_mapping.html</loc>
+    <lastmod>2026-06-29T01:36:51.740Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/letter_internal_eployees.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/letter_notification_customers.html</loc>
     <lastmod>2026-06-29T02:02:27.740Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/letter_exec_summary_board_of_directors.html</loc>
-    <lastmod>2026-06-29T01:25:22.660Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/legal_compliance_obligations.html</loc>
+    <lastmod>2026-06-29T01:38:00.110Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/erd.html</loc>
-    <lastmod>2026-06-29T01:38:00.130Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/incident_report.html</loc>
+    <lastmod>2026-06-29T01:43:22.040Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/forecast.html</loc>
-    <lastmod>2026-06-29T01:38:00.120Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/employee_handbook.html</loc>
+    <lastmod>2026-06-29T02:02:27.730Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/document_register.html</loc>
-    <lastmod>2026-06-29T01:44:13.360Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/definitions.html</loc>
+    <lastmod>2026-06-29T01:35:39.760Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/architecture_diagram.html</loc>
-    <lastmod>2026-06-29T00:54:25.630Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/data-dictionary.html</loc>
+    <lastmod>2026-06-29T01:39:28.750Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/failover_runbook.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/incident_register.html</loc>
+    <lastmod>2026-06-29T00:54:25.620Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/docs/support/business_impact_analysis.html</loc>
     <lastmod>2026-06-29T00:53:11.060Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/statement_of_applicability.html</loc>
-    <lastmod>2026-06-29T00:53:11.050Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/ISMS.html</loc>
+    <lastmod>2026-06-29T01:35:39.750Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/ndb_playbook.html</loc>
-    <lastmod>2026-06-29T02:02:27.720Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/vpn_access_log.html</loc>
+    <lastmod>2026-06-28T03:48:39.420Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/sso_session_log.html</loc>
-    <lastmod>2026-06-29T02:02:27.750Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/seim_alerts.html</loc>
+    <lastmod>2026-06-28T03:48:39.410Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/firewall_logs.html</loc>
-    <lastmod>2026-06-28T03:48:39.400Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/edr_logs.html</loc>
+    <lastmod>2026-06-28T03:48:39.390Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/iam_revocation_log.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/database_access_logs.html</loc>
+    <lastmod>2026-06-28T03:48:39.390Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/cloudtrail_export.html</loc>
     <lastmod>2026-06-29T01:01:01.530Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/application_server_logs.html</loc>
-    <lastmod>2026-06-28T03:48:39.380Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/access-demo.html</loc>
+    <lastmod>2026-06-29T01:02:48.890Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/articles.html</loc>
-    <lastmod>2026-06-28T03:55:39.400Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/risk_mgmt.html</loc>
+    <lastmod>2026-06-29T01:45:59.560Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/vendor.html</loc>
-    <lastmod>2026-06-29T01:48:04.300Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/rar.html</loc>
-    <lastmod>2026-06-29T01:49:16.390Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/app_hardening_std.html</loc>
+    <lastmod>2026-07-12T16:31:39.130Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/docs/policies/privacy.html</loc>
     <lastmod>2026-06-29T02:02:27.720Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/model.html</loc>
-    <lastmod>2026-06-29T01:51:48.730Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/policy_mgmt.html</loc>
+    <lastmod>2026-06-29T01:51:48.720Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/hr.html</loc>
-    <lastmod>2026-06-29T01:51:48.690Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/ir.html</loc>
+    <lastmod>2026-06-29T02:02:27.720Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/docs/policies/gdpr_dpa.html</loc>
+    <lastmod>2026-06-29T01:47:40.770Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/docs/policies/facility.html</loc>
@@ -162,83 +166,87 @@
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/isabella_ferreira/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.470Z</lastmod>
+    <lastmod>2026-08-17T00:30:06.060Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/noah_bennett/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.490Z</lastmod>
+    <lastmod>2026-08-17T00:30:06.100Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/adrian_vasquez/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.470Z</lastmod>
+    <lastmod>2026-08-17T00:30:05.840Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/anika_desai/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.490Z</lastmod>
+    <lastmod>2026-08-17T00:30:05.910Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/margaux_dubois/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.510Z</lastmod>
+    <lastmod>2026-08-17T00:30:06.080Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/chatbots/bots/hamish_boyd/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.510Z</lastmod>
+    <loc>https://tessera.locoensayo.org/chatbots/bots/theo_nowak/index.html</loc>
+    <lastmod>2026-08-17T00:30:06.190Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/chatbots/bots/priya_nair/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.480Z</lastmod>
+    <loc>https://tessera.locoensayo.org/chatbots/bots/connor_hayes/index.html</loc>
+    <lastmod>2026-08-17T00:30:05.940Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/blog/index.html</loc>
-    <lastmod>2026-06-28T03:55:39.220Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/blog/posts/post-with-code/index.html</loc>
-    <lastmod>2026-06-28T03:55:39.210Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/blog/posts/how-to-become-frontend-master/index.html</loc>
-    <lastmod>2026-06-28T03:55:39.190Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/blog/posts/essential-data-structures-algorithms/index.html</loc>
-    <lastmod>2026-06-28T04:54:08.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/about.html</loc>
-    <lastmod>2026-06-29T01:34:09.760Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/blog/posts/fullstack-development/index.html</loc>
-    <lastmod>2026-06-28T03:55:39.180Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/blog/posts/markdown_examples/index.html</loc>
-    <lastmod>2026-06-28T03:55:39.200Z</lastmod>
+    <loc>https://tessera.locoensayo.org/chatbots/bots/dr_sana_qureshi/index.html</loc>
+    <lastmod>2026-08-17T00:30:05.960Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/blog/posts/welcome/index.html</loc>
     <lastmod>2026-06-28T03:55:39.210Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/chatbots/bots/dr_sana_qureshi/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.500Z</lastmod>
+    <loc>https://tessera.locoensayo.org/blog/posts/markdown_examples/index.html</loc>
+    <lastmod>2026-06-28T03:55:39.200Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/chatbots/bots/connor_hayes/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.500Z</lastmod>
+    <loc>https://tessera.locoensayo.org/blog/posts/fullstack-development/index.html</loc>
+    <lastmod>2026-06-28T03:55:39.180Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/about.html</loc>
+    <lastmod>2026-06-29T01:34:09.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/blog/posts/essential-data-structures-algorithms/index.html</loc>
+    <lastmod>2026-06-28T04:54:08.240Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/blog/posts/how-to-become-frontend-master/index.html</loc>
+    <lastmod>2026-06-28T03:55:39.190Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/blog/posts/post-with-code/index.html</loc>
+    <lastmod>2026-06-28T03:55:39.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/blog/index.html</loc>
+    <lastmod>2026-06-28T03:55:39.220Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/chatbots/bots/priya_nair/index.html</loc>
+    <lastmod>2026-08-17T00:30:06.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/chatbots/bots/hamish_boyd/index.html</loc>
+    <lastmod>2026-08-17T00:30:06.010Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/rafa_costa/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.520Z</lastmod>
+    <lastmod>2026-08-17T00:30:06.170Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/olivia_tan/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.520Z</lastmod>
+    <lastmod>2026-08-17T00:30:06.120Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/henrik_larsson/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.460Z</lastmod>
+    <lastmod>2026-08-17T00:30:06.040Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/help_bot/index.html</loc>
@@ -246,7 +254,7 @@
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/bots/grace_sullivan/index.html</loc>
-    <lastmod>2026-06-29T01:34:10.480Z</lastmod>
+    <lastmod>2026-08-17T00:30:05.990Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/chatbots/index.html</loc>
@@ -297,115 +305,119 @@
     <lastmod>2026-06-29T01:52:48.570Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/gdpr_dpa.html</loc>
-    <lastmod>2026-06-29T01:47:40.770Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/vuln_mgmt.html</loc>
+    <lastmod>2026-07-12T16:30:44.330Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/ir.html</loc>
-    <lastmod>2026-06-29T02:02:27.720Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/hr.html</loc>
+    <lastmod>2026-06-29T01:51:48.690Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/policy_mgmt.html</loc>
-    <lastmod>2026-06-29T01:51:48.720Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/model.html</loc>
+    <lastmod>2026-06-29T01:51:48.730Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/docs/policies/office_macro_std.html</loc>
+    <lastmod>2026-07-12T16:31:13.510Z</lastmod>
   </url>
   <url>
     <loc>https://tessera.locoensayo.org/docs/policies/privacy_policy.html</loc>
     <lastmod>2026-06-29T02:02:27.720Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/policies/risk_mgmt.html</loc>
-    <lastmod>2026-06-29T01:45:59.560Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/rar.html</loc>
+    <lastmod>2026-06-29T01:49:16.390Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/access-demo.html</loc>
-    <lastmod>2026-06-29T01:02:48.890Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/policies/vendor.html</loc>
+    <lastmod>2026-06-29T01:48:04.300Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/cloudtrail_export.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/articles.html</loc>
+    <lastmod>2026-06-28T03:55:39.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/application_server_logs.html</loc>
+    <lastmod>2026-06-28T03:48:39.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/iam_revocation_log.html</loc>
     <lastmod>2026-06-29T01:01:01.530Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/database_access_logs.html</loc>
-    <lastmod>2026-06-28T03:48:39.390Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/firewall_logs.html</loc>
+    <lastmod>2026-06-28T03:48:39.400Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/edr_logs.html</loc>
-    <lastmod>2026-06-28T03:48:39.390Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/logs/sso_session_log.html</loc>
+    <lastmod>2026-06-29T02:02:27.750Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/seim_alerts.html</loc>
-    <lastmod>2026-06-28T03:48:39.410Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/ndb_playbook.html</loc>
+    <lastmod>2026-06-29T02:02:27.720Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/logs/vpn_access_log.html</loc>
-    <lastmod>2026-06-28T03:48:39.420Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/statement_of_applicability.html</loc>
+    <lastmod>2026-06-29T00:53:11.050Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/ISMS.html</loc>
-    <lastmod>2026-06-29T01:35:39.750Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/docs/support/business_impact_analysis.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/failover_runbook.html</loc>
     <lastmod>2026-06-29T00:53:11.060Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/incident_register.html</loc>
-    <lastmod>2026-06-29T00:54:25.620Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/architecture_diagram.html</loc>
+    <lastmod>2026-06-29T00:54:25.630Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/data-dictionary.html</loc>
-    <lastmod>2026-06-29T01:39:28.750Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/document_register.html</loc>
+    <lastmod>2026-06-29T01:44:13.360Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/definitions.html</loc>
-    <lastmod>2026-06-29T01:35:39.760Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/forecast.html</loc>
+    <lastmod>2026-06-29T01:38:00.120Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/employee_handbook.html</loc>
-    <lastmod>2026-06-29T02:02:27.730Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/erd.html</loc>
+    <lastmod>2026-06-29T01:38:00.130Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/incident_report.html</loc>
-    <lastmod>2026-06-29T01:43:22.040Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/letter_exec_summary_board_of_directors.html</loc>
+    <lastmod>2026-06-29T01:25:22.660Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/legal_compliance_obligations.html</loc>
-    <lastmod>2026-06-29T01:38:00.110Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tessera.locoensayo.org/docs/support/letter_notification_customers.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/letter_internal_eployees.html</loc>
     <lastmod>2026-06-29T02:02:27.740Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/nist_mapping.html</loc>
-    <lastmod>2026-06-29T01:36:51.740Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/network_logical.html</loc>
+    <lastmod>2026-06-29T01:34:09.760Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/org_chart.html</loc>
-    <lastmod>2026-06-29T00:48:31.670Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/preparing ISO27001.html</loc>
+    <lastmod>2026-06-29T01:36:51.730Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/risk_assessment_frameworks.html</loc>
-    <lastmod>2026-06-29T01:36:51.720Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/program.html</loc>
+    <lastmod>2026-06-29T01:36:51.730Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support/risk_register.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/support/security_posture.html</loc>
     <lastmod>2026-06-29T01:34:09.770Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/interviews.html</loc>
-    <lastmod>2026-06-28T03:55:39.430Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/support/training.html</loc>
+    <lastmod>2026-06-29T01:38:00.120Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/staged-content-example.html</loc>
-    <lastmod>2026-06-29T01:02:48.910Z</lastmod>
+    <loc>https://tessera.locoensayo.org/docs/logs.html</loc>
+    <lastmod>2026-06-28T03:55:39.440Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/docs/support.html</loc>
+    <loc>https://tessera.locoensayo.org/docs/policies.html</loc>
     <lastmod>2026-06-28T03:55:39.450Z</lastmod>
   </url>
   <url>
-    <loc>https://tessera.locoensayo.org/legal.html</loc>
-    <lastmod>2026-06-28T03:55:39.490Z</lastmod>
+    <loc>https://tessera.locoensayo.org/index.html</loc>
+    <lastmod>2026-06-28T16:02:22.510Z</lastmod>
   </url>
 </urlset>

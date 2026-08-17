@@ -1,95 +1,5 @@
 [
   {
-    "listing": "/docs/policies.html",
-    "items": [
-      "/docs/policies/acceptable_use.html",
-      "/docs/policies/access.html",
-      "/docs/policies/approved_software.html",
-      "/docs/policies/approved_vendors.html",
-      "/docs/policies/asset_mgmt.html",
-      "/docs/policies/bcdr.html",
-      "/docs/policies/breach.html",
-      "/docs/policies/data_classification.html",
-      "/docs/policies/data_mgmt.html",
-      "/docs/policies/data_protection.html",
-      "/docs/policies/document_numbering.html",
-      "/docs/policies/facility.html",
-      "/docs/policies/gdpr_dpa.html",
-      "/docs/policies/hr.html",
-      "/docs/policies/ir.html",
-      "/docs/policies/policy_mgmt.html",
-      "/docs/policies/privacy_policy.html",
-      "/docs/policies/privacy.html",
-      "/docs/policies/risk_mgmt.html",
-      "/docs/policies/rar.html",
-      "/docs/policies/model.html",
-      "/docs/policies/vendor.html"
-    ]
-  },
-  {
-    "listing": "/docs/logs.html",
-    "items": [
-      "/docs/support/logs/cloudtrail_export.html",
-      "/docs/support/logs/application_server_logs.html",
-      "/docs/support/logs/database_access_logs.html",
-      "/docs/support/logs/edr_logs.html",
-      "/docs/support/logs/firewall_logs.html",
-      "/docs/support/logs/iam_revocation_log.html",
-      "/docs/support/logs/sso_session_log.html",
-      "/docs/support/logs/seim_alerts.html",
-      "/docs/support/logs/vpn_access_log.html"
-    ]
-  },
-  {
-    "listing": "/docs/articles.html",
-    "items": [
-      "/docs/articles/data_breach_initial_report.html",
-      "/docs/articles/data_breach_customer_reactions.html",
-      "/docs/articles/data_breach_technical_analysis.html"
-    ]
-  },
-  {
-    "listing": "/blog/index.html",
-    "items": [
-      "/blog/posts/post-with-code/index.html",
-      "/blog/posts/welcome/index.html",
-      "/blog/posts/fullstack-development/index.html",
-      "/blog/posts/how-to-become-frontend-master/index.html",
-      "/blog/posts/essential-data-structures-algorithms/index.html",
-      "/blog/posts/markdown_examples/index.html"
-    ]
-  },
-  {
-    "listing": "/chatbots/index.html",
-    "items": [
-      "/chatbots/bots/dr_sana_qureshi/index.html",
-      "/chatbots/bots/priya_nair/index.html",
-      "/chatbots/bots/connor_hayes/index.html",
-      "/chatbots/bots/hamish_boyd/index.html",
-      "/chatbots/bots/rafa_costa/index.html",
-      "/chatbots/bots/margaux_dubois/index.html",
-      "/chatbots/bots/olivia_tan/index.html",
-      "/chatbots/bots/anika_desai/index.html",
-      "/chatbots/bots/henrik_larsson/index.html",
-      "/chatbots/bots/adrian_vasquez/index.html",
-      "/chatbots/bots/help_bot/index.html",
-      "/chatbots/bots/noah_bennett/index.html",
-      "/chatbots/bots/grace_sullivan/index.html",
-      "/chatbots/bots/isabella_ferreira/index.html"
-    ]
-  },
-  {
-    "listing": "/docs/interviews.html",
-    "items": [
-      "/docs/interviews/interview_CISO.html",
-      "/docs/interviews/interview_database_administrator.html",
-      "/docs/interviews/interview_data_protection_officer.html",
-      "/docs/interviews/interview_helpdesk.html",
-      "/docs/interviews/interview_network_engineer.html",
-      "/docs/interviews/interview_system_administrator.html"
-    ]
-  },
-  {
     "listing": "/docs/support.html",
     "items": [
       "/docs/support/logs/cloudtrail_export.html",
@@ -128,6 +38,100 @@
       "/docs/support/ISMS.html",
       "/docs/support/training.html",
       "/docs/support/logs/vpn_access_log.html"
+    ]
+  },
+  {
+    "listing": "/docs/interviews.html",
+    "items": [
+      "/docs/interviews/interview_CISO.html",
+      "/docs/interviews/interview_database_administrator.html",
+      "/docs/interviews/interview_data_protection_officer.html",
+      "/docs/interviews/interview_helpdesk.html",
+      "/docs/interviews/interview_network_engineer.html",
+      "/docs/interviews/interview_system_administrator.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/post-with-code/index.html",
+      "/blog/posts/welcome/index.html",
+      "/blog/posts/fullstack-development/index.html",
+      "/blog/posts/how-to-become-frontend-master/index.html",
+      "/blog/posts/essential-data-structures-algorithms/index.html",
+      "/blog/posts/markdown_examples/index.html"
+    ]
+  },
+  {
+    "listing": "/chatbots/index.html",
+    "items": [
+      "/chatbots/bots/dr_sana_qureshi/index.html",
+      "/chatbots/bots/priya_nair/index.html",
+      "/chatbots/bots/connor_hayes/index.html",
+      "/chatbots/bots/hamish_boyd/index.html",
+      "/chatbots/bots/theo_nowak/index.html",
+      "/chatbots/bots/rafa_costa/index.html",
+      "/chatbots/bots/margaux_dubois/index.html",
+      "/chatbots/bots/olivia_tan/index.html",
+      "/chatbots/bots/anika_desai/index.html",
+      "/chatbots/bots/henrik_larsson/index.html",
+      "/chatbots/bots/adrian_vasquez/index.html",
+      "/chatbots/bots/help_bot/index.html",
+      "/chatbots/bots/noah_bennett/index.html",
+      "/chatbots/bots/grace_sullivan/index.html",
+      "/chatbots/bots/isabella_ferreira/index.html"
+    ]
+  },
+  {
+    "listing": "/docs/articles.html",
+    "items": [
+      "/docs/articles/data_breach_initial_report.html",
+      "/docs/articles/data_breach_customer_reactions.html",
+      "/docs/articles/data_breach_technical_analysis.html"
+    ]
+  },
+  {
+    "listing": "/docs/logs.html",
+    "items": [
+      "/docs/support/logs/cloudtrail_export.html",
+      "/docs/support/logs/application_server_logs.html",
+      "/docs/support/logs/database_access_logs.html",
+      "/docs/support/logs/edr_logs.html",
+      "/docs/support/logs/firewall_logs.html",
+      "/docs/support/logs/iam_revocation_log.html",
+      "/docs/support/logs/sso_session_log.html",
+      "/docs/support/logs/seim_alerts.html",
+      "/docs/support/logs/vpn_access_log.html"
+    ]
+  },
+  {
+    "listing": "/docs/policies.html",
+    "items": [
+      "/docs/policies/acceptable_use.html",
+      "/docs/policies/access.html",
+      "/docs/policies/approved_software.html",
+      "/docs/policies/approved_vendors.html",
+      "/docs/policies/asset_mgmt.html",
+      "/docs/policies/bcdr.html",
+      "/docs/policies/breach.html",
+      "/docs/policies/data_classification.html",
+      "/docs/policies/data_mgmt.html",
+      "/docs/policies/data_protection.html",
+      "/docs/policies/document_numbering.html",
+      "/docs/policies/facility.html",
+      "/docs/policies/gdpr_dpa.html",
+      "/docs/policies/hr.html",
+      "/docs/policies/ir.html",
+      "/docs/policies/office_macro_std.html",
+      "/docs/policies/vuln_mgmt.html",
+      "/docs/policies/policy_mgmt.html",
+      "/docs/policies/privacy_policy.html",
+      "/docs/policies/privacy.html",
+      "/docs/policies/risk_mgmt.html",
+      "/docs/policies/rar.html",
+      "/docs/policies/model.html",
+      "/docs/policies/vendor.html",
+      "/docs/policies/app_hardening_std.html"
     ]
   }
 ]
