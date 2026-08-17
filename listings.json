@@ -41,25 +41,11 @@
     ]
   },
   {
-    "listing": "/docs/interviews.html",
+    "listing": "/docs/articles.html",
     "items": [
-      "/docs/interviews/interview_CISO.html",
-      "/docs/interviews/interview_database_administrator.html",
-      "/docs/interviews/interview_data_protection_officer.html",
-      "/docs/interviews/interview_helpdesk.html",
-      "/docs/interviews/interview_network_engineer.html",
-      "/docs/interviews/interview_system_administrator.html"
-    ]
-  },
-  {
-    "listing": "/blog/index.html",
-    "items": [
-      "/blog/posts/post-with-code/index.html",
-      "/blog/posts/welcome/index.html",
-      "/blog/posts/fullstack-development/index.html",
-      "/blog/posts/how-to-become-frontend-master/index.html",
-      "/blog/posts/essential-data-structures-algorithms/index.html",
-      "/blog/posts/markdown_examples/index.html"
+      "/docs/articles/data_breach_initial_report.html",
+      "/docs/articles/data_breach_customer_reactions.html",
+      "/docs/articles/data_breach_technical_analysis.html"
     ]
   },
   {
@@ -83,11 +69,14 @@
     ]
   },
   {
-    "listing": "/docs/articles.html",
+    "listing": "/blog/index.html",
     "items": [
-      "/docs/articles/data_breach_initial_report.html",
-      "/docs/articles/data_breach_customer_reactions.html",
-      "/docs/articles/data_breach_technical_analysis.html"
+      "/blog/posts/post-with-code/index.html",
+      "/blog/posts/welcome/index.html",
+      "/blog/posts/fullstack-development/index.html",
+      "/blog/posts/how-to-become-frontend-master/index.html",
+      "/blog/posts/essential-data-structures-algorithms/index.html",
+      "/blog/posts/markdown_examples/index.html"
     ]
   },
   {
